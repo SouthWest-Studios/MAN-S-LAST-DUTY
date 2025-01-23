@@ -20,13 +20,17 @@ public class Rewind : MonoBehaviour
 
     private int minuteCounter = 60;
     private float secondCounter = 0f;
+
+    [Header("Time")]
+    public int resetTime = 60;
     public TextMeshProUGUI minuteText;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        minuteCounter = resetTime;
+        StartCoroutine(ContarRegresivamente());
     }
 
     // Update is called once per frame
@@ -46,22 +50,6 @@ public class Rewind : MonoBehaviour
             {
                 timeContador += Time.deltaTime;
             }
-
-            secondCounter += Time.deltaTime;
-
-            if (secondCounter >= 1f)
-            {
-                minuteCounter--;
-                secondCounter = 0f;
-            }
-
-            
-
-            if (minuteCounter <= 0)
-            {
-                isRewinding = true;
-                minuteCounter = 0;
-            }
         }
         else
         {
@@ -80,7 +68,8 @@ public class Rewind : MonoBehaviour
             if (positionLists.Count <= 0 && rotationLists.Count <= 0)
             {
                 isRewinding = false;
-                minuteCounter = 60;
+                minuteCounter = resetTime;
+                StartCoroutine(ContarRegresivamente());
             }
 
         }
@@ -89,4 +78,17 @@ public class Rewind : MonoBehaviour
     }
 
 
+    IEnumerator ContarRegresivamente()
+    {
+        while (minuteCounter > 0)
+        {
+            Debug.Log(minuteCounter);  // Muestra el contador en la consola
+            minuteCounter--;  // Decrementa el contador
+
+            yield return new WaitForSeconds(1f);  // Espera 1 segundo
+        }
+        isRewinding = true;
+        minuteCounter = 0;
+        smoothTime = 0.1f;
+    }
 }
