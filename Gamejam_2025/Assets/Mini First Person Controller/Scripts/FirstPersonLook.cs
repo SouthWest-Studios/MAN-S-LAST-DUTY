@@ -14,6 +14,8 @@ public class FirstPersonLook : MonoBehaviour
 
     public bool isPanelOpen = false;
 
+    public CrosshairController crosshairController;
+
 
     void Reset()
     {
@@ -32,12 +34,14 @@ public class FirstPersonLook : MonoBehaviour
         if(isPanelOpen)
         {
             Cursor.lockState = CursorLockMode.None;
+            crosshairController.ShowCrosshair(false);
         }
         else
         {
             if (!player.isRewinding)
             {
                 Cursor.lockState = CursorLockMode.Locked;
+                crosshairController.ShowCrosshair(true);
                 // Get smooth velocity.
                 Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
                 Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
