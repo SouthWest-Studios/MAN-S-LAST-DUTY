@@ -6593,6 +6593,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4594224271191300721, guid: 122c22d1ef51b7b488d7e016cbbed82e,
+        type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 816140789}
     - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: minuteText
@@ -6606,11 +6611,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6007597286841217669, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1595838365}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122c22d1ef51b7b488d7e016cbbed82e, type: 3}
 --- !u!1 &865122439
 GameObject:
@@ -10936,12 +10937,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8a41175693849448c41e5a282da374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1389131581 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6007597286841217669, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-    type: 3}
-  m_PrefabInstance: {fileID: 830578777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1405382410
 GameObject:
   m_ObjectHideFlags: 0
@@ -13294,29 +13289,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 830578777}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389131581}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec72980442fddac4d86e75ab24b4d027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1595838365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1389131581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3be2c072b064f9647863371e506a5573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crosshair: {fileID: 816140789}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  interactColor: {r: 0, g: 1, b: 0, a: 1}
-  interactionKey: 101
-  maxInteractionDistance: 5
 --- !u!1 &1614921229
 GameObject:
   m_ObjectHideFlags: 0
