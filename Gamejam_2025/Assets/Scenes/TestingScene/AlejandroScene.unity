@@ -2189,6 +2189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &293931550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3824,6 +3825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &448945827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5953,6 +5955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &776835223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6246,6 +6249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &810612640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6648,6 +6652,11 @@ PrefabInstance:
       propertyPath: minuteText
       value: 
       objectReference: {fileID: 441203469}
+    - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
+        type: 3}
+      propertyPath: puzzleManager
+      value: 
+      objectReference: {fileID: 1635106351}
     - target: {fileID: 4835098825475368265, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: crosshairController
@@ -6658,6 +6667,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122c22d1ef51b7b488d7e016cbbed82e, type: 3}
+--- !u!114 &857493779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8097949607365610424, guid: a08dbdce116ea2549b3d694b1afdf038,
+    type: 3}
+  m_PrefabInstance: {fileID: 395970540305827858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865122439
 GameObject:
   m_ObjectHideFlags: 0
@@ -9187,6 +9208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &1098779411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10573,6 +10595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &1322592744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10982,6 +11005,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8a41175693849448c41e5a282da374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  primerCuadranteCheck: 0
+  segundoCuadranteCheck: 0
+  tercerCuadranteCheck: 0
+  cuartoCuadranteCheck: 0
+  puzzleManager: {fileID: 0}
 --- !u!1 &1405382410
 GameObject:
   m_ObjectHideFlags: 0
@@ -11988,7 +12016,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5248c18ae6741847b58d8562b5ac582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintNum: {fileID: 734418982}
+  correctNum: 0
+  hintNumText: {fileID: 0}
+  buttons: []
+  puzzleManager: {fileID: 1635106351}
 --- !u!4 &1514560332
 Transform:
   m_ObjectHideFlags: 0
@@ -12325,6 +12356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &1527911581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13222,6 +13254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &1594497735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13415,6 +13448,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614921229}
   m_CullTransparentMesh: 1
+--- !u!1 &1635106350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635106352}
+  - component: {fileID: 1635106351}
+  m_Layer: 0
+  m_Name: PuzzleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1635106351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635106350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae64ae6d67459e04d95dfa02ceea1cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzles:
+  - name: BloodPuzzle
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 1
+  - name: PeriodicTablePuzzle
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 1
+  - name: WavePuzzle
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 1
+  - name: GuitarHeroPuzzle
+    isCompleted: 1
+    itHasbeenCompleted: 1
+    isReseteable: 0
+--- !u!4 &1635106352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635106350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3017943, y: 0.6541729, z: 9.586381}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1639372633
 GameObject:
   m_ObjectHideFlags: 0
@@ -14467,6 +14561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &1770632089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14941,6 +15036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
 --- !u!114 &1801481414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17064,6 +17160,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9016962038042245357, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: start
+      value: 
+      objectReference: {fileID: 857493779}
+    - target: {fileID: 9016962038042245357, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: puzzlemanager
+      value: 
+      objectReference: {fileID: 1635106351}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17087,3 +17193,4 @@ SceneRoots:
   - {fileID: 830578777}
   - {fileID: 1542400149}
   - {fileID: 395970540305827858}
+  - {fileID: 1635106352}

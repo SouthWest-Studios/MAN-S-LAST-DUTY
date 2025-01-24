@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class Rewind : MonoBehaviour
 {
+    public PuzzleManager puzzleManager;
     [Header("Rewind Settings")]
     public bool isRewinding = false;
     public Transform cameraTransform;
@@ -93,6 +94,8 @@ public class Rewind : MonoBehaviour
             if(contadorReloadScene >= timeToReloadScene)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                puzzleManager.ResetAllPuzzles();
+                puzzleManager.SaveAllPuzzles();
             }
             else
             {

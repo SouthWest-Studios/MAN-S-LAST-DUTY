@@ -902,13 +902,20 @@ MonoBehaviour:
   puzzles:
   - name: BloodPuzzle
     isCompleted: 0
+    itHasbeenCompleted: 0
     isReseteable: 1
   - name: PeriodicTablePuzzle
     isCompleted: 0
+    itHasbeenCompleted: 0
     isReseteable: 1
   - name: WavePuzzle
     isCompleted: 0
+    itHasbeenCompleted: 0
     isReseteable: 1
+  - name: GuitarHeroPuzzle
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 0
 --- !u!4 &122704850
 Transform:
   m_ObjectHideFlags: 0
@@ -4232,6 +4239,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448945824}
   m_CullTransparentMesh: 1
+--- !u!1001 &466984202
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3025189923905429763, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_Name
+      value: GuitarHeroPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025189923905429763, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.111768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.6182976
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619217274634788411, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016962038042245357, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: start
+      value: 
+      objectReference: {fileID: 2109992028}
+    - target: {fileID: 9016962038042245357, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      propertyPath: puzzlemanager
+      value: 
+      objectReference: {fileID: 122704849}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6819683572342943392, guid: a08dbdce116ea2549b3d694b1afdf038,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: a08dbdce116ea2549b3d694b1afdf038, type: 3}
 --- !u!1 &497671651
 GameObject:
   m_ObjectHideFlags: 0
@@ -6955,13 +7049,18 @@ PrefabInstance:
     - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: minuteText
       value: 
       objectReference: {fileID: 441203469}
+    - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
+        type: 3}
+      propertyPath: puzzleManager
+      value: 
+      objectReference: {fileID: 122704849}
     - target: {fileID: 4835098825475368265, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: crosshairController
@@ -9619,7 +9718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 40
+  num: 30
 --- !u!114 &1098779411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9683,7 +9782,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 40
+          m_IntArgument: 30
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12517,6 +12616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5248c18ae6741847b58d8562b5ac582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctNum: 0
   hintNumText: {fileID: 734418982}
   buttons:
   - {fileID: 1322592743}
@@ -12529,6 +12629,7 @@ MonoBehaviour:
   - {fileID: 776835222}
   - {fileID: 810612639}
   - {fileID: 1594497734}
+  puzzleManager: {fileID: 122704849}
 --- !u!4 &1514560332
 Transform:
   m_ObjectHideFlags: 0
@@ -12865,7 +12966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5074144bf1dbe41ae64f9656d85379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 30
+  num: 23
 --- !u!114 &1527911581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12929,7 +13030,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 30
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17655,6 +17756,18 @@ MonoBehaviour:
   num: 4
   cuadrante: 4
   correctWaveScript: {fileID: 1365961639}
+--- !u!114 &2109992028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8097949607365610424, guid: a08dbdce116ea2549b3d694b1afdf038,
+    type: 3}
+  m_PrefabInstance: {fileID: 466984202}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2123075926
 GameObject:
   m_ObjectHideFlags: 0
@@ -17743,4 +17856,5 @@ SceneRoots:
   - {fileID: 164123494}
   - {fileID: 830578777}
   - {fileID: 1542400149}
+  - {fileID: 466984202}
   - {fileID: 122704850}

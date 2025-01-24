@@ -1,8 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using static PuzzleManager;
 
 public class GuitarHero : MonoBehaviour
 {
+    public PuzzleManager puzzlemanager;
+    private string puzzleName;
+
     [Header("Carriles")]
     public GameObject[] carril1;
     public GameObject[] carril2;
@@ -35,9 +40,22 @@ public class GuitarHero : MonoBehaviour
     private bool juegoActivo = true;
     private Coroutine generarLucesCoroutine;
     private Coroutine[] moverLucesCoroutines = new Coroutine[3];
+    public Button start;
 
     void Start()
     {
+        puzzleName = "GuitarHeroPuzzle";
+        foreach (var puzzle in puzzlemanager.puzzles)
+        {
+            if (puzzle.name == puzzleName)
+            {
+                if(puzzle.itHasbeenCompleted)
+                {
+                    start.interactable = false;
+                }
+                
+            }
+        }
         juegoActivo = false;
         ApagarTodasLasLuces();
         if (botonComenzar != null)
@@ -244,7 +262,8 @@ public class GuitarHero : MonoBehaviour
 
     private void CompletarJuego()
     {
-        LimpiarEstadoJuego();
+        puzzlemanager.CompletePuzzle("GuitarHeroPuzzle");
+        //LimpiarEstadoJuego();
         Debug.Log("¡Victoria! (desbloquea simon dice)");
     }
 

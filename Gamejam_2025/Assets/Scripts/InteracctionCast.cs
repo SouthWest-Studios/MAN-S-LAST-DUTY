@@ -39,7 +39,7 @@ public class InteracctionCast : MonoBehaviour
 
                 Button targetButton = hit.collider.gameObject.GetComponent<Button>();
 
-                if (Input.GetKeyDown(interactionKey))
+                if (Input.GetKeyDown(interactionKey) && targetButton.interactable == true)
                 {
                     targetButton.onClick.Invoke();
                     Debug.Log("button pressed");

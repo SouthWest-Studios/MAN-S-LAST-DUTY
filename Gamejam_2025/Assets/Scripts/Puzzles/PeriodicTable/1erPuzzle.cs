@@ -7,14 +7,19 @@ using UnityEngine.UI;
 
 public class PeriodicPuzzle : MonoBehaviour
 {
-    private int correctNum;
+    public int correctNum;
     
     public TextMeshPro hintNumText;
     private int hintNum;
 
     public List<PrimerPuzzleButtons> buttons;
 
+    public PuzzleManager puzzleManager;
 
+    private void Awake()
+    {
+        puzzleManager.LoadAllPuzzles();
+    }
     private void Start()
     {
         correctNum = Random.Range(1, 119);
@@ -37,6 +42,8 @@ public class PeriodicPuzzle : MonoBehaviour
         if (hintNum == correctNum)
         {
             hintNumText.text = "correcto";
+            puzzleManager.CompletePuzzle("PeriodicTablePuzzle");
+
         }
         for (int i = 0; i < buttons.Count; i++)
         {
