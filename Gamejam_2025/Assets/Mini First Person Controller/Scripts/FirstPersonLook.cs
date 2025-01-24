@@ -29,9 +29,9 @@ public class FirstPersonLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if(isPanelOpen)
+        if (isPanelOpen)
         {
             Cursor.lockState = CursorLockMode.None;
             crosshairController.ShowCrosshair(false);
@@ -42,6 +42,7 @@ public class FirstPersonLook : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 crosshairController.ShowCrosshair(true);
+
                 // Get smooth velocity.
                 Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
                 Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
@@ -54,8 +55,5 @@ public class FirstPersonLook : MonoBehaviour
                 character.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
             }
         }
-        
-        
-        
     }
 }

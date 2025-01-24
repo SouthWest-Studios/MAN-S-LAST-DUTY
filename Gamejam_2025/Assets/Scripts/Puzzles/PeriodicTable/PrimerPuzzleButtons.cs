@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class PrimerPuzzleButtons : MonoBehaviour
 {
-    private Button button;
+    private Button button;  
     private bool isPressed = false;
+
+    public int num;
 
     private void Start()
     {
@@ -26,6 +28,11 @@ public class PrimerPuzzleButtons : MonoBehaviour
             //button.onClick.RemoveAllListeners();
             //Debug.Log("Botón presionado y desactivado temporalmente.");
         }
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void ResetButton()

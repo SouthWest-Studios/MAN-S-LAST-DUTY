@@ -42,6 +42,7 @@ public class InteracctionCast : MonoBehaviour
                 if (Input.GetKeyDown(interactionKey))
                 {
                     targetButton.onClick.Invoke();
+                    Debug.Log("button pressed");
                 }
             }
             else
