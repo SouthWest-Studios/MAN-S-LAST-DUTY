@@ -804,6 +804,7 @@ GameObject:
   - component: {fileID: 4835098825475368265}
   - component: {fileID: 8594580181022100981}
   - component: {fileID: 8484286897039944296}
+  - component: {fileID: 4594224271191300721}
   m_Layer: 0
   m_Name: First Person Camera
   m_TagString: MainCamera
@@ -910,6 +911,7 @@ MonoBehaviour:
   smoothing: 1.5
   player: {fileID: 4596758276794941486}
   isPanelOpen: 0
+  crosshairController: {fileID: 0}
 --- !u!114 &8594580181022100981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,6 +972,23 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &4594224271191300721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007597286841217669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be2c072b064f9647863371e506a5573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crosshair: {fileID: 0}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  interactColor: {r: 0, g: 1, b: 0, a: 1}
+  interactionKey: 101
+  maxInteractionDistance: 5
 --- !u!1 &6039989719434558431
 GameObject:
   m_ObjectHideFlags: 0
