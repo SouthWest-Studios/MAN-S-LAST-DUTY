@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class BloodPuzzle : MonoBehaviour
 {
-    int correctNumber;
+    public int correctNumber;
 
-    int currentNumber = 0;
+    public int currentNumber;
 
     public List<StickHelpers> sticks;
 
     void Start()
     {
-        correctNumber = Random.Range(0, 9); // 0 incluido, 9 excluido
-
+        correctNumber = Random.Range(1, 10); // 1 incluido, 10 excluido
+        currentNumber = 1;
     }
 
     void Update()
@@ -24,9 +24,9 @@ public class BloodPuzzle : MonoBehaviour
 
     public void RotateButton()
     {
-        if (currentNumber > 7)
+        if (currentNumber > 8)
         {
-            currentNumber = 0;
+            currentNumber = 1;
             this.transform.rotation = Quaternion.Euler(90.73801f, 0f, 0f);
 
         }
