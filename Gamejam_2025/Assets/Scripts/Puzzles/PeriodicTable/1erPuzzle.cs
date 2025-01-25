@@ -18,7 +18,7 @@ public class PeriodicPuzzle : MonoBehaviour
 
     private void Awake()
     {
-        //if (puzzleManager.GetCopyList().Count > 0)
+        
         {
             puzzleManager.LoadAllPuzzles();
         }
@@ -26,6 +26,7 @@ public class PeriodicPuzzle : MonoBehaviour
     }
     private void Start()
     {
+        puzzleManager = FindAnyObjectByType<PuzzleManager>();
         correctNum = Random.Range(1, 119);
     }
 
@@ -45,6 +46,7 @@ public class PeriodicPuzzle : MonoBehaviour
         }
         if (hintNum == correctNum)
         {
+            puzzleManager = FindAnyObjectByType<PuzzleManager>();
             hintNumText.text = "correcto";
             puzzleManager.CompletePuzzle("PeriodicTablePuzzle");
 
