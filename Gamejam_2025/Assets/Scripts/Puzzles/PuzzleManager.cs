@@ -10,6 +10,7 @@ public class PuzzleManager : MonoBehaviour
         public bool isCompleted = false;
         public bool itHasbeenCompleted = false;
         public bool isReseteable = false;
+        public bool isGiven = false;
     }
 
     public List<Puzzle> puzzles = new List<Puzzle>();
@@ -20,6 +21,8 @@ public class PuzzleManager : MonoBehaviour
     public float messageDuration = 2f;   // Duración del mensaje en segundos
 
     private static PuzzleManager instance;
+
+    private FetusScript fetus;
 
     void Awake()
     {
@@ -80,6 +83,12 @@ public class PuzzleManager : MonoBehaviour
                 puzzle.isCompleted = true;
                 puzzle.itHasbeenCompleted = true;
 
+                if(puzzle.isReseteable == true)
+                {
+                    fetus = FindAnyObjectByType<FetusScript>();
+                    fetus.currentObject = puzzleName;
+                }
+                
                 ShowCompletionMessage();
                 return;
             }
@@ -87,7 +96,21 @@ public class PuzzleManager : MonoBehaviour
         
     }
 
-    private void ShowCompletionMessage()
+    public void GivePuzzle(string puzzleName)
+    {
+        foreach (var puzzle in puzzles)
+        {
+            if (puzzle.name == puzzleName)
+            {
+                puzzle.isGiven = true;
+                ShowCompletionMessage();
+                return;
+            }
+        }
+
+    }
+
+    public void ShowCompletionMessage()
     {
         if (completionMessage != null)
         {

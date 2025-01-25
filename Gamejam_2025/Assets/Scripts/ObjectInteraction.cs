@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectInteraction : MonoBehaviour
 {
     public GameObject canvasToOpen; // Arrastra el Canvas aquí en el Inspector.
     private bool playerIsNear = false; // Indica si el jugador está cerca.
     public FirstPersonLook cameraFirstPerson;
+
+    public bool isCanvasToOpen = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,8 +36,15 @@ public class ObjectInteraction : MonoBehaviour
         // Si el jugador está cerca y presiona la tecla E, activa el Canvas.
         if (playerIsNear && Input.GetKeyDown(KeyCode.E))
         {
-            cameraFirstPerson.isPanelOpen = true;
-            canvasToOpen.SetActive(true); // Activa el Canvas y el cursor.
+            if (isCanvasToOpen)
+            {
+                cameraFirstPerson.isPanelOpen = true;
+                canvasToOpen.SetActive(true); // Activa el Canvas y el cursor.
+            }
+            else
+            {
+                GetComponent<Button>().onClick.Invoke();
+            }
             
         }
         if (playerIsNear && Input.GetKeyDown(KeyCode.Escape))
