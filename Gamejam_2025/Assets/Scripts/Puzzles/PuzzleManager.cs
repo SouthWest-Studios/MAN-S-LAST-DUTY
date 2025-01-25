@@ -7,12 +7,17 @@ public class PuzzleManager : MonoBehaviour
     public class Puzzle
     {
         public string name;
-        public bool isCompleted;
-        public bool itHasbeenCompleted;
-        public bool isReseteable;
+        public bool isCompleted = false;
+        public bool itHasbeenCompleted = false;
+        public bool isReseteable = false;
     }
 
     public List<Puzzle> puzzles = new List<Puzzle>();
+    private static List<Puzzle> persistentPuzzles = null;
+
+    [Header("UI Elements")]
+    public GameObject completionMessage; // Referencia al objeto del mensaje
+    public float messageDuration = 2f;   // Duración del mensaje en segundos
 
     private static PuzzleManager instance;
 
@@ -28,10 +33,6 @@ public class PuzzleManager : MonoBehaviour
         {
             Destroy(gameObject); // Destruye el duplicado si ya existe una instancia
         }
-    }
-
-    private void Start()
-    {
         foreach (var puzzle in puzzles)
         {
             if (puzzle.name == "BloodPuzzle")
@@ -39,7 +40,7 @@ public class PuzzleManager : MonoBehaviour
                 puzzle.isCompleted = false;
                 puzzle.itHasbeenCompleted = false;
                 puzzle.isReseteable = true;
-                
+
             }
             if (puzzle.name == "PeriodicTablePuzzle")
             {
@@ -65,6 +66,11 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        
+    }
+
     public void CompletePuzzle(string puzzleName)
     {
         foreach (var puzzle in puzzles)
@@ -74,11 +80,30 @@ public class PuzzleManager : MonoBehaviour
                 puzzle.isCompleted = true;
                 puzzle.itHasbeenCompleted = true;
 
-                Debug.Log($"Puzzle '{puzzleName}' completado!");
+                ShowCompletionMessage();
                 return;
             }
         }
-        Debug.LogWarning($"Puzzle '{puzzleName}' no encontrado.");
+        
+    }
+
+    private void ShowCompletionMessage()
+    {
+        if (completionMessage != null)
+        {
+            completionMessage.SetActive(true); // Muestra el mensaje
+            // Inicia una animación o desvanecimiento
+            StartCoroutine(HideMessageAfterDelay());
+        }
+    }
+
+    private System.Collections.IEnumerator HideMessageAfterDelay()
+    {
+        yield return new WaitForSeconds(messageDuration);
+        if (completionMessage != null)
+        {
+            completionMessage.SetActive(false); // Oculta el mensaje después del tiempo
+        }
     }
 
     public bool AreAllPuzzlesCompleted()
@@ -116,31 +141,24 @@ public class PuzzleManager : MonoBehaviour
 
     public void SaveAllPuzzles()
     {
-        foreach (var puzzle in puzzles)
-        {
-            // Guardar el estado de cada puzzle en PlayerPrefs
-            PlayerPrefs.SetInt($"{puzzle.name}_isCompleted", puzzle.isCompleted ? 1 : 0);
-            PlayerPrefs.SetInt($"{puzzle.name}_itHasBeenCompleted", puzzle.itHasbeenCompleted ? 1 : 0);
-            PlayerPrefs.SetInt($"{puzzle.name}_isReseteable", puzzle.isReseteable ? 1 : 0);
-        }
+        persistentPuzzles = new List<Puzzle>(puzzles);
 
-        // Asegúrate de guardar los cambios
-        PlayerPrefs.Save();
 
-        Debug.Log("Todos los puzzles han sido guardados.");
     }
 
     public void LoadAllPuzzles()
     {
-        foreach (var puzzle in puzzles)
-        {
-            // Recuperar el estado de cada puzzle desde PlayerPrefs
-            puzzle.isCompleted = PlayerPrefs.GetInt($"{puzzle.name}_isCompleted", 0) == 1;
-            puzzle.itHasbeenCompleted = PlayerPrefs.GetInt($"{puzzle.name}_itHasBeenCompleted", 0) == 1;
-            puzzle.isReseteable = PlayerPrefs.GetInt($"{puzzle.name}_isReseteable", 0) == 1;
+        if( persistentPuzzles != null ){
+            puzzles = new List<Puzzle>(persistentPuzzles);
         }
+        
 
-        Debug.Log("Todos los puzzles han sido cargados.");
+
+    }
+
+    public List<Puzzle> GetCopyList()
+    {
+        return persistentPuzzles;
     }
 
 }

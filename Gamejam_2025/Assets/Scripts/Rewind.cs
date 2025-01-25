@@ -93,9 +93,10 @@ public class Rewind : MonoBehaviour
 
             if(contadorReloadScene >= timeToReloadScene)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 puzzleManager.ResetAllPuzzles();
                 puzzleManager.SaveAllPuzzles();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                
             }
             else
             {

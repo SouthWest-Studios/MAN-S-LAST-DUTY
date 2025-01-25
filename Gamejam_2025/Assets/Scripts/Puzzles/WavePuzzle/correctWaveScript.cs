@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class correctWaveScript : MonoBehaviour
 {
+    
     private int correctWaveNum;
 
     public bool primerCuadranteCheck = false;
@@ -10,9 +12,13 @@ public class correctWaveScript : MonoBehaviour
     public bool tercerCuadranteCheck = false;
     public bool cuartoCuadranteCheck = false;
 
+    public ObjectInteraction trigger;
+
     public PuzzleManager puzzleManager;
     void Start()
     {
+        
+
         int childCount = transform.childCount;
 
         int randomIndex = Random.Range(0, childCount);

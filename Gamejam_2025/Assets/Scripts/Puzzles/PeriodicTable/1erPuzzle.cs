@@ -18,7 +18,11 @@ public class PeriodicPuzzle : MonoBehaviour
 
     private void Awake()
     {
-        puzzleManager.LoadAllPuzzles();
+        //if (puzzleManager.GetCopyList().Count > 0)
+        {
+            puzzleManager.LoadAllPuzzles();
+        }
+        
     }
     private void Start()
     {
