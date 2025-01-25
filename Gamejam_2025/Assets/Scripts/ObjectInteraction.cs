@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ObjectInteraction : MonoBehaviour
 {
-    public GameObject canvasToOpen; // Arrastra el Canvas aquí en el Inspector.
-    private bool playerIsNear = false; // Indica si el jugador está cerca.
+    public GameObject canvasToOpen; // Arrastra el Canvas aquï¿½ en el Inspector.
+    private bool playerIsNear = false; // Indica si el jugador estï¿½ cerca.
     public FirstPersonLook cameraFirstPerson;
 
     private void OnTriggerEnter(Collider other)
@@ -14,7 +14,7 @@ public class ObjectInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsNear = true;
-            Debug.Log("El jugador está cerca del cubo.");
+            Debug.Log("El jugador estï¿½ cerca del cubo.");
         }
     }
 
@@ -24,13 +24,13 @@ public class ObjectInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerIsNear = false;
-            Debug.Log("El jugador se alejó del cubo.");
+            Debug.Log("El jugador se alejï¿½ del cubo.");
         }
     }
 
     private void Update()
     {
-        // Si el jugador está cerca y presiona la tecla E, activa el Canvas.
+        // Si el jugador estï¿½ cerca y presiona la tecla E, activa el Canvas.
         if (playerIsNear && Input.GetKeyDown(KeyCode.E))
         {
             cameraFirstPerson.isPanelOpen = true;
