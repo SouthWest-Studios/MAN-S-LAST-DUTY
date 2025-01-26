@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Button
   - SaveZone
+  - Slot
   layers:
   - Default
   - TransparentFX

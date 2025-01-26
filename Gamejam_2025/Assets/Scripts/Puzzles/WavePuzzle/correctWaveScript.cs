@@ -17,7 +17,7 @@ public class correctWaveScript : MonoBehaviour
     public PuzzleManager puzzleManager;
     void Start()
     {
-        
+        puzzleManager = FindAnyObjectByType<PuzzleManager>();
 
         int childCount = transform.childCount;
 
