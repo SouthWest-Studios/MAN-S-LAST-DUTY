@@ -9,7 +9,7 @@ public class WordleController : MonoBehaviour
     public int maxMoleculeID = 15; // Rango máximo de IDs de moléculas
     private List<int> correctCombination; // Lista de la combinación correcta
     private PuzzleManager puzzleManager;
-    bool allCorrect = true;
+    bool allCorrect;
     public GameObject canvas;
 
     private void Start()
@@ -48,6 +48,8 @@ public class WordleController : MonoBehaviour
         {
             if(canvas.activeSelf)
             {
+                puzzleManager = FindAnyObjectByType<PuzzleManager>();
+                puzzleManager.CompletePuzzle("WordlePuzzle");
                 return;
             }
         }
@@ -93,8 +95,7 @@ public class WordleController : MonoBehaviour
         }
         if (allCorrect)
         {
-            puzzleManager = FindAnyObjectByType<PuzzleManager>();
-            puzzleManager.CompletePuzzle("WordlePuzzle");
+            
         }
     }
 
