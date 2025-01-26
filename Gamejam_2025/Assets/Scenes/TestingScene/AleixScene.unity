@@ -447,7 +447,8 @@ GameObject:
   - component: {fileID: 51488626}
   - component: {fileID: 51488625}
   - component: {fileID: 51488624}
-  m_Layer: 0
+  - component: {fileID: 51488627}
+  m_Layer: 5
   m_Name: Image (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,6 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 8
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &51488625
@@ -525,6 +528,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51488622}
   m_CullTransparentMesh: 1
+--- !u!225 &51488627
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51488622}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &54387478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1016,12 @@ MonoBehaviour:
     itHasbeenCompleted: 0
     isReseteable: 0
     isGiven: 0
-  completionMessage: {fileID: 1329872237}
+  - name: WordlePuzzle
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 1
+    isGiven: 0
+  completionMessage: {fileID: 1329872238}
   messageDuration: 2
 --- !u!4 &122704850
 Transform:
@@ -2894,6 +2914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentObject: 
+  currentHint: 
 --- !u!1 &306035365
 GameObject:
   m_ObjectHideFlags: 0
@@ -3240,6 +3261,7 @@ Transform:
   m_Children:
   - {fileID: 762878610}
   - {fileID: 1009955990}
+  - {fileID: 522537233}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &351476276
@@ -3583,7 +3605,7 @@ GameObject:
   - component: {fileID: 362835857}
   - component: {fileID: 362835856}
   - component: {fileID: 362835858}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image (2)
   m_TagString: Slot
   m_Icon: {fileID: 0}
@@ -4410,7 +4432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 435387430}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Slots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4747,7 +4769,8 @@ GameObject:
   - component: {fileID: 451085409}
   - component: {fileID: 451085408}
   - component: {fileID: 451085407}
-  m_Layer: 0
+  - component: {fileID: 451085410}
+  m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4785,6 +4808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 2
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &451085408
@@ -4825,6 +4850,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451085405}
   m_CullTransparentMesh: 1
+--- !u!225 &451085410
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451085405}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &456912564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4837,7 +4874,8 @@ GameObject:
   - component: {fileID: 456912568}
   - component: {fileID: 456912567}
   - component: {fileID: 456912566}
-  m_Layer: 0
+  - component: {fileID: 456912569}
+  m_Layer: 5
   m_Name: Image (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4875,6 +4913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 7
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &456912567
@@ -4915,6 +4955,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456912564}
   m_CullTransparentMesh: 1
+--- !u!225 &456912569
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456912564}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &466984202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5277,6 +5329,59 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &522537232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522537233}
+  - component: {fileID: 522537234}
+  m_Layer: 0
+  m_Name: WordlePuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522537233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522537232}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 333110246}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522537234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522537232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5a3e79954420d44ae5a2424e14a53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 1739999552}
+  - {fileID: 1161476866}
+  - {fileID: 362835858}
+  - {fileID: 971565681}
+  - {fileID: 1006880164}
+  numberOfSlots: 5
+  maxMoleculeID: 15
+  canvas: {fileID: 1009955989}
 --- !u!1 &526851368
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,7 +7113,7 @@ GameObject:
   - component: {fileID: 762878612}
   - component: {fileID: 762878611}
   m_Layer: 0
-  m_Name: WaveProblemTrigger (1)
+  m_Name: WordleProblemTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7973,6 +8078,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
+      propertyPath: resetTime
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
+        type: 3}
       propertyPath: minuteText
       value: 
       objectReference: {fileID: 441203469}
@@ -8013,7 +8123,8 @@ GameObject:
   - component: {fileID: 851331022}
   - component: {fileID: 851331021}
   - component: {fileID: 851331020}
-  m_Layer: 0
+  - component: {fileID: 851331023}
+  m_Layer: 5
   m_Name: Image (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8051,6 +8162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 4
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &851331021
@@ -8091,6 +8204,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851331018}
   m_CullTransparentMesh: 1
+--- !u!225 &851331023
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851331018}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &865122439
 GameObject:
   m_ObjectHideFlags: 0
@@ -8314,7 +8439,8 @@ GameObject:
   - component: {fileID: 884670496}
   - component: {fileID: 884670495}
   - component: {fileID: 884670494}
-  m_Layer: 0
+  - component: {fileID: 884670497}
+  m_Layer: 5
   m_Name: Image (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8352,6 +8478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 6
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &884670495
@@ -8392,6 +8520,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884670492}
   m_CullTransparentMesh: 1
+--- !u!225 &884670497
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884670492}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &893856123
 GameObject:
   m_ObjectHideFlags: 0
@@ -9027,7 +9167,8 @@ GameObject:
   - component: {fileID: 942801788}
   - component: {fileID: 942801787}
   - component: {fileID: 942801786}
-  m_Layer: 0
+  - component: {fileID: 942801789}
+  m_Layer: 5
   m_Name: Image (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9065,6 +9206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 13
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &942801787
@@ -9105,6 +9248,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942801784}
   m_CullTransparentMesh: 1
+--- !u!225 &942801789
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942801784}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &945351043
 GameObject:
   m_ObjectHideFlags: 0
@@ -9353,7 +9508,7 @@ GameObject:
   - component: {fileID: 971565680}
   - component: {fileID: 971565679}
   - component: {fileID: 971565681}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image (3)
   m_TagString: Slot
   m_Icon: {fileID: 0}
@@ -9847,7 +10002,7 @@ GameObject:
   - component: {fileID: 1006880163}
   - component: {fileID: 1006880162}
   - component: {fileID: 1006880164}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image (4)
   m_TagString: Slot
   m_Icon: {fileID: 0}
@@ -9935,7 +10090,8 @@ GameObject:
   - component: {fileID: 1008385524}
   - component: {fileID: 1008385523}
   - component: {fileID: 1008385522}
-  m_Layer: 0
+  - component: {fileID: 1008385525}
+  m_Layer: 5
   m_Name: Image (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9973,6 +10129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 5
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &1008385523
@@ -10013,6 +10171,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008385520}
   m_CullTransparentMesh: 1
+--- !u!225 &1008385525
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008385520}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1009955989
 GameObject:
   m_ObjectHideFlags: 0
@@ -10025,7 +10195,7 @@ GameObject:
   - component: {fileID: 1009955993}
   - component: {fileID: 1009955992}
   - component: {fileID: 1009955991}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: WordleCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10129,7 +10299,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!1 &1018717708
 GameObject:
@@ -10276,7 +10446,7 @@ GameObject:
   - component: {fileID: 1024213235}
   - component: {fileID: 1024213237}
   - component: {fileID: 1024213236}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11684,7 +11854,7 @@ GameObject:
   - component: {fileID: 1161476865}
   - component: {fileID: 1161476864}
   - component: {fileID: 1161476866}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image (1)
   m_TagString: Slot
   m_Icon: {fileID: 0}
@@ -11772,7 +11942,8 @@ GameObject:
   - component: {fileID: 1169658928}
   - component: {fileID: 1169658927}
   - component: {fileID: 1169658926}
-  m_Layer: 0
+  - component: {fileID: 1169658929}
+  m_Layer: 5
   m_Name: Image (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11810,6 +11981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 12
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &1169658927
@@ -11850,6 +12023,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169658924}
   m_CullTransparentMesh: 1
+--- !u!225 &1169658929
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169658924}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1183329418
 GameObject:
   m_ObjectHideFlags: 0
@@ -13557,7 +13742,8 @@ GameObject:
   - component: {fileID: 1384098321}
   - component: {fileID: 1384098320}
   - component: {fileID: 1384098319}
-  m_Layer: 0
+  - component: {fileID: 1384098322}
+  m_Layer: 5
   m_Name: Image (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13595,6 +13781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 10
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &1384098320
@@ -13635,6 +13823,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384098317}
   m_CullTransparentMesh: 1
+--- !u!225 &1384098322
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384098317}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1389131581 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6007597286841217669, guid: 122c22d1ef51b7b488d7e016cbbed82e,
@@ -16668,7 +16868,8 @@ GameObject:
   - component: {fileID: 1661267909}
   - component: {fileID: 1661267908}
   - component: {fileID: 1661267910}
-  m_Layer: 0
+  - component: {fileID: 1661267911}
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16744,8 +16945,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 0
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
+--- !u!225 &1661267911
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661267906}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1672711708
 GameObject:
   m_ObjectHideFlags: 0
@@ -17257,7 +17472,7 @@ GameObject:
   - component: {fileID: 1739999551}
   - component: {fileID: 1739999550}
   - component: {fileID: 1739999552}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Slot
   m_Icon: {fileID: 0}
@@ -18777,7 +18992,8 @@ GameObject:
   - component: {fileID: 1946144720}
   - component: {fileID: 1946144719}
   - component: {fileID: 1946144718}
-  m_Layer: 0
+  - component: {fileID: 1946144721}
+  m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18815,6 +19031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 1
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &1946144719
@@ -18855,6 +19073,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946144716}
   m_CullTransparentMesh: 1
+--- !u!225 &1946144721
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946144716}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1950090596
 GameObject:
   m_ObjectHideFlags: 0
@@ -19092,7 +19322,8 @@ GameObject:
   - component: {fileID: 1983140203}
   - component: {fileID: 1983140202}
   - component: {fileID: 1983140201}
-  m_Layer: 0
+  - component: {fileID: 1983140204}
+  m_Layer: 5
   m_Name: Image (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19130,6 +19361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 3
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &1983140202
@@ -19170,6 +19403,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983140199}
   m_CullTransparentMesh: 1
+--- !u!225 &1983140204
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983140199}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2005833435
 GameObject:
   m_ObjectHideFlags: 0
@@ -20005,7 +20250,8 @@ GameObject:
   - component: {fileID: 2035942427}
   - component: {fileID: 2035942426}
   - component: {fileID: 2035942425}
-  m_Layer: 0
+  - component: {fileID: 2035942428}
+  m_Layer: 5
   m_Name: Image (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20043,6 +20289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 14
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &2035942426
@@ -20083,6 +20331,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035942423}
   m_CullTransparentMesh: 1
+--- !u!225 &2035942428
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035942423}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2055097081
 GameObject:
   m_ObjectHideFlags: 0
@@ -20095,7 +20355,8 @@ GameObject:
   - component: {fileID: 2055097085}
   - component: {fileID: 2055097084}
   - component: {fileID: 2055097083}
-  m_Layer: 0
+  - component: {fileID: 2055097086}
+  m_Layer: 5
   m_Name: Image (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20133,6 +20394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 9
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &2055097084
@@ -20173,6 +20436,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055097081}
   m_CullTransparentMesh: 1
+--- !u!225 &2055097086
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055097081}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2066506691
 GameObject:
   m_ObjectHideFlags: 0
@@ -20185,7 +20460,8 @@ GameObject:
   - component: {fileID: 2066506695}
   - component: {fileID: 2066506694}
   - component: {fileID: 2066506693}
-  m_Layer: 0
+  - component: {fileID: 2066506696}
+  m_Layer: 5
   m_Name: Image (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20223,6 +20499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679bc7f7860770f418824dfd3fbfebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moleculeID: 11
+  canvasGroup: {fileID: 0}
   snapDistance: 50
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &2066506694
@@ -20263,6 +20541,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066506691}
   m_CullTransparentMesh: 1
+--- !u!225 &2066506696
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066506691}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2074210981
 GameObject:
   m_ObjectHideFlags: 0
@@ -20561,6 +20851,6 @@ SceneRoots:
   - {fileID: 830578777}
   - {fileID: 1542400149}
   - {fileID: 466984202}
-  - {fileID: 122704850}
   - {fileID: 294698680}
   - {fileID: 333110246}
+  - {fileID: 122704850}

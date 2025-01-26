@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public int moleculeID;
     private Transform originalParent;
     private Canvas canvas;
     private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
+    public CanvasGroup canvasGroup;
     private Vector3 initialPosition;
+    private FetusScript fetus;
 
     [SerializeField]
     private float snapDistance = 80f; // Distancia máxima para ajustar automáticamente al slot más cercano
@@ -28,7 +31,9 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
             originalParent = transform.parent;
             initialPosition = transform.position;
         }
-        transform.SetParent(canvas.transform);
+
+        //transform.SetParent(canvas.transform);
+        //transform.SetAsLastSibling(); // Asegura que este objeto se dibuje al frente
 
         // Hacer el objeto más fácil de arrastrar (opcional)
         if (canvasGroup != null)
@@ -73,6 +78,8 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
         {
             canvasGroup.blocksRaycasts = true;
         }
+        fetus = FindAnyObjectByType<FetusScript>();
+        fetus.currentHint = "WordlePuzzle";
     }
 
     private Transform GetClosestSlot()

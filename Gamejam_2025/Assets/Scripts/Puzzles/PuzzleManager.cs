@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
@@ -17,7 +18,7 @@ public class PuzzleManager : MonoBehaviour
     private static List<Puzzle> persistentPuzzles = null;
 
     [Header("UI Elements")]
-    public GameObject completionMessage; // Referencia al objeto del mensaje
+    public TextMeshProUGUI completionMessage; // Referencia al objeto del mensaje
     public float messageDuration = 2f;   // Duración del mensaje en segundos
 
     private static PuzzleManager instance;
@@ -38,34 +39,34 @@ public class PuzzleManager : MonoBehaviour
         }
         foreach (var puzzle in puzzles)
         {
-            if (puzzle.name == "BloodPuzzle")
-            {
-                puzzle.isCompleted = false;
-                puzzle.itHasbeenCompleted = false;
-                puzzle.isReseteable = true;
+            //if (puzzle.name == "BloodPuzzle")
+            //{
+            //    puzzle.isCompleted = false;
+            //    puzzle.itHasbeenCompleted = false;
+            //    puzzle.isReseteable = true;
 
-            }
-            if (puzzle.name == "PeriodicTablePuzzle")
-            {
-                puzzle.isCompleted = false;
-                puzzle.itHasbeenCompleted = false;
-                puzzle.isReseteable = true;
+            //}
+            //if (puzzle.name == "PeriodicTablePuzzle")
+            //{
+            //    puzzle.isCompleted = false;
+            //    puzzle.itHasbeenCompleted = false;
+            //    puzzle.isReseteable = true;
 
-            }
-            if (puzzle.name == "WavePuzzle")
-            {
-                puzzle.isCompleted = false;
-                puzzle.itHasbeenCompleted = false;
-                puzzle.isReseteable = false;
+            //}
+            //if (puzzle.name == "WavePuzzle")
+            //{
+            //    puzzle.isCompleted = false;
+            //    puzzle.itHasbeenCompleted = false;
+            //    puzzle.isReseteable = false;
 
-            }
-            if (puzzle.name == "GuitarHeroPuzzle")
-            {
-                puzzle.isCompleted = false;
-                puzzle.itHasbeenCompleted = false;
-                puzzle.isReseteable = false;
+            //}
+            //if (puzzle.name == "GuitarHeroPuzzle")
+            //{
+            //    puzzle.isCompleted = false;
+            //    puzzle.itHasbeenCompleted = false;
+            //    puzzle.isReseteable = false;
 
-            }
+            //}
         }
     }
 
@@ -89,7 +90,7 @@ public class PuzzleManager : MonoBehaviour
                     fetus.currentObject = puzzleName;
                 }
                 
-                ShowCompletionMessage();
+                ShowCompletionMessage("PuzzleCompletado");
                 return;
             }
         }
@@ -103,18 +104,19 @@ public class PuzzleManager : MonoBehaviour
             if (puzzle.name == puzzleName)
             {
                 puzzle.isGiven = true;
-                ShowCompletionMessage();
+                ShowCompletionMessage("Puzzle Entregado");
                 return;
             }
         }
 
     }
 
-    public void ShowCompletionMessage()
+    public void ShowCompletionMessage(string message)
     {
         if (completionMessage != null)
         {
-            completionMessage.SetActive(true); // Muestra el mensaje
+            completionMessage.text = message;
+            completionMessage.gameObject.SetActive(true); // Muestra el mensaje
             // Inicia una animación o desvanecimiento
             StartCoroutine(HideMessageAfterDelay());
         }
@@ -125,7 +127,7 @@ public class PuzzleManager : MonoBehaviour
         yield return new WaitForSeconds(messageDuration);
         if (completionMessage != null)
         {
-            completionMessage.SetActive(false); // Oculta el mensaje después del tiempo
+            completionMessage.gameObject.SetActive(false); // Oculta el mensaje después del tiempo
         }
     }
 
