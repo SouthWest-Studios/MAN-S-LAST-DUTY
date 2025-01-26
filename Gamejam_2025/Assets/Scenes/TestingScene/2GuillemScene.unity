@@ -4008,6 +4008,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448945824}
   m_CullTransparentMesh: 1
+--- !u!1001 &468760603
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18683
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18683
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.18683
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.275755
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2625
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.9956
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_Name
+      value: Blender
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ef1e46af5479b747a7d08ff2827ec7c, type: 3}
 --- !u!1 &497671651
 GameObject:
   m_ObjectHideFlags: 0
@@ -8262,6 +8345,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018717708}
   m_CullTransparentMesh: 1
+--- !u!1001 &1034145953
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.439753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.70771337
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.40171
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d811d405097a35e4498224e9f5177dc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Sci Fi Wall bridge with Monitor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d811d405097a35e4498224e9f5177dc5, type: 3}
 --- !u!1 &1037826047
 GameObject:
   m_ObjectHideFlags: 0
@@ -17414,3 +17565,5 @@ SceneRoots:
   - {fileID: 4783700915879475726}
   - {fileID: 1638986685251394696}
   - {fileID: 317975907}
+  - {fileID: 1034145953}
+  - {fileID: 468760603}
