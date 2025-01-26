@@ -122,24 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &4584573 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5914284818210771321, guid: a08dbdce116ea2549b3d694b1afdf038,
-    type: 3}
-  m_PrefabInstance: {fileID: 395970540305827858}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4584579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4584573}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ac9a3f4e2d49745baa2491267e1693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &21297440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6667,36 +6649,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122c22d1ef51b7b488d7e016cbbed82e, type: 3}
---- !u!1 &847176689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4839902173483775444, guid: a08dbdce116ea2549b3d694b1afdf038,
-    type: 3}
-  m_PrefabInstance: {fileID: 395970540305827858}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &847176695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847176689}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ac9a3f4e2d49745baa2491267e1693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &857493779 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8097949607365610424, guid: a08dbdce116ea2549b3d694b1afdf038,
-    type: 3}
-  m_PrefabInstance: {fileID: 395970540305827858}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &865122439
 GameObject:
   m_ObjectHideFlags: 0
@@ -6772,24 +6724,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865122439}
   m_CullTransparentMesh: 1
---- !u!1 &868099118 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7258135638461113743, guid: a08dbdce116ea2549b3d694b1afdf038,
-    type: 3}
-  m_PrefabInstance: {fileID: 395970540305827858}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &868099124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868099118}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ac9a3f4e2d49745baa2491267e1693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &884011891
 GameObject:
   m_ObjectHideFlags: 0
@@ -17207,11 +17141,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016962038042245357, guid: a08dbdce116ea2549b3d694b1afdf038,
         type: 3}
-      propertyPath: start
-      value: 
-      objectReference: {fileID: 857493779}
-    - target: {fileID: 9016962038042245357, guid: a08dbdce116ea2549b3d694b1afdf038,
-        type: 3}
       propertyPath: puzzlemanager
       value: 
       objectReference: {fileID: 1635106351}
@@ -17219,18 +17148,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4839902173483775444, guid: a08dbdce116ea2549b3d694b1afdf038,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 847176695}
-    - targetCorrespondingSourceObject: {fileID: 7258135638461113743, guid: a08dbdce116ea2549b3d694b1afdf038,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 868099124}
-    - targetCorrespondingSourceObject: {fileID: 5914284818210771321, guid: a08dbdce116ea2549b3d694b1afdf038,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4584579}
     - targetCorrespondingSourceObject: {fileID: 6819683572342943392, guid: a08dbdce116ea2549b3d694b1afdf038,
         type: 3}
       insertIndex: -1

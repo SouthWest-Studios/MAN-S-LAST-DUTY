@@ -16,10 +16,22 @@ public class PintarCasillas : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private Button[] buttons = new Button[9];
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource[] buttonSounds = new AudioSource[9];
+
     private bool[] lightStates = new bool[9];
+
+    private const float POSICION_PRESIONADO = 0.0465f;
+    private const float DURACION_ANIMACION = 0.1f;
+    private Vector3[] posicionesOriginalesBottones = new Vector3[9];
 
     private void Start()
     {
+        // Store original button positions
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            posicionesOriginalesBottones[i] = buttons[i].transform.localPosition;
+        }
         SetupButtons();
         InitializeLights();
     }
@@ -41,15 +53,60 @@ public class PintarCasillas : MonoBehaviour
 
     private void SetupButtons()
     {
-        buttons[0].onClick.AddListener(() => PressButton(new int[] { 0, 1, 3 }));
-        buttons[1].onClick.AddListener(() => PressButton(new int[] { 0, 1, 2, 4 }));
-        buttons[2].onClick.AddListener(() => PressButton(new int[] { 1, 2, 5 }));
-        buttons[3].onClick.AddListener(() => PressButton(new int[] { 0, 3, 4, 6 }));
-        buttons[4].onClick.AddListener(() => PressButton(new int[] { 1, 3, 4, 5, 7 }));
-        buttons[5].onClick.AddListener(() => PressButton(new int[] { 2, 4, 5, 8 }));
-        buttons[6].onClick.AddListener(() => PressButton(new int[] { 3, 6, 7 }));
-        buttons[7].onClick.AddListener(() => PressButton(new int[] { 4, 6, 7, 8 }));
-        buttons[8].onClick.AddListener(() => PressButton(new int[] { 5, 7, 8 }));
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            int buttonIndex = i; // Capture the index for the closure
+            buttons[i].onClick.AddListener(() => StartCoroutine(AnimateButtonPress(buttonIndex)));
+        }
+    }
+
+    private IEnumerator AnimateButtonPress(int buttonIndex)
+    {
+        Button button = buttons[buttonIndex];
+        Vector3 posOriginal = posicionesOriginalesBottones[buttonIndex];
+        Vector3 posBajada = new Vector3(posOriginal.x, POSICION_PRESIONADO, posOriginal.z);
+
+        // Play the specific button sound
+        if (buttonSounds[buttonIndex] != null)
+        {
+            buttonSounds[buttonIndex].Play();
+        }
+
+        // Press animation
+        float tiempoTranscurrido = 0;
+        while (tiempoTranscurrido < DURACION_ANIMACION)
+        {
+            tiempoTranscurrido += Time.deltaTime;
+            float t = tiempoTranscurrido / DURACION_ANIMACION;
+            button.transform.localPosition = Vector3.Lerp(posOriginal, posBajada, t);
+            yield return null;
+        }
+
+        // Release animation
+        tiempoTranscurrido = 0;
+        while (tiempoTranscurrido < DURACION_ANIMACION)
+        {
+            tiempoTranscurrido += Time.deltaTime;
+            float t = tiempoTranscurrido / DURACION_ANIMACION;
+            button.transform.localPosition = Vector3.Lerp(posBajada, posOriginal, t);
+            yield return null;
+        }
+
+        button.transform.localPosition = posOriginal;
+
+        // Handle the button press logic after animation
+        switch(buttonIndex)
+        {
+            case 0: PressButton(new int[] { 0, 1, 3 }); break;
+            case 1: PressButton(new int[] { 0, 1, 2, 4 }); break;
+            case 2: PressButton(new int[] { 1, 2, 5 }); break;
+            case 3: PressButton(new int[] { 0, 3, 4, 6 }); break;
+            case 4: PressButton(new int[] { 1, 3, 4, 5, 7 }); break;
+            case 5: PressButton(new int[] { 2, 4, 5, 8 }); break;
+            case 6: PressButton(new int[] { 3, 6, 7 }); break;
+            case 7: PressButton(new int[] { 4, 6, 7, 8 }); break;
+            case 8: PressButton(new int[] { 5, 7, 8 }); break;
+        }
     }
 
     private void PressButton(int[] lightsToToggle)

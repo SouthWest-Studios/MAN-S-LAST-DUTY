@@ -31,6 +31,10 @@ public class GuitarHero : MonoBehaviour
     public GameObject botonCarril1;
     public GameObject botonCarril2;
     public GameObject botonCarril3;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource[] buttonSounds = new AudioSource[4]; 
+
     private float posicionOriginalBoton;
     private const float POSICION_PRESIONADO = 0.0465f;
     private const float DURACION_ANIMACION = 0.1f;
@@ -76,6 +80,11 @@ public class GuitarHero : MonoBehaviour
     {
         if (botonComenzar != null)
         {
+            if (buttonSounds[0] != null)
+            {
+                buttonSounds[0].Play();
+            }
+
             Vector3 posOriginal = botonComenzar.transform.localPosition;
             Vector3 posBajada = new Vector3(posOriginal.x, POSICION_PRESIONADO, posOriginal.z);
 
@@ -175,6 +184,11 @@ public class GuitarHero : MonoBehaviour
     {
         if (boton != null)
         {
+            if (buttonSounds[carril + 1] != null)
+            {
+                buttonSounds[carril + 1].Play();
+            }
+
             Vector3 posOriginal = boton.transform.localPosition;
             Vector3 posBajada = new Vector3(posOriginal.x, POSICION_PRESIONADO, posOriginal.z);
 
