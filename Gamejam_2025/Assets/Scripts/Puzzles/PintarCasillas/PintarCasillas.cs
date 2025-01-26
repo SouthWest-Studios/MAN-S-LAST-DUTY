@@ -128,16 +128,21 @@ public class PintarCasillas : MonoBehaviour
     private void CheckWinCondition()
     {
         bool allLightsOff = true;
+        bool allLightsOn = true;
+
         for (int i = 0; i < lightStates.Length; i++)
         {
             if (lightStates[i])
             {
                 allLightsOff = false;
-                break;
+            }
+            else
+            {
+                allLightsOn = false;
             }
         }
 
-        if (allLightsOff)
+        if (allLightsOff || allLightsOn)
         {
             Debug.Log("¡Puzzle completado! (Aleix haz lo tuyo)");
         }
