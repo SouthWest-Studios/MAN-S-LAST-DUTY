@@ -45,6 +45,10 @@ public class ProximidadSonora : MonoBehaviour
     public GameObject mainCanvas;
     public FirstPersonLook cameraFirstPerson;
 
+    [Header("Camera Shake")]
+    public TraumaInducer shakeEffect;
+    public float errorShakeIntensity = 0.3f;
+
     private bool gameActive = false;
     private Vector2 lastMousePosition;
 
@@ -230,10 +234,20 @@ public class ProximidadSonora : MonoBehaviour
             
             StartCoroutine(CloseGameAfterDelay(2f));
         }
-        else if (failSound != null)
+        else 
         {
-            effectsAudioSource.clip = failSound;
-            effectsAudioSource.Play();
+            if (failSound != null)
+            {
+                effectsAudioSource.clip = failSound;
+                effectsAudioSource.Play();
+            }
+            
+            if (shakeEffect != null)
+            {
+                shakeEffect.MaximumStress = errorShakeIntensity;
+                shakeEffect.Delay = 0f;
+                shakeEffect.InduceTrauma();
+            }
         }
     }
 
