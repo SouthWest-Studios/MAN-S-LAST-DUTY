@@ -12,6 +12,7 @@ public class Rewind : MonoBehaviour
     public PuzzleManager puzzleManager;
     [Header("Rewind Settings")]
     public bool isRewinding = false;
+    private bool isCountdownStart = false;
     public Transform cameraTransform;
     public float timeBetweenSaves = 0.2f;
     public float timeToReloadScene = 4f;
@@ -19,6 +20,7 @@ public class Rewind : MonoBehaviour
     private float contadorInicioScene = 0;
     public float initialFadetoBlackSceneTime = 2;
     public Image fadeToBlackImage;
+
 
     [Header("Smooth Time Settings")]
     public float smoothTime = 0.1f;
@@ -74,7 +76,7 @@ public class Rewind : MonoBehaviour
         contadorInicioScene = initialFadetoBlackSceneTime;
         InitializeRewind();
         InitializePostProcessing();
-        StartCoroutine(CountdownTimer());
+        //StartCoroutine(CountdownTimer());
         StartLensDistortionRebound(); // Inicia el rebote de la distorsión de lente al inicio
     }
 
@@ -381,4 +383,20 @@ public class Rewind : MonoBehaviour
             isLensDistortionRebounding = false; // Detener el rebote
         }
     }
+
+    public void StartCountdown()
+    {
+        StartCoroutine(CountdownTimer());
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("SaveZone") && !isCountdownStart)
+        {
+            isCountdownStart = true;
+            StartCountdown();
+        }
+    }
+
 }

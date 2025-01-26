@@ -12,7 +12,7 @@ public class FirstPersonLook : MonoBehaviour
 
     public Rewind player;
 
-    public bool isPanelOpen = false;
+    public bool isPanelOpen = true;
 
     public CrosshairController crosshairController;
 
