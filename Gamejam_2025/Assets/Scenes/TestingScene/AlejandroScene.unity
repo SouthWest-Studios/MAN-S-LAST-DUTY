@@ -702,6 +702,18 @@ MonoBehaviour:
   Delay: 1
   MaximumStress: 0.6
   Range: 45
+--- !u!114 &67147808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3334779308447653984, guid: 5ded053cb784ce34580de164dd17c223,
+    type: 3}
+  m_PrefabInstance: {fileID: 4783700915879475726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67147799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c546fda51b76b0b4d9789823153242a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &73810871
 GameObject:
   m_ObjectHideFlags: 0
@@ -17780,6 +17792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8050a3c6c8694914197633a7e74694b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectInteraction: {fileID: 0}
   gridWidth: 15
   gridHeight: 15
   gridContainer: {fileID: 6366589655912887718}
@@ -18150,6 +18163,11 @@ PrefabInstance:
       propertyPath: cameraFirstPerson
       value: 
       objectReference: {fileID: 1595838358}
+    - target: {fileID: 4854149966043522876, guid: 5ded053cb784ce34580de164dd17c223,
+        type: 3}
+      propertyPath: objectInteraction
+      value: 
+      objectReference: {fileID: 67147808}
     - target: {fileID: 4854149966043522876, guid: 5ded053cb784ce34580de164dd17c223,
         type: 3}
       propertyPath: crosshairController

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class ProximidadSonora : MonoBehaviour
 {
+    public ObjectInteraction objectInteraction;
     [Header("Grid Settings")]
     public int gridWidth = 10;
     public int gridHeight = 10;
@@ -293,16 +294,18 @@ public class ProximidadSonora : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         
-        if (cameraFirstPerson != null)
-            cameraFirstPerson.isPanelOpen = false;
+        // if (cameraFirstPerson != null)
+        //     cameraFirstPerson.isPanelOpen = false;
             
-        if (crosshairController != null)
-            crosshairController.ShowCrosshair(true);
+        // if (crosshairController != null)
+        //     crosshairController.ShowCrosshair(true);
             
-        if (mainCanvas != null)
-            mainCanvas.SetActive(false);
-        else
-            Debug.LogWarning("No se puede cerrar el canvas porque la referencia es null");
+        // if (mainCanvas != null)
+        //     mainCanvas.SetActive(false);
+        // else
+        //     Debug.LogWarning("No se puede cerrar el canvas porque la referencia es null");
+        objectInteraction.EndFocusTransition();
+
     }
 
     private System.Collections.IEnumerator StartNextLevelAfterDelay(float delay)
