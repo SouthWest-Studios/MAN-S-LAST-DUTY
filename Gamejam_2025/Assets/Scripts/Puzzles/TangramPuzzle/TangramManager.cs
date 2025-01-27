@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class TangramManager : MonoBehaviour
 {
-    public List<SlotScript> slots; // Lista de todos los slots
-    public int numberOfSlots = 5; // N�mero de slots en el juego
-    public int maxMoleculeID = 15; // Rango m�ximo de IDs de mol�culas
+    public List<SlotTangramScript> slots; // Lista de todos los slots
+    public int numberOfSlots = 7; // N�mero de slots en el juego
+    public int maxMoleculeID = 7; // Rango m�ximo de IDs de mol�culas
     private List<int> correctCombination; // Lista de la combinaci�n correcta
     private PuzzleManager puzzleManager;
     bool allCorrect;
@@ -17,19 +17,28 @@ public class TangramManager : MonoBehaviour
         
     }
 
-   
+
 
     private void Update()
     {
         if (allCorrect)
         {
-            if(canvas.activeSelf)
+            return;
+        }
+        bool check = true;
+        for (int i = 0; i < slots.Count; i++)
+        {
+
+           if(slots[i].GetComponentInChildren<DraggableTangram>() == null)
             {
-                puzzleManager = FindAnyObjectByType<PuzzleManager>();
-                puzzleManager.CompletePuzzle("WordlePuzzle");
-                return;
+                check = false;
             }
         }
+        if (check)
+        {
+            CheckCombination();
+        }
+        
     }
 
     public void CheckCombination()
@@ -38,29 +47,47 @@ public class TangramManager : MonoBehaviour
         for (int i = 0; i < slots.Count; i++)
         {
 
-            var molecule = slots[i].GetComponentInChildren<DraggableMolecule>();
-          
-            
-            
+            var molecule = slots[i].GetComponentInChildren<DraggableTangram>();
+
+            if(molecule.pieceID == 1 && molecule.pieceRotation != 3)
+            {
+                allCorrect = false;
+            }
+            if (molecule.pieceID == 2 && molecule.pieceRotation != 2)
+            {
+                allCorrect = false;
+            }
+            if (molecule.pieceID == 3 && molecule.pieceRotation != 0)
+            {
+                allCorrect = false;
+            }
+            if (molecule.pieceID == 4 && molecule.pieceRotation != 0)
+            {
+                allCorrect = false;
+            }
+            if (molecule.pieceID == 5 && molecule.pieceRotation != 3)
+            {
+                allCorrect = false;
+            }
+            if (molecule.pieceID == 6 && molecule.pieceRotation != 3)
+            {
+                allCorrect = false;
+            }
+            if (molecule.pieceID == 7 && molecule.pieceRotation != 0)
+            {
+                allCorrect = false;
+            }
+
+
+
         }
         if (allCorrect)
         {
+            puzzleManager = FindAnyObjectByType<PuzzleManager>();
+            puzzleManager.CompletePuzzle("TangramPuzzle");
             
         }
     }
 
-    private void EnableMoleculeInteraction(DraggableMolecule molecule, bool enable)
-    {
-        // Aqu� puedes deshabilitar la interacci�n con las mol�culas que han sido marcadas como rojas
-        var draggable = molecule.GetComponent<DraggableMolecule>();
-        if (draggable != null)
-        {
-            draggable.enabled = enable; // Si 'enable' es false, deshabilita el script DraggableMolecule
-            
-            if (draggable.canvasGroup != null)
-            {
-                draggable.canvasGroup.blocksRaycasts = enable; // Si 'enable' es false, bloquea los raycasts para que no pueda ser arrastrada
-            }
-        }
-    }
+    
 }

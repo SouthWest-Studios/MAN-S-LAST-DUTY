@@ -11,10 +11,15 @@ public class BloodPuzzle : MonoBehaviour
 
     public List<StickHelpers> sticks;
 
+    private Quaternion inicialRotation;
+
+
     void Start()
     {
         correctNumber = Random.Range(1, 10); // 1 incluido, 10 excluido
         currentNumber = 1;
+        inicialRotation = Quaternion.identity;
+        sticks[0].GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 
     void Update()
@@ -24,18 +29,25 @@ public class BloodPuzzle : MonoBehaviour
 
     public void RotateButton()
     {
+        
+    
+        for (int i = 1; i < sticks.Count + 1; i++)
+        {
+
+        }
         if (currentNumber > 8)
         {
             currentNumber = 1;
-            this.transform.rotation = Quaternion.Euler(90.73801f, 0f, 0f);
+            this.transform.rotation = inicialRotation;
 
         }
         else
         {
-            this.transform.Rotate(Vector3.forward, -10f);
+            this.transform.Rotate(Vector3.forward, 23f);
             currentNumber++;
         }
-        
+        sticks[currentNumber].GetComponent<MeshRenderer>().material.color = Color.blue;
+
 
     }
     

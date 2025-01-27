@@ -12,6 +12,10 @@ public class ObjectInteraction : MonoBehaviour
 
     public bool isCanvasToOpen = false;
 
+    private Vector3 initialPlayerCameraPosition;
+    private Quaternion initialPlayerCameraRotation;
+    private bool hasSavedInitialTransform = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -54,6 +58,13 @@ public class ObjectInteraction : MonoBehaviour
         cameraFirstPerson.enabled = false;
 
         // Guardar la posición y rotación iniciales de la cámara del jugador
+        if (!hasSavedInitialTransform)
+        {
+            initialPlayerCameraPosition = cameraFirstPerson.transform.position;
+            initialPlayerCameraRotation = cameraFirstPerson.transform.rotation;
+            hasSavedInitialTransform = true;
+        }
+
         Transform playerCameraTransform = cameraFirstPerson.transform;
         Vector3 startPosition = playerCameraTransform.position;
         Quaternion startRotation = playerCameraTransform.rotation;
@@ -106,7 +117,9 @@ public class ObjectInteraction : MonoBehaviour
         focusCamera.gameObject.SetActive(false);
         cameraFirstPerson.gameObject.SetActive(true);
 
-        
+        cameraFirstPerson.transform.position = initialPlayerCameraPosition;
+        cameraFirstPerson.transform.rotation = initialPlayerCameraRotation;
+
         cameraFirstPerson.enabled = true;
 
         focusCamera = null;
