@@ -82,6 +82,18 @@ MonoBehaviour:
     isReseteable: 0
     isGiven: 0
     seed: 0
+  - name: SimonSaysPuzzle
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 0
+    isGiven: 0
+    seed: 0
+  - name: 'UmbilicalCord '
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 1
+    isGiven: 0
+    seed: 0
   completionMessage: {fileID: 4240873601808607014}
   messageDuration: 2
 --- !u!1 &4887264158253401834
