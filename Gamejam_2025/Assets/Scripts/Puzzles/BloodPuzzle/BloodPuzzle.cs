@@ -24,7 +24,7 @@ public class BloodPuzzle : MonoBehaviour
 
         originalColor = new List<Color>(sticks.Count);
 
-        sticks[0].gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        
 
         for (int i = 0; i < sticks.Count; i++)
         {
@@ -32,18 +32,19 @@ public class BloodPuzzle : MonoBehaviour
             MeshRenderer renderer = sticks[i].gameObject.GetComponent<MeshRenderer>();
             if (renderer != null)
             {
-                if(i != 0)
-                {
-                    sticks[i].gameObject.GetComponent<Renderer>().material.color = Color.black;
-                    originalColor.Add(renderer.material.color); // Agrega el color a la lista
-                }
                 
+                    sticks[i].gameObject.GetComponent<Renderer>().material.color = Color.black;
+                    
+                
+                originalColor.Add(renderer.material.color); // Agrega el color a la lista
+
             }
             else
             {
                 Debug.LogWarning($"El objeto en sticks[{i}] no tiene un MeshRenderer.");
             }
         }
+        sticks[0].gameObject.GetComponent<Renderer>().material.color = Color.blue;
     }
 
     void Update()
@@ -67,14 +68,15 @@ public class BloodPuzzle : MonoBehaviour
             this.transform.Rotate(Vector3.forward, 23f);
             currentNumber++;
         }
-        //sticks[currentNumber].GetComponent<Renderer>().material.color = Color.blue;
-        //for (int i = 0; i < sticks.Count; i++)
-        //{
-        //    if(i != currentNumber)
-        //    {
-        //        sticks[currentNumber].GetComponent<Renderer>().material.color = originalColor[i];
-        //    }
-        //}
+        
+        sticks[currentNumber].GetComponent<Renderer>().material.color = Color.blue;
+        for (int i = 0; i < sticks.Count; i++)
+        {
+            if (i != currentNumber)
+            {
+                sticks[i].GetComponent<Renderer>().material.color = originalColor[i];
+            }
+        }
 
 
     }
