@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,5 +55,13 @@ public class CustomQueue<T>
     public int Count()
     {
         return queue.Count;
+    }
+
+    internal void Clear()
+    {
+        while(queue.Count > 0)
+        {
+            queue.Dequeue();
+        }
     }
 }

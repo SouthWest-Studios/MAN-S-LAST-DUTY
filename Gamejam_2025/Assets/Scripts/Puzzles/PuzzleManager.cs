@@ -2,17 +2,23 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
+
+
+
+[System.Serializable]
+public class Puzzle
+{
+    public string name;
+    public bool isCompleted = false;
+    public bool itHasbeenCompleted = false;
+    public bool isReseteable = false;
+    public bool isGiven = false;
+    public int seed;
+}
 public class PuzzleManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class Puzzle
-    {
-        public string name;
-        public bool isCompleted = false;
-        public bool itHasbeenCompleted = false;
-        public bool isReseteable = false;
-        public bool isGiven = false;
-    }
+    
 
     public List<Puzzle> puzzles = new List<Puzzle>();
     private static List<Puzzle> persistentPuzzles = null;
@@ -21,7 +27,7 @@ public class PuzzleManager : MonoBehaviour
     public TextMeshProUGUI completionMessage; // Referencia al objeto del mensaje
     public float messageDuration = 2f;   // Duración del mensaje en segundos
 
-    private static PuzzleManager instance;
+    public static PuzzleManager instance;
 
     private FetusScript fetus;
 
@@ -37,37 +43,7 @@ public class PuzzleManager : MonoBehaviour
         {
             Destroy(gameObject); // Destruye el duplicado si ya existe una instancia
         }
-        foreach (var puzzle in puzzles)
-        {
-            //if (puzzle.name == "BloodPuzzle")
-            //{
-            //    puzzle.isCompleted = false;
-            //    puzzle.itHasbeenCompleted = false;
-            //    puzzle.isReseteable = true;
-
-            //}
-            //if (puzzle.name == "PeriodicTablePuzzle")
-            //{
-            //    puzzle.isCompleted = false;
-            //    puzzle.itHasbeenCompleted = false;
-            //    puzzle.isReseteable = true;
-
-            //}
-            //if (puzzle.name == "WavePuzzle")
-            //{
-            //    puzzle.isCompleted = false;
-            //    puzzle.itHasbeenCompleted = false;
-            //    puzzle.isReseteable = false;
-
-            //}
-            //if (puzzle.name == "GuitarHeroPuzzle")
-            //{
-            //    puzzle.isCompleted = false;
-            //    puzzle.itHasbeenCompleted = false;
-            //    puzzle.isReseteable = false;
-
-            //}
-        }
+       
     }
 
     private void Start()
@@ -184,6 +160,16 @@ public class PuzzleManager : MonoBehaviour
     public List<Puzzle> GetCopyList()
     {
         return persistentPuzzles;
+    }
+
+    public Puzzle GetPuzzle(string puzzleName)
+    {
+        foreach (var puzzle in puzzles)
+        {
+            if (puzzle.name == puzzleName)
+                return puzzle;
+        }
+        return null;
     }
 
 }

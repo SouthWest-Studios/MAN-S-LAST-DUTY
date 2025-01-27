@@ -1,3 +1,4 @@
+using UnityEditor.UI;
 using UnityEngine;
 
 public class PDGridManager : MonoBehaviour
@@ -11,6 +12,9 @@ public class PDGridManager : MonoBehaviour
     public int rows = 5, cols = 10;
     private PDPipeCell[,] grid;
 
+    private Puzzle puzzle;
+    private int seed = 0;
+
     private void Awake()
     {
         if (instance == null)
@@ -20,11 +24,19 @@ public class PDGridManager : MonoBehaviour
     }
     void Start()
     {
-  
+
+        puzzle = PuzzleManager.instance.GetPuzzle("PipeDreamPuzzle");
+        if (puzzle != null)
+        {
+            seed = puzzle.seed;
+
+            Random.InitState(seed);
+        }
+       
         GenerateGrid();
     }
 
-    void GenerateGrid()
+    public void GenerateGrid()
     {
         grid = new PDPipeCell[rows, cols];
         int numRow = 0, numCol = 0;
@@ -57,5 +69,21 @@ public class PDGridManager : MonoBehaviour
     {
         if (x < 0 || x >= rows || y < 0 || y >= cols) return null;
         return grid[x, y];
+    }
+
+    public void ResetGrid()
+    {
+        int numRow = 0, numCol = 0;
+        for (int i = 0; i < rows * cols; i++)
+        {
+
+            Destroy(grid[numRow, numCol].gameObject);
+            numCol++;
+            if (numCol >= cols)
+            {
+                numRow++;
+                numCol = 0;
+            }
+        }
     }
 }

@@ -78,10 +78,34 @@ public class PDFlowManager : MonoBehaviour
             if (!winPipes)
             {
                 Debug.Log("FIN DE LAS TUBERIAS :c");
+                ResetGame(); // Reinicia el minijuego
             }
             
         }
         
         
     }
+
+    public void ResetGame()
+    {
+        // Reiniciar la cuadrícula eliminando todos los hijos del grid
+        foreach (Transform child in PDGridManager.instance.gameplayGrid)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Reiniciar PipePreview
+        PDPipePreview.instance.ResetPreview();
+        PDGridManager.instance.ResetGrid();
+
+        // Reiniciar valores globales
+        winPipes = false;
+        timer.fillAmount = 0;
+
+        // Regenerar la cuadrícula
+        PDGridManager.instance.GenerateGrid();
+
+        Debug.Log("El juego ha sido reiniciado.");
+    }
+
 }

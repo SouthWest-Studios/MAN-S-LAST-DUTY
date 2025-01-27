@@ -43,4 +43,19 @@ public class PDPipePreview : MonoBehaviour
     {
         return pipesQueue.Dequeue();
     }
+
+    public void ResetPreview()
+    {
+        pipesQueue.Clear(); // Vacía la cola de tuberías
+
+        // Limpia los sprites de la vista previa
+        foreach (Image previewImage in previewRender)
+        {
+            previewImage.sprite = null;
+            previewImage.transform.rotation = Quaternion.identity;
+        }
+
+        Debug.Log("Vista previa de tuberías reiniciada.");
+    }
+
 }
