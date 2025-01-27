@@ -36,7 +36,7 @@ public class StickHelpers : MonoBehaviour
                 }
                 else if (Mathf.Abs(correctNum - position) >= 5) 
                 {
-                    GetComponent<Renderer>().material.color = new Color(0, 0, 0); // Color violeta
+                    GetComponent<Renderer>().material.color = Color.grey;
                 }
             }
             else

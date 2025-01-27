@@ -13,14 +13,20 @@ public class BloodPuzzle : MonoBehaviour
 
     private Quaternion inicialRotation;
 
-    private List<Color> originalColor; 
+    private List<Color> originalColor;
+
+   
+
+    
 
 
     void Start()
     {
+        
         correctNumber = Random.Range(1, 10); // 1 incluido, 10 excluido
         currentNumber = 0;
         inicialRotation = Quaternion.identity;
+
 
         originalColor = new List<Color>(sticks.Count);
 
@@ -33,9 +39,10 @@ public class BloodPuzzle : MonoBehaviour
             if (renderer != null)
             {
                 
-                    sticks[i].gameObject.GetComponent<Renderer>().material.color = Color.black;
-                    
-                
+                sticks[i].gameObject.GetComponent<Renderer>().material.color = Color.black;
+                sticks[i].gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                //sticks[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
                 originalColor.Add(renderer.material.color); // Agrega el color a la lista
 
             }
@@ -44,7 +51,7 @@ public class BloodPuzzle : MonoBehaviour
                 Debug.LogWarning($"El objeto en sticks[{i}] no tiene un MeshRenderer.");
             }
         }
-        sticks[0].gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        sticks[0].gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     void Update()
@@ -61,6 +68,7 @@ public class BloodPuzzle : MonoBehaviour
         {
             currentNumber = 0;
             this.transform.rotation = inicialRotation;
+            
 
         }
         else
@@ -69,12 +77,13 @@ public class BloodPuzzle : MonoBehaviour
             currentNumber++;
         }
         
-        sticks[currentNumber].GetComponent<Renderer>().material.color = Color.blue;
+        sticks[currentNumber].gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
         for (int i = 0; i < sticks.Count; i++)
         {
             if (i != currentNumber)
             {
-                sticks[i].GetComponent<Renderer>().material.color = originalColor[i];
+                sticks[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
 
@@ -83,9 +92,29 @@ public class BloodPuzzle : MonoBehaviour
     
     public void saveTry()
     {
-        for(int i = 0; i < 8; i++)
+        for(int i = 0; i < 9; i++)
         {
             sticks[i].stickColoring(currentNumber, correctNumber);
+            
         }
+        for (int i = 0; i < sticks.Count; i++)
+        {
+            
+            MeshRenderer renderer = sticks[i].gameObject.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+
+
+
+
+                originalColor[i] = renderer.material.color;
+
+            }
+            
+            
+        }
+
+
+        
     }
 }
