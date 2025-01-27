@@ -49,8 +49,18 @@ public class ProximidadSonora : MonoBehaviour
     public TraumaInducer shakeEffect;
     public float errorShakeIntensity = 0.3f;
 
+    [Header("Level Settings")]
+    public int currentLevel = 1;
+    public TextMeshProUGUI levelText; // Cambiado de TextMeshPro a TextMeshProUGUI
+
+    private Vector3 targetPosition3D; // Ahora almacenamos las coordenadas en 3D
+
     private bool gameActive = false;
     private Vector2 lastMousePosition;
+
+    private float level1Sum = 0f;
+    private float level2Sum = 0f;
+    private float level3Sum = 0f;
 
     private void Start()
     {
@@ -65,6 +75,7 @@ public class ProximidadSonora : MonoBehaviour
             if (mainCanvas == null)
                 Debug.LogError("No se ha asignado el canvas principal y no se pudo encontrar automáticamente");
         }
+        UpdateLevelText();
     }
 
     private void OnEnable()
@@ -89,6 +100,7 @@ public class ProximidadSonora : MonoBehaviour
         GenerateNewTarget();
         if (crosshairController != null)
             crosshairController.ShowCrosshair(false);
+        UpdateLevelText();
     }
 
     private void InitializeGame()
@@ -155,10 +167,14 @@ public class ProximidadSonora : MonoBehaviour
 
     private void GenerateNewTarget()
     {
-        targetPosition = new Vector2(
+        Vector2 target2D = new Vector2(
             Random.Range(0, gridWidth),
             Random.Range(0, gridHeight)
         );
+        
+        targetPosition = target2D;
+        // Guardamos también un valor Z para el nivel 3
+        targetPosition3D = new Vector3(target2D.x, target2D.y, Random.Range(0, gridHeight));
     }
 
     private void Update()
@@ -222,6 +238,21 @@ public class ProximidadSonora : MonoBehaviour
         
         if (distance <= proximityThreshold / 100f)
         {
+            // Guardar la suma del nivel actual
+            float currentSum = targetPosition.x + targetPosition.y;
+            switch(currentLevel)
+            {
+                case 1:
+                    level1Sum = currentSum;
+                    break;
+                case 2:
+                    level2Sum = currentSum;
+                    break;
+                case 3:
+                    level3Sum = currentSum;
+                    break;
+            }
+
             ShowCoordinates();
             radarAudioSource.Stop();
             if (successSound != null)
@@ -229,10 +260,17 @@ public class ProximidadSonora : MonoBehaviour
                 effectsAudioSource.clip = successSound;
                 effectsAudioSource.Play();
             }
-            gameActive = false;
-            Debug.Log("¡Juego completado! Coordenadas encontradas: " + targetPosition);
             
-            StartCoroutine(CloseGameAfterDelay(2f));
+            if (currentLevel < 3)
+            {
+                currentLevel++;
+                StartCoroutine(StartNextLevelAfterDelay(2f));
+            }
+            else
+            {
+                gameActive = false;
+                StartCoroutine(CloseGameAfterDelay(2f));
+            }
         }
         else 
         {
@@ -267,12 +305,43 @@ public class ProximidadSonora : MonoBehaviour
             Debug.LogWarning("No se puede cerrar el canvas porque la referencia es null");
     }
 
+    private System.Collections.IEnumerator StartNextLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StartGame();
+    }
+
     private void ShowCoordinates()
     {
         if (coordinatesText != null)
         {
-            coordinatesText.text = $"X={targetPosition.x:F1}\nY={targetPosition.y:F1}";
+            string coordsText = "";
+            
+            if (currentLevel >= 1)
+            {
+                coordsText = $"X = {level1Sum:0}";
+            }
+            
+            if (currentLevel >= 2)
+            {
+                coordsText += $"\nY = {level2Sum:0}";
+            }
+            
+            if (currentLevel >= 3)
+            {
+                coordsText += $"\nZ = {level3Sum:0}";
+            }
+
+            coordinatesText.text = coordsText;
             coordinatesText.gameObject.SetActive(true);
+        }
+    }
+
+    private void UpdateLevelText()
+    {
+        if (levelText != null)
+        {
+            levelText.text = $"Nivel {currentLevel}";
         }
     }
 }
