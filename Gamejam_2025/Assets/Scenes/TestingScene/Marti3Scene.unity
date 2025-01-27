@@ -1346,22 +1346,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3970577487728411449, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1313439987, guid: c6b6a596677fd5b40a7961ac905ce6ec,
-        type: 3}
-    - target: {fileID: 5549627345106503791, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
-        type: 3}
-      propertyPath: flowSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5549627345106503791, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
-        type: 3}
-      propertyPath: totalPoints
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6063444476908651996, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
         type: 3}
       propertyPath: cameraFirstPerson
@@ -1372,12 +1356,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PipeDreamTrigger
       objectReference: {fileID: 0}
-    - target: {fileID: 8608087137961015329, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2d4f7290b9d88274c9440498637c73ed,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
