@@ -16,13 +16,18 @@ MonoBehaviour:
   emptySprite: {fileID: -2030756448, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   fillAnimationSprites:
   - {fileID: -2030756448, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: -1868453986, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: -821751411, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: 1881249261, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: 622118137, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: -1733606245, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  fillLeftAnimationSprites: []
-  fillRightAnimationSprites: []
+  - {fileID: -1979154664, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: -1024749567, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: -1718579071, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: -1433917693, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: 1557893802, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  fillInverseAnimationSprites:
+  - {fileID: 566461998, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: 1782638542, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: -2011827088, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: 516247348, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: 1663934532, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: 509233248, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   connections: 00010100
   initialRotation: 0
   isFilled: 0
