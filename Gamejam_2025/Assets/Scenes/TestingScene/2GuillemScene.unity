@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moleculeID: 0
   canvasGroup: {fileID: 0}
-  snapDistance: 50
+  snapDistance: 100
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &114061551
 MonoBehaviour:
@@ -2167,7 +2167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moleculeID: 0
   canvasGroup: {fileID: 0}
-  snapDistance: 50
+  snapDistance: 100
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &176940439
 MonoBehaviour:
@@ -3206,7 +3206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moleculeID: 0
   canvasGroup: {fileID: 0}
-  snapDistance: 50
+  snapDistance: 100
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &330363590
 MonoBehaviour:
@@ -5341,7 +5341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moleculeID: 0
   canvasGroup: {fileID: 0}
-  snapDistance: 50
+  snapDistance: 100
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &544212949
 MonoBehaviour:
@@ -11228,7 +11228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moleculeID: 0
   canvasGroup: {fileID: 0}
-  snapDistance: 50
+  snapDistance: 100
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &1187129950
 MonoBehaviour:
@@ -13253,7 +13253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moleculeID: 0
   canvasGroup: {fileID: 0}
-  snapDistance: 50
+  snapDistance: 100
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &1458590806
 MonoBehaviour:
@@ -18310,7 +18310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moleculeID: 0
   canvasGroup: {fileID: 0}
-  snapDistance: 50
+  snapDistance: 100
   pointerOffset: {x: 40, y: 40}
 --- !u!114 &1990107094
 MonoBehaviour:
