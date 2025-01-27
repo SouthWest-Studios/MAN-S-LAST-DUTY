@@ -3,7 +3,8 @@ using UnityEngine.EventSystems;
 
 public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    public int moleculeID;
+    public int pieceID;
+    public int pieceRotation = 0;
     private Transform originalParent;
     private Canvas canvas;
     private RectTransform rectTransform;
@@ -82,6 +83,11 @@ public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         if (eventData.clickCount == 1)
         {
             transform.Rotate(0, 0, 90);
+            pieceRotation++;
+            if (pieceRotation > 3)
+            {
+                pieceRotation = 0;
+            }
         }
     }
 
@@ -90,7 +96,7 @@ public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         Transform closestSlot = null;
         float closestDistance = snapDistance;
 
-        foreach (var slot in FindObjectsOfType<SlotScript>()) // Busca todos los slots disponibles
+        foreach (var slot in FindObjectsOfType<SlotTangramScript>()) // Busca todos los slots disponibles
         {
             float distance = Vector3.Distance(transform.position, slot.transform.position - new Vector3(pointerOffset.x, pointerOffset.y, 0f));
 

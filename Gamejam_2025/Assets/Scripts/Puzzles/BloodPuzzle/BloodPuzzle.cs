@@ -11,10 +11,21 @@ public class BloodPuzzle : MonoBehaviour
 
     public List<StickHelpers> sticks;
 
+    private Quaternion inicialRotation;
+
+    private List<Color> originalColor; 
+
+
     void Start()
     {
         correctNumber = Random.Range(1, 10); // 1 incluido, 10 excluido
-        currentNumber = 1;
+        currentNumber = 0;
+        inicialRotation = Quaternion.identity;
+        sticks[0].GetComponent<MeshRenderer>().material.color = Color.blue;
+        for (int i = 0; i < sticks.Count; i++)
+        {
+            originalColor[i] = sticks[0].gameObject.GetComponent<MeshRenderer>().material.color;
+        }
     }
 
     void Update()
@@ -24,24 +35,35 @@ public class BloodPuzzle : MonoBehaviour
 
     public void RotateButton()
     {
-        if (currentNumber > 8)
+        
+    
+        
+        if (currentNumber > 7)
         {
-            currentNumber = 1;
-            this.transform.rotation = Quaternion.Euler(90.73801f, 0f, 0f);
+            currentNumber = 0;
+            this.transform.rotation = inicialRotation;
 
         }
         else
         {
-            this.transform.Rotate(Vector3.forward, -10f);
+            this.transform.Rotate(Vector3.forward, 23f);
             currentNumber++;
         }
-        
+        sticks[currentNumber].GetComponent<MeshRenderer>().material.color = Color.blue;
+        for (int i = 0; i < sticks.Count + 0; i++)
+        {
+            if(i != currentNumber - 1)
+            {
+                sticks[currentNumber].GetComponent<MeshRenderer>().material.color = originalColor[i];
+            }
+        }
+
 
     }
     
     public void saveTry()
     {
-        for(int i = 0; i < 9; i++)
+        for(int i = 0; i < 8; i++)
         {
             sticks[i].stickColoring(currentNumber, correctNumber);
         }
