@@ -1,4 +1,7 @@
-public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public int moleculeID;
     private Transform originalParent;
@@ -9,7 +12,7 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
     private FetusScript fetus;
 
     [SerializeField]
-    private float snapDistance = 80f; // Distancia m�xima para ajustar autom�ticamente al slot m�s cercano
+    private float snapDistance = 80f; // Distancia máxima para ajustar automáticamente al slot más cercano
     [SerializeField]
     private Vector2 pointerOffset = new Vector2(40f, 40f); // Desfase del puntero
 
@@ -28,10 +31,7 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
             initialPosition = transform.position;
         }
 
-        //transform.SetParent(canvas.transform);
-        //transform.SetAsLastSibling(); // Asegura que este objeto se dibuje al frente
-
-        // Hacer el objeto m�s f�cil de arrastrar (opcional)
+        // Hacer el objeto más fácil de arrastrar (opcional)
         if (canvasGroup != null)
         {
             canvasGroup.blocksRaycasts = false; // Evitar conflictos con raycasts
@@ -40,7 +40,7 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
     public void OnDrag(PointerEventData eventData)
     {
-        // Ajustar la posici�n al centro del puntero con un desfase
+        // Ajustar la posición al centro del puntero con un desfase
         Vector3 pointerPosition = eventData.position;
         transform.position = pointerPosition - new Vector3(pointerOffset.x, pointerOffset.y, 0);
     }
@@ -51,8 +51,7 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
         if (closestSlot != null)
         {
-            // Ajustar al centro del slot m�s cercano
-
+            // Ajustar al centro del slot más cercano
             var existingMolecule = closestSlot.GetComponentInChildren<DraggableMolecule>();
             if (existingMolecule != null && existingMolecule != this)
             {
@@ -61,11 +60,10 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
             transform.SetParent(closestSlot);
 
             // Asegurar que el objeto se coloca en el centro del slot
-            rectTransform.anchoredPosition = Vector2.zero + new Vector2(6,6);
+            rectTransform.anchoredPosition = Vector2.zero + new Vector2(6, 6);
         }
         else
         {
-            
             ReturnToInitialPosition();
         }
 
@@ -78,6 +76,15 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
         fetus.currentHint = "WordlePuzzle";
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // Si no se está arrastrando el objeto, rotarlo 90 grados
+        if (eventData.clickCount == 1)
+        {
+            transform.Rotate(0, 0, 90);
+        }
+    }
+
     private Transform GetClosestSlot()
     {
         Transform closestSlot = null;
@@ -85,7 +92,7 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
         foreach (var slot in FindObjectsOfType<SlotScript>()) // Busca todos los slots disponibles
         {
-            float distance = Vector3.Distance(transform.position, slot.transform.position - new Vector3(pointerOffset.x, pointerOffset.y, 0f)) ;
+            float distance = Vector3.Distance(transform.position, slot.transform.position - new Vector3(pointerOffset.x, pointerOffset.y, 0f));
 
             if (distance < closestDistance)
             {
@@ -96,7 +103,6 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
 
         return closestSlot;
     }
-
 
     public void ReturnToInitialPosition()
     {
