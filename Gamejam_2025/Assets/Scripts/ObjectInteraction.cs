@@ -42,6 +42,12 @@ public class ObjectInteraction : MonoBehaviour
             {
                 StartCoroutine(StartFocusTransition(focusCamera));
             }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                canvasToOpen.SetActive(true);
+                cameraFirstPerson.isPanelOpen = true;
+            }
         }
 
         if (playerIsNear && Input.GetKeyDown(KeyCode.Escape))

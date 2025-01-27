@@ -67,14 +67,14 @@ public class BloodPuzzle : MonoBehaviour
             this.transform.Rotate(Vector3.forward, 23f);
             currentNumber++;
         }
-        sticks[currentNumber].GetComponent<MeshRenderer>().material.color = Color.blue;
-        for (int i = 0; i < sticks.Count + 0; i++)
-        {
-            if(i != currentNumber - 1)
-            {
-                sticks[currentNumber].GetComponent<MeshRenderer>().material.color = originalColor[i];
-            }
-        }
+        //sticks[currentNumber].GetComponent<Renderer>().material.color = Color.blue;
+        //for (int i = 0; i < sticks.Count; i++)
+        //{
+        //    if(i != currentNumber)
+        //    {
+        //        sticks[currentNumber].GetComponent<Renderer>().material.color = originalColor[i];
+        //    }
+        //}
 
 
     }
