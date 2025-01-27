@@ -12,6 +12,9 @@ public class PDFlowManager : MonoBehaviour
     public Image timer;
     public bool winPipes = false;
 
+    private Puzzle puzzle;
+    private int seed;
+
     private void Awake()
     {
         if (instance == null)
@@ -19,6 +22,17 @@ public class PDFlowManager : MonoBehaviour
             instance = this;
         }
         timer.fillAmount = 0;
+    }
+
+    private void Start()
+    {
+        puzzle = PuzzleManager.instance.GetPuzzle("PipeDreamPuzzle");
+        if (puzzle != null)
+        {
+            seed = puzzle.seed;
+
+            Random.InitState(seed);
+        }
     }
 
     public void StartFlow(int startX, int startY)
@@ -32,22 +46,18 @@ public class PDFlowManager : MonoBehaviour
 
         if (currentCell == null || currentCell.pipe == null) yield break;
 
-        currentCell.FillPipe();
+        // Reproducir la animación de llenado
+        currentCell.FillPipeWithAnimation();
         timer.fillAmount += (1.0f / totalPoints);
-        if(timer.fillAmount >= 0.98)
+
+        if (timer.fillAmount >= 0.98)
         {
-            //Terminar
+            // Terminar
             winPipes = true;
         }
         else
         {
             yield return new WaitForSeconds(flowSpeed);
-
-            if (waterPrefab != null)
-            {
-                GameObject water = Instantiate(waterPrefab, currentCell.transform);
-                water.transform.localPosition = Vector3.zero;
-            }
 
             for (int direction = 0; direction < 4; direction++)
             {
@@ -64,27 +74,23 @@ public class PDFlowManager : MonoBehaviour
 
                 var nextCell = PDGridManager.instance.GetPipeAt(nextX, nextY);
 
-                //Debug.Log("Curr:" + currentCell.position + "Dir: " + currentCell.pipe.connections + "Next: " + nextCell.position + " Dir: " + nextCell.pipe.connections);
-
                 if (nextCell != null && nextCell.pipe != null)
                 {
                     if (currentCell.pipe.IsConnectedTo(nextCell.pipe, direction) && !nextCell.pipe.isFilled)
                     {
                         yield return StartCoroutine(FlowRoutine(nextX, nextY));
                     }
-
                 }
             }
+
             if (!winPipes)
             {
                 Debug.Log("FIN DE LAS TUBERIAS :c");
                 ResetGame(); // Reinicia el minijuego
             }
-            
         }
-        
-        
     }
+
 
     public void ResetGame()
     {
@@ -93,7 +99,8 @@ public class PDFlowManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-
+        StopAllCoroutines();
+        Random.InitState(seed);
         // Reiniciar PipePreview
         PDPipePreview.instance.ResetPreview();
         PDGridManager.instance.ResetGrid();

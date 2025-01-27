@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: CrossPipe
   m_EditorClassIdentifier: 
   pipeName: CrossPipe
-  emptySprite: {fileID: 21300000, guid: 1fe63eea551e5f54bb90a2416e545c55, type: 3}
-  filledSprite: {fileID: 21300000, guid: bb66976e9c554f841a909967dca7171e, type: 3}
+  emptySprite: {fileID: 799260958, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  fillAnimationSprites:
+  - {fileID: 799260958, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: -1024749567, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: 1722885746, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: -178850135, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  - {fileID: 1856591006, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   connections: 01010101
   initialRotation: 0
+  isFilled: 0

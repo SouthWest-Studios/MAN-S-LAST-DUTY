@@ -38,6 +38,7 @@ public class PDGridManager : MonoBehaviour
 
     public void GenerateGrid()
     {
+
         grid = new PDPipeCell[rows, cols];
         int numRow = 0, numCol = 0;
 
