@@ -64,25 +64,26 @@ public class ObjectInteraction : MonoBehaviour
 
         float elapsedTime = 0f;
 
-        // Transición suave entre las cámaras
+        
         while (elapsedTime < 1f)
         {
             elapsedTime += Time.deltaTime * transitionSpeed;
 
-            // Interpolación de posición y rotación
+            
             playerCameraTransform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime);
             playerCameraTransform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime);
 
             yield return null;
         }
 
-        // Al finalizar la transición, activa la cámara de enfoque y desactiva la cámara del jugador
+        
         cameraFirstPerson.gameObject.SetActive(false);
         targetCamera.gameObject.SetActive(true);
 
-        // Activa el canvas si es necesario
+        
         if (isCanvasToOpen)
         {
+            Cursor.lockState = CursorLockMode.None;
             canvasToOpen.SetActive(true);
             cameraFirstPerson.isPanelOpen = true;
         }
@@ -94,18 +95,18 @@ public class ObjectInteraction : MonoBehaviour
     {
         if (focusCamera == null || isTransitioning) return;
 
-        // Desactiva el canvas si está activo
+        
         if (isCanvasToOpen)
         {
             canvasToOpen.SetActive(false);
             cameraFirstPerson.isPanelOpen = false;
         }
 
-        // Reactiva la cámara del jugador
+        
         focusCamera.gameObject.SetActive(false);
         cameraFirstPerson.gameObject.SetActive(true);
 
-        // Reactiva el control de la cámara del jugador
+        
         cameraFirstPerson.enabled = true;
 
         focusCamera = null;
