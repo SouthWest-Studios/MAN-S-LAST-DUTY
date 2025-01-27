@@ -10,6 +10,7 @@ public class FetusScript : MonoBehaviour
     private WordleController wordleController;
    public void FetusInteract()
     {
+        Debug.Log("fetusInteract");
         manager = FindAnyObjectByType<PuzzleManager>();
         wordleController = FindAnyObjectByType<WordleController>();
 
