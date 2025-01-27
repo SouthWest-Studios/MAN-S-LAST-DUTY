@@ -167,7 +167,7 @@ public class PanelController : MonoBehaviour
         [System.Serializable]
         public class GameSettings
         {
-            public TextMeshProUGUI languageText;
+            public Text languageText;
             public Button leftLanguageButton;
             public Button rightLanguageButton;
             public Button applyButton;
@@ -175,7 +175,30 @@ public class PanelController : MonoBehaviour
 
         public GameSettings gameSettings;
 
-        private string[] languages = { "English", "Castellano", "Catala" };
+        [System.Serializable]
+        public class AudioSettings
+        {
+            public Slider globalVolume;
+            public Slider musicVolume;
+            public Slider voiceVolume;
+            public Slider sfxVolume;
+            public Button applyButton;
+        }
+
+        public AudioSettings audioSettings;
+
+        [System.Serializable]
+        public class AccessibilitySettings
+        {
+            public Toggle subtitlesToggle;
+            public Toggle speechToggle;
+            public Toggle highContrastToggle;
+            public Button applyButton;
+        }
+
+        public AccessibilitySettings accessibilitySettings;
+
+        private string[] languages = { "Ingles", "Castellano", "Catalan" };
         private int currentLanguageIndex = 0;
 
         public void Initialize()
@@ -200,6 +223,9 @@ public class PanelController : MonoBehaviour
             gameSettings.leftLanguageButton?.onClick.AddListener(() => ChangeLanguage(-1));
             gameSettings.rightLanguageButton?.onClick.AddListener(() => ChangeLanguage(1));
             gameSettings.applyButton?.onClick.AddListener(ApplySettings);
+
+            audioSettings.applyButton?.onClick.AddListener(ApplyAudioSettings);
+            accessibilitySettings.applyButton?.onClick.AddListener(ApplyAccessibilitySettings);
 
             UpdateLanguageDisplay();
 
@@ -236,9 +262,22 @@ public class PanelController : MonoBehaviour
         {
             Debug.Log("Settings applied: Language - " + languages[currentLanguageIndex]);
         }
+
+        private void ApplyAudioSettings()
+        {
+            Debug.Log("Audio settings applied: Global - " + audioSettings.globalVolume.value +
+                      ", Music - " + audioSettings.musicVolume.value +
+                      ", Voice - " + audioSettings.voiceVolume.value +
+                      ", SFX - " + audioSettings.sfxVolume.value);
+        }
+
+        private void ApplyAccessibilitySettings()
+        {
+            Debug.Log("Accessibility settings applied: Subtitles - " + accessibilitySettings.subtitlesToggle.isOn +
+                      ", Speech - " + accessibilitySettings.speechToggle.isOn +
+                      ", High Contrast - " + accessibilitySettings.highContrastToggle.isOn);
+        }
     }
-
-
 
     [System.Serializable]
     public class Panel3Handler

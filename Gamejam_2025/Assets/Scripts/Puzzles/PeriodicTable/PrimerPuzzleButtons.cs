@@ -8,6 +8,7 @@ public class PrimerPuzzleButtons : MonoBehaviour
     private Button button;  
     private bool isPressed = false;
 
+
     public int num;
 
     private void Start()
