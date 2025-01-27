@@ -122,7 +122,8 @@ public class ObjectInteraction : MonoBehaviour
 
         cameraFirstPerson.enabled = true;
 
-        focusCamera = null;
+        
         isTransitioning = false;
+        hasSavedInitialTransform = false;
     }
 }
