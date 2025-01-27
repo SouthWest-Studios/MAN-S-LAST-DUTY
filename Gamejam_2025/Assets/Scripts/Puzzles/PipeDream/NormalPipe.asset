@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NormalPipe
   m_EditorClassIdentifier: 
   pipeName: NormalPipe
-  emptySprite: {fileID: 958027521, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  emptySprite: {fileID: 799260958, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   fillAnimationSprites:
   - {fileID: 799260958, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   - {fileID: -511568804, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}

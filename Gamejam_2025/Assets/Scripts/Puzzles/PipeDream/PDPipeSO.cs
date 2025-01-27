@@ -6,6 +6,7 @@ public class PDPipeType : ScriptableObject
     public string pipeName;
     public Sprite emptySprite;
     public Sprite[] fillAnimationSprites;
+    public Sprite[] fillInverseAnimationSprites;
     public bool[] connections = new bool[4]; // Arriba, Derecha, Abajo, Izquierda
     public int initialRotation = 0;
     public bool isFilled = false;

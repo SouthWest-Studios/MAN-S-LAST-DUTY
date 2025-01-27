@@ -31,7 +31,41 @@ public class PDPipeCell : MonoBehaviour
     {
         if (pipe == null) return;
 
-        Sprite[] animationSprites = pipe.fillAnimationSprites;
+
+        Sprite[] animationSprites;
+
+
+        Debug.Log(pipe.pipeName + " __ " + "Initial rotation: " + pipe.initialRotation + " RotZ: " + GetComponent<RectTransform>().rotation.z + " EntryDirection: " + entryDirection);
+
+        if (pipe.pipeName == "NormalPipe")
+        {
+            if((pipe.initialRotation == 2 && entryDirection == 0) || (pipe.initialRotation == 0 && entryDirection == 2) || (pipe.initialRotation == 3 && entryDirection == 3))
+            {
+                animationSprites = pipe.fillInverseAnimationSprites;
+            }
+            else
+            {
+                animationSprites = pipe.fillAnimationSprites;
+            }
+        }
+        else if(pipe.pipeName == "CurvePipe")
+        {
+            if ((pipe.initialRotation == 0 && entryDirection == 0) || (pipe.initialRotation == 1 && entryDirection == 3) || (pipe.initialRotation == 2 && entryDirection == 2) || (pipe.initialRotation == 3 && entryDirection == 1))
+            {
+                animationSprites = pipe.fillAnimationSprites;
+            }
+            else
+            {
+                animationSprites = pipe.fillInverseAnimationSprites;
+            }
+        }
+        else
+        {
+            animationSprites = pipe.fillAnimationSprites;
+        }
+
+
+        
 
         if (animationSprites == null || animationSprites.Length == 0)
         {

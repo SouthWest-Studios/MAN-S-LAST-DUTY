@@ -5036,6 +5036,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892328854}
   m_CullTransparentMesh: 1
+--- !u!1001 &893712116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3845768
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.765301
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 292886780615936999, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906948072386470639, guid: a0372ff4103366940a35d057d91ae74b,
+        type: 3}
+      propertyPath: m_Name
+      value: SaveZone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0372ff4103366940a35d057d91ae74b, type: 3}
 --- !u!1 &902673022
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,10 +5669,21 @@ MonoBehaviour:
       content: {fileID: 2091510849}
       button: {fileID: 863004745}
     gameSettings:
-      languageText: {fileID: 2129606762}
+      languageText: {fileID: 0}
       leftLanguageButton: {fileID: 1502999529}
       rightLanguageButton: {fileID: 1396539855}
       applyButton: {fileID: 412887745}
+    audioSettings:
+      globalVolume: {fileID: 0}
+      musicVolume: {fileID: 0}
+      voiceVolume: {fileID: 0}
+      sfxVolume: {fileID: 0}
+      applyButton: {fileID: 0}
+    accessibilitySettings:
+      subtitlesToggle: {fileID: 0}
+      speechToggle: {fileID: 0}
+      highContrastToggle: {fileID: 0}
+      applyButton: {fileID: 0}
   panel3Handler:
     topBanner: {fileID: 1618306058}
     creatorsButton: {fileID: 1404868220}
@@ -6826,26 +6905,31 @@ MonoBehaviour:
     itHasbeenCompleted: 0
     isReseteable: 1
     isGiven: 0
+    seed: 0
   - name: PeriodicTablePuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 1
     isGiven: 0
+    seed: 0
   - name: WavePuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 0
     isGiven: 0
+    seed: 0
   - name: GuitarHeroPuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 0
     isGiven: 0
+    seed: 0
   - name: WordlePuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 1
     isGiven: 0
+    seed: 0
   completionMessage: {fileID: 1271634149}
   messageDuration: 2
 --- !u!4 &1109970730
@@ -11605,3 +11689,4 @@ SceneRoots:
   - {fileID: 1905666182}
   - {fileID: 1871900579}
   - {fileID: 1109970730}
+  - {fileID: 893712116}
