@@ -91,7 +91,7 @@ public class ObjectInteraction : MonoBehaviour
         isTransitioning = false;
     }
 
-    void EndFocusTransition()
+    public void EndFocusTransition()
     {
         if (focusCamera == null || isTransitioning) return;
 
