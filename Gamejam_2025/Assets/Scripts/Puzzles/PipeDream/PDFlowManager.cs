@@ -12,6 +12,9 @@ public class PDFlowManager : MonoBehaviour
     public Image timer;
     public bool winPipes = false;
 
+    private Puzzle puzzle;
+    private int seed;
+
     private void Awake()
     {
         if (instance == null)
@@ -19,6 +22,17 @@ public class PDFlowManager : MonoBehaviour
             instance = this;
         }
         timer.fillAmount = 0;
+    }
+
+    private void Start()
+    {
+        puzzle = PuzzleManager.instance.GetPuzzle("PipeDreamPuzzle");
+        if (puzzle != null)
+        {
+            seed = puzzle.seed;
+
+            Random.InitState(seed);
+        }
     }
 
     public void StartFlow(int startX, int startY)
@@ -93,7 +107,8 @@ public class PDFlowManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-
+        StopAllCoroutines();
+        Random.InitState(seed);
         // Reiniciar PipePreview
         PDPipePreview.instance.ResetPreview();
         PDGridManager.instance.ResetGrid();
