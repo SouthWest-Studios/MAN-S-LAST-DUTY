@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NormalPipe
   m_EditorClassIdentifier: 
   pipeName: NormalPipe
-  emptySprite: {fileID: 958027521, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
+  emptySprite: {fileID: 799260958, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   fillAnimationSprites:
   - {fileID: 799260958, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   - {fileID: -511568804, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
@@ -21,13 +21,6 @@ MonoBehaviour:
   - {fileID: 622118137, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   - {fileID: 955219810, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   - {fileID: 226390231, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  fillInverseAnimationSprites:
-  - {fileID: 958027521, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: -378796620, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: -2077885041, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: -1253747129, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: -1733606245, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  - {fileID: -305241480, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   connections: 01000100
   initialRotation: 0
   isFilled: 0
