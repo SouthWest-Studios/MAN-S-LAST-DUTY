@@ -1,3 +1,7 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+
 public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public int moleculeID;
