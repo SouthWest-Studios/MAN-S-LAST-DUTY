@@ -17,7 +17,7 @@ public class ButtonController : MonoBehaviour
 
     public void ActivateLight()
     {
-        pointLight.intensity = 0.01f; // Ajusta la intensidad según prefieras
+        pointLight.intensity = 1f; // Ajusta la intensidad según prefieras
     }
 
     public void DeactivateLight()

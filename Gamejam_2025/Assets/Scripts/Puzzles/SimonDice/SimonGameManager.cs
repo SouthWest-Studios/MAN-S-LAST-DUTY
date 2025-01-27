@@ -16,9 +16,21 @@ public class SimonGameManager : MonoBehaviour
     public TraumaInducer shakeEffect;
     public float errorShakeIntensity = 0.3f;
 
+    private PuzzleManager puzzleManager;
+
+    private int seed = 1;
+
+    private Puzzle puzzle;
+
     void Start()
     {
-        
+        puzzle = PuzzleManager.instance.GetPuzzle("SimonSaysPuzzle");
+        if (puzzle != null)
+        {
+            seed = puzzle.seed;
+
+            Random.InitState(seed);
+        }
     }
 
     private IEnumerator StartGame()
@@ -26,11 +38,12 @@ public class SimonGameManager : MonoBehaviour
         yield return StartCoroutine(FlashLightsAtStart());
         GenerateNextStep();
         yield return PlayPattern();
-        playerTurn = true;
+        
     }
 
     private IEnumerator FlashLightsAtStart()
     {
+        playerTurn = false;
         for (int i = 0; i < 3; i++) // Tres parpadeos
         {
             // Activa todas las luces
@@ -51,8 +64,12 @@ public class SimonGameManager : MonoBehaviour
 
     private void GenerateNextStep()
     {
+
         int randomIndex = Random.Range(0, buttons.Count);
-        pattern.Add(randomIndex);
+        if (pattern.Count < 6)
+        {
+            pattern.Add(randomIndex);
+        }
     }
 
     private IEnumerator PlayPattern()
@@ -75,6 +92,7 @@ public class SimonGameManager : MonoBehaviour
     {
         if (!gameStarted)
         {
+            Random.InitState(seed);
             StartCoroutine(StartGame());
             gameStarted = true;
         }
@@ -101,7 +119,8 @@ public class SimonGameManager : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("juegoComletado");
+                        puzzleManager = FindObjectOfType<PuzzleManager>();
+                        puzzleManager.CompletePuzzle("SimonSaysPuzzle");
                         gameFinished = true;
                     }
 
@@ -134,6 +153,7 @@ public class SimonGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         pattern.Clear();
+        Random.InitState(seed);
         currentStep = 0;
         StartCoroutine(StartGame());
     }

@@ -5,7 +5,7 @@ using static PuzzleManager;
 
 public class GuitarHero : MonoBehaviour
 {
-    public PuzzleManager puzzlemanager;
+    private PuzzleManager puzzlemanager;
     private string puzzleName;
 
     [Header("Carriles")]
@@ -48,18 +48,7 @@ public class GuitarHero : MonoBehaviour
 
     void Start()
     {
-        puzzleName = "GuitarHeroPuzzle";
-        foreach (var puzzle in puzzlemanager.puzzles)
-        {
-            if (puzzle.name == puzzleName)
-            {
-                if(puzzle.itHasbeenCompleted)
-                {
-                    start.interactable = false;
-                }
-                
-            }
-        }
+        
         juegoActivo = false;
         ApagarTodasLasLuces();
         if (botonComenzar != null)
@@ -276,6 +265,7 @@ public class GuitarHero : MonoBehaviour
 
     private void CompletarJuego()
     {
+        puzzlemanager = FindObjectOfType<PuzzleManager>();
         puzzlemanager.CompletePuzzle("GuitarHeroPuzzle");
         //LimpiarEstadoJuego();
         Debug.Log("¡Victoria! (desbloquea simon dice)");

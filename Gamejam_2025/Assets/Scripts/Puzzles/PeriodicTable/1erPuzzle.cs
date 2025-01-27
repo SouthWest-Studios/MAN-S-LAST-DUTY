@@ -14,11 +14,11 @@ public class PeriodicPuzzle : MonoBehaviour
 
     public List<PrimerPuzzleButtons> buttons;
 
-    public PuzzleManager puzzleManager;
+    private PuzzleManager puzzleManager;
 
     private void Awake()
     {
-        
+        puzzleManager = FindObjectOfType<PuzzleManager>();
         {
             puzzleManager.LoadAllPuzzles();
         }
