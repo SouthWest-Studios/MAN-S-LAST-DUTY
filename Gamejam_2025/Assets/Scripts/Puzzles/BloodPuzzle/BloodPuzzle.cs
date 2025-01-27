@@ -21,10 +21,28 @@ public class BloodPuzzle : MonoBehaviour
         correctNumber = Random.Range(1, 10); // 1 incluido, 10 excluido
         currentNumber = 0;
         inicialRotation = Quaternion.identity;
-        sticks[0].GetComponent<MeshRenderer>().material.color = Color.blue;
+
+        originalColor = new List<Color>(sticks.Count);
+
+        sticks[0].gameObject.GetComponent<Renderer>().material.color = Color.blue;
+
         for (int i = 0; i < sticks.Count; i++)
         {
-            originalColor[i] = sticks[0].gameObject.GetComponent<MeshRenderer>().material.color;
+            // Accede al objeto correcto usando el índice i
+            MeshRenderer renderer = sticks[i].gameObject.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                if(i != 0)
+                {
+                    sticks[i].gameObject.GetComponent<Renderer>().material.color = Color.black;
+                    originalColor.Add(renderer.material.color); // Agrega el color a la lista
+                }
+                
+            }
+            else
+            {
+                Debug.LogWarning($"El objeto en sticks[{i}] no tiene un MeshRenderer.");
+            }
         }
     }
 
