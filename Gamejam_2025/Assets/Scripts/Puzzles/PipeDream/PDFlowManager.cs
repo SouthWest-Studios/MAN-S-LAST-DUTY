@@ -46,22 +46,18 @@ public class PDFlowManager : MonoBehaviour
 
         if (currentCell == null || currentCell.pipe == null) yield break;
 
-        currentCell.FillPipe();
+        // Reproducir la animación de llenado
+        currentCell.FillPipeWithAnimation();
         timer.fillAmount += (1.0f / totalPoints);
-        if(timer.fillAmount >= 0.98)
+
+        if (timer.fillAmount >= 0.98)
         {
-            //Terminar
+            // Terminar
             winPipes = true;
         }
         else
         {
             yield return new WaitForSeconds(flowSpeed);
-
-            if (waterPrefab != null)
-            {
-                GameObject water = Instantiate(waterPrefab, currentCell.transform);
-                water.transform.localPosition = Vector3.zero;
-            }
 
             for (int direction = 0; direction < 4; direction++)
             {
@@ -78,27 +74,23 @@ public class PDFlowManager : MonoBehaviour
 
                 var nextCell = PDGridManager.instance.GetPipeAt(nextX, nextY);
 
-                //Debug.Log("Curr:" + currentCell.position + "Dir: " + currentCell.pipe.connections + "Next: " + nextCell.position + " Dir: " + nextCell.pipe.connections);
-
                 if (nextCell != null && nextCell.pipe != null)
                 {
                     if (currentCell.pipe.IsConnectedTo(nextCell.pipe, direction) && !nextCell.pipe.isFilled)
                     {
                         yield return StartCoroutine(FlowRoutine(nextX, nextY));
                     }
-
                 }
             }
+
             if (!winPipes)
             {
                 Debug.Log("FIN DE LAS TUBERIAS :c");
                 ResetGame(); // Reinicia el minijuego
             }
-            
         }
-        
-        
     }
+
 
     public void ResetGame()
     {

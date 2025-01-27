@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ public class PDPipeCell : MonoBehaviour
     {
         if (pipe)
         {
-            GetComponent<Image>().sprite = pipe.emptySprite;
+            //GetComponent<Image>().sprite = pipe.emptySprite;
         }
     }
 
@@ -18,9 +19,11 @@ public class PDPipeCell : MonoBehaviour
     {
         if (pipe == null)
         {
+           
             pipe = PDPipePreview.instance.NextPipe();
             pipe.RotatePipe(pipe.initialRotation);
             transform.rotation = Quaternion.Euler(0, 0, pipe.initialRotation * -90);
+            GetComponent<Image>().sprite = pipe.emptySprite;
         }
     }
 
@@ -29,7 +32,7 @@ public class PDPipeCell : MonoBehaviour
         if (pipe != null)
         {
             pipe.isFilled = true;
-            GetComponent<Image>().sprite = pipe.filledSprite;
+            GetComponent<Image>().sprite = pipe.fillAnimationSprites[pipe.fillAnimationSprites.Length];
         }
     }
 
@@ -37,7 +40,7 @@ public class PDPipeCell : MonoBehaviour
     {
         if (pipe != null)
         {
-            GetComponent<Image>().sprite = pipe.filledSprite;
+            GetComponent<Image>().sprite = pipe.fillAnimationSprites[pipe.fillAnimationSprites.Length];
 
             // Instancia un efecto visual (opcional)
             Instantiate(waterPrefab, transform.position, Quaternion.identity, transform);
@@ -126,5 +129,31 @@ public class PDPipeCell : MonoBehaviour
 
         Gizmos.DrawLine(position, position + right);
         Gizmos.DrawLine(position, position + left);
+    }
+
+    public void FillPipeWithAnimation()
+    {
+        if (pipe != null && pipe.fillAnimationSprites.Length > 0)
+        {
+            StartCoroutine(PlayFillAnimation());
+        }
+        else
+        {
+            FillPipe(); // Fallback si no hay animación
+        }
+    }
+
+    private IEnumerator PlayFillAnimation()
+    {
+        Image pipeImage = GetComponent<Image>(); // Asume que el sprite está en un Image (UI)
+        foreach (var sprite in pipe.fillAnimationSprites)
+        {
+            pipeImage.sprite = sprite;
+            yield return new WaitForSeconds(PDFlowManager.instance.flowSpeed/ pipe.fillAnimationSprites.Length); // Ajusta la duración de cada frame
+        }
+
+        // Cambia al sprite de "lleno" al terminar la animación
+        pipe.isFilled = true;
+        pipeImage.sprite = pipe.fillAnimationSprites[pipe.fillAnimationSprites.Length-1];
     }
 }

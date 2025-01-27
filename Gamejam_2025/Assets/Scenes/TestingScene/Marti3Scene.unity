@@ -1042,37 +1042,37 @@ MonoBehaviour:
     itHasbeenCompleted: 0
     isReseteable: 1
     isGiven: 0
-    seed: 
+    seed: 0
   - name: PeriodicTablePuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 1
     isGiven: 0
-    seed: 
+    seed: 0
   - name: WavePuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 0
     isGiven: 0
-    seed: 
+    seed: 0
   - name: GuitarHeroPuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 0
     isGiven: 0
-    seed: 
+    seed: 0
   - name: WordlePuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 1
     isGiven: 0
-    seed: 
+    seed: 0
   - name: PipeDreamPuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 0
     isGiven: 0
-    seed: semillaDeEjemplo
+    seed: 0
   completionMessage: {fileID: 1329872238}
   messageDuration: 2
 --- !u!4 &122704850
@@ -16433,7 +16433,6 @@ MonoBehaviour:
   - {fileID: 776835222}
   - {fileID: 810612639}
   - {fileID: 1594497734}
-  puzzleManager: {fileID: 122704849}
 --- !u!4 &1514560332
 Transform:
   m_ObjectHideFlags: 0
