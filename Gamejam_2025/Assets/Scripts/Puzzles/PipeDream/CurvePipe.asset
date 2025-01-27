@@ -21,6 +21,8 @@ MonoBehaviour:
   - {fileID: 1881249261, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   - {fileID: 622118137, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
   - {fileID: -1733606245, guid: c6b6a596677fd5b40a7961ac905ce6ec, type: 3}
-  connections: 00000101
+  fillLeftAnimationSprites: []
+  fillRightAnimationSprites: []
+  connections: 00010100
   initialRotation: 0
   isFilled: 0

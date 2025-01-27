@@ -1346,26 +1346,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3970577487728411449, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
+    - target: {fileID: 5549627345106503791, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 509233248, guid: c6b6a596677fd5b40a7961ac905ce6ec,
-        type: 3}
-    - target: {fileID: 3970577487728411449, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3970577487728411449, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3970577487728411449, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.96281624
+      propertyPath: totalPoints
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6063444476908651996, guid: 3053d134a53c03c409ac7e5b8cb7da4d,
         type: 3}
@@ -3239,6 +3223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasToOpen: {fileID: 0}
   cameraFirstPerson: {fileID: 1595838358}
+  focusCamera: {fileID: 0}
+  transitionSpeed: 2
   isCanvasToOpen: 0
 --- !u!65 &294698682
 BoxCollider:
@@ -7745,6 +7731,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasToOpen: {fileID: 1009955989}
   cameraFirstPerson: {fileID: 1595838358}
+  focusCamera: {fileID: 0}
+  transitionSpeed: 2
   isCanvasToOpen: 1
 --- !u!65 &762878612
 BoxCollider:
@@ -17217,6 +17205,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasToOpen: {fileID: 1780268769}
   cameraFirstPerson: {fileID: 1595838358}
+  focusCamera: {fileID: 0}
+  transitionSpeed: 2
   isCanvasToOpen: 1
 --- !u!65 &1579613157
 BoxCollider:
@@ -19989,6 +19979,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasToOpen: {fileID: 47081456}
   cameraFirstPerson: {fileID: 1595838358}
+  focusCamera: {fileID: 0}
+  transitionSpeed: 2
   isCanvasToOpen: 1
 --- !u!1 &1837116348
 GameObject:
