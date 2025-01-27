@@ -1,57 +1,115 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ObjectInteraction : MonoBehaviour
 {
-    public GameObject canvasToOpen; // Arrastra el Canvas aqu� en el Inspector.
-    private bool playerIsNear = false; // Indica si el jugador est� cerca.
+    public GameObject canvasToOpen;
+    private bool playerIsNear = false;
     public FirstPersonLook cameraFirstPerson;
+    public Camera focusCamera;
+    public float transitionSpeed = 2.0f; // Velocidad de transición
+    private bool isTransitioning = false;
 
     public bool isCanvasToOpen = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto que entra en el trigger es el jugador.
         if (other.CompareTag("Player"))
         {
             playerIsNear = true;
-            Debug.Log("El jugador est� cerca del cubo.");
+            Debug.Log("El jugador está cerca del cubo.");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // Cuando el jugador sale del trigger, actualiza el estado.
         if (other.CompareTag("Player"))
         {
             playerIsNear = false;
-            Debug.Log("El jugador se alej� del cubo.");
+            Debug.Log("El jugador se alejó del cubo.");
         }
     }
 
     private void Update()
     {
-        // Si el jugador est� cerca y presiona la tecla E, activa el Canvas.
         if (playerIsNear && Input.GetKeyDown(KeyCode.E))
         {
-            if (isCanvasToOpen)
+            if (focusCamera != null && !isTransitioning)
             {
-                cameraFirstPerson.isPanelOpen = true;
-                canvasToOpen.SetActive(true); // Activa el Canvas y el cursor.
+                StartCoroutine(StartFocusTransition(focusCamera));
             }
-            else
-            {
-                GetComponent<Button>().onClick.Invoke();
-            }
-            
         }
+
         if (playerIsNear && Input.GetKeyDown(KeyCode.Escape))
         {
-            cameraFirstPerson.isPanelOpen = false;
-            canvasToOpen.SetActive(false); // Desactiva el Canvas y el cursor.
-            
+            EndFocusTransition();
         }
+    }
+
+    IEnumerator StartFocusTransition(Camera targetCamera)
+    {
+        isTransitioning = true;
+
+        // Desactivar el control de la cámara del jugador
+        cameraFirstPerson.enabled = false;
+
+        // Guardar la posición y rotación iniciales de la cámara del jugador
+        Transform playerCameraTransform = cameraFirstPerson.transform;
+        Vector3 startPosition = playerCameraTransform.position;
+        Quaternion startRotation = playerCameraTransform.rotation;
+
+        // Posición y rotación de la cámara objetivo
+        Vector3 targetPosition = targetCamera.transform.position;
+        Quaternion targetRotation = targetCamera.transform.rotation;
+
+        float elapsedTime = 0f;
+
+        
+        while (elapsedTime < 1f)
+        {
+            elapsedTime += Time.deltaTime * transitionSpeed;
+
+            
+            playerCameraTransform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime);
+            playerCameraTransform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime);
+
+            yield return null;
+        }
+
+        
+        cameraFirstPerson.gameObject.SetActive(false);
+        targetCamera.gameObject.SetActive(true);
+
+        
+        if (isCanvasToOpen)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            canvasToOpen.SetActive(true);
+            cameraFirstPerson.isPanelOpen = true;
+        }
+
+        isTransitioning = false;
+    }
+
+    void EndFocusTransition()
+    {
+        if (focusCamera == null || isTransitioning) return;
+
+        
+        if (isCanvasToOpen)
+        {
+            canvasToOpen.SetActive(false);
+            cameraFirstPerson.isPanelOpen = false;
+        }
+
+        
+        focusCamera.gameObject.SetActive(false);
+        cameraFirstPerson.gameObject.SetActive(true);
+
+        
+        cameraFirstPerson.enabled = true;
+
+        focusCamera = null;
+        isTransitioning = false;
     }
 }
