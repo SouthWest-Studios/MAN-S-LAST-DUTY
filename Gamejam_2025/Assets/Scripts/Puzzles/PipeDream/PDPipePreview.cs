@@ -8,7 +8,7 @@ public class PDPipePreview : MonoBehaviour
     public Image[] previewRender;
     public PDPipeType[] pipes;
 
-    private CustomQueue<PDPipeType> pipesQueue = new CustomQueue<PDPipeType>();
+    private Queue<PDPipeType> pipesQueue = new Queue<PDPipeType>();
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class PDPipePreview : MonoBehaviour
 
     void Update()
     {
-        while (pipesQueue.Count() < 4)
+        while (pipesQueue.Count < 4)
         {
             int pipeRandom = Random.Range(0, pipes.Length);
             int randomRotation = Random.Range(0, 4);
@@ -30,32 +30,44 @@ public class PDPipePreview : MonoBehaviour
 
             pipesQueue.Enqueue(newPipe);
 
-            List<PDPipeType> pipesQueueList = pipesQueue.GetAllElements();
-            for (int i = 0; i < pipesQueue.Count(); i++)
-            {
-                previewRender[i].sprite = pipesQueueList[i].emptySprite;
-                previewRender[i].transform.rotation = Quaternion.Euler(0, 0, pipesQueueList[i].initialRotation * -90);
-            }
+            UpdatePreviewUI();
         }
     }
 
     public PDPipeType NextPipe()
     {
-        return pipesQueue.Dequeue();
+        var pipe = pipesQueue.Dequeue();
+        UpdatePreviewUI();
+        return pipe;
     }
 
     public void ResetPreview()
     {
-        pipesQueue.Clear(); // Vacía la cola de tuberías
-
-        // Limpia los sprites de la vista previa
+        pipesQueue.Clear();
         foreach (Image previewImage in previewRender)
         {
             previewImage.sprite = null;
             previewImage.transform.rotation = Quaternion.identity;
         }
 
-        Debug.Log("Vista previa de tuberías reiniciada.");
+        Debug.Log("Vista previa reiniciada.");
     }
 
+    private void UpdatePreviewUI()
+    {
+        var pipesList = pipesQueue.ToArray();
+        for (int i = 0; i < previewRender.Length; i++)
+        {
+            if (i < pipesList.Length)
+            {
+                previewRender[i].sprite = pipesList[i].emptySprite;
+                previewRender[i].transform.rotation = Quaternion.Euler(0, 0, pipesList[i].initialRotation * -90);
+            }
+            else
+            {
+                previewRender[i].sprite = null;
+                previewRender[i].transform.rotation = Quaternion.identity;
+            }
+        }
+    }
 }
