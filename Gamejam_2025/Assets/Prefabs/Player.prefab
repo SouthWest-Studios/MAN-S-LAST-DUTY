@@ -251,7 +251,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &8691012292855062502
 MonoBehaviour:
@@ -292,6 +292,7 @@ MonoBehaviour:
   smoothTimeDecrement: 0.02
   smoothTimeMin: 0
   resetTime: 60
+  minuteCounter: 0
   minuteText: {fileID: 0}
   blurMaterial: {fileID: 2100000, guid: 84e029077ff0ab84b98d8113400f9bb1, type: 2}
   maxBlurSize: 30
