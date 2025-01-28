@@ -22,6 +22,7 @@ public class PuzzleManager : MonoBehaviour
 
     public List<Puzzle> puzzles = new List<Puzzle>();
     private static List<Puzzle> persistentPuzzles = null;
+    public static string numpadFinalCode = "1234";
 
     [Header("UI Elements")]
     public TextMeshProUGUI completionMessage; // Referencia al objeto del mensaje
@@ -176,6 +177,7 @@ public class PuzzleManager : MonoBehaviour
     public void SaveGame()
     {
         PlayerPrefs.SetInt("PuzzleCount", puzzles.Count);
+        PlayerPrefs.SetString("umpadFinalCode", numpadFinalCode);
 
         for (int i = 0; i < puzzles.Count; i++)
         {
@@ -198,6 +200,8 @@ public class PuzzleManager : MonoBehaviour
             Debug.LogWarning("No hay datos de guardado.");
             return;
         }
+
+        numpadFinalCode = PlayerPrefs.GetString("numpadFinalCode");
 
         int puzzleCount = PlayerPrefs.GetInt("PuzzleCount");
         puzzles.Clear();
@@ -224,6 +228,9 @@ public class PuzzleManager : MonoBehaviour
     {
         int seed = (int)System.DateTime.Now.Ticks; // Usa el timestamp actual como semilla
         Random.InitState(seed);
+
+        int randomCode = Random.Range(0, 10000); // Genera un número entre 0 y 9999
+        numpadFinalCode = randomCode.ToString("D4"); // Convierte a string con 4 dígitos (rellenando con ceros si es necesario)
 
         foreach (var puzzle in puzzles)
         {
