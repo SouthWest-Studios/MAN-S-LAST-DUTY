@@ -172,4 +172,69 @@ public class PuzzleManager : MonoBehaviour
         return null;
     }
 
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("PuzzleCount", puzzles.Count);
+
+        for (int i = 0; i < puzzles.Count; i++)
+        {
+            PlayerPrefs.SetString($"Puzzle_{i}_name", puzzles[i].name);
+            PlayerPrefs.SetInt($"Puzzle_{i}_isCompleted", puzzles[i].isCompleted ? 1 : 0);
+            PlayerPrefs.SetInt($"Puzzle_{i}_itHasbeenCompleted", puzzles[i].itHasbeenCompleted ? 1 : 0);
+            PlayerPrefs.SetInt($"Puzzle_{i}_isReseteable", puzzles[i].isReseteable ? 1 : 0);
+            PlayerPrefs.SetInt($"Puzzle_{i}_isGiven", puzzles[i].isGiven ? 1 : 0);
+            PlayerPrefs.SetInt($"Puzzle_{i}_seed", puzzles[i].seed);
+        }
+
+        PlayerPrefs.Save();
+        Debug.Log("Juego guardado con PlayerPrefs.");
+    }
+
+    public void LoadGame()
+    {
+        if (!PlayerPrefs.HasKey("PuzzleCount"))
+        {
+            Debug.LogWarning("No hay datos de guardado.");
+            return;
+        }
+
+        int puzzleCount = PlayerPrefs.GetInt("PuzzleCount");
+        puzzles.Clear();
+
+        for (int i = 0; i < puzzleCount; i++)
+        {
+            Puzzle puzzle = new Puzzle
+            {
+                name = PlayerPrefs.GetString($"Puzzle_{i}_name", ""),
+                isCompleted = PlayerPrefs.GetInt($"Puzzle_{i}_isCompleted", 0) == 1,
+                itHasbeenCompleted = PlayerPrefs.GetInt($"Puzzle_{i}_itHasbeenCompleted", 0) == 1,
+                isReseteable = PlayerPrefs.GetInt($"Puzzle_{i}_isReseteable", 0) == 1,
+                isGiven = PlayerPrefs.GetInt($"Puzzle_{i}_isGiven", 0) == 1,
+                seed = PlayerPrefs.GetInt($"Puzzle_{i}_seed", 0)
+            };
+
+            puzzles.Add(puzzle);
+        }
+
+        Debug.Log("Juego cargado desde PlayerPrefs.");
+    }
+
+    public void NewGame()
+    {
+        int seed = (int)System.DateTime.Now.Ticks; // Usa el timestamp actual como semilla
+        Random.InitState(seed);
+
+        foreach (var puzzle in puzzles)
+        {
+            puzzle.isCompleted = false;
+            puzzle.itHasbeenCompleted = false;
+            puzzle.isGiven = false;
+            puzzle.seed = Random.Range(0, 100000); // Genera una semilla aleatoria
+        }
+
+        SaveGame(); // Guarda el estado inicial
+        Debug.Log("Nueva partida iniciada.");
+    }
+
 }

@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class Rewind : MonoBehaviour
 {
-    public PuzzleManager puzzleManager;
     [Header("Rewind Settings")]
     public bool isRewinding = false;
     private bool isCountdownStart = false;
@@ -95,8 +94,9 @@ public class Rewind : MonoBehaviour
 
             if(contadorReloadScene >= timeToReloadScene)
             {
-                puzzleManager.ResetAllPuzzles();
-                puzzleManager.SaveAllPuzzles();
+                PuzzleManager.instance.ResetAllPuzzles();
+                PuzzleManager.instance.SaveAllPuzzles();
+                PuzzleManager.instance.SaveGame(); //Guarda partida
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 
             }

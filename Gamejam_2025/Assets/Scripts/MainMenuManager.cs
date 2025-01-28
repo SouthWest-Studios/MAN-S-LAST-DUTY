@@ -68,7 +68,23 @@ public class MainMenuManager : MonoBehaviour
     public void NuevaPartida()
     {
         iniciarPartida = true;
+        PuzzleManager.instance.NewGame();
         turnOffMonitorAnimator.Play("turnOffMonitor");
+    }
+
+    public void CargarPartida()
+    {
+        if (!PlayerPrefs.HasKey("PuzzleCount"))
+        {
+            Debug.LogWarning("No hay datos de guardado.");
+            return;
+        }
+        else
+        {
+            iniciarPartida = true;
+            PuzzleManager.instance.LoadGame();
+            turnOffMonitorAnimator.Play("turnOffMonitor");
+        }
     }
 
     public void CerrarJuego()
