@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using System.Collections;
 using UnityEngine.UI;
+using System.Security.Cryptography;
+using System.Linq;
+using TMPro;
 
 public class correctWaveScript : MonoBehaviour
 {
@@ -26,7 +29,9 @@ public class correctWaveScript : MonoBehaviour
 
     public List<GameObject> correctWaves;
 
-    public GameObject finalText;
+    public TextMeshPro finalText;
+
+    public static int[] finalRandNum = new int[4];
 
 
     void Start()
@@ -40,7 +45,7 @@ public class correctWaveScript : MonoBehaviour
         correctWaveNum = randomIndex;
 
         
-        
+
 
         canShowWave = true;
     }
@@ -56,13 +61,7 @@ public class correctWaveScript : MonoBehaviour
             button.interactable = true;
         }
 
-        if (primerCuadranteCheck && segundoCuadranteCheck && tercerCuadranteCheck && cuartoCuadranteCheck)
-        {
-            puzzleManager.CompletePuzzle("WavePuzzle");
-            finalText.SetActive(true);
-            trigger.EndFocusTransition();
-            trigger.enabled = false;
-        }
+        
     }
     public void ShowCorrectWave()
     {
@@ -147,5 +146,28 @@ public class correctWaveScript : MonoBehaviour
         }
 
         
+    }
+
+    public void CheckWin2()
+    {
+        if (primerCuadranteCheck && segundoCuadranteCheck && tercerCuadranteCheck && cuartoCuadranteCheck)
+        {
+            puzzleManager.CompletePuzzle("WavePuzzle");
+            finalText.gameObject.SetActive(true);
+
+            finalRandNum = new int[4];
+
+            for (int i = 0; i < finalRandNum.Length; i++)
+            {
+                finalRandNum[i] = Random.Range(0, 10);
+            }
+
+            finalText.text = finalRandNum[0].ToString() + finalRandNum[1].ToString() + finalRandNum[2].ToString() + finalRandNum[3].ToString();
+
+
+
+            trigger.EndFocusTransition();
+            trigger.enabled = false;
+        }
     }
 }
