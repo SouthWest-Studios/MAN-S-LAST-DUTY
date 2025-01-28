@@ -59,9 +59,9 @@ public class ProximidadSonora : MonoBehaviour
     private bool gameActive = false;
     private Vector2 lastMousePosition;
 
-    private float level1Sum = 0f;
-    private float level2Sum = 0f;
-    private float level3Sum = 0f;
+    public static float level1Sum = 0f;
+    public static float level2Sum = 0f;
+    public static float level3Sum = 0f;
 
     private void Start()
     {

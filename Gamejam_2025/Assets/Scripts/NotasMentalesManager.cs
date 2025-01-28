@@ -11,6 +11,18 @@ public class NotasMentalesManager : MonoBehaviour
     public GameObject notasMentales;
     public GameObject iconoActualizarNotas;
 
+    [Header("Grupos")]
+    public GameObject numpadCodes;
+    public GameObject wordle;
+    public GameObject tangram;
+    public GameObject periodicTable;
+    public GameObject blood;
+    public GameObject proximidadSonora;
+    public GameObject ondas;
+    public GameObject cordonUmbilical;
+
+
+    [Header("Modificacion de datos")]
     public TextMeshProUGUI numpadCode;
     public Image[] wordleCells;
     public Sprite[] wordleSprites;
@@ -19,6 +31,7 @@ public class NotasMentalesManager : MonoBehaviour
     public Image[] bloodCells;
     public Sprite[] bloodResultSprites;
     public TextMeshProUGUI periodicNumber;
+    public TextMeshProUGUI proximidadSonoraNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -71,9 +84,14 @@ public class NotasMentalesManager : MonoBehaviour
 
         if (PuzzleManager.instance.GetPuzzle("ProximidadSonoraPuzzle").itHasbeenCompleted)
         {
-
+            proximidadSonoraNumber.text = "X: " + ProximidadSonora.level1Sum.ToString() + "\nY: " + ProximidadSonora.level2Sum.ToString() + "\nZ: " + ProximidadSonora.level3Sum.ToString();
         }
-        
+
+        if (PuzzleManager.instance.GetPuzzle("CordonUmbilicarPuzzle").itHasbeenCompleted)
+        {
+            //proximidadSonoraNumber.text = "X: " + ProximidadSonora.level1Sum.ToString() + "\nY: " + ProximidadSonora.level2Sum.ToString() + "\nZ: " + ProximidadSonora.level3Sum.ToString();
+        }
+
 
 
 

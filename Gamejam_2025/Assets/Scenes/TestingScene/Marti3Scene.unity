@@ -4970,6 +4970,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a08dbdce116ea2549b3d694b1afdf038, type: 3}
+--- !u!114 &487688431 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1718557147116437070, guid: 1d4324d5d4502df468865913cda8cc80,
+    type: 3}
+  m_PrefabInstance: {fileID: 2879858409153710818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &497671651
 GameObject:
   m_ObjectHideFlags: 0
@@ -15996,6 +16008,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuzzleManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
+        type: 3}
+      propertyPath: puzzles.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
+        type: 3}
+      propertyPath: puzzles.Array.data[10].name
+      value: CordonUmbilicarPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
+        type: 3}
+      propertyPath: puzzles.Array.data[10].isReseteable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20550,6 +20577,11 @@ PrefabInstance:
       propertyPath: periodicNumber
       value: 
       objectReference: {fileID: 2879858409153710819}
+    - target: {fileID: 4856067155581855238, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: proximidadSonoraNumber
+      value: 
+      objectReference: {fileID: 487688431}
     - target: {fileID: 5475812835721557026, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_Name
