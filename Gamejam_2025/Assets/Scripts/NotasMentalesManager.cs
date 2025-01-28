@@ -18,6 +18,7 @@ public class NotasMentalesManager : MonoBehaviour
     public Sprite[] tangramResultSprites;
     public Image[] bloodCells;
     public Sprite[] bloodResultSprites;
+    public TextMeshProUGUI periodicNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,9 @@ public class NotasMentalesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //NO HAY QUE HACER -> SIMOON DICE, GUITAR, PIPES, LUCES
+
         string numpadActualCode = PuzzleManager.numpadActualCode;
 
         if (numpadActualCode != "****") {
@@ -54,6 +58,23 @@ public class NotasMentalesManager : MonoBehaviour
                 bloodCells[i].sprite = bloodResultSprites[BloodManager.blood[i].correctNumber];
             }
         }
+
+        if (PuzzleManager.instance.GetPuzzle("PeriodicTablePuzzle").itHasbeenCompleted)
+        {
+            periodicNumber.text = PeriodicPuzzle.correctNum.ToString();
+        }
+
+        if (PuzzleManager.instance.GetPuzzle("WavePuzzle").itHasbeenCompleted)
+        {
+
+        }
+
+        if (PuzzleManager.instance.GetPuzzle("ProximidadSonoraPuzzle").itHasbeenCompleted)
+        {
+
+        }
+        
+
 
 
     }

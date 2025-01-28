@@ -5196,6 +5196,7 @@ MonoBehaviour:
   numberOfSlots: 5
   maxMoleculeID: 15
   canvas: {fileID: 1009955989}
+  finalText: {fileID: 0}
 --- !u!1 &526851368
 GameObject:
   m_ObjectHideFlags: 0
@@ -13674,6 +13675,9 @@ MonoBehaviour:
   cuartoCuadranteCheck: 0
   trigger: {fileID: 1579613156}
   puzzleManager: {fileID: 0}
+  button: {fileID: 0}
+  correctWaves: []
+  finalText: {fileID: 0}
 --- !u!1 &1384098317
 GameObject:
   m_ObjectHideFlags: 0
@@ -14859,7 +14863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5248c18ae6741847b58d8562b5ac582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctNum: 0
   hintNumText: {fileID: 734418982}
   buttons:
   - {fileID: 1322592743}
@@ -20487,6 +20490,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 672796831842813167, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Name
+      value: number
+      objectReference: {fileID: 0}
     - target: {fileID: 909807478194262584, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20537,6 +20545,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4856067155581855238, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: periodicNumber
+      value: 
+      objectReference: {fileID: 2879858409153710819}
     - target: {fileID: 5475812835721557026, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_Name
@@ -20547,6 +20560,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d4324d5d4502df468865913cda8cc80, type: 3}
+--- !u!114 &2879858409153710819 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5461082591577206784, guid: 1d4324d5d4502df468865913cda8cc80,
+    type: 3}
+  m_PrefabInstance: {fileID: 2879858409153710818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
