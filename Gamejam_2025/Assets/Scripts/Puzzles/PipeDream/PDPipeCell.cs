@@ -35,7 +35,7 @@ public class PDPipeCell : MonoBehaviour
         Sprite[] animationSprites;
 
 
-        Debug.Log(pipe.pipeName + " __ " + "Initial rotation: " + pipe.initialRotation + " RotZ: " + GetComponent<RectTransform>().rotation.z + " EntryDirection: " + entryDirection);
+        //Debug.Log(pipe.pipeName + " __ " + "Initial rotation: " + pipe.initialRotation + " RotZ: " + GetComponent<RectTransform>().rotation.z + " EntryDirection: " + entryDirection);
 
         if (pipe.pipeName == "NormalPipe")
         {
