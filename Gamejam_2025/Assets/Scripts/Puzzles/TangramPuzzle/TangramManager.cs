@@ -12,8 +12,10 @@ public class TangramManager : MonoBehaviour
     bool allCorrect;
     public GameObject canvas;
     public List<GameObject> formas;
-    int randForm;
+    public static int randForm;
     public string formName;
+
+
     public ObjectInteraction objectInteraction;
 
     private void Start()

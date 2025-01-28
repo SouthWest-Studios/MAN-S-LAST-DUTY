@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class NotasMentalesManager : MonoBehaviour
 {
@@ -10,8 +12,12 @@ public class NotasMentalesManager : MonoBehaviour
     public GameObject iconoActualizarNotas;
 
     public TextMeshProUGUI numpadCode;
-    public SpriteRenderer[] wordleCells;
+    public Image[] wordleCells;
     public Sprite[] wordleSprites;
+    public Image tangramCell;
+    public Sprite[] tangramResultSprites;
+    public Image[] bloodCells;
+    public Sprite[] bloodResultSprites;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +42,20 @@ public class NotasMentalesManager : MonoBehaviour
             }
         }
 
-        
+        if (PuzzleManager.instance.GetPuzzle("TangramPuzzle").itHasbeenCompleted)
+        {
+            tangramCell.sprite = tangramResultSprites[TangramManager.randForm];
+        }
+
+        if (PuzzleManager.instance.GetPuzzle("BloodPuzzle").itHasbeenCompleted)
+        {
+            for (int i = 0; i <  BloodManager.blood.Count; i++)
+            {
+                bloodCells[i].sprite = bloodResultSprites[BloodManager.blood[i].correctNumber];
+            }
+        }
+
+
     }
 
 

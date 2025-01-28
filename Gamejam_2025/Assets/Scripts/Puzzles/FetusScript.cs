@@ -47,7 +47,7 @@ public class FetusScript : MonoBehaviour
             {
                 for(int i = 0; i <= 2; i++)
                 {
-                    bloodManager.blood[i].saveTry();
+                    BloodManager.blood[i].saveTry();
                     bloodManager.CheckWin();
                 }
                 
