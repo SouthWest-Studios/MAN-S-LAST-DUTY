@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1356566668323723323}
   - component: {fileID: 5461082591577206784}
   m_Layer: 5
-  m_Name: test
+  m_Name: number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 5004203906346766195}
   - component: {fileID: 3840455405172610165}
   m_Layer: 5
-  m_Name: onda
+  m_Name: dibujo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1056,6 +1056,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notasMentales: {fileID: 8853093162860474972}
   iconoActualizarNotas: {fileID: 0}
+  numpadCodes: {fileID: 0}
+  wordle: {fileID: 0}
+  tangram: {fileID: 0}
+  periodicTable: {fileID: 0}
+  blood: {fileID: 0}
+  proximidadSonora: {fileID: 0}
+  ondas: {fileID: 0}
+  cordonUmbilical: {fileID: 0}
   numpadCode: {fileID: 2424841852319036192}
   wordleCells:
   - {fileID: 8143191625638824484}
@@ -1096,6 +1104,22 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2974fa16c6846cb42a5870406fd1f0a4, type: 3}
   - {fileID: 21300000, guid: a410e6ab90a698c448fab0c80bcac0bf, type: 3}
   - {fileID: 21300000, guid: f2ce8920eb012794b8202cf7ba767996, type: 3}
+  periodicNumber: {fileID: 5461082591577206784}
+  proximidadSonoraNumber: {fileID: 1718557147116437070}
+  cordonUmbilicalCell: {fileID: 3840455405172610165}
+  cordonUmbilicalSprites:
+  - {fileID: 21300000, guid: ed81f78dd1802214e9fe5333e8da5276, type: 3}
+  - {fileID: 21300000, guid: 7d471f39c4206ba4fa4516946bfc1bb2, type: 3}
+  - {fileID: 21300000, guid: e8dbd52ae505f9d43b345fda70075d01, type: 3}
+  - {fileID: 21300000, guid: 9cd27d66c74cb3343bffb56a371ce00e, type: 3}
+  - {fileID: 21300000, guid: 861b758acbb5d954e91ee9a3b4c90136, type: 3}
+  - {fileID: 21300000, guid: e10203b2617a8b74ba2733687b234e2b, type: 3}
+  - {fileID: 21300000, guid: 3badecc51b1d36e468653f18f4334a99, type: 3}
+  - {fileID: 21300000, guid: 674fbe37679d83048a85d0afb1d67a7c, type: 3}
+  - {fileID: 21300000, guid: 164db1fd1cd4fa247b09308e89137203, type: 3}
+  - {fileID: 21300000, guid: 4bfebc1af92ad0d4ca95dc6e7ff4b8e1, type: 3}
+  - {fileID: 21300000, guid: 06412a1675856b74e887ee6663b57abb, type: 3}
+  - {fileID: 21300000, guid: b5d27c6268e89b94699b3baf34cbc707, type: 3}
 --- !u!1 &5713391310433795391
 GameObject:
   m_ObjectHideFlags: 0

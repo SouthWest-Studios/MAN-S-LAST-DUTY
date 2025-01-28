@@ -45,8 +45,8 @@ public class CordonUmbilical : MonoBehaviour
     [SerializeField] private float hoverScaleSpeed = 0.0005f;
 
     [Header("Puzzle Settings")]
-    [SerializeField] private int correctGroupIndex = 0; // Grupo 1 (índice 0)
-    [SerializeField] private int correctObjectInGroupIndex = 0; // Primer objeto (índice 0)
+    [SerializeField] public static int correctGroupIndex = 0; // Grupo 1 (índice 0)
+    [SerializeField] public static int correctObjectInGroupIndex = 0; // Primer objeto (índice 0)
 
     private bool isPuzzleActive = false;
     private bool isSnapped = false;

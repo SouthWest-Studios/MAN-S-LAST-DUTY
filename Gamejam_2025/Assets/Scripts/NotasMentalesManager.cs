@@ -11,6 +11,8 @@ public class NotasMentalesManager : MonoBehaviour
     public GameObject notasMentales;
     public GameObject iconoActualizarNotas;
 
+    public static NotasMentalesManager instance;
+
     [Header("Grupos")]
     public GameObject numpadCodes;
     public GameObject wordle;
@@ -32,6 +34,14 @@ public class NotasMentalesManager : MonoBehaviour
     public Sprite[] bloodResultSprites;
     public TextMeshProUGUI periodicNumber;
     public TextMeshProUGUI proximidadSonoraNumber;
+    public Image cordonUmbilicalCell;
+    public Sprite[] cordonUmbilicalSprites;
+
+
+    private void Awake()
+    {
+        if(instance == null) { instance = this; }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -89,7 +99,34 @@ public class NotasMentalesManager : MonoBehaviour
 
         if (PuzzleManager.instance.GetPuzzle("CordonUmbilicarPuzzle").itHasbeenCompleted)
         {
-            //proximidadSonoraNumber.text = "X: " + ProximidadSonora.level1Sum.ToString() + "\nY: " + ProximidadSonora.level2Sum.ToString() + "\nZ: " + ProximidadSonora.level3Sum.ToString();
+            if(CordonUmbilical.correctGroupIndex == 0)
+            {
+                if(CordonUmbilical.correctObjectInGroupIndex == 0) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[0]; }
+                if(CordonUmbilical.correctObjectInGroupIndex == 1) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[1]; }
+                if(CordonUmbilical.correctObjectInGroupIndex == 2) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[2]; }
+
+            }else if(CordonUmbilical.correctGroupIndex == 1)
+            {
+                if (CordonUmbilical.correctObjectInGroupIndex == 0) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[3]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 1) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[4]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 2) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[5]; }
+            }
+            else if (CordonUmbilical.correctGroupIndex == 2)
+            {
+                if (CordonUmbilical.correctObjectInGroupIndex == 0) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[6]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 1) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[7]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 2) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[8]; }
+            }
+            else if (CordonUmbilical.correctGroupIndex == 3)
+            {
+                if (CordonUmbilical.correctObjectInGroupIndex == 0) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[9]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 1) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[10]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 2) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[11]; }
+            }
+
+
+
+            
         }
 
 

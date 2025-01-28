@@ -60,6 +60,10 @@ public class PuzzleManager : MonoBehaviour
             if (puzzle.name == puzzleName)
             {
                 puzzle.isCompleted = true;
+                if (!puzzle.itHasbeenCompleted)
+                {
+                    NotasMentalesManager.instance.ShowDrawIcon();
+                }
                 puzzle.itHasbeenCompleted = true;
 
                 if(puzzle.isReseteable == true)
