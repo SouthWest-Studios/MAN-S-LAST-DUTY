@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using static PuzzleManager;
 
 public class PintarCasillas : MonoBehaviour
 {
@@ -19,11 +21,15 @@ public class PintarCasillas : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource[] buttonSounds = new AudioSource[9];
 
+    // Add TMP reference at the top with other variables
+    public TextMeshPro numeroResultado;
+
     private bool[] lightStates = new bool[9];
 
     private const float POSICION_PRESIONADO = 0.0465f;
     private const float DURACION_ANIMACION = 0.1f;
     private Vector3[] posicionesOriginalesBottones = new Vector3[9];
+    private PuzzleManager puzzlemanager;
 
     private void Start()
     {
@@ -145,6 +151,24 @@ public class PintarCasillas : MonoBehaviour
         if (allLightsOff || allLightsOn)
         {
             Debug.Log("¡Puzzle completado! (Aleix haz lo tuyo)");
+            CompletarJuego();
+        }
+    }
+
+    private void CompletarJuego()
+    {
+        puzzlemanager = FindObjectOfType<PuzzleManager>();
+        puzzlemanager.CompletePuzzle("PintarCasillasPuzzle");
+        
+        // Get and display the fourth digit
+        if (numeroResultado != null)
+        {
+            string code = PuzzleManager.numpadFinalCode;
+            if (code.Length >= 4)
+            {
+                numeroResultado.text = $"***{code[3]}";
+                numeroResultado.gameObject.SetActive(true);
+            }
         }
     }
 }
