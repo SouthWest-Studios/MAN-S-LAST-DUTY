@@ -281,13 +281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5750d7a2e51ef9244a49239a4dce83de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzleManager: {fileID: 0}
   isRewinding: 0
   cameraTransform: {fileID: 8348994376948079107}
   timeBetweenSaves: 0
   timeToReloadScene: 4
   initialFadetoBlackSceneTime: 1
   fadeToBlackImage: {fileID: 891020684723529811}
+  resetThings: 0
   smoothTime: 0.2
   smoothTimeDecrement: 0.02
   smoothTimeMin: 0
@@ -807,6 +807,7 @@ GameObject:
   - component: {fileID: 8484286897039944296}
   - component: {fileID: 6034712580490492204}
   - component: {fileID: 447585423441966817}
+  - component: {fileID: 2352812884434781036}
   m_Layer: 0
   m_Name: First Person Camera
   m_TagString: MainCamera
@@ -1006,6 +1007,25 @@ MonoBehaviour:
   interactColor: {r: 0, g: 1, b: 0, a: 1}
   interactionKey: 101
   maxInteractionDistance: 5
+--- !u!114 &2352812884434781036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007597286841217669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9677b988b998e48a8eb88d9cdd4e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabDistance: 3
+  holdDistance: 1.5
+  smoothSpeed: 8
+  interactKey: 101
+  crosshair: {fileID: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  grabbableColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &6039989719434558431
 GameObject:
   m_ObjectHideFlags: 0

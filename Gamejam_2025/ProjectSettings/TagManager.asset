@@ -7,6 +7,7 @@ TagManager:
   - Button
   - SaveZone
   - Slot
+  - Grabbable
   layers:
   - Default
   - TransparentFX

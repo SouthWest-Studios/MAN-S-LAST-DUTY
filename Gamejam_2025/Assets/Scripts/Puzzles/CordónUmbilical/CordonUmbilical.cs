@@ -16,6 +16,7 @@ public class CordonUmbilical : MonoBehaviour
     [SerializeField] private GameObject[] pivotObjects; // Objetos dentro de los pivotes de la lupa
     private PuzzleManager puzzleManager; // Añadir referencia al PuzzleManager
     private FetusScript fetus; // Añadir referencia al FetusScript
+    [SerializeField] private ObjectInteraction objectInteraction; // Añadir referencia al ObjectInteraction
 
     [Header("Materials")]
     [SerializeField] private Material defaultMaterial;
@@ -61,6 +62,10 @@ public class CordonUmbilical : MonoBehaviour
     private bool gameWon = false;
     private int currentObjectGroup = -1; // Grupo actual de objetos
 
+    [Header("Post-Selection")]
+    [SerializeField] private GameObject objectToActivate;
+    [SerializeField] private float deactivationDelay = 2f;
+
     void Start()
     {
         currentMainCamera = puzzleCamera;
@@ -96,6 +101,8 @@ public class CordonUmbilical : MonoBehaviour
                 pivotObj.SetActive(false);
             }
         }
+
+        // Buscar la referencia al ObjectInteraction
     }
 
     public void ActivatePuzzle()
@@ -393,6 +400,29 @@ public class CordonUmbilical : MonoBehaviour
         // Configurar FetusScript para la verificación posterior
         fetus = FindObjectOfType<FetusScript>();
         fetus.currentHint = "UmbilicalCord";
+
+        // Llamar a EndFocusTransition inmediatamente después de seleccionar
+        if (objectInteraction != null)
+        {
+            objectInteraction.EndFocusTransition();
+        }
+
+        // Iniciar la corrutina para desactivar los scripts y activar el objeto
+        StartCoroutine(DeactivateAfterDelay());
+    }
+
+    private IEnumerator DeactivateAfterDelay()
+    {
+        yield return new WaitForSeconds(deactivationDelay);
+
+        // Desactivar el GameObject completo que contiene este script
+        // Activar el objeto especificado
+        if (objectToActivate != null)
+        {
+            objectToActivate.SetActive(true);
+        }
+        gameObject.SetActive(false);
+
     }
 
     private void EndPuzzle()
@@ -403,12 +433,12 @@ public class CordonUmbilical : MonoBehaviour
             selectedObject.localScale = GetOriginalScale(selectedObject.gameObject);
             if (selectedRenderer != null)
             {
-                selectedRenderer.material = defaultMaterial;
+                selectedRenderer.material = wrongObjectMaterial;
             }
             selectedObject = null;
             selectedRenderer = null;
         }
-        
+
         StartCoroutine(TransitionToPoint(initialCameraPoint));
         isFocused = false;
 
