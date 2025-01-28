@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using static PuzzleManager;
 
 public class GuitarHero : MonoBehaviour
@@ -31,12 +32,16 @@ public class GuitarHero : MonoBehaviour
     public GameObject botonCarril1;
     public GameObject botonCarril2;
     public GameObject botonCarril3;
+    public TextMeshPro numeroResultado; // Add this line
+    private BoxCollider carril1Collider;
+    private BoxCollider carril2Collider;
+    private BoxCollider carril3Collider;
 
     [Header("Audio")]
     [SerializeField] private AudioSource[] buttonSounds = new AudioSource[4]; 
 
     private float posicionOriginalBoton;
-    private const float POSICION_PRESIONADO = 0.0465f;
+    private const float POSICION_PRESIONADO = -0.9891f;
     private const float DURACION_ANIMACION = 0.1f;
     
     private float tiempoRestante;
@@ -55,6 +60,12 @@ public class GuitarHero : MonoBehaviour
         {
             posicionOriginalBoton = botonComenzar.transform.localPosition.y;
         }
+
+        // Initialize and disable colliders
+        carril1Collider = botonCarril1.GetComponent<BoxCollider>();
+        carril2Collider = botonCarril2.GetComponent<BoxCollider>();
+        carril3Collider = botonCarril3.GetComponent<BoxCollider>();
+        SetCarrilesColliders(false);
     }
 
     public void ComenzarJuego() //Funcion para botón
@@ -112,6 +123,7 @@ public class GuitarHero : MonoBehaviour
         }
         
         juegoActivo = false;
+        SetCarrilesColliders(false);
         fallos = 0;
         
         ApagarTodasLasLuces();
@@ -123,6 +135,7 @@ public class GuitarHero : MonoBehaviour
         
         tiempoRestante = tiempoTotalJuego;
         juegoActivo = true;
+        SetCarrilesColliders(true);
         generarLucesCoroutine = StartCoroutine(GenerarLuces());
     }
 
@@ -267,7 +280,18 @@ public class GuitarHero : MonoBehaviour
     {
         puzzlemanager = FindObjectOfType<PuzzleManager>();
         puzzlemanager.CompletePuzzle("GuitarHeroPuzzle");
-        //LimpiarEstadoJuego();
+        
+        // Get and display the third digit
+        if (numeroResultado != null)
+        {
+            string code = PuzzleManager.numpadFinalCode;
+            if (code.Length >= 3)
+            {
+                numeroResultado.text = $"**{code[2]}*";
+                numeroResultado.gameObject.SetActive(true);
+            }
+        }
+        
         Debug.Log("¡Victoria! (desbloquea simon dice)");
     }
 
@@ -313,6 +337,13 @@ public class GuitarHero : MonoBehaviour
         foreach (var luz in carril3) luz.SetActive(false);
         foreach (var luz in lucesFallos) luz.SetActive(false);
         foreach (var indicador in indicadoresTiempo) indicador.SetActive(false);
+    }
+
+    private void SetCarrilesColliders(bool estado)
+    {
+        if (carril1Collider) carril1Collider.enabled = estado;
+        if (carril2Collider) carril2Collider.enabled = estado;
+        if (carril3Collider) carril3Collider.enabled = estado;
     }
 }
 
