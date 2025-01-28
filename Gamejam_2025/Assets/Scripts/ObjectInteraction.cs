@@ -50,7 +50,7 @@ public class ObjectInteraction : MonoBehaviour
             }
         }
 
-        if (playerIsNear && Input.GetKeyDown(KeyCode.Escape))
+        if (playerIsNear && Input.GetKeyDown(KeyCode.Escape) && canvasToOpen.activeSelf)
         {
             EndFocusTransition();
         }
