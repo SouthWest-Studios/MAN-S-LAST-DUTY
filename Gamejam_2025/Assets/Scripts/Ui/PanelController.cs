@@ -160,14 +160,13 @@ public class PanelController : MonoBehaviour
         // Elementos del top banner (siempre visibles)
         public GameObject topBanner;
         public PanelElements gamePanel;
-        public PanelElements graphicsPanel;
         public PanelElements audioPanel;
         public PanelElements accessibilityPanel;
 
         [System.Serializable]
         public class GameSettings
         {
-            public Text languageText;
+            public TextMeshProUGUI languageText;
             public Button leftLanguageButton;
             public Button rightLanguageButton;
             public Button applyButton;
@@ -198,7 +197,7 @@ public class PanelController : MonoBehaviour
 
         public AccessibilitySettings accessibilitySettings;
 
-        private string[] languages = { "Ingles", "Castellano", "Catalan" };
+        private string[] languages = { "English", "Castellano"};
         private int currentLanguageIndex = 0;
 
         public void Initialize()
@@ -209,13 +208,11 @@ public class PanelController : MonoBehaviour
 
             // Asegurar que todos los botones están siempre visibles
             gamePanel.button?.gameObject.SetActive(true);
-            graphicsPanel.button?.gameObject.SetActive(true);
             audioPanel.button?.gameObject.SetActive(true);
             accessibilityPanel.button?.gameObject.SetActive(true);
 
             // Asignar eventos de clic a los botones
             gamePanel.button?.onClick.AddListener(() => ShowContent(gamePanel));
-            graphicsPanel.button?.onClick.AddListener(() => ShowContent(graphicsPanel));
             audioPanel.button?.onClick.AddListener(() => ShowContent(audioPanel));
             accessibilityPanel.button?.onClick.AddListener(() => ShowContent(accessibilityPanel));
 
@@ -236,12 +233,10 @@ public class PanelController : MonoBehaviour
         public void ShowContent(PanelElements selectedPanel)
         {
             gamePanel.content?.SetActive(selectedPanel == gamePanel);
-            graphicsPanel.content?.SetActive(selectedPanel == graphicsPanel);
             audioPanel.content?.SetActive(selectedPanel == audioPanel);
             accessibilityPanel.content?.SetActive(selectedPanel == accessibilityPanel);
 
             gamePanel.button.interactable = selectedPanel != gamePanel;
-            graphicsPanel.button.interactable = selectedPanel != graphicsPanel;
             audioPanel.button.interactable = selectedPanel != audioPanel;
             accessibilityPanel.button.interactable = selectedPanel != accessibilityPanel;
         }
