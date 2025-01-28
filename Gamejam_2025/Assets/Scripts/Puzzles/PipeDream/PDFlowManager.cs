@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class PDFlowManager : MonoBehaviour
     private int seed;
 
     private PuzzleManager puzzleManager;
+
+    public TextMeshPro finalText;
 
     private void Awake()
     {
@@ -67,6 +70,19 @@ public class PDFlowManager : MonoBehaviour
             winPipes = true;
             puzzleManager = FindAnyObjectByType<PuzzleManager>();
             puzzleManager.CompletePuzzle("PipeDreamPuzzle");
+
+            int indexCode = 1;
+            finalText.gameObject.SetActive(true);
+            finalText.text = "*" + PuzzleManager.numpadFinalCode[indexCode].ToString() + "**";
+            
+            char[] auxList =  PuzzleManager.numpadActualCode.ToCharArray();
+            auxList[indexCode] = PuzzleManager.numpadFinalCode[indexCode];
+            string finalCharacters = "";
+            for (int i = 0; i < auxList.Length; i++)
+            {
+                finalCharacters += auxList[i].ToString();
+            }
+            PuzzleManager.numpadActualCode = finalCharacters;
             
         }
         else
