@@ -36,6 +36,7 @@ public class NotasMentalesManager : MonoBehaviour
     public TextMeshProUGUI proximidadSonoraNumber;
     public Image cordonUmbilicalCell;
     public Sprite[] cordonUmbilicalSprites;
+    public TextMeshProUGUI ondaNumero;
 
 
     private void Awake()
@@ -47,23 +48,43 @@ public class NotasMentalesManager : MonoBehaviour
     void Start()
     {
         numpadCode.text = "";
+        numpadCodes.SetActive(false);
+        wordle.SetActive(false);
+        tangram.SetActive(false);
+        periodicTable.SetActive(false);
+        blood.SetActive(false);
+        proximidadSonora.SetActive(false);
+        ondas.SetActive(false);
+        cordonUmbilical.SetActive(false);
+
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        GestionMente();
 
-        //NO HAY QUE HACER -> SIMOON DICE, GUITAR, PIPES, LUCES
+
+    }
+
+
+    private void GestionMente()
+    {
+        //NO HAY QUE HACER -> SIMON DICE, GUITAR, PIPES, LUCES -> te dan el codigo estos
 
         string numpadActualCode = PuzzleManager.numpadActualCode;
 
-        if (numpadActualCode != "****") {
+        if (numpadActualCode != "****")
+        {
+            numpadCodes.SetActive(true);
             numpadCode.text = PuzzleManager.numpadActualCode;
         }
 
         if (PuzzleManager.instance.GetPuzzle("WordlePuzzle").itHasbeenCompleted)
         {
-            for(int i = 0; i<wordleCells.Length; i++)
+            wordle.SetActive(true);
+            for (int i = 0; i < wordleCells.Length; i++)
             {
                 wordleCells[i].sprite = wordleSprites[WordleController.correctCombination[i]];
             }
@@ -71,12 +92,14 @@ public class NotasMentalesManager : MonoBehaviour
 
         if (PuzzleManager.instance.GetPuzzle("TangramPuzzle").itHasbeenCompleted)
         {
+            tangram.SetActive(true);
             tangramCell.sprite = tangramResultSprites[TangramManager.randForm];
         }
 
         if (PuzzleManager.instance.GetPuzzle("BloodPuzzle").itHasbeenCompleted)
         {
-            for (int i = 0; i <  BloodManager.blood.Count; i++)
+            blood.SetActive(true);
+            for (int i = 0; i < BloodManager.blood.Count; i++)
             {
                 bloodCells[i].sprite = bloodResultSprites[BloodManager.blood[i].correctNumber];
             }
@@ -84,28 +107,39 @@ public class NotasMentalesManager : MonoBehaviour
 
         if (PuzzleManager.instance.GetPuzzle("PeriodicTablePuzzle").itHasbeenCompleted)
         {
+            periodicTable.SetActive(true);
             periodicNumber.text = PeriodicPuzzle.correctNum.ToString();
         }
 
         if (PuzzleManager.instance.GetPuzzle("WavePuzzle").itHasbeenCompleted)
         {
+            ondas.SetActive(true);
+            ondaNumero.text = "";
+            for(int i = 0; i< correctWaveScript.finalRandNum.Length; i++)
+            {
+                ondaNumero.text += correctWaveScript.finalRandNum[i].ToString();
+            }
+            
 
         }
 
         if (PuzzleManager.instance.GetPuzzle("ProximidadSonoraPuzzle").itHasbeenCompleted)
         {
+            proximidadSonora.SetActive(true);
             proximidadSonoraNumber.text = "X: " + ProximidadSonora.level1Sum.ToString() + "\nY: " + ProximidadSonora.level2Sum.ToString() + "\nZ: " + ProximidadSonora.level3Sum.ToString();
         }
 
         if (PuzzleManager.instance.GetPuzzle("CordonUmbilicarPuzzle").itHasbeenCompleted)
         {
-            if(CordonUmbilical.correctGroupIndex == 0)
+            cordonUmbilical.SetActive(true);
+            if (CordonUmbilical.correctGroupIndex == 0)
             {
-                if(CordonUmbilical.correctObjectInGroupIndex == 0) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[0]; }
-                if(CordonUmbilical.correctObjectInGroupIndex == 1) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[1]; }
-                if(CordonUmbilical.correctObjectInGroupIndex == 2) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[2]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 0) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[0]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 1) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[1]; }
+                if (CordonUmbilical.correctObjectInGroupIndex == 2) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[2]; }
 
-            }else if(CordonUmbilical.correctGroupIndex == 1)
+            }
+            else if (CordonUmbilical.correctGroupIndex == 1)
             {
                 if (CordonUmbilical.correctObjectInGroupIndex == 0) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[3]; }
                 if (CordonUmbilical.correctObjectInGroupIndex == 1) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[4]; }
@@ -123,15 +157,7 @@ public class NotasMentalesManager : MonoBehaviour
                 if (CordonUmbilical.correctObjectInGroupIndex == 1) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[10]; }
                 if (CordonUmbilical.correctObjectInGroupIndex == 2) { cordonUmbilicalCell.sprite = cordonUmbilicalSprites[11]; }
             }
-
-
-
-            
         }
-
-
-
-
     }
 
 
