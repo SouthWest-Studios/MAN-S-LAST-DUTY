@@ -33,6 +33,7 @@ public class PeriodicPuzzle : MonoBehaviour
     public void GuessNum(int num)
     {
         hintNum = num;
+        hintNumText.text = "?";
     }
     public void ShowNum()
     {
@@ -47,7 +48,7 @@ public class PeriodicPuzzle : MonoBehaviour
         if (hintNum == correctNum)
         {
             puzzleManager = FindAnyObjectByType<PuzzleManager>();
-            hintNumText.text = "correcto";
+            hintNumText.text = "correct";
             puzzleManager.CompletePuzzle("PeriodicTablePuzzle");
 
         }

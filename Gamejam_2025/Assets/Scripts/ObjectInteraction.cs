@@ -122,7 +122,7 @@ public class ObjectInteraction : MonoBehaviour
             canvasToOpen.SetActive(false);
             cameraFirstPerson.isPanelOpen = false;
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            
         }
 
         
