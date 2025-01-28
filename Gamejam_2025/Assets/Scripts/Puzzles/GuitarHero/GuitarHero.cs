@@ -287,7 +287,7 @@ public class GuitarHero : MonoBehaviour
             string code = PuzzleManager.numpadFinalCode;
             if (code.Length >= 3)
             {
-                numeroResultado.text = code[2].ToString();
+                numeroResultado.text = $"**{code[2]}*";
                 numeroResultado.gameObject.SetActive(true);
             }
         }

@@ -166,7 +166,7 @@ public class PintarCasillas : MonoBehaviour
             string code = PuzzleManager.numpadFinalCode;
             if (code.Length >= 4)
             {
-                numeroResultado.text = code[3].ToString();
+                numeroResultado.text = $"***{code[3]}";
                 numeroResultado.gameObject.SetActive(true);
             }
         }
