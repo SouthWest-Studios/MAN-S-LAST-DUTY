@@ -42,7 +42,7 @@ public class ObjectInteraction : MonoBehaviour
             {
                 StartCoroutine(StartFocusTransition(focusCamera));
             }
-            else
+            else if (canvasToOpen != null)
             {
                 Cursor.lockState = CursorLockMode.None;
                 canvasToOpen.SetActive(true);
@@ -50,9 +50,12 @@ public class ObjectInteraction : MonoBehaviour
             }
         }
 
-        if (playerIsNear && Input.GetKeyDown(KeyCode.Escape) && canvasToOpen.activeSelf)
+        if(canvasToOpen!=null)
         {
-            EndFocusTransition();
+            if (playerIsNear && Input.GetKeyDown(KeyCode.Escape) && canvasToOpen.activeSelf)
+            {
+                EndFocusTransition();
+            }
         }
     }
 

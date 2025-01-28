@@ -22,6 +22,7 @@ public class CordonUmbilical : MonoBehaviour
     [SerializeField] private Material hoverMaterial;
     [SerializeField] private Material wrongPivotMaterial; // Nuevo material para pivotes incorrectos
     [SerializeField] private Material correctPivotMaterial; // Nuevo material para pivotes correctos
+    [SerializeField] private Material wrongObjectMaterial; // Nuevo material para objetos incorrectos
 
     private Material[] originalMaterials;
     private MeshRenderer hoveredRenderer;
@@ -594,23 +595,15 @@ public class CordonUmbilical : MonoBehaviour
 
     public void CheckPuzzle()
     {
-        // Debug.Log("Comprobando puzzle...");
-        // Debug.Log($"Selected Object: {(selectedObject != null ? selectedObject.name : "null")}");
-        // Debug.Log($"Selected Object parent: {(selectedObject != null ? selectedObject.parent.name : "null")}");
-        
         GameObject[] currentGroup = GetCurrentGroup();
         int currentPivotIndex = GetCurrentPivotIndex();
         
         if (currentGroup == null || selectedObject == null) 
         {
-            // Debug.Log("Grupo nulo o no hay objeto seleccionado");
             return;
         }
 
         int selectedIndex = System.Array.IndexOf(currentGroup, selectedObject.gameObject);
-        // Debug.Log($"Índice seleccionado: {selectedIndex}");
-        // Debug.Log($"Grupo correcto: {correctGroupIndex}, Índice correcto: {correctObjectInGroupIndex}");
-        
         bool isCorrect = (currentObjectGroup == correctGroupIndex && selectedIndex == correctObjectInGroupIndex);
         
         // Cambiar material del pivot según si es el grupo correcto o no
@@ -630,9 +623,15 @@ public class CordonUmbilical : MonoBehaviour
             }
         }
 
+        // Aplicar material al objeto seleccionado según si es correcto o no
+        if (selectedRenderer != null)
+        {
+            selectedRenderer.material = isCorrect ? correctPivotMaterial : wrongObjectMaterial;
+            Debug.Log(selectedObject.name + " is correct: " + isCorrect, selectedRenderer.material);
+        }
+
         if (isCorrect)
         {
-            // Debug.Log("¡Objeto correcto!");
             puzzleManager = FindObjectOfType<PuzzleManager>();
             puzzleManager.CompletePuzzle("UmbilicalCord");
         }
