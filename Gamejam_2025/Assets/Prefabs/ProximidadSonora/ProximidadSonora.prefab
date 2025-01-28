@@ -576,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8050a3c6c8694914197633a7e74694b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectInteraction: {fileID: 3334779308447653984}
   gridWidth: 15
   gridHeight: 15
   gridContainer: {fileID: 883662449915747369}

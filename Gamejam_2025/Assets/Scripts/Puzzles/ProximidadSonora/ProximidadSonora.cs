@@ -183,6 +183,11 @@ public class ProximidadSonora : MonoBehaviour
         if (!gameActive) return;
 
         HandleMouseInput();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnDisable();
+        }
     }
 
     private void HandleMouseInput()
