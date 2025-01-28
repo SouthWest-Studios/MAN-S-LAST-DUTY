@@ -3943,6 +3943,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4065,6 +4069,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4191,6 +4199,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4293,6 +4305,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4417,6 +4433,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4551,6 +4571,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4677,6 +4701,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4894,6 +4922,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4998,6 +5030,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5100,6 +5136,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5234,6 +5274,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5362,6 +5406,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5486,6 +5534,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5588,6 +5640,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10886222, guid: d53129b78df454ca9974eb0eeb85e69a, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10886222, guid: d53129b78df454ca9974eb0eeb85e69a, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5714,6 +5770,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5816,6 +5876,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5922,6 +5986,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6024,6 +6092,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6150,6 +6222,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6274,6 +6350,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6376,6 +6456,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6502,6 +6586,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6604,6 +6692,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10886222, guid: d53129b78df454ca9974eb0eeb85e69a, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10886222, guid: d53129b78df454ca9974eb0eeb85e69a, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6710,6 +6802,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6812,6 +6908,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6938,6 +7038,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7040,6 +7144,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7146,6 +7254,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7248,6 +7360,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7445,6 +7561,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7569,6 +7689,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7691,6 +7815,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7825,6 +7953,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -7953,6 +8085,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8055,6 +8191,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8161,6 +8301,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8263,6 +8407,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10886222, guid: d53129b78df454ca9974eb0eeb85e69a, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10886222, guid: d53129b78df454ca9974eb0eeb85e69a, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8389,6 +8537,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8491,6 +8643,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8617,6 +8773,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8741,6 +8901,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8845,6 +9009,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8947,6 +9115,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9071,6 +9243,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10819750, guid: 864b9a11ebc2443ab9da5151bfc65e6f, type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
