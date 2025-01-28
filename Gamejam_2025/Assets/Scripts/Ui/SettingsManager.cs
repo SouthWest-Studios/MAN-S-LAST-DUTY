@@ -16,6 +16,13 @@ public class SettingsManager : MonoBehaviour
     public PanelController panelController;
     public FirstPersonLook isPanelOpen;
 
+    public SettingsManager instance;
+
+    private void Awake()
+    {
+        if(instance == null) { instance = this; }
+    }
+
     private void Start()
     {
         buttonTextAnimators = new Animator[buttonTexts.Length];

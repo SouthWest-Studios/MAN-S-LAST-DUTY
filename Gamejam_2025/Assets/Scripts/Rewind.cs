@@ -9,7 +9,9 @@ using UnityEngine.UI;
 
 public class Rewind : MonoBehaviour
 {
-    public PuzzleManager puzzleManager;
+
+    public static Rewind instance;
+
     [Header("Rewind Settings")]
     public bool isRewinding = false;
     private bool isCountdownStart = false;
@@ -20,6 +22,7 @@ public class Rewind : MonoBehaviour
     private float contadorInicioScene = 0;
     public float initialFadetoBlackSceneTime = 2;
     public Image fadeToBlackImage;
+    public bool resetThings = false;
 
 
     [Header("Smooth Time Settings")]
@@ -70,6 +73,13 @@ public class Rewind : MonoBehaviour
     private int maxRebounds = 4;   // Máximo número de repeticiones
     private float reboundIntensityDecay = 0.5f;  // Factor para reducir la intensidad después de cada rebote
 
+
+
+    private void Awake()
+    {
+        if (instance != null) { instance = this; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,15 +98,16 @@ public class Rewind : MonoBehaviour
 
         if (isRewinding)
         {
-            IncreaseBlurEffect();
+            //IncreaseBlurEffect();
             RewindPlayerState();
             ApplyPostProcessingEffects();
 
 
             if(contadorReloadScene >= timeToReloadScene)
             {
-                puzzleManager.ResetAllPuzzles();
-                puzzleManager.SaveAllPuzzles();
+                PuzzleManager.instance.ResetAllPuzzles();
+                PuzzleManager.instance.SaveAllPuzzles();
+                PuzzleManager.instance.SaveGame(); //Guarda partida
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 
             }
@@ -118,9 +129,13 @@ public class Rewind : MonoBehaviour
                 fadeToBlackImage.color = new Color(6f / 255f, 6f / 255f, 6f / 255f, (contadorInicioScene / initialFadetoBlackSceneTime));
             }
 
-
-            ResetBlur();
-            ResetPostProcessingEffects();
+            if (!resetThings)
+            {
+                ResetBlur();
+                ResetPostProcessingEffects();
+                resetThings = true;
+            }
+           
             SavePlayerState();
         }
 
@@ -245,6 +260,11 @@ public class Rewind : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
+        StartRewinding();
+    }
+
+    public void StartRewinding()
+    {
         isRewinding = true;
         minuteCounter = resetTime;
         currentSmoothTime = smoothTime;
