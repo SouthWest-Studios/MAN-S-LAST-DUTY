@@ -20,6 +20,7 @@ public class GrabObjects : MonoBehaviour
     private bool isHolding = false;
     private UnityEngine.UI.Image crosshairImage;
     private GameObject currentGrabbable;
+    private FetusScript fetus;
 
     private void Start()
     {
@@ -28,6 +29,8 @@ public class GrabObjects : MonoBehaviour
         {
             crosshairImage = crosshair.GetComponent<UnityEngine.UI.Image>();
         }
+        // Obtener referencia a FetusScript
+        fetus = FindObjectOfType<FetusScript>();
     }
 
     private void Update()
@@ -91,6 +94,12 @@ public class GrabObjects : MonoBehaviour
             heldRigidbody.freezeRotation = true;
             heldRigidbody.drag = 10;
             isHolding = true;
+
+            // Actualizar currentHint en FetusScript con el nombre del objeto
+            if (fetus != null)
+            {
+                fetus.currentHint = heldObject.name;
+            }
         }
     }
 
@@ -126,9 +135,28 @@ public class GrabObjects : MonoBehaviour
             heldRigidbody.freezeRotation = false;
             heldRigidbody.drag = 1;
             heldRigidbody = null;
+            
+
         }
 
         heldObject = null;
         isHolding = false;
+    }
+
+    public GameObject GetHeldObject()
+    {
+        return heldObject;
+    }
+
+    public void ForceDropObject()
+    {
+        heldObject = null;
+        heldRigidbody = null;
+        isHolding = false;
+        
+        if (fetus != null)
+        {
+            fetus.currentHint = "";
+        }
     }
 }
