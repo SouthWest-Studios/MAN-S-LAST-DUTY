@@ -7,7 +7,7 @@ public class BloodManager : MonoBehaviour
 {
 
     private PuzzleManager puzzleManager;
-    public List<BloodPuzzle> blood;
+    public static List<BloodPuzzle> blood;
     private FetusScript fetusScript;
     public GameObject bloodTube;
     void Start()
