@@ -12,11 +12,12 @@ public class Numpat : MonoBehaviour
     public AudioSource[] doorAudioSources;
     private bool isOpened = false;
     public Color errorColor = Color.red;
+    public Color correctColor = Color.green;
     private Color defaultColor = Color.white;
 
     public void SendNumber(int number)
     {
-        if (isOpened) return;
+        if (isOpened || indexPad >= 4) return;
 
         codeNumbers[indexPad].sprite = numbers[number];
         indexPad++;
@@ -26,6 +27,13 @@ public class Numpat : MonoBehaviour
         {
             if (actualCode == PuzzleManager.numpadFinalCode)
             {
+
+
+                foreach (var spriteRenderer in codeNumbers)
+                {
+                    spriteRenderer.color = correctColor;
+                }
+
                 // Código correcto, abre la puerta
                 doorAnimator.Play("DoubleOpeningDoor");
                 foreach (AudioSource audioSource in doorAudioSources)
