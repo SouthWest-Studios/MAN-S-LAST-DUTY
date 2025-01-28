@@ -6049,13 +6049,12 @@ GameObject:
   - component: {fileID: 562820125551521518}
   - component: {fileID: 6742260583487031035}
   - component: {fileID: 3361837363611576673}
-  - component: {fileID: 7917406325648703299}
   - component: {fileID: 5595340305701434280}
   - component: {fileID: 4140258303226467383}
   - component: {fileID: 8738259240144854788}
   m_Layer: 0
   m_Name: Feto
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6169,23 +6168,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.42, y: 1.4118853, z: 2.51}
   m_Center: {x: 0, y: -0.07405801, z: 0}
---- !u!114 &7917406325648703299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4772908383179383906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c546fda51b76b0b4d9789823153242a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasToOpen: {fileID: 0}
-  cameraFirstPerson: {fileID: 0}
-  focusCamera: {fileID: 0}
-  transitionSpeed: 2
-  isCanvasToOpen: 0
 --- !u!114 &5595340305701434280
 MonoBehaviour:
   m_ObjectHideFlags: 0

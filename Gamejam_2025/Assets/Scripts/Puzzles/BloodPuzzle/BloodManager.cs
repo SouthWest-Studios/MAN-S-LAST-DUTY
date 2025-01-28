@@ -26,7 +26,7 @@ public class BloodManager : MonoBehaviour
                 winCounter++;
             }
         }
-        if (winCounter == 0)
+        if (winCounter == 3)
         {
             // Lógica de CheckWin después de la espera
             PuzzleManager puzzleManager = FindAnyObjectByType<PuzzleManager>();
