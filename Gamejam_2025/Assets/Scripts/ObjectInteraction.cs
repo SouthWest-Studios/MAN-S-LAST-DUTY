@@ -103,6 +103,7 @@ public class ObjectInteraction : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             canvasToOpen.SetActive(true);
             cameraFirstPerson.isPanelOpen = true;
+            cameraFirstPerson.crosshairController.gameObject.SetActive(false);
         }
 
         isTransitioning = false;
@@ -117,12 +118,14 @@ public class ObjectInteraction : MonoBehaviour
         {
             canvasToOpen.SetActive(false);
             cameraFirstPerson.isPanelOpen = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         
         focusCamera.gameObject.SetActive(false);
         cameraFirstPerson.gameObject.SetActive(true);
-
+        cameraFirstPerson.crosshairController.gameObject.SetActive(true);
         cameraFirstPerson.transform.position = initialPlayerCameraPosition;
         cameraFirstPerson.transform.rotation = initialPlayerCameraRotation;
 
@@ -131,5 +134,6 @@ public class ObjectInteraction : MonoBehaviour
         
         isTransitioning = false;
         hasSavedInitialTransform = false;
+        
     }
 }

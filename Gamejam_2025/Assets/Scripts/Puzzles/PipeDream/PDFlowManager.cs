@@ -10,9 +10,12 @@ public class PDFlowManager : MonoBehaviour
     public int totalPoints = 8;
     public Image timer;
     public bool winPipes = false;
+    public ObjectInteraction objectInteraction;
 
     private Puzzle puzzle;
     private int seed;
+
+    private PuzzleManager puzzleManager;
 
     private void Awake()
     {
@@ -60,7 +63,11 @@ public class PDFlowManager : MonoBehaviour
 
         if (timer.fillAmount >= 0.98f)
         {
+            objectInteraction.EndFocusTransition();
             winPipes = true;
+            puzzleManager = FindAnyObjectByType<PuzzleManager>();
+            puzzleManager.CompletePuzzle("PipeDreamPuzzle");
+            
         }
         else
         {

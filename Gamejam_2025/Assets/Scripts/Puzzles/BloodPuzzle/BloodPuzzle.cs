@@ -15,9 +15,9 @@ public class BloodPuzzle : MonoBehaviour
 
     private List<Color> originalColor;
 
-   
+    private FetusScript fetusScript;
 
-    
+    public BloodManager manager;
 
 
     void Start()
@@ -52,6 +52,8 @@ public class BloodPuzzle : MonoBehaviour
             }
         }
         sticks[0].gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+       
     }
 
     void Update()
@@ -67,8 +69,8 @@ public class BloodPuzzle : MonoBehaviour
         if (currentNumber > 7)
         {
             currentNumber = 0;
-            this.transform.rotation = inicialRotation;
-            
+            this.transform.rotation = Quaternion.identity;
+            this.transform.localRotation = Quaternion.identity;
 
         }
         else
@@ -86,8 +88,9 @@ public class BloodPuzzle : MonoBehaviour
                 sticks[i].gameObject.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
-
-
+        
+        
+        
     }
     
     public void saveTry()

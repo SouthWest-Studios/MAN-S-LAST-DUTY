@@ -1081,10 +1081,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterPrefab: {fileID: 2126800297988303558, guid: a0bfd240626d15046b930db2745b8a0e,
     type: 3}
-  flowSpeed: 3
+  flowSpeed: 6
   totalPoints: 10
   timer: {fileID: 8608087137961015329}
   winPipes: 0
+  objectInteraction: {fileID: 6063444476908651996}
 --- !u!114 &8904099024636110909
 MonoBehaviour:
   m_ObjectHideFlags: 0
