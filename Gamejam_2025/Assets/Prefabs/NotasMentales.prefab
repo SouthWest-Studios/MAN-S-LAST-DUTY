@@ -1056,14 +1056,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notasMentales: {fileID: 8853093162860474972}
   iconoActualizarNotas: {fileID: 0}
-  numpadCodes: {fileID: 0}
-  wordle: {fileID: 0}
-  tangram: {fileID: 0}
-  periodicTable: {fileID: 0}
-  blood: {fileID: 0}
-  proximidadSonora: {fileID: 0}
-  ondas: {fileID: 0}
-  cordonUmbilical: {fileID: 0}
+  numpadCodes: {fileID: 2735138251690459401}
+  wordle: {fileID: 4167836382832465764}
+  tangram: {fileID: 942921614544435329}
+  periodicTable: {fileID: 9177307198778035684}
+  blood: {fileID: 4468523803983619787}
+  proximidadSonora: {fileID: 6030793138476051523}
+  ondas: {fileID: 2126241277310292923}
+  cordonUmbilical: {fileID: 6366250255280780155}
   numpadCode: {fileID: 2424841852319036192}
   wordleCells:
   - {fileID: 8143191625638824484}
@@ -1120,6 +1120,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4bfebc1af92ad0d4ca95dc6e7ff4b8e1, type: 3}
   - {fileID: 21300000, guid: 06412a1675856b74e887ee6663b57abb, type: 3}
   - {fileID: 21300000, guid: b5d27c6268e89b94699b3baf34cbc707, type: 3}
+  ondaNumero: {fileID: 1979028452452298513}
 --- !u!1 &5713391310433795391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1208,7 @@ GameObject:
   - component: {fileID: 2059279551844361734}
   - component: {fileID: 1979028452452298513}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: texto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
