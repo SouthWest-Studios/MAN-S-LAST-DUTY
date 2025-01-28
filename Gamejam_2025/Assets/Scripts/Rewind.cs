@@ -33,7 +33,7 @@ public class Rewind : MonoBehaviour
 
     [Header("Time Settings")]
     public int resetTime = 60;
-    private int minuteCounter;
+    public int minuteCounter;
     public TextMeshProUGUI minuteText;
 
     [Header("Blur Settings")]
@@ -64,14 +64,14 @@ public class Rewind : MonoBehaviour
     public float vignetteSpeed = 2f;
     public Color targetColor = Color.blue;
 
-    // Variables para el rebote de la distorsión de lente
+    // Variables para el rebote de la distorsiï¿½n de lente
     private bool isLensDistortionRebounding = false;
     private float lensDistortionTime = 0f;
     private float lensDistortionInitialValue = 0f;
-    private float lensDistortionMaxValue = 0.5f; // Tamaño máximo de la distorsión (ajusta según necesites)
-    private int reboundCount = 0;  // Número de repeticiones del rebote
-    private int maxRebounds = 4;   // Máximo número de repeticiones
-    private float reboundIntensityDecay = 0.5f;  // Factor para reducir la intensidad después de cada rebote
+    private float lensDistortionMaxValue = 0.5f; // Tamaï¿½o mï¿½ximo de la distorsiï¿½n (ajusta segï¿½n necesites)
+    private int reboundCount = 0;  // Nï¿½mero de repeticiones del rebote
+    private int maxRebounds = 4;   // Mï¿½ximo nï¿½mero de repeticiones
+    private float reboundIntensityDecay = 0.5f;  // Factor para reducir la intensidad despuï¿½s de cada rebote
 
 
 
@@ -87,7 +87,7 @@ public class Rewind : MonoBehaviour
         InitializeRewind();
         InitializePostProcessing();
         //StartCoroutine(CountdownTimer());
-        StartLensDistortionRebound(); // Inicia el rebote de la distorsión de lente al inicio
+        StartLensDistortionRebound(); // Inicia el rebote de la distorsiï¿½n de lente al inicio
     }
 
     // Update is called once per frame
@@ -141,11 +141,11 @@ public class Rewind : MonoBehaviour
 
         if (!isRewinding && !isLensDistortionRebounding)
         {
-            // Inicia el rebote de la distorsión de lente al final del rewind
+            // Inicia el rebote de la distorsiï¿½n de lente al final del rewind
             StartLensDistortionRebound();
         }
 
-        // Maneja la animación de rebote de la distorsión de lente
+        // Maneja la animaciï¿½n de rebote de la distorsiï¿½n de lente
         if (isLensDistortionRebounding)
         {
             HandleLensDistortionRebound();
@@ -209,7 +209,7 @@ public class Rewind : MonoBehaviour
         }
     }
 
-    // Rewinds el estado del jugador (movimiento y rotación)
+    // Rewinds el estado del jugador (movimiento y rotaciï¿½n)
     private void RewindPlayerState()
     {
         if (timeCounter > currentSmoothTime)
@@ -228,7 +228,7 @@ public class Rewind : MonoBehaviour
             timeCounter += Time.deltaTime;
         }
 
-        // Si no quedan más estados que retroceder, para el rewind
+        // Si no quedan mï¿½s estados que retroceder, para el rewind
         if (positionStack.Count <= 0 && rotationStack.Count <= 0)
         {
             StopRewind();
@@ -251,7 +251,7 @@ public class Rewind : MonoBehaviour
         minuteText.text = minuteCounter.ToString();
     }
 
-    // Temporizador de cuenta regresiva para activar el rewind después de que pase el tiempo
+    // Temporizador de cuenta regresiva para activar el rewind despuï¿½s de que pase el tiempo
     private IEnumerator CountdownTimer()
     {
         while (minuteCounter > 0)
@@ -280,7 +280,7 @@ public class Rewind : MonoBehaviour
         ApplyVignette();
     }
 
-    // Aplica el efecto de aberración cromática
+    // Aplica el efecto de aberraciï¿½n cromï¿½tica
     private void ApplyChromaticAberration()
     {
         if (chromaticAberration != null)
@@ -289,7 +289,7 @@ public class Rewind : MonoBehaviour
         }
     }
 
-    // Aplica el efecto de grano de película
+    // Aplica el efecto de grano de pelï¿½cula
     private void ApplyFilmGrain()
     {
         if (filmGrain != null)
@@ -298,7 +298,7 @@ public class Rewind : MonoBehaviour
         }
     }
 
-    // Aplica el efecto de distorsión de lente
+    // Aplica el efecto de distorsiï¿½n de lente
     private void ApplyLensDistortion()
     {
         if (lensDistortion != null)
@@ -311,7 +311,7 @@ public class Rewind : MonoBehaviour
         }
     }
 
-    // Aplica ajustes de color (tono y saturación)
+    // Aplica ajustes de color (tono y saturaciï¿½n)
     private void ApplyColorAdjustment()
     {
         if (colorAdjustments != null)
@@ -320,7 +320,7 @@ public class Rewind : MonoBehaviour
         }
     }
 
-    // Aplica el efecto de viñeta
+    // Aplica el efecto de viï¿½eta
     private void ApplyVignette()
     {
         if (vignette != null)
@@ -354,7 +354,7 @@ public class Rewind : MonoBehaviour
         }
     }
 
-    // Resetea el blur cuando deshabilitamos el componente o cerramos la aplicación
+    // Resetea el blur cuando deshabilitamos el componente o cerramos la aplicaciï¿½n
     private void OnDisable()
     {
         ResetBlur();
@@ -367,7 +367,7 @@ public class Rewind : MonoBehaviour
         ResetPostProcessingEffects();
     }
 
-    // Inicia el rebote de la distorsión de lente al principio
+    // Inicia el rebote de la distorsiï¿½n de lente al principio
     private void StartLensDistortionRebound()
     {
         isLensDistortionRebounding = true;
@@ -377,14 +377,14 @@ public class Rewind : MonoBehaviour
         reboundCount = 0;  // Reinicia el contador de repeticiones
     }
 
-    // Maneja el rebote de la distorsión de lente (expansión y contracción) con intensidad decreciente
+    // Maneja el rebote de la distorsiï¿½n de lente (expansiï¿½n y contracciï¿½n) con intensidad decreciente
     private void HandleLensDistortionRebound()
     {
         if (reboundCount < maxRebounds)
         {
             if (lensDistortionTime < 1f)
             {
-                // Rebotar la distorsión de lente con una onda (expansión y contracción)
+                // Rebotar la distorsiï¿½n de lente con una onda (expansiï¿½n y contracciï¿½n)
                 lensDistortion.intensity.value = Mathf.Lerp(lensDistortionInitialValue, lensDistortionMaxValue, Mathf.Sin(lensDistortionTime * Mathf.PI));
                 lensDistortionTime += Time.deltaTime * 2f; // Acelera o desacelera el rebote
             }
@@ -398,7 +398,7 @@ public class Rewind : MonoBehaviour
         }
         else
         {
-            // Al finalizar los rebotes, restablece la distorsión de lente a su valor inicial
+            // Al finalizar los rebotes, restablece la distorsiï¿½n de lente a su valor inicial
             lensDistortion.intensity.value = lensDistortionInitialValue;
             isLensDistortionRebounding = false; // Detener el rebote
         }
