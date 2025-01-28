@@ -23,6 +23,7 @@ public class PuzzleManager : MonoBehaviour
     public List<Puzzle> puzzles = new List<Puzzle>();
     private static List<Puzzle> persistentPuzzles = null;
     public static string numpadFinalCode = "1234";
+    public static string numpadActualCode = "****";
 
     [Header("UI Elements")]
     public TextMeshProUGUI completionMessage; // Referencia al objeto del mensaje
