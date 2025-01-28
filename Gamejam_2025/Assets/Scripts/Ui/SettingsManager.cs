@@ -18,6 +18,11 @@ public class SettingsManager : MonoBehaviour
 
     public SettingsManager instance;
 
+    public Slider masterVolumeSlider;
+    public Slider musicVolumeSlider;
+    public Slider voiceVolumeSlider;
+    public Slider sfxVolumeSlider;
+
     private void Awake()
     {
         if(instance == null) { instance = this; }
@@ -36,6 +41,11 @@ public class SettingsManager : MonoBehaviour
 
         configPanel.SetActive(false);
         SetTextTriggers("Out");
+
+        masterVolumeSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
+        musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
+        voiceVolumeSlider.onValueChanged.AddListener(OnVoiceVolumeChanged);
+        sfxVolumeSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
     }
 
     private void Update()
@@ -55,7 +65,7 @@ public class SettingsManager : MonoBehaviour
         {
             TextMeshProUGUI selectedText = selectedObject.GetComponentInChildren<TextMeshProUGUI>();
 
-            // Verificar si el texto seleccionado está dentro de los botones de la izquierda
+            // Verificar si el texto seleccionado estï¿½ dentro de los botones de la izquierda
             int selectedIndex = System.Array.IndexOf(buttonTexts, selectedText);
             if (selectedIndex != -1)
             {
@@ -144,5 +154,25 @@ public class SettingsManager : MonoBehaviour
     public void OnButtonClick(int index)
     {
         panelController.ActivatePanel(index);
+    }
+
+    private void OnMasterVolumeChanged(float value)
+    {
+        VolumeAudioManager.Instance.SetMasterVolume(value / 100f);
+    }
+
+    private void OnMusicVolumeChanged(float value)
+    {
+        VolumeAudioManager.Instance.SetMusicVolume(value / 100f);
+    }
+
+    private void OnVoiceVolumeChanged(float value)
+    {
+        VolumeAudioManager.Instance.SetVoiceVolume(value / 100f);
+    }
+
+    private void OnSFXVolumeChanged(float value)
+    {
+        VolumeAudioManager.Instance.SetSFXVolume(value / 100f);
     }
 }
