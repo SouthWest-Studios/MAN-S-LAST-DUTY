@@ -11,10 +11,13 @@ public class TangramManager : MonoBehaviour
     private PuzzleManager puzzleManager;
     bool allCorrect;
     public GameObject canvas;
+    public List<GameObject> formas;
+    int randForm;
+    public ObjectInteraction objectInteraction;
 
     private void Start()
     {
-        
+        randForm = Random.Range(0, 4);
     }
 
 
@@ -85,7 +88,10 @@ public class TangramManager : MonoBehaviour
         {
             puzzleManager = FindAnyObjectByType<PuzzleManager>();
             puzzleManager.CompletePuzzle("TangramPuzzle");
-            
+            formas[randForm].SetActive(true);
+            objectInteraction.EndFocusTransition();
+            objectInteraction.enabled = false;
+
         }
     }
 
