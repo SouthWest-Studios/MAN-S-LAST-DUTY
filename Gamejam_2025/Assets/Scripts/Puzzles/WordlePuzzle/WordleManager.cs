@@ -11,6 +11,7 @@ public class WordleController : MonoBehaviour
     private PuzzleManager puzzleManager;
     bool allCorrect;
     public GameObject canvas;
+    public GameObject finalText;
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class WordleController : MonoBehaviour
             {
                 puzzleManager = FindAnyObjectByType<PuzzleManager>();
                 puzzleManager.CompletePuzzle("WordlePuzzle");
+                finalText.SetActive(true);
                 return;
             }
         }

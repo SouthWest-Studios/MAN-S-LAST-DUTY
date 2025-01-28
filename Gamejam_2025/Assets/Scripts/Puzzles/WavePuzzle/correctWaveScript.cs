@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System.Collections;
+using UnityEngine.UI;
 
 public class correctWaveScript : MonoBehaviour
 {
@@ -15,40 +17,93 @@ public class correctWaveScript : MonoBehaviour
     public ObjectInteraction trigger;
 
     public PuzzleManager puzzleManager;
+
+    private bool canShowWave = true;
+
+    public Button button;
+
+    int randomIndex;
+
+    public List<GameObject> correctWaves;
+
+    public GameObject finalText;
+
+
     void Start()
     {
         puzzleManager = FindAnyObjectByType<PuzzleManager>();
 
         int childCount = transform.childCount;
-
-        int randomIndex = Random.Range(0, childCount);
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        randomIndex = Random.Range(1, 5);
 
         correctWaveNum = randomIndex;
 
-        for (int i = 0; i < childCount; i++)
-        {
-            transform.GetChild(i).gameObject.SetActive(i == randomIndex);
-        }
-        gameObject.SetActive(false);
+        
+        
+
+        canShowWave = true;
     }
 
+    private void Update()
+    {
+        if (!canShowWave)
+        {
+            button.interactable = false;
+        }
+        else
+        {
+            button.interactable = true;
+        }
+
+        if (primerCuadranteCheck && segundoCuadranteCheck && tercerCuadranteCheck && cuartoCuadranteCheck)
+        {
+            puzzleManager.CompletePuzzle("WavePuzzle");
+            finalText.SetActive(true);
+            trigger.EndFocusTransition();
+            trigger.enabled = false;
+        }
+    }
     public void ShowCorrectWave()
     {
-        gameObject.SetActive(true);
+        if (!canShowWave)
+        {
+            
+            Debug.Log("ShowCorrectWave bloqueado por cooldown.");
+            return;
+        }
+        
+        Debug.Log("Ejecutando ShowCorrectWave.");
+        canShowWave = false;
+        int childCount = transform.childCount;
+
+        correctWaves[randomIndex - 1].SetActive(true);
+
+
         StartCoroutine(DeactivateAfterDelay(0.2f));
+        StartCoroutine(ResetWaveCooldown(4f));
     }
+
 
     private System.Collections.IEnumerator DeactivateAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        gameObject.SetActive(false);
+        int childCount = transform.childCount;
+
+        correctWaves[randomIndex - 1].SetActive(false);
+    }
+
+    private IEnumerator ResetWaveCooldown(float cooldown)
+    {
+        yield return new WaitForSeconds(cooldown);
+        canShowWave = true; // Permitimos que la función pueda ejecutarse nuevamente
     }
 
     public void CheckWin(int numero, int cuadrante)
     {
         if (cuadrante == 1)
         {
-            if (numero == correctWaveNum + 1)
+            if (numero == correctWaveNum)
             {
                 primerCuadranteCheck = true;
             }
@@ -59,7 +114,7 @@ public class correctWaveScript : MonoBehaviour
         }
         if (cuadrante == 2)
         {
-            if (numero == correctWaveNum + 1)
+            if (numero == correctWaveNum)
             {
                 segundoCuadranteCheck = true;
             }
@@ -70,7 +125,7 @@ public class correctWaveScript : MonoBehaviour
         }
         if (cuadrante == 3)
         {
-            if (numero == correctWaveNum + 1)
+            if (numero == correctWaveNum)
             {
                 tercerCuadranteCheck = true;
             }
@@ -81,7 +136,7 @@ public class correctWaveScript : MonoBehaviour
         }
         if (cuadrante == 4)
         {
-            if (numero == correctWaveNum + 1)
+            if (numero == correctWaveNum)
             {
                 cuartoCuadranteCheck = true;
             }
@@ -91,9 +146,6 @@ public class correctWaveScript : MonoBehaviour
             }
         }
 
-        if(primerCuadranteCheck && segundoCuadranteCheck && tercerCuadranteCheck && cuartoCuadranteCheck)
-        {
-            puzzleManager.CompletePuzzle("WavePuzzle");
-        }
+        
     }
 }
