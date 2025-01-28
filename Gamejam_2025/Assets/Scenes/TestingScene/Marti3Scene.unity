@@ -20605,21 +20605,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 16294216446148430, guid: 144055c3ff2175f409a4304afc015cb9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1313651608458330782, guid: 144055c3ff2175f409a4304afc015cb9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1580771900353743342, guid: 144055c3ff2175f409a4304afc015cb9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.2
-      objectReference: {fileID: 0}
     - target: {fileID: 2333587895621402787, guid: 144055c3ff2175f409a4304afc015cb9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20674,11 +20659,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Feto
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484901482258554479, guid: 144055c3ff2175f409a4304afc015cb9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
