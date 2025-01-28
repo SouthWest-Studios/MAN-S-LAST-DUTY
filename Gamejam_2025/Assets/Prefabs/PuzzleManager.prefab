@@ -88,7 +88,19 @@ MonoBehaviour:
     isReseteable: 0
     isGiven: 0
     seed: 0
-  - name: 'UmbilicalCord '
+  - name: TangramPuzzle
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 1
+    isGiven: 0
+    seed: 0
+  - name: BloodPuzzle
+    isCompleted: 0
+    itHasbeenCompleted: 0
+    isReseteable: 1
+    isGiven: 0
+    seed: 0
+  - name: ProximidadSonoraPuzzle
     isCompleted: 0
     itHasbeenCompleted: 0
     isReseteable: 1
@@ -156,7 +168,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &5970817979275446103
 MonoBehaviour:

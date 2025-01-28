@@ -8,6 +8,8 @@ TagManager:
   - SaveZone
   - Slot
   - Grabbable
+  - Music
+  - Voice
   layers:
   - Default
   - TransparentFX

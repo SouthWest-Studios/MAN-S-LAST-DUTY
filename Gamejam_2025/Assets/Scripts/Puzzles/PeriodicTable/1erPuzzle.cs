@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PeriodicPuzzle : MonoBehaviour
 {
-    public int correctNum;
+    public static int correctNum;
     
     public TextMeshPro hintNumText;
     private int hintNum;
