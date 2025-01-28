@@ -61,10 +61,14 @@ public class CordonUmbilical : MonoBehaviour
     private Vector3[] originalScales;
     private bool gameWon = false;
     private int currentObjectGroup = -1; // Grupo actual de objetos
+    private bool isPuzzleComplete = false; // Añadir esta variable
 
     [Header("Post-Selection")]
     [SerializeField] private GameObject objectToActivate;
     [SerializeField] private float deactivationDelay = 2f;
+    [SerializeField] private GameObject prefabToSpawn; // Añadir esta variable
+    [SerializeField] private Vector3 spawnPosition; // Opcional: posición donde aparecerá el prefab
+    [SerializeField] private GameObject[] objectsToDeactivate; // Añadir este array
 
     void Start()
     {
@@ -120,6 +124,9 @@ public class CordonUmbilical : MonoBehaviour
 
     void Update()
     {
+        // Añadir verificación al inicio del Update
+        if (isPuzzleComplete) return;
+
         if (targetCanvas != null && targetCanvas.activeSelf && !isPuzzleActive)
         {
             ActivatePuzzle();
@@ -415,14 +422,55 @@ public class CordonUmbilical : MonoBehaviour
     {
         yield return new WaitForSeconds(deactivationDelay);
 
-        // Desactivar el GameObject completo que contiene este script
+        // Instanciar el prefab antes de desactivar
+        if (prefabToSpawn != null)
+        {
+            Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+        }
+
         // Activar el objeto especificado
         if (objectToActivate != null)
         {
             objectToActivate.SetActive(true);
         }
-        gameObject.SetActive(false);
 
+        // Desactivar el script ObjectInteraction y su collider
+        if (objectInteraction != null)
+        {
+            objectInteraction.enabled = false;
+            Collider collider = objectInteraction.GetComponent<Collider>();
+            if (collider != null)
+            {
+                collider.enabled = false;
+            }
+        }
+
+        // Desactivar todos los objetos del array
+        foreach (GameObject obj in objectsToDeactivate)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(false);
+            }
+        }
+
+        // Marcar el puzzle como completado
+        isPuzzleComplete = true;
+        
+        // Desactivar elementos visuales
+        if (targetCanvas != null)
+        {
+            targetCanvas.SetActive(false);
+        }
+        foreach (GameObject pivotObj in pivotObjects)
+        {
+            if (pivotObj != null)
+            {
+                pivotObj.SetActive(false);
+            }
+        }
+        
+        //gameObject.SetActive(false);
     }
 
     private void EndPuzzle()
