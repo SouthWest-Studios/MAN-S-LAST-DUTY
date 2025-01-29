@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SimonGameManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class SimonGameManager : MonoBehaviour
     private bool gameFinished = false;
     public TraumaInducer shakeEffect;
     public float errorShakeIntensity = 0.3f;
+
+    public TextMeshPro finalText;
 
     private PuzzleManager puzzleManager;
 
@@ -122,6 +125,25 @@ public class SimonGameManager : MonoBehaviour
                         puzzleManager = FindObjectOfType<PuzzleManager>();
                         puzzleManager.CompletePuzzle("SimonSaysPuzzle");
                         gameFinished = true;
+
+                        int indexCode = 0;
+                        finalText.gameObject.SetActive(true);
+                        finalText.text = PuzzleManager.numpadFinalCode[indexCode].ToString() + "***";
+
+                        char[] auxList = PuzzleManager.numpadActualCode.ToCharArray();
+                        auxList[indexCode] = PuzzleManager.numpadFinalCode[indexCode];
+                        string finalCharacters = "";
+                        for (int i = 0; i < auxList.Length; i++)
+                        {
+                            finalCharacters += auxList[i].ToString();
+                        }
+                        PuzzleManager.numpadActualCode = finalCharacters;
+
+                        for(int i = 0; i < buttons.Count; i++)
+                        {
+                            buttons[i].gameObject.SetActive(false);
+                        }
+                        
                     }
 
                     
