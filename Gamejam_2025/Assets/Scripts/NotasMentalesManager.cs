@@ -11,6 +11,7 @@ public class NotasMentalesManager : MonoBehaviour
     public GameObject notasMentales;
     public GameObject iconoActualizarNotas;
     public Animator notasMentalesAnimator;
+    public Animator brainAnimator;
 
     public static NotasMentalesManager instance;
     private bool isOpened = false;
@@ -180,7 +181,7 @@ public class NotasMentalesManager : MonoBehaviour
 
     public void ShowDrawIcon()
     {
-
+        brainAnimator.Play("brainEnter");
     }
 
 

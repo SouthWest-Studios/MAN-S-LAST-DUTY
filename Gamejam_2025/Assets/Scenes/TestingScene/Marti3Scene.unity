@@ -783,33 +783,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66448027}
   m_CullTransparentMesh: 1
---- !u!1 &67117644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8853093162860474972, guid: 1d4324d5d4502df468865913cda8cc80,
-    type: 3}
-  m_PrefabInstance: {fileID: 2879858409153710818}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &67117648
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 67117644}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d044e718f9aed7745b002fdd83af7361, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &73810871
 GameObject:
   m_ObjectHideFlags: 0
@@ -12887,6 +12860,7 @@ MonoBehaviour:
   lightOffTime: 0.3
   shakeEffect: {fileID: 1268962380}
   errorShakeIntensity: 0.3
+  finalText: {fileID: 0}
 --- !u!114 &1268962380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20517,11 +20491,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 645993915373326496, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 909807478194262584, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20572,192 +20541,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1004680770042853978, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1175959631471273684, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385271556935855550, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1702619847996506060, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718557147116437070, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718557147116437070, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 16777215
-      objectReference: {fileID: 0}
-    - target: {fileID: 1956065104025214082, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1979028452452298513, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1979028452452298513, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 16777215
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424841852319036192, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424841852319036192, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 16777215
-      objectReference: {fileID: 0}
-    - target: {fileID: 2574000491193738230, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643631460247427633, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3113184628303900384, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304385471774505152, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3409828733620800184, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3723423994450468128, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806713836747585647, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3838688098102641698, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3840455405172610165, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856067155581855238, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: notasMentalesAnimator
-      value: 
-      objectReference: {fileID: 67117648}
-    - target: {fileID: 5196370625722004845, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5461082591577206784, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5461082591577206784, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 16777215
-      objectReference: {fileID: 0}
     - target: {fileID: 5475812835721557026, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_Name
       value: NotasMentales
       objectReference: {fileID: 0}
-    - target: {fileID: 5597384430702076117, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614554973411883374, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6818153982420268145, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6872842330822848579, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7062699490780037590, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102383076650995429, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7671403329138785497, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8143191625638824484, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290178329138972261, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8354843077029705967, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8399988087647105880, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720348283113782082, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033452693950453307, guid: 1d4324d5d4502df468865913cda8cc80,
+    - target: {fileID: 8149446576046322332, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -20765,11 +20554,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8853093162860474972, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 67117648}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d4324d5d4502df468865913cda8cc80, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
