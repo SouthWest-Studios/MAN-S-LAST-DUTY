@@ -424,7 +424,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -758,6 +758,11 @@ MonoBehaviour:
   errorShakeIntensity: 0.3
   currentLevel: 1
   levelText: {fileID: 8529503250945338443}
+  copylevel1Sum: 0
+  copylevel2Sum: 0
+  copylevel3Sum: 0
+  navigationManager: {fileID: 0}
+  clickCooldown: 1.5
 --- !u!82 &9012978512784823328
 AudioSource:
   m_ObjectHideFlags: 0
@@ -892,6 +897,8 @@ MonoBehaviour:
   focusCamera: {fileID: 5230580511881564132}
   transitionSpeed: 2
   isCanvasToOpen: 1
+  canvasAnimator: {fileID: 0}
+  player: {fileID: 0}
 --- !u!82 &4974178341622581054
 AudioSource:
   m_ObjectHideFlags: 0
