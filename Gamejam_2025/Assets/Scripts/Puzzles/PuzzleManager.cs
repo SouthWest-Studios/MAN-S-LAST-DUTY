@@ -33,6 +33,12 @@ public class PuzzleManager : MonoBehaviour
 
     private FetusScript fetus;
 
+
+    [Header("Idioma")]
+    public int idiomaIndex = 0; //0 ESP, 1 ENG, 2 CAT
+
+
+
     void Awake()
     {
         // Asegurarse de que solo exista una instancia de PuzzleManager
@@ -247,6 +253,16 @@ public class PuzzleManager : MonoBehaviour
 
         SaveGame(); // Guarda el estado inicial
         Debug.Log("Nueva partida iniciada.");
+    }
+
+
+    public void CambiarIdioma()
+    {
+        idiomaIndex++;
+        if(idiomaIndex >= 3)
+        {
+            idiomaIndex = 0;
+        }
     }
 
 }
