@@ -2539,10 +2539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e02ea9c7c3f8c448d3b1718ea0eb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blood:
-  - {fileID: 6693547504477841021}
-  - {fileID: 6823390541582214112}
-  - {fileID: 3485922939571934263}
   bloodTube: {fileID: 7157285475196094796}
 --- !u!1 &2428323113008473080
 GameObject:
@@ -8094,7 +8090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 8256028638566184312}
   moveDistance: 40
-  animationSpeed: 1
+  animationSpeed: 4
 --- !u!1 &8256028638566184312 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3797605738333172092, guid: a5b0f132aa41b534097ffb186a1bc164,
