@@ -73,8 +73,7 @@ public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             canvasGroup.blocksRaycasts = true;
         }
-        fetus = FindAnyObjectByType<FetusScript>();
-        fetus.currentHint = "WordlePuzzle";
+        
     }
 
     public void OnPointerClick(PointerEventData eventData)

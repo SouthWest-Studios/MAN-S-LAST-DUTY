@@ -12,10 +12,22 @@ public class FetusScript : MonoBehaviour
     private BloodManager bloodManager;
     private GrabObjects grabObjects; 
 
+    private bool showHints = true;
+
 
     void Start()
     {
         grabObjects = FindObjectOfType<GrabObjects>();
+        
+    }
+
+    private void Update()
+    {
+        if (showHints)
+        {
+            ShowHints();
+            showHints = false;
+        }
     }
 
     public void FetusInteract()
@@ -35,6 +47,7 @@ public class FetusScript : MonoBehaviour
 
         if(currentHint != null)
         {
+
             if(currentHint == "WordlePuzzle")
             {
                 
@@ -52,7 +65,7 @@ public class FetusScript : MonoBehaviour
                 }
                 
             }
-
+            manager.GiveHint(currentHint);
         }
 
         if (grabObjects != null && grabObjects.GetHeldObject() != null)
@@ -69,9 +82,11 @@ public class FetusScript : MonoBehaviour
 
         for (int i = 0; i < manager.puzzles.Count; i++)
         {
-            if (manager.puzzles[i].isGiven && manager.puzzles[i].name == "WordlePuzzle")
+            if (manager.puzzles[i].isHintGiven && manager.puzzles[i].name == "WordlePuzzle")
             {
+                wordleController = FindAnyObjectByType<WordleController>();
                 wordleController.CheckCombination();
+                manager.puzzles[i].isHintGiven = false;
             }
         }
 

@@ -13,7 +13,8 @@ public class Puzzle
     public bool isCompleted = false;
     public bool itHasbeenCompleted = false;
     public bool isReseteable = false;
-    public bool isGiven = false;
+    public bool isPuzzleGiven = false;
+    public bool isHintGiven = false;
     public int seed;
 }
 public class PuzzleManager : MonoBehaviour
@@ -91,8 +92,22 @@ public class PuzzleManager : MonoBehaviour
         {
             if (puzzle.name == puzzleName)
             {
-                puzzle.isGiven = true;
+                puzzle.isPuzzleGiven = true;
                 ShowCompletionMessage("Puzzle Entregado");
+                return;
+            }
+        }
+
+    }
+
+    public void GiveHint(string puzzleName)
+    {
+        foreach (var puzzle in puzzles)
+        {
+            if (puzzle.name == puzzleName)
+            {
+                puzzle.isHintGiven = true;
+                ShowCompletionMessage("Pista Entregada");
                 return;
             }
         }
@@ -193,10 +208,11 @@ public class PuzzleManager : MonoBehaviour
         for (int i = 0; i < puzzles.Count; i++)
         {
             PlayerPrefs.SetString($"Puzzle_{i}_name", puzzles[i].name);
-            PlayerPrefs.SetInt($"Puzzle_{i}_isCompleted", puzzles[i].isCompleted ? 1 : 0);
+            //PlayerPrefs.SetInt($"Puzzle_{i}_isCompleted", puzzles[i].isCompleted ? 1 : 0);
             PlayerPrefs.SetInt($"Puzzle_{i}_itHasbeenCompleted", puzzles[i].itHasbeenCompleted ? 1 : 0);
             PlayerPrefs.SetInt($"Puzzle_{i}_isReseteable", puzzles[i].isReseteable ? 1 : 0);
-            PlayerPrefs.SetInt($"Puzzle_{i}_isGiven", puzzles[i].isGiven ? 1 : 0);
+            //PlayerPrefs.SetInt($"Puzzle_{i}_isGiven", puzzles[i].isPuzzleGiven ? 1 : 0);
+            PlayerPrefs.SetInt($"Puzzle_{i}_isHintGiven", puzzles[i].isHintGiven ? 1 : 0);
             PlayerPrefs.SetInt($"Puzzle_{i}_seed", puzzles[i].seed);
         }
 
@@ -222,10 +238,11 @@ public class PuzzleManager : MonoBehaviour
             Puzzle puzzle = new Puzzle
             {
                 name = PlayerPrefs.GetString($"Puzzle_{i}_name", ""),
-                isCompleted = PlayerPrefs.GetInt($"Puzzle_{i}_isCompleted", 0) == 1,
+                //isCompleted = PlayerPrefs.GetInt($"Puzzle_{i}_isCompleted", 0) == 1,
                 itHasbeenCompleted = PlayerPrefs.GetInt($"Puzzle_{i}_itHasbeenCompleted", 0) == 1,
                 isReseteable = PlayerPrefs.GetInt($"Puzzle_{i}_isReseteable", 0) == 1,
-                isGiven = PlayerPrefs.GetInt($"Puzzle_{i}_isGiven", 0) == 1,
+                //isPuzzleGiven = PlayerPrefs.GetInt($"Puzzle_{i}_isGiven", 0) == 1,
+                isHintGiven = PlayerPrefs.GetInt($"Puzzle_{i}_isHintGiven", 0) == 1,
                 seed = PlayerPrefs.GetInt($"Puzzle_{i}_seed", 0)
             };
 
@@ -247,7 +264,8 @@ public class PuzzleManager : MonoBehaviour
         {
             puzzle.isCompleted = false;
             puzzle.itHasbeenCompleted = false;
-            puzzle.isGiven = false;
+            puzzle.isPuzzleGiven = false;
+            puzzle.isHintGiven = false;
             puzzle.seed = Random.Range(0, 100000); // Genera una semilla aleatoria
         }
 

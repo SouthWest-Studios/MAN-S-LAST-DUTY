@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class WordleController : MonoBehaviour
 {
-    public static List<SlotScript> slots; // Lista de todos los slots
+    public List<SlotScript> slots; // Lista de todos los slots
     public int numberOfSlots = 5; // Número de slots en el juego
     public int maxMoleculeID = 11; // Rango máximo de IDs de moléculas
     public static List<int> correctCombination; // Lista de la combinación correcta
@@ -59,6 +59,7 @@ public class WordleController : MonoBehaviour
                 puzzleManager.CompletePuzzle("WordlePuzzle");
                 //finalText.SetActive(true);
                 trigger.EndFocusTransition();
+                //trigger.gameObject.GetComponent<Collider>().enabled = false;
                 trigger.enabled = false;
                 return;
             }

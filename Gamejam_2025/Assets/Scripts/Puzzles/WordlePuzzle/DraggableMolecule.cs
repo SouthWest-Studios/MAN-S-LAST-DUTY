@@ -82,7 +82,7 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
             canvasGroup.blocksRaycasts = true;
         }
         fetus = FindAnyObjectByType<FetusScript>();
-        fetus.currentHint = "WordlePuzzle";
+        
     }
 
     private Transform GetClosestSlot()

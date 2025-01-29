@@ -21,13 +21,15 @@ public class SimonGameManager : MonoBehaviour
 
     private PuzzleManager puzzleManager;
 
-    private int seed = 1;
+    private int seed;
 
     private Puzzle puzzle;
 
     void Start()
     {
         puzzle = PuzzleManager.instance.GetPuzzle("SimonSaysPuzzle");
+
+        
         if (puzzle != null)
         {
             seed = puzzle.seed;
@@ -95,7 +97,9 @@ public class SimonGameManager : MonoBehaviour
     {
         if (!gameStarted)
         {
+            int random1 = Random.Range(0, 1000);
             Random.InitState(seed);
+            int random2 = Random.Range(0, 1000);
             StartCoroutine(StartGame());
             gameStarted = true;
         }
