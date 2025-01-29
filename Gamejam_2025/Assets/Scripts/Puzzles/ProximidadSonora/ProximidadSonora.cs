@@ -69,7 +69,9 @@ public class ProximidadSonora : MonoBehaviour
 
     public NavigationManager navigationManager;
 
- 
+    [Header("Click Settings")]
+    public float clickCooldown = 3f;
+    private float lastClickTime = -3f;
 
     private void Start()
     {
@@ -231,8 +233,9 @@ public class ProximidadSonora : MonoBehaviour
 
         UpdateAudioFeedback(gridPosition);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time >= lastClickTime + clickCooldown)
         {
+            lastClickTime = Time.time;
             CheckHit(gridPosition);
         }
     }
@@ -277,12 +280,12 @@ public class ProximidadSonora : MonoBehaviour
             if (currentLevel < 3)
             {
                 currentLevel++;
-                StartCoroutine(StartNextLevelAfterDelay(2f));
+                StartCoroutine(StartNextLevelAfterDelay(1f));
             }
             else
             {
                 gameActive = false;
-                StartCoroutine(CloseGameAfterDelay(2f));
+                StartCoroutine(CloseGameAfterDelay(1f));
             }
         }
         else 
