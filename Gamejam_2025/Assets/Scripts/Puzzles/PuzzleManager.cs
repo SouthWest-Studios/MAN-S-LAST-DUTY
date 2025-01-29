@@ -38,7 +38,7 @@ public class PuzzleManager : MonoBehaviour
     [Header("Idioma")]
     public int idiomaIndex = 0; //0 ESP, 1 ENG, 2 CAT
 
-    public List<int> wordleFinalList = new List<int>();
+    public List<Vector3> wordleFinalList = new List<Vector3>();
 
 
 
@@ -46,7 +46,7 @@ public class PuzzleManager : MonoBehaviour
     {
         for(int i = 0; i < 5; i++)
         {
-            wordleFinalList.Add(-1);
+            wordleFinalList.Add(new Vector3(-1,-1,-1));
         }
         // Asegurarse de que solo exista una instancia de PuzzleManager
         if (instance == null)
