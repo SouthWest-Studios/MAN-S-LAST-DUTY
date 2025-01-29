@@ -33,6 +33,8 @@ public class correctWaveScript : MonoBehaviour
 
     public static int[] finalRandNum = new int[4];
 
+    public NavigationManager navigationManager;
+
 
     void Start()
     {
@@ -43,9 +45,20 @@ public class correctWaveScript : MonoBehaviour
         randomIndex = Random.Range(1, 5);
 
         correctWaveNum = randomIndex;
+        finalRandNum = new int[4];
 
-        
+        for (int i = 0; i < finalRandNum.Length; i++)
+        {
+            finalRandNum[i] = Random.Range(0, 10);
+        }
 
+        finalText.text = finalRandNum[0].ToString() + finalRandNum[1].ToString() + finalRandNum[2].ToString() + finalRandNum[3].ToString();
+
+        Debug.Log("wave number = " +  finalText.text);
+
+        navigationManager.InitializeNavigationWaves();
+
+        this.gameObject.SetActive(false);
 
         canShowWave = true;
     }
@@ -155,14 +168,7 @@ public class correctWaveScript : MonoBehaviour
             puzzleManager.CompletePuzzle("WavePuzzle");
             finalText.gameObject.SetActive(true);
 
-            finalRandNum = new int[4];
-
-            for (int i = 0; i < finalRandNum.Length; i++)
-            {
-                finalRandNum[i] = Random.Range(0, 10);
-            }
-
-            finalText.text = finalRandNum[0].ToString() + finalRandNum[1].ToString() + finalRandNum[2].ToString() + finalRandNum[3].ToString();
+            
 
 
 
