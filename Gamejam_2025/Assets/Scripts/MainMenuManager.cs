@@ -35,6 +35,8 @@ public class MainMenuManager : MonoBehaviour
 
 
     public AudioClip turnOffMonitor_AC;
+    public AudioClip popOpen_AC;
+    public AudioClip popClose_AC;
 
   
 
@@ -161,6 +163,16 @@ public class MainMenuManager : MonoBehaviour
     {
         transform.gameObject.SetActive(false);
         //Si tiene animacion, getAnimator play out
+    }
+
+    public void PlayPopOpen()
+    {
+        generalAudioSource.PlayOneShot(popOpen_AC);
+    }
+
+    public void PlayPopClose()
+    {
+        generalAudioSource.PlayOneShot(popClose_AC);
     }
 
 
