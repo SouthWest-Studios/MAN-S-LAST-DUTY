@@ -13976,6 +13976,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &574078203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5496045600653356845, guid: b07f96431074ffc459ba987b4e42caf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7605073970867420326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &576892881
 GameObject:
   m_ObjectHideFlags: 0
@@ -19430,6 +19436,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817203603}
   m_Mesh: {fileID: 4300000, guid: 50d5441fe077a466f8313250ca58e409, type: 3}
+--- !u!1 &820609592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5623800215893750197, guid: b07f96431074ffc459ba987b4e42caf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7605073970867420326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &821322228
 GameObject:
   m_ObjectHideFlags: 0
@@ -25037,6 +25049,12 @@ Transform:
   - {fileID: 1043525129}
   m_Father: {fileID: 1727648422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1085372459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 427853291773757716, guid: b07f96431074ffc459ba987b4e42caf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7605073970867420326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093436423
 GameObject:
   m_ObjectHideFlags: 0
@@ -42483,6 +42501,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1922675736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1026299311175498367, guid: b07f96431074ffc459ba987b4e42caf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7605073970867420326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1934497138
 GameObject:
   m_ObjectHideFlags: 0
@@ -48096,16 +48120,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 110234651830221881, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136853440870893737, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
         type: 3}
       propertyPath: puzzleManager
@@ -48116,6 +48130,51 @@ PrefabInstance:
       propertyPath: navigationManager
       value: 
       objectReference: {fileID: 131840217}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.data[0]
+      value: 
+      objectReference: {fileID: 1085372459}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.data[1]
+      value: 
+      objectReference: {fileID: 1922675736}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.data[2]
+      value: 
+      objectReference: {fileID: 820609592}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.data[3]
+      value: 
+      objectReference: {fileID: 574078203}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.data[4]
+      value: 
+      objectReference: {fileID: 1085372459}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.data[5]
+      value: 
+      objectReference: {fileID: 1922675736}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.data[6]
+      value: 
+      objectReference: {fileID: 820609592}
+    - target: {fileID: 473439931458418833, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: correctWaves.Array.data[7]
+      value: 
+      objectReference: {fileID: 574078203}
     - target: {fileID: 492803818799053830, guid: b07f96431074ffc459ba987b4e42caf7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48166,36 +48225,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 939896499938090142, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813254840909786351, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813254840909786351, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: puzzleManager
-      value: 
-      objectReference: {fileID: 1114122497}
-    - target: {fileID: 1813254840909786351, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: navigationManager
-      value: 
-      objectReference: {fileID: 131840217}
-    - target: {fileID: 1908950373239270644, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1921887788977274582, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2541967901986600238, guid: b07f96431074ffc459ba987b4e42caf7,
         type: 3}
       propertyPath: player
@@ -48210,85 +48239,33 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 99835360}
     - target: {fileID: 3591620098134113195, guid: b07f96431074ffc459ba987b4e42caf7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
+      objectReference: {fileID: 99835360}
+    - target: {fileID: 3591620098134113195, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckWin2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591620098134113195, guid: b07f96431074ffc459ba987b4e42caf7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowCorrectWave
       objectReference: {fileID: 0}
     - target: {fileID: 3620491846924289051, guid: b07f96431074ffc459ba987b4e42caf7,
         type: 3}
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 1114122497}
-    - target: {fileID: 4137504273147160373, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148757866417610874, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4318035384366408273, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5351742941924913612, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5505297597695699381, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6056518003775620796, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326517519677643857, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7339082949652743788, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7363634759686363689, guid: b07f96431074ffc459ba987b4e42caf7,
         type: 3}
       propertyPath: m_Name
       value: WaveProblem
       objectReference: {fileID: 0}
-    - target: {fileID: 7593156306004737198, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455838648309117219, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9146562940960141677, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 9147853328967212093, guid: b07f96431074ffc459ba987b4e42caf7,
-        type: 3}
-      propertyPath: correctWaveScript
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 110234651830221881, guid: b07f96431074ffc459ba987b4e42caf7, type: 3}
-    - {fileID: 1813254840909786351, guid: b07f96431074ffc459ba987b4e42caf7, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

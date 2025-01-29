@@ -38,7 +38,7 @@ public class GuitarHero : MonoBehaviour
     private BoxCollider carril3Collider;
 
     [Header("Audio")]
-    [SerializeField] private AudioSource[] buttonSounds = new AudioSource[4]; 
+    [SerializeField] private AudioSource buttonSound;
 
     private float posicionOriginalBoton;
     private const float POSICION_PRESIONADO = -0.9891f;
@@ -50,6 +50,9 @@ public class GuitarHero : MonoBehaviour
     private Coroutine generarLucesCoroutine;
     private Coroutine[] moverLucesCoroutines = new Coroutine[3];
     public Button start;
+
+    private System.Random randomGenerator = new System.Random();
+    private bool juegoCompletado = false;
 
     void Start()
     {
@@ -80,9 +83,9 @@ public class GuitarHero : MonoBehaviour
     {
         if (botonComenzar != null)
         {
-            if (buttonSounds[0] != null)
+            if (buttonSound != null)
             {
-                buttonSounds[0].Play();
+                buttonSound.Play();
             }
 
             Vector3 posOriginal = botonComenzar.transform.localPosition;
@@ -186,9 +189,9 @@ public class GuitarHero : MonoBehaviour
     {
         if (boton != null)
         {
-            if (buttonSounds[carril + 1] != null)
+            if (buttonSound != null)
             {
-                buttonSounds[carril + 1].Play();
+                buttonSound.Play();
             }
 
             Vector3 posOriginal = boton.transform.localPosition;
@@ -278,10 +281,14 @@ public class GuitarHero : MonoBehaviour
 
     private void CompletarJuego()
     {
+        if (juegoCompletado) return;
+        
+        juegoCompletado = true;
+        juegoActivo = false;
+        
         puzzlemanager = FindObjectOfType<PuzzleManager>();
         puzzlemanager.CompletePuzzle("GuitarHeroPuzzle");
         
-        // Get and display the third digit
         if (numeroResultado != null)
         {
             int indexCode = 2;
@@ -299,13 +306,23 @@ public class GuitarHero : MonoBehaviour
         }
         
         Debug.Log("¡Victoria! (desbloquea simon dice)");
+        
+        // Limpiar el estado del juego
+        StopAllCoroutines();
+        ApagarTodasLasLuces();
+        SetCarrilesColliders(false);
+        
+        if (start != null)
+        {
+            start.interactable = false;
+        }
     }
 
     IEnumerator GenerarLuces()
     {
         while (juegoActivo)
         {
-            int carrilSeleccionado = Random.Range(0, 3);
+            int carrilSeleccionado = randomGenerator.Next(0, 3);
             GameObject[] carrilActual = carrilSeleccionado == 0 ? carril1 : 
                                       carrilSeleccionado == 1 ? carril2 : carril3;
             

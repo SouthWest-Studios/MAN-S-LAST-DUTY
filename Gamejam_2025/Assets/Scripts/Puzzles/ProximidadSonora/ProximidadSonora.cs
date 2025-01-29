@@ -200,6 +200,9 @@ public class ProximidadSonora : MonoBehaviour
         targetPosition = target2D;
         // Guardamos también un valor Z para el nivel 3
         targetPosition3D = new Vector3(target2D.x, target2D.y, Random.Range(0, gridHeight));
+        
+        Debug.Log("New Target Position 2D: " + targetPosition);
+        Debug.Log("New Target Position 3D: " + targetPosition3D);
     }
 
     private void Update()

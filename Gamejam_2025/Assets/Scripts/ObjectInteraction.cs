@@ -17,9 +17,9 @@ public class ObjectInteraction : MonoBehaviour
     private Quaternion initialPlayerCameraRotation;
     private bool hasSavedInitialTransform = false;
 
-    public Animator canvasAnimator; // Referencia al Animator del canvas
 
     public FirstPersonMovement player;
+    public Animator canvasAnimator; // Referencia al Animator del canvas
 
     private void OnTriggerEnter(Collider other)
     {

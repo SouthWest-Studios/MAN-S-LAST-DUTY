@@ -3,20 +3,27 @@ using UnityEngine;
 
 public class BloodButtonAnimation : MonoBehaviour
 {
-    public GameObject button; // Asigna el botón en el inspector
-    public float moveDistance = 40f; // Distancia que se moverá en el eje Y
-    public float animationSpeed = 2f; // Velocidad de la animación
+    public GameObject button; // Asigna el botï¿½n en el inspector
+    public float moveDistance = 40f; // Distancia que se moverï¿½ en el eje Y
+    public float animationSpeed = 2f; // Velocidad de la animaciï¿½n
+    [SerializeField] private AudioSource buttonSound;
 
     public void ButtonDown()
     {
-        // Inicia la corutina para mover el botón
+        // Inicia la corutina para mover el botï¿½n
         StartCoroutine(AnimateButton());
     }
 
     private IEnumerator AnimateButton()
     {
-        Vector3 startPosition = button.transform.localPosition; // Posición inicial
-        Vector3 downPosition = startPosition - new Vector3(0, moveDistance, 0); // Posición hacia abajo
+        // Reproducir el sonido al inicio de la animaciÃ³n
+        if (buttonSound != null)
+        {
+            buttonSound.Play();
+        }
+
+        Vector3 startPosition = button.transform.localPosition; // Posiciï¿½n inicial
+        Vector3 downPosition = startPosition - new Vector3(0, moveDistance, 0); // Posiciï¿½n hacia abajo
 
         float elapsedTime = 0f;
 
@@ -38,7 +45,7 @@ public class BloodButtonAnimation : MonoBehaviour
             yield return null;
         }
 
-        // Asegurarse de que vuelva exactamente a la posición inicial
+        // Asegurarse de que vuelva exactamente a la posiciï¿½n inicial
         button.transform.localPosition = startPosition;
     }
 }

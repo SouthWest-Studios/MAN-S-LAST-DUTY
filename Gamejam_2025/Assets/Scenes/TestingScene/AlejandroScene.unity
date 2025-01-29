@@ -8805,23 +8805,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
         type: 3}
-      propertyPath: puzzles.Array.data[7].name
-      value: UmbilicalCordPuzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
-        type: 3}
-      propertyPath: puzzles.Array.data[7].seed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
-        type: 3}
       propertyPath: puzzles.Array.data[9].seed
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
-        type: 3}
-      propertyPath: puzzles.Array.data[7].isGiven
-      value: 0
+      value: 2567
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13073,6 +13058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hintNumText: {fileID: 0}
   buttons: []
+  finalObject: {fileID: 0}
 --- !u!4 &1514560332
 Transform:
   m_ObjectHideFlags: 0
