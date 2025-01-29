@@ -16,6 +16,9 @@ public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     private float snapDistance = 80f; // Distancia máxima para ajustar automáticamente al slot más cercano
     [SerializeField]
     private Vector2 pointerOffset = new Vector2(40f, 40f); // Desfase del puntero
+    [SerializeField] private AudioSource pickupSound;
+    [SerializeField] private AudioSource dropSound;
+    [SerializeField] private AudioSource rotateSound;
 
     private void Awake()
     {
@@ -31,6 +34,9 @@ public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             originalParent = transform.parent;
             initialPosition = transform.position;
         }
+
+        if (pickupSound != null)
+            pickupSound.Play();
 
         // Hacer el objeto más fácil de arrastrar (opcional)
         if (canvasGroup != null)
@@ -62,6 +68,9 @@ public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
             // Asegurar que el objeto se coloca en el centro del slot
             rectTransform.anchoredPosition = Vector2.zero + new Vector2(6, 6);
+
+            if (dropSound != null)
+                dropSound.Play();
         }
         else
         {
@@ -81,6 +90,9 @@ public class DraggableTangram : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         // Si no se está arrastrando el objeto, rotarlo 90 grados
         if (eventData.clickCount == 1)
         {
+            if (rotateSound != null)
+                rotateSound.Play();
+                
             transform.Rotate(0, 0, 90);
             pieceRotation++;
             if (pieceRotation > 3)

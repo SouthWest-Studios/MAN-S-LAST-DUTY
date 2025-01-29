@@ -14,6 +14,7 @@ public class TangramManager : MonoBehaviour
     public List<GameObject> formas;
     public static int randForm;
     public string formName;
+    public AudioSource victorySound;
 
 
     public ObjectInteraction objectInteraction;
@@ -89,6 +90,7 @@ public class TangramManager : MonoBehaviour
         }
         if (allCorrect)
         {
+            victorySound.Play();
             puzzleManager = FindAnyObjectByType<PuzzleManager>();
             puzzleManager.CompletePuzzle("TangramPuzzle");
             formas[randForm].SetActive(true); 
