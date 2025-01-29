@@ -129,7 +129,7 @@ public class NotasMentalesManager : MonoBehaviour
             proximidadSonoraNumber.text = "X: " + ProximidadSonora.level1Sum.ToString() + "\nY: " + ProximidadSonora.level2Sum.ToString() + "\nZ: " + ProximidadSonora.level3Sum.ToString();
         }
 
-        if (PuzzleManager.instance.GetPuzzle("CordonUmbilicarPuzzle").itHasbeenCompleted)
+        if (PuzzleManager.instance.GetPuzzle("CordonUmbilicalPuzzle").itHasbeenCompleted)
         {
             cordonUmbilical.SetActive(true);
             if (CordonUmbilical.correctGroupIndex == 0)
