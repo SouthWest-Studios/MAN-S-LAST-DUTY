@@ -36,6 +36,7 @@ public class CordonUmbilical : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float snapDistance = 1f;
     [SerializeField] private float unSnapDistance = 2f; // Nueva variable para controlar la distancia de unsnap
+    [SerializeField] private float initialLupaRotationY = 90f; // Añadir esta variable
 
     [Header("Selection Objects")]
     [SerializeField] private GameObject[] selectableObjectsGroup1; // Objetos del primer punto
@@ -116,6 +117,14 @@ public class CordonUmbilical : MonoBehaviour
             }
         }
 
+        // Establecer la rotación inicial de la lupa
+        if (lupaTransform != null)
+        {
+            Vector3 initialRotation = lupaTransform.eulerAngles;
+            initialRotation.y = initialLupaRotationY;
+            lupaTransform.eulerAngles = initialRotation;
+        }
+
         // Buscar la referencia al ObjectInteraction
     }
 
@@ -174,66 +183,86 @@ public class CordonUmbilical : MonoBehaviour
     private void MoveLupa()
     {
         Ray ray = puzzleCamera.ScreenPointToRay(Input.mousePosition);
-        Plane movementPlane = new Plane(Vector3.right, Vector3.zero); // Plano YZ
+        // Crear un plano relativo a la rotación del objeto principal
+        Plane movementPlane = new Plane(transform.right, transform.position);
 
         hasValidRaycast = movementPlane.Raycast(ray, out float enter);
         if (hasValidRaycast)
         {
-            lastRayHitPoint = ray.GetPoint(enter);
+            Vector3 worldHitPoint = ray.GetPoint(enter);
+            // Convertir el punto de impacto a espacio local del objeto principal
+            Vector3 localHitPoint = transform.InverseTransformPoint(worldHitPoint);
             
-            // Limitar el movimiento a los rangos establecidos
-            Vector3 newPosition = lupaTransform.position;
-            newPosition.y = Mathf.Clamp(lastRayHitPoint.y, minY, maxY);
-            newPosition.z = Mathf.Clamp(lastRayHitPoint.z, minZ, maxZ);
+            // Aplicar límites en coordenadas locales
+            Vector3 newLocalPosition = lupaTransform.localPosition;
+            newLocalPosition.y = Mathf.Clamp(localHitPoint.y, minY, maxY);
+            newLocalPosition.z = Mathf.Clamp(localHitPoint.z, minZ, maxZ);
             
-            lupaTransform.position = Vector3.Lerp(lupaTransform.position, newPosition, moveSpeed * Time.deltaTime);
+            // Interpolar en espacio local
+            lupaTransform.localPosition = Vector3.Lerp(
+                lupaTransform.localPosition,
+                newLocalPosition,
+                moveSpeed * Time.deltaTime
+            );
         }
     }
 
     private void CheckPivotSnapping()
     {
-        // Solo verificar snap si no estamos ya snapped
         foreach (Transform pivot in pivotPoints)
         {
+            // Convertir las posiciones a espacio local del objeto principal
+            Vector3 localLupaPos = transform.InverseTransformPoint(lupaTransform.position);
+            Vector3 localPivotPos = transform.InverseTransformPoint(pivot.position);
+
             float distance = Vector2.Distance(
-                new Vector2(lupaTransform.position.y, lupaTransform.position.z),
-                new Vector2(pivot.position.y, pivot.position.z)
+                new Vector2(localLupaPos.y, localLupaPos.z),
+                new Vector2(localPivotPos.y, localPivotPos.z)
             );
 
             if (distance < snapDistance)
             {
                 isSnapped = true;
+                // Ajustar la posición de la lupa al pivot en espacio mundial
                 lupaTransform.position = pivot.position;
+                // Alinear la rotación con el pivot y el objeto principal
+                Quaternion targetRotation = pivot.rotation * transform.rotation;
+                Vector3 eulerRotation = targetRotation.eulerAngles;
+                eulerRotation.y = initialLupaRotationY;
+                lupaTransform.eulerAngles = eulerRotation;
                 return;
             }
         }
-        // Eliminar esta línea para evitar que se establezca a false constantemente
-        // isSnapped = false;
     }
 
     private void CheckUnsnapping()
     {
         Ray ray = puzzleCamera.ScreenPointToRay(Input.mousePosition);
-        Plane movementPlane = new Plane(Vector3.right, Vector3.zero);
+        Plane movementPlane = new Plane(transform.right, transform.position);
 
         if (movementPlane.Raycast(ray, out float enter))
         {
-            Vector3 hitPoint = ray.GetPoint(enter);
+            Vector3 worldHitPoint = ray.GetPoint(enter);
+            Vector3 localHitPoint = transform.InverseTransformPoint(worldHitPoint);
+            Vector3 localLupaPos = transform.InverseTransformPoint(lupaTransform.position);
             
             float distance = Vector2.Distance(
-                new Vector2(hitPoint.y, hitPoint.z),
-                new Vector2(lupaTransform.position.y, lupaTransform.position.z)
+                new Vector2(localHitPoint.y, localHitPoint.z),
+                new Vector2(localLupaPos.y, localLupaPos.z)
             );
 
-            // Solo cambiar isSnapped si la distancia es suficiente
             if (distance > unSnapDistance)
             {
                 isSnapped = false;
-                // Mover inmediatamente la lupa a la nueva posición para evitar "saltos"
-                Vector3 newPosition = lupaTransform.position;
-                newPosition.y = Mathf.Clamp(hitPoint.y, minY, maxY);
-                newPosition.z = Mathf.Clamp(hitPoint.z, minZ, maxZ);
-                lupaTransform.position = newPosition;
+                Vector3 newLocalPosition = localLupaPos;
+                newLocalPosition.y = Mathf.Clamp(localHitPoint.y, minY, maxY);
+                newLocalPosition.z = Mathf.Clamp(localHitPoint.z, minZ, maxZ);
+                lupaTransform.position = transform.TransformPoint(newLocalPosition);
+                
+                // Mantener la rotación Y en 90 al desengancharse
+                Vector3 currentRotation = lupaTransform.eulerAngles;
+                currentRotation.y = initialLupaRotationY;
+                lupaTransform.eulerAngles = currentRotation;
             }
         }
     }
