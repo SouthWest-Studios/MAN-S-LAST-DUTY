@@ -17,6 +17,7 @@ public class FirstPersonMovement : MonoBehaviour
 
 
 
+
     void Awake()
     {
         // Get the rigidbody on this.
@@ -36,7 +37,7 @@ public class FirstPersonMovement : MonoBehaviour
         }
 
         // Get targetVelocity from input.
-        if (!GetComponent<Rewind>().isRewinding)
+        if (!GetComponent<Rewind>().isRewinding && !FirstPersonLook.instance.isPanelOpen)
         {
             Vector2 targetVelocity = new Vector2(Input.GetAxis("Horizontal") * targetMovingSpeed, Input.GetAxis("Vertical") * targetMovingSpeed);
 

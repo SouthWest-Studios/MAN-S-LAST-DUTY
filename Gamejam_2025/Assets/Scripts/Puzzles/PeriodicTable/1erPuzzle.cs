@@ -16,6 +16,8 @@ public class PeriodicPuzzle : MonoBehaviour
 
     private PuzzleManager puzzleManager;
 
+    public GameObject finalObject;
+
     private void Awake()
     {
         puzzleManager = FindObjectOfType<PuzzleManager>();
@@ -50,6 +52,7 @@ public class PeriodicPuzzle : MonoBehaviour
             puzzleManager = FindAnyObjectByType<PuzzleManager>();
             hintNumText.text = "correct";
             puzzleManager.CompletePuzzle("PeriodicTablePuzzle");
+            finalObject.SetActive(true);
 
         }
         for (int i = 0; i < buttons.Count; i++)
