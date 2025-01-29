@@ -20541,31 +20541,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1718557147116437070, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1979028452452298513, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424841852319036192, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856067155581855238, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: brainAnimator
-      value: 
-      objectReference: {fileID: 2879858409153710819}
-    - target: {fileID: 5461082591577206784, guid: 1d4324d5d4502df468865913cda8cc80,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 5475812835721557026, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_Name
@@ -20576,12 +20551,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d4324d5d4502df468865913cda8cc80, type: 3}
---- !u!95 &2879858409153710819 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9218208305982447691, guid: 1d4324d5d4502df468865913cda8cc80,
-    type: 3}
-  m_PrefabInstance: {fileID: 2879858409153710818}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

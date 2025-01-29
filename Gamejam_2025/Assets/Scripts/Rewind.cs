@@ -98,7 +98,7 @@ public class Rewind : MonoBehaviour
 
         if (isRewinding)
         {
-            //IncreaseBlurEffect();
+            IncreaseBlurEffect();
             RewindPlayerState();
             ApplyPostProcessingEffects();
 
@@ -131,9 +131,9 @@ public class Rewind : MonoBehaviour
 
             if (!resetThings)
             {
-                ResetBlur();
-                ResetPostProcessingEffects();
-                resetThings = true;
+                //ResetBlur();
+                //ResetPostProcessingEffects();
+                //resetThings = true;
             }
            
             SavePlayerState();
