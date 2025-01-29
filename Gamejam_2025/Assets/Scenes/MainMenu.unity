@@ -2136,7 +2136,9 @@ GameObject:
   m_Component:
   - component: {fileID: 149415721}
   - component: {fileID: 149415723}
+  - component: {fileID: 149415725}
   - component: {fileID: 149415722}
+  - component: {fileID: 149415724}
   m_Layer: 5
   m_Name: Icon_Idioma
   m_TagString: Untagged
@@ -2224,6 +2226,51 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1908596204}
   m_OnClick:
     m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &149415724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149415720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6232f3b6b7d3863459c1423d2ff702ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAreaWidth: 1
+  dragAreaHeight: 1
+--- !u!114 &149415725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149415720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a236b3fd989b5428728ef3985e60b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doubleClickTime: 0.3
+  onSingleClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 569544157}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ApplyTint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 149415725}
+          m_ObjectArgumentAssemblyTypeName: DoubleClickUI, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDoubleClick:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 736611763}
         m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
@@ -2237,6 +2284,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onClickOutside:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 569544157}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: UnapplyTint
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 149415725}
+          m_ObjectArgumentAssemblyTypeName: DoubleClickUI, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  tintSelect: {r: 0.44859973, g: 0.3254717, b: 1, a: 1}
 --- !u!1 &153546681
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,6 +3595,7 @@ GameObject:
   - component: {fileID: 243445900}
   - component: {fileID: 243445901}
   - component: {fileID: 243445902}
+  - component: {fileID: 243445903}
   m_Layer: 5
   m_Name: Icon_NuevaPartida
   m_TagString: Untagged
@@ -3662,6 +3726,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   tintSelect: {r: 0.44859973, g: 0.3254717, b: 1, a: 1}
+--- !u!114 &243445903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243445899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6232f3b6b7d3863459c1423d2ff702ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAreaWidth: 1
+  dragAreaHeight: 1
 --- !u!1 &250726245
 GameObject:
   m_ObjectHideFlags: 0
@@ -6771,8 +6849,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1542078063}
   - {fileID: 1507866634}
+  - {fileID: 1542078063}
   - {fileID: 2051172422}
   m_Father: {fileID: 477204642}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7635,8 +7713,7 @@ GameObject:
   - component: {fileID: 618268167}
   - component: {fileID: 618268169}
   - component: {fileID: 618268168}
-  - component: {fileID: 618268171}
-  - component: {fileID: 618268170}
+  - component: {fileID: 618268172}
   m_Layer: 5
   m_Name: Ajustes
   m_TagString: Untagged
@@ -7708,7 +7785,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618268166}
   m_CullTransparentMesh: 1
---- !u!114 &618268170
+--- !u!114 &618268172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7717,76 +7794,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 618268166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a236b3fd989b5428728ef3985e60b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 6232f3b6b7d3863459c1423d2ff702ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doubleClickTime: 0.3
-  onSingleClick:
-    m_PersistentCalls:
-      m_Calls: []
-  onDoubleClick:
-    m_PersistentCalls:
-      m_Calls: []
-  onClickOutside:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 569544157}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: HideGameObject
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 618268167}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  tintSelect: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &618268171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618268166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 618268168}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  dragAreaWidth: 1
+  dragAreaHeight: 1
 --- !u!1 &626711751
 GameObject:
   m_ObjectHideFlags: 0
@@ -9560,6 +9572,7 @@ GameObject:
   - component: {fileID: 743313819}
   - component: {fileID: 743313821}
   - component: {fileID: 743313820}
+  - component: {fileID: 743313822}
   m_Layer: 5
   m_Name: Icon_Basura
   m_TagString: Untagged
@@ -9678,6 +9691,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &743313822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743313818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6232f3b6b7d3863459c1423d2ff702ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAreaWidth: 1
+  dragAreaHeight: 1
 --- !u!1 &746229728
 GameObject:
   m_ObjectHideFlags: 0
@@ -11450,6 +11477,7 @@ GameObject:
   - component: {fileID: 839083613}
   - component: {fileID: 839083614}
   - component: {fileID: 839083615}
+  - component: {fileID: 839083616}
   m_Layer: 5
   m_Name: Icon_Continuar
   m_TagString: Untagged
@@ -11580,6 +11608,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   tintSelect: {r: 0.44859973, g: 0.3254717, b: 1, a: 1}
+--- !u!114 &839083616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839083612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6232f3b6b7d3863459c1423d2ff702ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAreaWidth: 1
+  dragAreaHeight: 1
 --- !u!1 &840324961
 GameObject:
   m_ObjectHideFlags: 0
@@ -12854,6 +12896,7 @@ GameObject:
   - component: {fileID: 937834705}
   - component: {fileID: 937834707}
   - component: {fileID: 937834706}
+  - component: {fileID: 937834708}
   m_Layer: 5
   m_Name: Icon_Creditos
   m_TagString: Untagged
@@ -12996,6 +13039,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &937834708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937834704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6232f3b6b7d3863459c1423d2ff702ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAreaWidth: 1
+  dragAreaHeight: 1
 --- !u!1 &943489632
 GameObject:
   m_ObjectHideFlags: 0
@@ -14248,6 +14305,7 @@ GameObject:
   - component: {fileID: 1029394571}
   - component: {fileID: 1029394573}
   - component: {fileID: 1029394572}
+  - component: {fileID: 1029394574}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -14314,6 +14372,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029394570}
   m_CullTransparentMesh: 1
+--- !u!114 &1029394574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029394570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6232f3b6b7d3863459c1423d2ff702ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAreaWidth: 1
+  dragAreaHeight: 1
 --- !u!1001 &1035726757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15579,6 +15651,7 @@ GameObject:
   - component: {fileID: 1126650176}
   - component: {fileID: 1126650178}
   - component: {fileID: 1126650177}
+  - component: {fileID: 1126650179}
   m_Layer: 5
   m_Name: Icon_Ajustes
   m_TagString: Untagged
@@ -15721,6 +15794,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1126650179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126650175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6232f3b6b7d3863459c1423d2ff702ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAreaWidth: 1
+  dragAreaHeight: 1
 --- !u!1 &1130652574
 GameObject:
   m_ObjectHideFlags: 0
