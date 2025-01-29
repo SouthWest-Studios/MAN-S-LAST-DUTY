@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 4188592109375136769}
   - component: {fileID: 9144692848017809066}
   m_Layer: 0
-  m_Name: PipeDreamTrigger2 1
+  m_Name: PipeDreamTriggerBueno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1113,8 +1113,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1.170044, y: 327}
-  m_SizeDelta: {x: -252.74008, y: 31.6}
+  m_AnchoredPosition: {x: 1.2700195, y: 327}
+  m_SizeDelta: {x: -252.54008, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1650735308823906732
 CanvasRenderer:
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f27d450a24ddb6c49b3b7a6f35e5705a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3247d79fda3e4e448d7d924038ac8e9, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1247,7 +1247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9087184400299570743
 Transform:
   m_ObjectHideFlags: 0
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   waterPrefab: {fileID: 2126800297988303558, guid: a0bfd240626d15046b930db2745b8a0e,
     type: 3}
   flowSpeed: 3
-  totalPoints: 10
+  totalPoints: 8
   timer: {fileID: 6708896458980485080}
   winPipes: 0
   objectInteraction: {fileID: 9144692848017809066}
