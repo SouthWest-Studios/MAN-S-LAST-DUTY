@@ -8268,39 +8268,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364457262}
   m_Mesh: {fileID: 4300000, guid: 3b872743d9d7049898f889f9f56efae5, type: 3}
---- !u!1 &367681223 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1845947429702644651, guid: 4130fcb44527101428d7e6d1e24c7f69,
-    type: 3}
-  m_PrefabInstance: {fileID: 8863373301570070029}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &367681228
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367681223}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &368076261
 GameObject:
   m_ObjectHideFlags: 0
@@ -48494,16 +48461,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 745070937224396367, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517941999137421243, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1610007103086650495, guid: 4130fcb44527101428d7e6d1e24c7f69,
         type: 3}
       propertyPath: player
@@ -48514,65 +48471,10 @@ PrefabInstance:
       propertyPath: cameraFirstPerson
       value: 
       objectReference: {fileID: 1595838358}
-    - target: {fileID: 1690582265697124292, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1845947429702644651, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_Name
-      value: WordlePuzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619376562787876937, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.077
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619376562787876937, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.886
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619376562787876937, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.832
-      objectReference: {fileID: 0}
     - target: {fileID: 5843358854158533112, guid: 4130fcb44527101428d7e6d1e24c7f69,
         type: 3}
       propertyPath: m_Name
       value: WordleProblem
-      objectReference: {fileID: 0}
-    - target: {fileID: 5843358854158533112, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6264099043629937219, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167544139783466953, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508604247463277939, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10.941757
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508604247463277939, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.5258627
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508604247463277939, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.635232
       objectReference: {fileID: 0}
     - target: {fileID: 7965333000002595963, guid: 4130fcb44527101428d7e6d1e24c7f69,
         type: 3}
@@ -48627,11 +48529,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1845947429702644651, guid: 4130fcb44527101428d7e6d1e24c7f69,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 367681228}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4130fcb44527101428d7e6d1e24c7f69, type: 3}
 --- !u!1 &9035125819820924187
 GameObject:

@@ -85,7 +85,7 @@ public class FetusScript : MonoBehaviour
             if (manager.puzzles[i].isHintGiven && manager.puzzles[i].name == "WordlePuzzle")
             {
                 wordleController = FindAnyObjectByType<WordleController>();
-                wordleController.CheckCombination();
+                wordleController.LoadMolecules();
                 manager.puzzles[i].isHintGiven = false;
             }
         }
