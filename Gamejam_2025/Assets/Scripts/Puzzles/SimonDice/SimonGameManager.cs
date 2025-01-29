@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SimonGameManager : MonoBehaviour
 {
@@ -24,6 +25,14 @@ public class SimonGameManager : MonoBehaviour
     private int seed;
 
     private Puzzle puzzle;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip buttonSound;
+    public AudioClip errorSound;
+    public AudioClip victorySound;
+
+    private readonly float[] buttonPitches = { 0.6f, 0.8f, 1f, 1.2f };
 
     void Start()
     {
@@ -49,22 +58,29 @@ public class SimonGameManager : MonoBehaviour
     private IEnumerator FlashLightsAtStart()
     {
         playerTurn = false;
-        for (int i = 0; i < 3; i++) // Tres parpadeos
+        float[] pitches = { 0.3f, 0.6f, 1.0f };
+        
+        for (int i = 0; i < 3; i++)
         {
-            // Activa todas las luces
             foreach (var button in buttons)
             {
                 button.ActivateLight();
             }
-            yield return new WaitForSeconds(0.3f); // Tiempo de encendido
+            if (buttonSound != null)
+            {
+                audioSource.pitch = pitches[i];
+                audioSource.PlayOneShot(buttonSound);
+            }
+            yield return new WaitForSeconds(0.3f);
 
-            // Apaga todas las luces
             foreach (var button in buttons)
             {
                 button.DeactivateLight();
             }
-            yield return new WaitForSeconds(0.3f); // Tiempo de apagado
+            yield return new WaitForSeconds(0.3f);
         }
+        
+        audioSource.pitch = 1f; // Restauramos el pitch original
     }
 
     private void GenerateNextStep()
@@ -84,6 +100,7 @@ public class SimonGameManager : MonoBehaviour
         foreach (int index in pattern)
         {
             buttons[index].ActivateLight();
+            PlayButtonSound(index);
             yield return new WaitForSeconds(lightOnTime);
             buttons[index].DeactivateLight();
             yield return new WaitForSeconds(lightOffTime);
@@ -91,6 +108,16 @@ public class SimonGameManager : MonoBehaviour
 
         playerTurn = true;
         currentStep = 0; // Resetea el progreso del jugador para la nueva ronda
+    }
+
+    private void PlayButtonSound(int buttonIndex)
+    {
+        if (buttonSound != null && buttonIndex < buttonPitches.Length)
+        {
+            audioSource.pitch = buttonPitches[buttonIndex];
+            audioSource.PlayOneShot(buttonSound);
+            //audioSource.pitch = 1f;
+        }
     }
 
     public void ButtonPressed(int buttonIndex)
@@ -105,27 +132,26 @@ public class SimonGameManager : MonoBehaviour
         }
         else
         {
-            if(gameFinished)
-            {
-                
-                
-                return;
-                
-            }
+            if(gameFinished) return;
             if (!playerTurn) return;
 
             if (pattern[currentStep] == buttonIndex)
             {
+                PlayButtonSound(buttonIndex);
                 currentStep++;
                 if (currentStep >= pattern.Count)
                 {
                     if (pattern.Count < 6)
                     {
-                        // El jugador completó el patrón correctamente
+                        // El jugador completï¿½ el patrï¿½n correctamente
                         StartCoroutine(NextRound());
                     }
                     else
                     {
+                        if (victorySound != null)
+                        {
+                            audioSource.PlayOneShot(victorySound);
+                        }
                         puzzleManager = FindObjectOfType<PuzzleManager>();
                         puzzleManager.CompletePuzzle("SimonSaysPuzzle");
                         gameFinished = true;
@@ -155,12 +181,16 @@ public class SimonGameManager : MonoBehaviour
             }
             else
             {
+                if (errorSound != null)
+                {
+                    audioSource.PlayOneShot(errorSound);
+                }
                 if(shakeEffect != null)
                 {
                     shakeEffect.MaximumStress = errorShakeIntensity;
                     shakeEffect.Delay = 0f;
                     shakeEffect.InduceTrauma();
-                    Debug.Log("¡Game Over! Reiniciando...");
+                    Debug.Log("ï¿½Game Over! Reiniciando...");
                     StartCoroutine(RestartGame());
                 }
                 

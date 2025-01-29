@@ -611,18 +611,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 186838213288114010}
-        m_TargetAssemblyTypeName: GuitarHero, Assembly-CSharp
-        m_MethodName: PulsarCarril3
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &350494175740632165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,9 +1711,9 @@ MonoBehaviour:
   velocidadJuego: 2
   tiempoTotalJuego: 20
   botonComenzar: {fileID: 9089270543393591705}
-  botonCarril1: {fileID: 0}
-  botonCarril2: {fileID: 0}
-  botonCarril3: {fileID: 0}
+  botonCarril1: {fileID: 6864967562615221732}
+  botonCarril2: {fileID: 5499933186596521353}
+  botonCarril3: {fileID: 1251422156827950552}
   numeroResultado: {fileID: 427601859153930536}
   buttonSound: {fileID: 3321211471921995712}
   start: {fileID: 3353229414255590088}
@@ -2431,18 +2419,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 186838213288114010}
-        m_TargetAssemblyTypeName: GuitarHero, Assembly-CSharp
-        m_MethodName: PulsarCarril2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1569565138819743832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3015,18 +2991,6 @@ MonoBehaviour:
       - m_Target: {fileID: 3958230768190331890}
         m_TargetAssemblyTypeName: BloodButtonAnimation, Assembly-CSharp
         m_MethodName: ButtonDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 186838213288114010}
-        m_TargetAssemblyTypeName: GuitarHero, Assembly-CSharp
-        m_MethodName: PulsarCarril1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -20,6 +20,7 @@ public class PintarCasillas : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource[] buttonSounds = new AudioSource[9];
+    [SerializeField] private AudioSource completionSound;
 
     // Add TMP reference at the top with other variables
     public TextMeshPro numeroResultado;
@@ -157,6 +158,12 @@ public class PintarCasillas : MonoBehaviour
 
     private void CompletarJuego()
     {
+        // Play completion sound if assigned
+        if (completionSound != null)
+        {
+            completionSound.Play();
+        }
+
         puzzlemanager = FindObjectOfType<PuzzleManager>();
         puzzlemanager.CompletePuzzle("PintarCasillasPuzzle");
         
