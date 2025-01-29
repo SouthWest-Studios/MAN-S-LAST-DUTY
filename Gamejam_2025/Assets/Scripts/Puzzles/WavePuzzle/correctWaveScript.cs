@@ -46,7 +46,7 @@ public class correctWaveScript : MonoBehaviour
         puzzleManager = FindAnyObjectByType<PuzzleManager>();
 
         int childCount = transform.childCount;
-        Random.InitState((int)System.DateTime.Now.Ticks);
+        //Random.InitState((int)System.DateTime.Now.Ticks);
         randomIndex = Random.Range(1, 5);
 
         correctWaveNum = randomIndex;

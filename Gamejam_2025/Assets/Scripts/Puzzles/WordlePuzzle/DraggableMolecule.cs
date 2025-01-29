@@ -66,6 +66,7 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
             }
             transform.SetParent(closestSlot);
             wordle.SetHintActive();
+            wordle.SaveMolecules();
 
             // Asegurar que el objeto se coloca en el centro del slot
             rectTransform.anchoredPosition = Vector2.zero + new Vector2(6,6);

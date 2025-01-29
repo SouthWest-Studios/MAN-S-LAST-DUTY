@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class WordleController : MonoBehaviour
 {
@@ -110,6 +111,47 @@ public class WordleController : MonoBehaviour
         {
             
         }
+    }
+
+    public void SaveMolecules()
+    {
+        for(int i = 0; i < slots.Count; i++)
+        {
+            if(slots[i].GetComponentInChildren<DraggableMolecule>() != null)
+            {
+                PuzzleManager.instance.wordleFinalList[i] = new Vector3(slots[i].GetComponentInChildren<DraggableMolecule>().transform.position.x, slots[i].GetComponentInChildren<DraggableMolecule>().transform.position.y, slots[i].GetComponentInChildren<DraggableMolecule>().moleculeID);
+            }
+            
+        }
+        
+    }
+    public void LoadMolecules()
+    {
+        canvas.SetActive(true);
+        DraggableMolecule[] draggableMolecules = Resources.FindObjectsOfTypeAll<DraggableMolecule>();
+
+        for (int i = 0; i < PuzzleManager.instance.wordleFinalList.Count; i++)
+        {
+            for (int j = 0; j < draggableMolecules.Length; j++) // Evita usar un número fijo (12)
+            {
+                if (PuzzleManager.instance.wordleFinalList[i].z == draggableMolecules[j].moleculeID)
+                {
+
+                    draggableMolecules[j].gameObject.transform.SetParent(slots[i].transform);
+                    draggableMolecules[j].gameObject.GetComponent<RectTransform>().position = new Vector2(PuzzleManager.instance.wordleFinalList[i].x, PuzzleManager.instance.wordleFinalList[i].y);
+                    draggableMolecules[j].transform.localScale = new Vector3(0.756f, 0.756f, 0.756f);
+                    
+                }
+            }
+        }
+
+        CheckCombination();
+        canvas.SetActive(false);
+    }
+
+    private T[] FindObjectsOfTypeAll<T>()
+    {
+        throw new System.NotImplementedException();
     }
 
     private void EnableMoleculeInteraction(DraggableMolecule molecule, bool enable)
