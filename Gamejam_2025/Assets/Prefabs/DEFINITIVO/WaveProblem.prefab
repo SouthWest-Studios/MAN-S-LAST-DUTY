@@ -423,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 1
   cuadrante: 1
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &521813780956623852
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   cuadrante: 4
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &583368542233358566
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 2
   cuadrante: 3
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &836247654940270897
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,10 +943,10 @@ MonoBehaviour:
   puzzleManager: {fileID: 0}
   button: {fileID: 3591620098134113195}
   correctWaves:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 427853291773757716}
+  - {fileID: 1026299311175498367}
+  - {fileID: 5623800215893750197}
+  - {fileID: 5496045600653356845}
   finalText: {fileID: 8414302406356482742}
   navigationManager: {fileID: 0}
 --- !u!1 &951218632818472765
@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 3
   cuadrante: 1
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &1333317993639503044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,7 +1604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 2
   cuadrante: 2
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &1380690139628961133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,7 +1976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 2
   cuadrante: 1
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &1565078722012566416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,7 +2172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 3
   cuadrante: 4
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &1937995652846005859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 3
   cuadrante: 3
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &2652421117022278259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,7 +2901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 2
   cuadrante: 4
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &2676066919372279975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,7 +3172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 1
   cuadrante: 3
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &2859237604403470931
 GameObject:
   m_ObjectHideFlags: 0
@@ -3610,7 +3610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   cuadrante: 1
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &3394171671886807085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3881,7 +3881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   cuadrante: 2
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &3728090623915660690
 GameObject:
   m_ObjectHideFlags: 0
@@ -4887,9 +4887,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 473439931458418833}
         m_TargetAssemblyTypeName: correctWaveScript, Assembly-CSharp
-        m_MethodName: ShowCorrectWave
+        m_MethodName: CheckWin2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4899,9 +4899,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 473439931458418833}
         m_TargetAssemblyTypeName: correctWaveScript, Assembly-CSharp
-        m_MethodName: CheckWin2
+        m_MethodName: ShowCorrectWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5259,7 +5259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 1
   cuadrante: 2
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &6201291146679820013
 GameObject:
   m_ObjectHideFlags: 0
@@ -5908,7 +5908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 1
   cuadrante: 4
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &7167845046681224336
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,7 +6269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 3
   cuadrante: 2
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &7448888630105263718
 GameObject:
   m_ObjectHideFlags: 0
@@ -6690,7 +6690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   cuadrante: 3
-  correctWaveScript: {fileID: 0}
+  correctWaveScript: {fileID: 473439931458418833}
 --- !u!1 &8282699877636024570
 GameObject:
   m_ObjectHideFlags: 0

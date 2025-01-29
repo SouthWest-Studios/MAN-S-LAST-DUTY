@@ -58,7 +58,7 @@ public class correctWaveScript : MonoBehaviour
 
         navigationManager.InitializeNavigationWaves();
 
-        this.gameObject.SetActive(false);
+        
 
         canShowWave = true;
     }
