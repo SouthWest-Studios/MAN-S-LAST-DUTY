@@ -12,6 +12,7 @@ public class FetusScript : MonoBehaviour
     private BloodManager bloodManager;
     private GrabObjects grabObjects; 
 
+
     void Start()
     {
         grabObjects = FindObjectOfType<GrabObjects>();
@@ -28,16 +29,15 @@ public class FetusScript : MonoBehaviour
         // Si hay un objeto siendo sostenido, lo destruimos
         
         if (currentObject != "")
-        {            
-          manager.GivePuzzle(currentObject);
-            
+        {
+          manager.GivePuzzle(currentObject);           
         }
 
         if(currentHint != null)
         {
             if(currentHint == "WordlePuzzle")
             {
-                wordleController.CheckCombination();
+                
             }
             if(currentHint == "UmbilicalCord")
             {
@@ -60,6 +60,21 @@ public class FetusScript : MonoBehaviour
             Destroy(grabObjects.GetHeldObject());
             grabObjects.ForceDropObject();
         }
+
+    }
+
+    public void ShowHints()
+    {
+        manager = FindAnyObjectByType<PuzzleManager>();
+
+        for (int i = 0; i < manager.puzzles.Count; i++)
+        {
+            if (manager.puzzles[i].isGiven && manager.puzzles[i].name == "WordlePuzzle")
+            {
+                wordleController.CheckCombination();
+            }
+        }
+
 
     }
 }

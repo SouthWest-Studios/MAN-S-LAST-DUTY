@@ -408,7 +408,7 @@ public class CordonUmbilical : MonoBehaviour
     {
         // Configurar FetusScript para la verificación posterior
         fetus = FindObjectOfType<FetusScript>();
-        fetus.currentHint = "UmbilicalCord";
+        
 
         // Llamar a EndFocusTransition inmediatamente después de seleccionar
         if (objectInteraction != null)
