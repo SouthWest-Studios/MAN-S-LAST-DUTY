@@ -30,7 +30,11 @@ public class DoubleClickUI : MonoBehaviour
         if (myButton != null)
         {
             myButton.onClick.AddListener(OnClick);
-            originalColor = myButton.targetGraphic.color;
+            if (myButton.targetGraphic)
+            {
+                originalColor = myButton.targetGraphic.color;
+            }
+            
         }
         else
         {
@@ -83,11 +87,14 @@ public class DoubleClickUI : MonoBehaviour
 
     public void ApplyTint()
     {
-        myButton.targetGraphic.color = tintSelect;
+        if (!myButton.targetGraphic) { return; }
+       
+            myButton.targetGraphic.color = tintSelect;
         myButton.targetGraphic.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = tintSelect;
     }
     public void UnapplyTint()
     {
+        if (!myButton.targetGraphic) { return; }
         myButton.targetGraphic.color = originalColor;
         myButton.targetGraphic.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = originalColor;
     }

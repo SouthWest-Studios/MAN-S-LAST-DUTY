@@ -20,11 +20,21 @@ public class MainMenuManager : MonoBehaviour
     public Transform windowsBarMenuPanel;
     private bool isWindowsBarShow = false;
 
+   
+
 
     [Header("Turn off monitor")]
     public Animator turnOffMonitorAnimator;
     private bool iniciarPartida = false;
     private bool cerrarJuego = false;
+
+
+    [Header("Sounds")]
+    public AudioSource generalAudioSource;
+    public AudioClip mouseClick_AC;
+
+
+    public AudioClip turnOffMonitor_AC;
 
   
 
@@ -47,7 +57,10 @@ public class MainMenuManager : MonoBehaviour
 
         timeText.text = DateTime.Now.ToString("hh:mm tt");
 
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            generalAudioSource.PlayOneShot(mouseClick_AC);
+        }
 
 
     }
@@ -73,6 +86,7 @@ public class MainMenuManager : MonoBehaviour
         iniciarPartida = true;
         PuzzleManager.instance.NewGame();
         turnOffMonitorAnimator.Play("turnOffMonitor");
+        generalAudioSource.PlayOneShot(turnOffMonitor_AC);
     }
 
     public void CargarPartida()
@@ -87,6 +101,7 @@ public class MainMenuManager : MonoBehaviour
             iniciarPartida = true;
             PuzzleManager.instance.LoadGame();
             turnOffMonitorAnimator.Play("turnOffMonitor");
+            generalAudioSource.PlayOneShot(turnOffMonitor_AC);
         }
     }
 
@@ -94,6 +109,7 @@ public class MainMenuManager : MonoBehaviour
     {
         cerrarJuego = true;
         turnOffMonitorAnimator.Play("turnOffMonitor");
+        generalAudioSource.PlayOneShot(turnOffMonitor_AC);
     }
 
 
@@ -133,6 +149,18 @@ public class MainMenuManager : MonoBehaviour
     public void UnapplyTint(DoubleClickUI script)
     {
         script.UnapplyTint();
+    }
+
+    public void ShowGameObject(Transform transform)
+    {
+        transform.gameObject.SetActive(true);
+        //Si tiene animacion, getAnimator play in
+    }
+
+    public void HideGameObject(Transform transform)
+    {
+        transform.gameObject.SetActive(false);
+        //Si tiene animacion, getAnimator play out
     }
 
 
