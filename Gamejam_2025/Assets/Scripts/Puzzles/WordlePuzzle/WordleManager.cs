@@ -13,7 +13,11 @@ public class WordleController : MonoBehaviour
     public GameObject canvas;
     public GameObject finalText;
 
+    public GameObject hint;
+
     public List<InitialSlotScript> initialSlotScripts;
+
+    public ObjectInteraction trigger;
 
     private void Start()
     {
@@ -53,7 +57,9 @@ public class WordleController : MonoBehaviour
             {
                 puzzleManager = FindAnyObjectByType<PuzzleManager>();
                 puzzleManager.CompletePuzzle("WordlePuzzle");
-                finalText.SetActive(true);
+                //finalText.SetActive(true);
+                trigger.EndFocusTransition();
+                trigger.enabled = false;
                 return;
             }
         }
@@ -94,10 +100,11 @@ public class WordleController : MonoBehaviour
             else
             {
                 // Sin molécula en este slot
-                slots[i].GetComponent<SlotScript>().SetSlotColor(Color.white);
+                slots[i].GetComponent<SlotScript>().SetSlotColor(Color.black);
                 allCorrect = false; // Si hay un slot vacío, el juego no está completado
             }
         }
+        
         if (allCorrect)
         {
             
@@ -117,5 +124,14 @@ public class WordleController : MonoBehaviour
                 draggable.canvasGroup.blocksRaycasts = enable; // Si 'enable' es false, bloquea los raycasts para que no pueda ser arrastrada
             }
         }
+    }
+
+    public void SetHintActive()
+    {
+        if(hint != null)
+        {
+            hint.SetActive(true);
+        }
+        
     }
 }

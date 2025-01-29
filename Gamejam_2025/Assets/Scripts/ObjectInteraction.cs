@@ -16,6 +16,8 @@ public class ObjectInteraction : MonoBehaviour
     private Quaternion initialPlayerCameraRotation;
     private bool hasSavedInitialTransform = false;
 
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
