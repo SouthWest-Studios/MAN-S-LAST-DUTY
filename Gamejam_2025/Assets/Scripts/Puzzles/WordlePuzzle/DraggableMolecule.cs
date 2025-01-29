@@ -12,6 +12,8 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
     private Vector3 initialPosition;
     private FetusScript fetus;
 
+    public WordleController wordle;
+
     [SerializeField]
     private float snapDistance = 80f; // Distancia m�xima para ajustar autom�ticamente al slot m�s cercano
     [SerializeField]
@@ -86,6 +88,8 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
     {
         Transform closestSlot = null;
         float closestDistance = snapDistance;
+
+        
 
         foreach (var slot in FindObjectsOfType<SlotScript>()) // Busca todos los slots disponibles
         {

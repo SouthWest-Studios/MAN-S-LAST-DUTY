@@ -6,12 +6,14 @@ public class WordleController : MonoBehaviour
 {
     public List<SlotScript> slots; // Lista de todos los slots
     public int numberOfSlots = 5; // Número de slots en el juego
-    public int maxMoleculeID = 12; // Rango máximo de IDs de moléculas
+    public int maxMoleculeID = 11; // Rango máximo de IDs de moléculas
     public static List<int> correctCombination; // Lista de la combinación correcta
     private PuzzleManager puzzleManager;
     bool allCorrect;
     public GameObject canvas;
     public GameObject finalText;
+
+    public List<InitialSlotScript> initialSlotScripts;
 
     private void Start()
     {
@@ -24,7 +26,7 @@ public class WordleController : MonoBehaviour
 
         // Crear una lista de números disponibles
         List<int> availableIDs = new List<int>();
-        for (int i = 0; i < maxMoleculeID; i++)
+        for (int i = 0; i <= maxMoleculeID; i++)
         {
             availableIDs.Add(i);
         }
@@ -83,8 +85,9 @@ public class WordleController : MonoBehaviour
                 {
                     // Rojo: Incorrecta
                     slots[i].GetComponent<SlotScript>().SetSlotColor(Color.red);
+                    molecule.ReturnToInitialPosition();
                     EnableMoleculeInteraction(molecule, false); // Deshabilitar interacción si es incorrecta
-                    molecule.GetComponent<Image>().color = Color.red; // Cambiar color a rojo
+                    initialSlotScripts[molecule.moleculeID].gameObject.GetComponent<Image>().color = Color.red;
                     allCorrect = false; // Si alguna molécula es incorrecta, no está completamente correcta
                 }
             }
