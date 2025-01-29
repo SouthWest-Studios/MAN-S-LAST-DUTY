@@ -9,30 +9,32 @@ public class DraggableMolecule : MonoBehaviour, IBeginDragHandler, IDragHandler,
     private Canvas canvas;
     private RectTransform rectTransform;
     public CanvasGroup canvasGroup;
-    private Vector3 initialPosition;
+    public Vector3 initialPosition;
     private FetusScript fetus;
 
     public WordleController wordle;
 
     [SerializeField]
-    private float snapDistance = 80f; // Distancia m�xima para ajustar autom�ticamente al slot m�s cercano
+    private float snapDistance = 80f;
     [SerializeField]
-    private Vector2 pointerOffset = new Vector2(40f, 40f); // Desfase del puntero
+    private Vector2 pointerOffset = new Vector2(40f, 40f);
 
     private void Awake()
     {
         canvas = FindObjectOfType<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-    }
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
         if (originalParent == null)
         {
             originalParent = transform.parent;
             initialPosition = transform.position;
         }
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        
 
         //transform.SetParent(canvas.transform);
         //transform.SetAsLastSibling(); // Asegura que este objeto se dibuje al frente
