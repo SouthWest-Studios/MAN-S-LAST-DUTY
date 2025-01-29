@@ -14,11 +14,17 @@ public class Numpat : MonoBehaviour
     public Color errorColor = Color.red;
     public Color correctColor = Color.green;
     private Color defaultColor = Color.white;
+    public AudioSource audioSource;
+    public AudioClip buttonSound;
+    public AudioClip errorClip;
+    public AudioClip correctClip;
+    public TraumaInducer traumaInducer;
 
     public void SendNumber(int number)
     {
         if (isOpened || indexPad >= 4) return;
 
+        audioSource.PlayOneShot(buttonSound);
         codeNumbers[indexPad].sprite = numbers[number];
         indexPad++;
         actualCode += number.ToString();
@@ -27,14 +33,12 @@ public class Numpat : MonoBehaviour
         {
             if (actualCode == PuzzleManager.numpadFinalCode)
             {
-
-
+                audioSource.PlayOneShot(correctClip);
                 foreach (var spriteRenderer in codeNumbers)
                 {
                     spriteRenderer.color = correctColor;
                 }
 
-                // Código correcto, abre la puerta
                 doorAnimator.Play("DoubleOpeningDoor");
                 foreach (AudioSource audioSource in doorAudioSources)
                 {
@@ -44,7 +48,8 @@ public class Numpat : MonoBehaviour
             }
             else
             {
-                // Código incorrecto, cambiar a rojo y luego reiniciar
+                audioSource.PlayOneShot(errorClip);
+                traumaInducer.InduceTrauma();
                 StartCoroutine(WrongCodeSequence());
             }
         }
