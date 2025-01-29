@@ -20,6 +20,8 @@ public class MainMenuManager : MonoBehaviour
     public Transform windowsBarMenuPanel;
     private bool isWindowsBarShow = false;
 
+   
+
 
     [Header("Turn off monitor")]
     public Animator turnOffMonitorAnimator;
@@ -147,6 +149,18 @@ public class MainMenuManager : MonoBehaviour
     public void UnapplyTint(DoubleClickUI script)
     {
         script.UnapplyTint();
+    }
+
+    public void ShowGameObject(Transform transform)
+    {
+        transform.gameObject.SetActive(true);
+        //Si tiene animacion, getAnimator play in
+    }
+
+    public void HideGameObject(Transform transform)
+    {
+        transform.gameObject.SetActive(false);
+        //Si tiene animacion, getAnimator play out
     }
 
 
