@@ -42,7 +42,7 @@ public class SettingsManager : MonoBehaviour
         configPanel.SetActive(false);
         SetTextTriggers("Out");
 
-        masterVolumeSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
+        masterVolumeSlider.onValueChanged.AddListener(OnMasterVolumeChanged);   
         musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
         voiceVolumeSlider.onValueChanged.AddListener(OnVoiceVolumeChanged);
         sfxVolumeSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
