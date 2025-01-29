@@ -9,6 +9,11 @@ using TMPro;
 
 public class correctWaveScript : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip showWaveSound;
+    public AudioClip checkSound;
+    public AudioClip winSound;
     
     private int correctWaveNum;
 
@@ -88,6 +93,11 @@ public class correctWaveScript : MonoBehaviour
         Debug.Log("Ejecutando ShowCorrectWave.");
         canShowWave = false;
 
+        if (audioSource && showWaveSound)
+        {
+            audioSource.PlayOneShot(showWaveSound);
+        }
+
         correctWaves[randomIndex - 1].SetActive(true);
 
 
@@ -111,6 +121,11 @@ public class correctWaveScript : MonoBehaviour
 
     public void CheckWin(int numero, int cuadrante)
     {
+        if (audioSource && checkSound)
+        {
+            audioSource.PlayOneShot(checkSound);
+        }
+
         if (cuadrante == 1)
         {
             if (numero == correctWaveNum)
@@ -163,6 +178,11 @@ public class correctWaveScript : MonoBehaviour
     {
         if (primerCuadranteCheck && segundoCuadranteCheck && tercerCuadranteCheck && cuartoCuadranteCheck)
         {
+            if (audioSource && winSound)
+            {
+                audioSource.PlayOneShot(winSound);
+            }
+
             puzzleManager.CompletePuzzle("WavePuzzle");
             finalText.gameObject.SetActive(true);
 
