@@ -58,7 +58,7 @@ public class correctWaveScript : MonoBehaviour
 
         navigationManager.InitializeNavigationWaves();
 
-        this.gameObject.SetActive(false);
+        
 
         canShowWave = true;
     }
@@ -87,7 +87,6 @@ public class correctWaveScript : MonoBehaviour
         
         Debug.Log("Ejecutando ShowCorrectWave.");
         canShowWave = false;
-        int childCount = transform.childCount;
 
         correctWaves[randomIndex - 1].SetActive(true);
 
@@ -100,7 +99,6 @@ public class correctWaveScript : MonoBehaviour
     private System.Collections.IEnumerator DeactivateAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        int childCount = transform.childCount;
 
         correctWaves[randomIndex - 1].SetActive(false);
     }
@@ -108,7 +106,7 @@ public class correctWaveScript : MonoBehaviour
     private IEnumerator ResetWaveCooldown(float cooldown)
     {
         yield return new WaitForSeconds(cooldown);
-        canShowWave = true; // Permitimos que la función pueda ejecutarse nuevamente
+        canShowWave = true; // Permitimos que la funciï¿½n pueda ejecutarse nuevamente
     }
 
     public void CheckWin(int numero, int cuadrante)
