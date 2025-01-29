@@ -1153,9 +1153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notasMentales: {fileID: 8853093162860474972}
-  iconoActualizarNotas: {fileID: 0}
   notasMentalesAnimator: {fileID: 4783720648196025322}
-  brainAnimator: {fileID: 0}
+  brainAnimator: {fileID: 9218208305982447691}
   numpadCodes: {fileID: 2735138251690459401}
   wordle: {fileID: 4167836382832465764}
   tangram: {fileID: 942921614544435329}

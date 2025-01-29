@@ -9,7 +9,6 @@ public class NotasMentalesManager : MonoBehaviour
 {
 
     public GameObject notasMentales;
-    public GameObject iconoActualizarNotas;
     public Animator notasMentalesAnimator;
     public Animator brainAnimator;
 
