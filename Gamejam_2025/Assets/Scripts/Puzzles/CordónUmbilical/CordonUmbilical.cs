@@ -74,6 +74,16 @@ public class CordonUmbilical : MonoBehaviour
     {
         currentMainCamera = puzzleCamera;
         
+        // Initialize random values based on puzzle seed
+        Puzzle puzzle = PuzzleManager.instance.GetPuzzle("UmbilicalCordPuzzle");
+        if (puzzle != null)
+        {
+            Random.InitState(puzzle.seed);
+            correctGroupIndex = Random.Range(0, 4); 
+            correctObjectInGroupIndex = Random.Range(0, 3); 
+            //Debug.Log("Correct group: " + correctGroupIndex + ", Correct object: " + correctObjectInGroupIndex);
+        }
+
         // Calcular el total de objetos para el array
         int totalObjects = 0;
         if (selectableObjectsGroup1 != null) totalObjects += selectableObjectsGroup1.Length;
@@ -132,22 +142,14 @@ public class CordonUmbilical : MonoBehaviour
             ActivatePuzzle();
         }
 
-        // Modificar la lógica de enfoque/desenfoque con E
-        if (isSnapped && Input.GetKeyDown(KeyCode.E) && !isTransitioning)
+        // Modificar la lógica para permitir solo enfoque
+        if (isSnapped && Input.GetMouseButtonDown(0) && !isTransitioning && !isFocused)
         {
-            if (!isFocused)
+            int currentPivotIndex = GetCurrentPivotIndex();
+            if (currentPivotIndex != -1)
             {
-                int currentPivotIndex = GetCurrentPivotIndex();
-                if (currentPivotIndex != -1)
-                {
-                    isFocused = true;
-                    StartCoroutine(TransitionToPoint(cameraPoints[currentPivotIndex]));
-                }
-            }
-            else
-            {
-                StartCoroutine(TransitionToPoint(initialCameraPoint));
-                isFocused = false;
+                isFocused = true;
+                StartCoroutine(TransitionToPoint(cameraPoints[currentPivotIndex]));
             }
         }
 

@@ -163,12 +163,18 @@ public class PintarCasillas : MonoBehaviour
         // Get and display the fourth digit
         if (numeroResultado != null)
         {
-            string code = PuzzleManager.numpadFinalCode;
-            if (code.Length >= 4)
+            int indexCode = 3;
+            numeroResultado.text = $"***{PuzzleManager.numpadFinalCode[indexCode]}";
+            numeroResultado.gameObject.SetActive(true);
+
+            char[] auxList = PuzzleManager.numpadActualCode.ToCharArray();
+            auxList[indexCode] = PuzzleManager.numpadFinalCode[indexCode];
+            string finalCharacters = "";
+            for (int i = 0; i < auxList.Length; i++)
             {
-                numeroResultado.text = $"***{code[3]}";
-                numeroResultado.gameObject.SetActive(true);
+                finalCharacters += auxList[i].ToString();
             }
+            PuzzleManager.numpadActualCode = finalCharacters;
         }
     }
 }

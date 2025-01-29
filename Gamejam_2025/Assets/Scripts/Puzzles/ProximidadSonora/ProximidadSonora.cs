@@ -76,6 +76,17 @@ public class ProximidadSonora : MonoBehaviour
             if (mainCanvas == null)
                 Debug.LogError("No se ha asignado el canvas principal y no se pudo encontrar automáticamente");
         }
+        
+        // Initialize random values based on puzzle seed
+        Puzzle puzzle = PuzzleManager.instance.GetPuzzle("ProximidadSonoraPuzzle");
+        if (puzzle != null)
+        {
+            Random.InitState(puzzle.seed);
+            level1Sum = Random.Range(0f, 30f);
+            level2Sum = Random.Range(0f, 30f);
+            level3Sum = Random.Range(0f, 30f);
+        }
+        
         UpdateLevelText();
     }
 
@@ -244,21 +255,6 @@ public class ProximidadSonora : MonoBehaviour
         
         if (distance <= proximityThreshold / 100f)
         {
-            // Guardar la suma del nivel actual
-            float currentSum = targetPosition.x + targetPosition.y;
-            switch(currentLevel)
-            {
-                case 1:
-                    level1Sum = currentSum;
-                    break;
-                case 2:
-                    level2Sum = currentSum;
-                    break;
-                case 3:
-                    level3Sum = currentSum;
-                    break;
-            }
-
             ShowCoordinates();
             radarAudioSource.Stop();
             if (successSound != null)

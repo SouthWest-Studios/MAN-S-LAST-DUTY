@@ -140,7 +140,7 @@ public class GuitarHero : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         if (!juegoActivo) return;
 
         tiempoRestante -= Time.deltaTime;
@@ -284,12 +284,18 @@ public class GuitarHero : MonoBehaviour
         // Get and display the third digit
         if (numeroResultado != null)
         {
-            string code = PuzzleManager.numpadFinalCode;
-            if (code.Length >= 3)
+            int indexCode = 2;
+            numeroResultado.text = $"**{PuzzleManager.numpadFinalCode[indexCode]}*";
+            numeroResultado.gameObject.SetActive(true);
+
+            char[] auxList = PuzzleManager.numpadActualCode.ToCharArray();
+            auxList[indexCode] = PuzzleManager.numpadFinalCode[indexCode];
+            string finalCharacters = "";
+            for (int i = 0; i < auxList.Length; i++)
             {
-                numeroResultado.text = $"**{code[2]}*";
-                numeroResultado.gameObject.SetActive(true);
+                finalCharacters += auxList[i].ToString();
             }
+            PuzzleManager.numpadActualCode = finalCharacters;
         }
         
         Debug.Log("¡Victoria! (desbloquea simon dice)");
