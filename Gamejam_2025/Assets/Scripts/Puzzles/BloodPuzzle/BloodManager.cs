@@ -10,9 +10,47 @@ public class BloodManager : MonoBehaviour
     public static List<BloodPuzzle> blood;
     private FetusScript fetusScript;
     public GameObject bloodTube;
+
+    public AudioSource rotateSound;
+    public AudioSource startSound;
+    public AudioSource finishSound;
+
+    public GameObject[] rotatingTubes; // Arrastra aqu铆 los 4 tubos
+    private bool isRotating = false;
+    public float rotationSpeed = 50f; // Velocidad de rotaci贸n ajustable
+    private float currentRotationSpeed = 50f;
+    private float maxRotationSpeed = 3000f;
+    private float elapsedTime = 0f;
+    private bool accelerating = true;
+
     void Start()
     {
         
+    }
+
+    void Update()
+    {
+        if (isRotating)
+        {
+            if (elapsedTime <= 20f && accelerating)
+            {
+                // Acelerar hasta 3000 en 20 segundos
+                currentRotationSpeed = Mathf.Lerp(50f, maxRotationSpeed, elapsedTime / 20f);
+            }
+            else if (elapsedTime > 20f && elapsedTime <= 30f)
+            {
+                accelerating = false;
+                // Desacelerar de 3000 a 0 en los 煤ltimos 10 segundos
+                currentRotationSpeed = Mathf.Lerp(maxRotationSpeed, 0f, (elapsedTime - 20f) / 10f);
+            }
+
+            foreach (GameObject tube in rotatingTubes)
+            {
+                tube.transform.Rotate(Vector3.up * currentRotationSpeed * Time.deltaTime);
+            }
+
+            elapsedTime += Time.deltaTime;
+        }
     }
 
     public void CheckWin()
@@ -28,7 +66,7 @@ public class BloodManager : MonoBehaviour
         }
         if (winCounter == 3)
         {
-            // L骻ica de CheckWin despu閟 de la espera
+            // L锟絞ica de CheckWin despu锟絪 de la espera
             PuzzleManager puzzleManager = FindAnyObjectByType<PuzzleManager>();
             if (puzzleManager != null)
             {
@@ -44,6 +82,14 @@ public class BloodManager : MonoBehaviour
 
     public void ShowTube()
     {
+        if (startSound != null)
+        {
+            startSound.Play();
+        }
+        isRotating = true; // Comenzar rotaci贸n
+        elapsedTime = 0f;
+        accelerating = true;
+        currentRotationSpeed = 50f;
         StartCoroutine(DelayedShowTube());
     }
 
@@ -52,15 +98,34 @@ public class BloodManager : MonoBehaviour
         // Espera 30 segundos
         //GetComponent<Button>().interactable = false;
         yield return new WaitForSeconds(30f);
+        isRotating = false; // Detener rotaci贸n
+        
+        // Resetear la rotaci贸n de los tubos
+        foreach (GameObject tube in rotatingTubes)
+        {
+            tube.transform.rotation = Quaternion.identity;
+        }
+
         FetusScript fetusScript = FindAnyObjectByType<FetusScript>();
         if (fetusScript != null)
         {
             
         }
 
+        if (finishSound != null)
+        {
+            finishSound.Play();
+        }
 
         bloodTube.SetActive(true);
     }
 
+    public void PlayRotateSound()
+    {
+        if (rotateSound != null)
+        {
+            rotateSound.Play();
+        }
+    }
 
 }

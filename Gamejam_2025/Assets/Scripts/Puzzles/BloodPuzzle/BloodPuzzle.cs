@@ -34,7 +34,7 @@ public class BloodPuzzle : MonoBehaviour
 
         for (int i = 0; i < sticks.Count; i++)
         {
-            // Accede al objeto correcto usando el índice i
+            // Accede al objeto correcto usando el ï¿½ndice i
             MeshRenderer renderer = sticks[i].gameObject.GetComponent<MeshRenderer>();
             if (renderer != null)
             {
@@ -63,8 +63,10 @@ public class BloodPuzzle : MonoBehaviour
 
     public void RotateButton()
     {
-        
-    
+        if (manager != null)
+        {
+            manager.PlayRotateSound();
+        }
         
         if (currentNumber > 7)
         {
