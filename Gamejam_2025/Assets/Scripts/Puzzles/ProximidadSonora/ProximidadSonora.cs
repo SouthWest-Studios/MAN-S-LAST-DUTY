@@ -63,6 +63,14 @@ public class ProximidadSonora : MonoBehaviour
     public static float level2Sum = 0f;
     public static float level3Sum = 0f;
 
+    public  float copylevel1Sum = 0f;
+    public  float copylevel2Sum = 0f;
+    public  float copylevel3Sum = 0f;
+
+    public NavigationManager navigationManager;
+
+ 
+
     private void Start()
     {
         InitializeGame();
@@ -76,7 +84,7 @@ public class ProximidadSonora : MonoBehaviour
             if (mainCanvas == null)
                 Debug.LogError("No se ha asignado el canvas principal y no se pudo encontrar automáticamente");
         }
-        
+
         // Initialize random values based on puzzle seed
         Puzzle puzzle = PuzzleManager.instance.GetPuzzle("ProximidadSonoraPuzzle");
         if (puzzle != null)
@@ -85,8 +93,11 @@ public class ProximidadSonora : MonoBehaviour
             level1Sum = Random.Range(0f, 30f);
             level2Sum = Random.Range(0f, 30f);
             level3Sum = Random.Range(0f, 30f);
+            copylevel1Sum = level1Sum;
+            copylevel2Sum = level2Sum;
+            copylevel3Sum = level3Sum;
         }
-        
+        navigationManager.InitializeNavigationSonor();
         UpdateLevelText();
     }
 
@@ -347,5 +358,23 @@ public class ProximidadSonora : MonoBehaviour
         {
             levelText.text = $"Nivel {currentLevel}";
         }
+    }
+
+    public float GetLevel1Sum()
+    {
+        Debug.Log("returnX = " + copylevel1Sum);
+        return copylevel1Sum;
+    }
+    public float GetLevel2Sum()
+    {
+        Debug.Log("returnY = " + copylevel2Sum);
+        return copylevel2Sum;
+        
+    }
+    public float GetLevel3Sum()
+    {
+        Debug.Log("returnZ = " + copylevel3Sum);
+        return copylevel3Sum;
+        
     }
 }
