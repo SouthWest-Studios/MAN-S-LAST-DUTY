@@ -9,6 +9,7 @@ public class ObjectInteraction : MonoBehaviour
     public Camera focusCamera;
     public float transitionSpeed = 2.0f; // Velocidad de transición
     private bool isTransitioning = false;
+    private bool isFocused = false; // Estado de la cámara
 
     public bool isCanvasToOpen = false;
 
@@ -16,7 +17,7 @@ public class ObjectInteraction : MonoBehaviour
     private Quaternion initialPlayerCameraRotation;
     private bool hasSavedInitialTransform = false;
 
-    
+    public FirstPersonMovement player;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -40,21 +41,12 @@ public class ObjectInteraction : MonoBehaviour
     {
         if (playerIsNear && Input.GetKeyDown(KeyCode.E))
         {
-            if (focusCamera != null && !isTransitioning)
+            if (!isFocused && !isTransitioning)
             {
+                
                 StartCoroutine(StartFocusTransition(focusCamera));
             }
-            else if (canvasToOpen != null)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                canvasToOpen.SetActive(true);
-                cameraFirstPerson.isPanelOpen = true;
-            }
-        }
-
-        if(canvasToOpen!=null)
-        {
-            if (playerIsNear && Input.GetKeyDown(KeyCode.Escape) && canvasToOpen.activeSelf)
+            else if (isFocused && !isTransitioning)
             {
                 EndFocusTransition();
             }
@@ -64,11 +56,20 @@ public class ObjectInteraction : MonoBehaviour
     IEnumerator StartFocusTransition(Camera targetCamera)
     {
         isTransitioning = true;
+        isFocused = true;
 
-        // Desactivar el control de la cámara del jugador
-        cameraFirstPerson.enabled = false;
+        // Bloquear el movimiento del jugador inmediatamente
+        player.enabled = false;
 
-        // Guardar la posición y rotación iniciales de la cámara del jugador
+        // Si el jugador usa Rigidbody, detenemos su velocidad para evitar deslizamientos
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        // Guardar la posición y rotación iniciales solo una vez
         if (!hasSavedInitialTransform)
         {
             initialPlayerCameraPosition = cameraFirstPerson.transform.position;
@@ -76,33 +77,36 @@ public class ObjectInteraction : MonoBehaviour
             hasSavedInitialTransform = true;
         }
 
+        // Desactivar el control de la cámara del jugador
+        cameraFirstPerson.enabled = false;
+
         Transform playerCameraTransform = cameraFirstPerson.transform;
         Vector3 startPosition = playerCameraTransform.position;
         Quaternion startRotation = playerCameraTransform.rotation;
 
-        // Posición y rotación de la cámara objetivo
         Vector3 targetPosition = targetCamera.transform.position;
         Quaternion targetRotation = targetCamera.transform.rotation;
 
         float elapsedTime = 0f;
 
-        
         while (elapsedTime < 1f)
         {
             elapsedTime += Time.deltaTime * transitionSpeed;
+            float t = Mathf.Clamp01(elapsedTime);
 
-            
-            playerCameraTransform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime);
-            playerCameraTransform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime);
+            playerCameraTransform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            playerCameraTransform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
 
             yield return null;
         }
 
-        
+        // Asegurar que la cámara llega a su destino
+        playerCameraTransform.position = targetPosition;
+        playerCameraTransform.rotation = targetRotation;
+
         cameraFirstPerson.gameObject.SetActive(false);
         targetCamera.gameObject.SetActive(true);
 
-        
         if (isCanvasToOpen)
         {
             Cursor.lockState = CursorLockMode.None;
@@ -114,31 +118,33 @@ public class ObjectInteraction : MonoBehaviour
         isTransitioning = false;
     }
 
+
     public void EndFocusTransition()
     {
         if (focusCamera == null || isTransitioning) return;
 
-        
+        isFocused = false; // Estado actualizado
+
         if (isCanvasToOpen)
         {
             canvasToOpen.SetActive(false);
             cameraFirstPerson.isPanelOpen = false;
             Cursor.lockState = CursorLockMode.Locked;
-            
         }
 
-        
         focusCamera.gameObject.SetActive(false);
         cameraFirstPerson.gameObject.SetActive(true);
-        cameraFirstPerson.crosshairController.gameObject.SetActive(true);
+
+        // Restaurar la posición y rotación originales
         cameraFirstPerson.transform.position = initialPlayerCameraPosition;
         cameraFirstPerson.transform.rotation = initialPlayerCameraRotation;
 
         cameraFirstPerson.enabled = true;
+        cameraFirstPerson.crosshairController.gameObject.SetActive(true);
 
-        
+        // Resetear variables
         isTransitioning = false;
         hasSavedInitialTransform = false;
-        
+        player.enabled = true;
     }
 }
