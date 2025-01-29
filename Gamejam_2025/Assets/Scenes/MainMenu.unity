@@ -5153,7 +5153,7 @@ MonoBehaviour:
   turnOffMonitorAnimator: {fileID: 2097607339}
   generalAudioSource: {fileID: 148660918}
   mouseClick_AC: {fileID: 8300000, guid: e34d8450f95b5974a962150d0ed331e2, type: 3}
-  turnOffMonitor_AC: {fileID: 0}
+  turnOffMonitor_AC: {fileID: 8300000, guid: 959150098a9267d4da38efbac412a075, type: 3}
 --- !u!4 &569544158
 Transform:
   m_ObjectHideFlags: 0
