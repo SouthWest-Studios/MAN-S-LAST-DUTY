@@ -26,6 +26,9 @@ public class MainMenuManager : MonoBehaviour
     private bool iniciarPartida = false;
     private bool cerrarJuego = false;
 
+  
+
+
 
 
     // Start is called before the first frame update
@@ -109,6 +112,27 @@ public class MainMenuManager : MonoBehaviour
                         Application.Quit(); // Funciona en la build
             #endif
         }
+    }
+
+
+    public void IconMark(Image image)
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
+    }
+
+    public void IconMarkOff(Image image)
+    {
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
+    }
+
+    public void ApplyTint(DoubleClickUI script)
+    {
+        script.ApplyTint();
+    }
+
+    public void UnapplyTint(DoubleClickUI script)
+    {
+        script.UnapplyTint();
     }
 
 
