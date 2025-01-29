@@ -55,7 +55,7 @@ public class BloodManager : MonoBehaviour
         FetusScript fetusScript = FindAnyObjectByType<FetusScript>();
         if (fetusScript != null)
         {
-            fetusScript.currentHint = "BloodPuzzle";
+            
         }
 
 
