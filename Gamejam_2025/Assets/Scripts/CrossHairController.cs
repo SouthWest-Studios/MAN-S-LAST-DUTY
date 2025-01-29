@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class CrosshairController : MonoBehaviour
 {
+    public static CrosshairController instance;
     public GameObject crosshair; // Arrastra aquí el punto de apuntado.
+
+
+    private void Awake()
+    {
+        if(instance == null) { instance = this; }
+    }
 
     void Start()
     {

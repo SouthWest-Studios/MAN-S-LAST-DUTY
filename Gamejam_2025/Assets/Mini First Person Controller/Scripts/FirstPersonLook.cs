@@ -15,6 +15,12 @@ public class FirstPersonLook : MonoBehaviour
     public bool isPanelOpen = true;
 
     public CrosshairController crosshairController;
+    public static FirstPersonLook instance;
+
+    private void Awake()
+    {
+        if (instance == null) { instance = this; }
+    }
 
 
     void Reset()

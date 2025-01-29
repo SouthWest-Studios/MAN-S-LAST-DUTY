@@ -10,8 +10,10 @@ public class NotasMentalesManager : MonoBehaviour
 
     public GameObject notasMentales;
     public GameObject iconoActualizarNotas;
+    public Animator notasMentalesAnimator;
 
     public static NotasMentalesManager instance;
+    private bool isOpened = false;
 
     [Header("Grupos")]
     public GameObject numpadCodes;
@@ -65,7 +67,22 @@ public class NotasMentalesManager : MonoBehaviour
     {
         GestionMente();
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!isOpened)
+            {
+                notasMentalesAnimator.SetTrigger("EntryAnimation");
+                FirstPersonLook.instance.isPanelOpen = true;
+            }
+            else
+            {
+                notasMentalesAnimator.SetTrigger("OutAnimation");
+                FirstPersonLook.instance.isPanelOpen = false;
+            }
+            isOpened = !isOpened;
 
+
+        }
     }
 
 

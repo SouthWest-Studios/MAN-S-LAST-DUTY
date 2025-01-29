@@ -16023,21 +16023,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuzzleManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
-        type: 3}
-      propertyPath: puzzles.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
-        type: 3}
-      propertyPath: puzzles.Array.data[10].name
-      value: CordonUmbilicarPuzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
-        type: 3}
-      propertyPath: puzzles.Array.data[10].isReseteable
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20587,40 +20572,195 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1004680770042853978, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175959631471273684, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385271556935855550, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702619847996506060, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718557147116437070, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1718557147116437070, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956065104025214082, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979028452452298513, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1979028452452298513, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424841852319036192, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2424841852319036192, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574000491193738230, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643631460247427633, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113184628303900384, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304385471774505152, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409828733620800184, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723423994450468128, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806713836747585647, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838688098102641698, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840455405172610165, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856067155581855238, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: notasMentalesAnimator
+      value: 
+      objectReference: {fileID: 67117648}
+    - target: {fileID: 5196370625722004845, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461082591577206784, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5461082591577206784, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      value: 16777215
       objectReference: {fileID: 0}
     - target: {fileID: 5475812835721557026, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_Name
       value: NotasMentales
       objectReference: {fileID: 0}
+    - target: {fileID: 5597384430702076117, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614554973411883374, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6818153982420268145, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6872842330822848579, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062699490780037590, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102383076650995429, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671403329138785497, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8143191625638824484, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290178329138972261, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354843077029705967, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399988087647105880, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8720348283113782082, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9033452693950453307, guid: 1d4324d5d4502df468865913cda8cc80,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.972549
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
