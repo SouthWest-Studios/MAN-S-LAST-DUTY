@@ -1260,7 +1260,7 @@ Transform:
   m_GameObject: {fileID: 2984511282669510879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 540.11, y: 520.85, z: -174.74}
+  m_LocalPosition: {x: 541.146, y: 520.85, z: -156.926}
   m_LocalScale: {x: 0.90000004, y: 0.76122904, z: 0.90000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1376,6 +1376,8 @@ MonoBehaviour:
   focusCamera: {fileID: 1872871779693777075}
   transitionSpeed: 2
   isCanvasToOpen: 1
+  canvasAnimator: {fileID: 7089070405693252047}
+  player: {fileID: 0}
 --- !u!1 &3369589607291862035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,6 +2054,7 @@ GameObject:
   - component: {fileID: 2749786220132275320}
   - component: {fileID: 7931377664800072349}
   - component: {fileID: 3330772108347349630}
+  - component: {fileID: 7089070405693252047}
   m_Layer: 5
   m_Name: TangramCanvas
   m_TagString: Untagged
@@ -2151,6 +2154,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &7089070405693252047
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7176018350378174554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a4be55974620bc4da986805c94060b9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7310596101241108415
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class ObjectInteraction : MonoBehaviour
     private Quaternion initialPlayerCameraRotation;
     private bool hasSavedInitialTransform = false;
 
+    public Animator canvasAnimator; // Referencia al Animator del canvas
+
     public FirstPersonMovement player;
 
     private void OnTriggerEnter(Collider other)
@@ -37,18 +39,45 @@ public class ObjectInteraction : MonoBehaviour
         }
     }
 
+
     private void Update()
     {
         if (playerIsNear && Input.GetKeyDown(KeyCode.E))
         {
             if (!isFocused && !isTransitioning)
             {
-                
                 StartCoroutine(StartFocusTransition(focusCamera));
+
+                if (isCanvasToOpen)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    canvasToOpen.SetActive(true);
+                    cameraFirstPerson.isPanelOpen = true;
+                    cameraFirstPerson.crosshairController.gameObject.SetActive(false);
+
+                    // Activar el trigger "In" del Animator
+                    if (canvasAnimator != null)
+                    {
+                        canvasAnimator.SetTrigger("In");
+                    }
+                }
             }
             else if (isFocused && !isTransitioning)
             {
-                EndFocusTransition();
+                StartCoroutine(EndFocusTransitionCoroutine());
+
+                if (isCanvasToOpen)
+                {
+                    // No desactivar el canvas aquí, se hará en la corrutina
+                    cameraFirstPerson.isPanelOpen = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+
+                    // Activar el trigger "Out" del Animator
+                    if (canvasAnimator != null)
+                    {
+                        canvasAnimator.SetTrigger("Out");
+                    }
+                }
             }
         }
     }
@@ -107,31 +136,39 @@ public class ObjectInteraction : MonoBehaviour
         cameraFirstPerson.gameObject.SetActive(false);
         targetCamera.gameObject.SetActive(true);
 
-        if (isCanvasToOpen)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            canvasToOpen.SetActive(true);
-            cameraFirstPerson.isPanelOpen = true;
-            cameraFirstPerson.crosshairController.gameObject.SetActive(false);
-        }
-
         isTransitioning = false;
     }
 
-
-    public void EndFocusTransition()
+    IEnumerator EndFocusTransitionCoroutine()
     {
-        if (focusCamera == null || isTransitioning) return;
+        isTransitioning = true;
 
-        isFocused = false; // Estado actualizado
+        // Guardar la posición y rotación actuales de la cámara de enfoque
+        Vector3 startPosition = focusCamera.transform.position;
+        Quaternion startRotation = focusCamera.transform.rotation;
 
-        if (isCanvasToOpen)
+        // Posición y rotación objetivo (la cámara del jugador)
+        Vector3 targetPosition = initialPlayerCameraPosition;
+        Quaternion targetRotation = initialPlayerCameraRotation;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 1f)
         {
-            canvasToOpen.SetActive(false);
-            cameraFirstPerson.isPanelOpen = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            elapsedTime += Time.deltaTime * transitionSpeed;
+            float t = Mathf.Clamp01(elapsedTime);
+
+            focusCamera.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            focusCamera.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
+
+            yield return null;
         }
 
+        // Asegurar que la cámara llega a su destino
+        focusCamera.transform.position = targetPosition;
+        focusCamera.transform.rotation = targetRotation;
+
+        // Desactivar la cámara de enfoque y reactivar la cámara del jugador
         focusCamera.gameObject.SetActive(false);
         cameraFirstPerson.gameObject.SetActive(true);
 
@@ -139,12 +176,27 @@ public class ObjectInteraction : MonoBehaviour
         cameraFirstPerson.transform.position = initialPlayerCameraPosition;
         cameraFirstPerson.transform.rotation = initialPlayerCameraRotation;
 
+        // Reactivar el control de la cámara del jugador
         cameraFirstPerson.enabled = true;
         cameraFirstPerson.crosshairController.gameObject.SetActive(true);
 
-        // Resetear variables
+        // Desactivar el canvas si es necesario
+        if (isCanvasToOpen)
+        {
+            canvasToOpen.SetActive(false);
+        }
+
+        // Restablecer variables
+        isFocused = false;
         isTransitioning = false;
         hasSavedInitialTransform = false;
         player.enabled = true;
+    }
+
+    public void EndFocusTransition()
+    {
+        if (focusCamera == null || isTransitioning) return;
+
+        StartCoroutine(EndFocusTransitionCoroutine());
     }
 }
