@@ -2016,7 +2016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544281476907291135}
   m_Layer: 0
-  m_Name: TangramProblem 1
+  m_Name: TangramProblem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
