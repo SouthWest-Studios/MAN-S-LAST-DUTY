@@ -20,6 +20,13 @@ public class Numpat : MonoBehaviour
     public AudioClip correctClip;
     public TraumaInducer traumaInducer;
 
+
+    public AudioClip[] clipsUBTITLE;
+
+    public string[] lineES;
+    public string[] lineEN;
+    public string[] lineCA;
+
     public void SendNumber(int number)
     {
         if (isOpened || indexPad >= 4) return;
@@ -33,6 +40,13 @@ public class Numpat : MonoBehaviour
         {
             if (actualCode == PuzzleManager.numpadFinalCode)
             {
+
+
+                SubtitulosManager.instance.PlayDialogue(lineES, lineEN, lineCA, clipsUBTITLE);
+
+
+
+
                 audioSource.PlayOneShot(correctClip);
                 foreach (var spriteRenderer in codeNumbers)
                 {

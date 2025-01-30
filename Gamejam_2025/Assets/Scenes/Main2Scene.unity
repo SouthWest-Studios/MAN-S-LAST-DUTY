@@ -51162,97 +51162,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &2126244166
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2126244167}
-  - component: {fileID: 2126244169}
-  - component: {fileID: 2126244168}
-  m_Layer: 0
-  m_Name: DialogueTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2126244167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126244166}
-  serializedVersion: 2
-  m_LocalRotation: {x: -1.6463637e-10, y: -0.70710814, z: 1.6463589e-10, w: 0.70710546}
-  m_LocalPosition: {x: 1.66, y: -0.64, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1758029257664677519}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2126244168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126244166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79107d971b864cd409c0d48468b4168d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipsFirstRun:
-  - {fileID: 8300000, guid: c3f5289fb8f306444935d9f0e79df6f3, type: 3}
-  clipsResumen:
-  - {fileID: 8300000, guid: 43af8f2fb913dfc4b9a4886956f43c9a, type: 3}
-  linesFirstRun_EN:
-  - 'Here, you must turn off all the lights. To do so, you will need to use the buttons. 
-    Each button turns on certain lights. Once all lights are off, you will receive
-    a code for the door. '
-  linesFirstRun_ES:
-  - "Aqu\xED deber\xE1 apagar todas las luces. Para ello, tendr\xE1 que usar los
-    botones.  Cada bot\xF3n enciende ciertas luces. Al apagar todas las luces, recibir\xE1
-    un c\xF3digo para la puerta. "
-  linesFirstRun_CA:
-  - "Aqu\xED haur\xE0s d'apagar totes les llums. Per aix\xF2, haur\xE0s d'usar els
-    botons. Cada bot\xF3 enc\xE9n certes llums. Quan apagues totes les llums, rebr\xE0s
-    un codi per la porta."
-  linesResumen_EN:
-  - 'Turn off the lights by pressing the buttons.  Each button turns off certain
-    lights. Once finished, you will receive a code for the door. '
-  linesResumen_ES:
-  - "Apague las luces pulsando los botones.  Cada bot\xF3n apaga ciertas luces. Al
-    terminar, recibir\xE1 un c\xF3digo para la puerta. "
-  linesResumen_CA:
-  - "Apaga les llums prement els botons. Cada bot\xF3 apaga certes llums. Quan acabis,
-    rebr\xE0s un codi per la porta."
---- !u!65 &2126244169
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126244166}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.2, y: 2.95, z: 2.61}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2128373640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 8a0669be60aaf43bc84e95a66b4f5248,
@@ -52410,11 +52319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6720297729368687196, guid: cf5af7c29a2e38e43960a0a37b7cdd3c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2126244167}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8215713607247515346, guid: cf5af7c29a2e38e43960a0a37b7cdd3c,
         type: 3}
