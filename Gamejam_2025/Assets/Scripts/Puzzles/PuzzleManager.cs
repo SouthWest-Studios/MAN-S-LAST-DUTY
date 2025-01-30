@@ -42,6 +42,11 @@ public class PuzzleManager : MonoBehaviour
     public List<Vector3> wordleFinalListPosition = new List<Vector3>();
 
 
+ 
+
+    public List<Vector2Int> blood;
+    
+
 
     void Awake()
     {
@@ -53,6 +58,8 @@ public class PuzzleManager : MonoBehaviour
         {
             wordleFinalListPosition.Add(new Vector3(-1, -1, -1));
         }
+        
+
         // Asegurarse de que solo exista una instancia de PuzzleManager
         if (instance == null)
         {

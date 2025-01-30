@@ -7,6 +7,7 @@ public class BloodManager : MonoBehaviour
 {
 
     private PuzzleManager puzzleManager;
+    public List<BloodPuzzle> bloodAsyncStatic;
     public static List<BloodPuzzle> blood;
     private FetusScript fetusScript;
     public GameObject bloodTube;
@@ -25,7 +26,10 @@ public class BloodManager : MonoBehaviour
 
     void Start()
     {
-        
+        if(blood == null)
+        {
+            blood = bloodAsyncStatic;
+        }
     }
 
     void Update()
@@ -126,6 +130,40 @@ public class BloodManager : MonoBehaviour
         {
             rotateSound.Play();
         }
+    }
+
+    public void SaveBlood()
+    {
+        for (int k = 0; k < blood.Count; k++)
+        {
+            if (PuzzleManager.instance.blood.Count > k)
+            {
+
+                PuzzleManager.instance.blood[k] = new Vector2Int(blood[k].currentNumber, blood[k].correctNumber);
+
+            }
+            else
+            {
+                PuzzleManager.instance.blood.Add(new Vector2Int(blood[k].currentNumber, blood[k].correctNumber));
+            }
+            
+        }
+        
+    }
+
+    public void LoadBlood()
+    {
+        for (int k = 0; k < PuzzleManager.instance.blood.Count; k++)
+        {
+            //for (int i = 0; i < PuzzleManager.instance.blood[k].sticks.Count; i++)
+            //{
+                //blood[k].sticks[i] = PuzzleManager.instance.blood[k].sticks[i];
+                blood[k].currentNumber = PuzzleManager.instance.blood[k].x;
+                blood[k].correctNumber = PuzzleManager.instance.blood[k].y;
+                blood[k].saveTry();
+            //}
+        }
+
     }
 
 }

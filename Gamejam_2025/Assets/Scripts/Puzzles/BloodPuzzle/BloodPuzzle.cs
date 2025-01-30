@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BloodPuzzle : MonoBehaviour
 {
+    public int BloodRuedaID;
     public int correctNumber;
 
     public int currentNumber;
@@ -94,13 +95,17 @@ public class BloodPuzzle : MonoBehaviour
         
         
     }
+
+    
     
     public void saveTry()
     {
-        for(int i = 0; i < 9; i++)
+        
+        for (int i = 0; i < 9; i++)
         {
-            sticks[i].stickColoring(currentNumber, correctNumber);
             
+            sticks[i].stickColoring(currentNumber, correctNumber);
+
         }
         for (int i = 0; i < sticks.Count; i++)
         {
@@ -108,9 +113,6 @@ public class BloodPuzzle : MonoBehaviour
             MeshRenderer renderer = sticks[i].gameObject.GetComponent<MeshRenderer>();
             if (renderer != null)
             {
-
-
-
 
                 originalColor[i] = renderer.material.color;
 
