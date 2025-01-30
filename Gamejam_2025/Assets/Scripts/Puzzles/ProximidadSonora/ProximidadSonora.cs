@@ -213,9 +213,13 @@ public class ProximidadSonora : MonoBehaviour
         Debug.Log("New Target Position 3D: " + targetPosition3D);
     }
 
+    private bool wasCanvasActive = false;
+
     private void Update()
     {
-        if (mainCanvas.activeSelf)
+        bool isCanvasActive = mainCanvas.activeSelf;
+        
+        if (isCanvasActive && !wasCanvasActive)
         {
             OnEnable();
         }
@@ -223,18 +227,12 @@ public class ProximidadSonora : MonoBehaviour
 
         HandleMouseInput();
 
-        
-        if (!mainCanvas.activeSelf)
+        if (!isCanvasActive && wasCanvasActive)
         {
             OnDisable();
         }
-        //if (mainCanvas && Input.GetKeyDown(KeyCode.E) && gameActive)
-        //{
-        //    OnDisable();
-        //}
 
-
-
+        wasCanvasActive = isCanvasActive;
     }
 
     private void HandleMouseInput()
