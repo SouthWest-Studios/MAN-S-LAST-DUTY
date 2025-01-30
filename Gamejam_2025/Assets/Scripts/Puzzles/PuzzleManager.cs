@@ -43,10 +43,13 @@ public class PuzzleManager : MonoBehaviour
 
     public static int numeroDeBucles = 0;
 
-
- 
-
     public static List<Vector2Int> blood = new List<Vector2Int>();
+
+    public static int firstIndex;
+    public static int firstCorrectIndex;
+
+    public static int secondIndex;
+    public static int secondCorrectIndex;
     
 
 

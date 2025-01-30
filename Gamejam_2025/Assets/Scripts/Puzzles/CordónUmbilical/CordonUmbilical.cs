@@ -401,6 +401,7 @@ public class CordonUmbilical : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
+                    
                     // Si es el mismo objeto que ya está seleccionado, no hacer nada
                     if (selectedObject == hit.transform)
                         return;
@@ -417,6 +418,7 @@ public class CordonUmbilical : MonoBehaviour
 
                     // Establecer nuevo objeto seleccionado
                     selectedObject = hit.transform;
+                    Save();
                     selectedRenderer = hitObject.GetComponent<MeshRenderer>();
                     
                     // Establecer escala exacta para el objeto seleccionado
@@ -702,26 +704,38 @@ public class CordonUmbilical : MonoBehaviour
         return startIndex + group.Length;
     }
 
+    public void Save()
+    {
+        PuzzleManager.firstIndex = currentObjectGroup;
+        PuzzleManager.firstCorrectIndex = correctGroupIndex;
+        GameObject[] currentGroup = GetCurrentGroup();
+        PuzzleManager.secondIndex = System.Array.IndexOf(currentGroup, selectedObject.gameObject);
+        PuzzleManager.secondCorrectIndex = correctObjectInGroupIndex;
+    }
     public void CheckPuzzle()
     {
+        currentObjectGroup = PuzzleManager.firstIndex;
+        currentObjectGroup = PuzzleManager.firstCorrectIndex;
+        correctObjectInGroupIndex = PuzzleManager.secondCorrectIndex;
+        int selectedIndex = PuzzleManager.secondIndex;
         GameObject[] currentGroup = GetCurrentGroup();
-        int currentPivotIndex = GetCurrentPivotIndex();
+        //int currentPivotIndex = GetCurrentPivotIndex();
         
-        if (currentGroup == null || selectedObject == null) 
+        if (currentGroup == null/* || selectedObject == null*/) 
         {
             return;
         }
 
-        int selectedIndex = System.Array.IndexOf(currentGroup, selectedObject.gameObject);
+        //int selectedIndex = System.Array.IndexOf(currentGroup, selectedObject.gameObject);
         bool isCorrect = (currentObjectGroup == correctGroupIndex && selectedIndex == correctObjectInGroupIndex);
         
         // Cambiar material del pivot según si es el grupo correcto o no
-        if (currentPivotIndex >= 0 && currentPivotIndex < pivotObjects.Length)
+        if (selectedIndex >= 0 && selectedIndex < pivotObjects.Length)
         {
-            MeshRenderer pivotRenderer = pivotObjects[currentPivotIndex].GetComponent<MeshRenderer>();
+            MeshRenderer pivotRenderer = pivotObjects[selectedIndex].GetComponent<MeshRenderer>();
             if (pivotRenderer != null)
             {
-                if (currentPivotIndex == correctGroupIndex)
+                if (selectedIndex == correctGroupIndex)
                 {
                     pivotRenderer.material = correctPivotMaterial;
                 }
@@ -732,12 +746,12 @@ public class CordonUmbilical : MonoBehaviour
             }
         }
 
-        // Aplicar material al objeto seleccionado según si es correcto o no
-        if (selectedRenderer != null)
-        {
-            selectedRenderer.material = isCorrect ? correctPivotMaterial : wrongObjectMaterial;
-            Debug.Log(selectedObject.name + " is correct: " + isCorrect, selectedRenderer.material);
-        }
+        //// Aplicar material al objeto seleccionado según si es correcto o no
+        //if (selectedRenderer != null)
+        //{
+        //    selectedRenderer.material = isCorrect ? correctPivotMaterial : wrongObjectMaterial;
+        //    Debug.Log(selectedObject.name + " is correct: " + isCorrect, selectedRenderer.material);
+        //}
 
         if (isCorrect)
         {
