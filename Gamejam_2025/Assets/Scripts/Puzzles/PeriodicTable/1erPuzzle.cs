@@ -18,6 +18,16 @@ public class PeriodicPuzzle : MonoBehaviour
 
     public GameObject finalObject;
 
+
+
+
+    public AudioClip[] clip;
+
+
+    public string[] lines_ES;
+    public string[] lines_EN;
+    public string[] lines_CA;
+
     private void Awake()
     {
         puzzleManager = FindObjectOfType<PuzzleManager>();
@@ -49,6 +59,12 @@ public class PeriodicPuzzle : MonoBehaviour
         }
         if (hintNum == correctNum)
         {
+
+
+            SubtitulosManager.instance.PlayDialogue(lines_ES, lines_EN, lines_CA, clip);
+
+
+
             puzzleManager = FindAnyObjectByType<PuzzleManager>();
             hintNumText.text = "correct";
             puzzleManager.CompletePuzzle("PeriodicTablePuzzle");

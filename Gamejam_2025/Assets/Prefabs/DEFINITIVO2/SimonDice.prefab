@@ -908,6 +908,92 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4199677686725018299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6319465661606551366}
+  - component: {fileID: 8278339621850329659}
+  - component: {fileID: 5121891263037069116}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6319465661606551366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199677686725018299}
+  serializedVersion: 2
+  m_LocalRotation: {x: -1.6463637e-10, y: -0.70710814, z: 1.6463589e-10, w: 0.70710546}
+  m_LocalPosition: {x: 27.17186, y: -1.1033076, z: 46.367733}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8255388844228217216}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8278339621850329659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199677686725018299}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5121891263037069116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199677686725018299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd17bcf95ab1fd489aa201323ea6570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: 2a7e7710fe719e643a967632476fd02e, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: fe60046503c1134489f5d9904d541f9d, type: 3}
+  linesFirstRun_EN:
+  - 'Copy the color sequence to receive a number for the door code.  If the combination
+    fails, you must repeat the test. '
+  linesFirstRun_ES:
+  - "Copie la secuencia de colores para recibir un n\xFAmero del c\xF3digo de la
+    puerta.  Si falla la combinaci\xF3n, deber\xE1 volver a realizar la prueba. "
+  linesFirstRun_CA:
+  - "Copia la seq\xFC\xE8ncia de colors per rebre un n\xFAmero del codi de la porta.
+    Si falla la combinaci\xF3, haur\xE0s de tornar a realitzar la prova. "
+  linesResumen_EN:
+  - 'Copy the color sequence to receive a number for the door code. '
+  linesResumen_ES:
+  - "Copie la secuencia de colores para recibir un n\xFAmero del c\xF3digo de la
+    puerta."
+  linesResumen_CA:
+  - "Copia la seq\xFC\xE8ncia de colors per rebre un n\xFAmero del codi de la porta. "
 --- !u!1 &4675190945462041227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,7 +1804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6367447302762126244}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 17.362648, y: 1.288, z: -44.776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1730,6 +1816,7 @@ Transform:
   - {fileID: 2418904176870880564}
   - {fileID: 1816680792263260250}
   - {fileID: 1160588599002607043}
+  - {fileID: 6319465661606551366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &6442120158814971139

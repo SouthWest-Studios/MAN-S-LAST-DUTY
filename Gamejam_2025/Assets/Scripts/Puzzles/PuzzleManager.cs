@@ -55,6 +55,10 @@ public class PuzzleManager : MonoBehaviour
     //PARA LOS DIALOGOS/SUBTITUOS, HAY QUE GUARDARLOS
     public static bool firstRunDoned = false;
     public static bool firstBloodDialogueDoned = false;
+    public static bool wordleDialogueDoned = false;
+    public static bool periodicTableDialogueDoned = false;
+    public static bool simonDiceDialogueDoned = false;
+    public static bool pipeDreamDialogueDoned = false;
 
     void Awake()
     {

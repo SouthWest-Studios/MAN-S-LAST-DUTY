@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTriggerWordle: MonoBehaviour
+public class DialogueTriggerSimonDice: MonoBehaviour
 {
 
     private bool seHaActivado = false;
@@ -39,9 +39,9 @@ public class DialogueTriggerWordle: MonoBehaviour
         if (other.CompareTag("Player") && !seHaActivado)
         {
             seHaActivado = true;
-            if (!PuzzleManager.wordleDialogueDoned)
+            if (!PuzzleManager.simonDiceDialogueDoned)
             {
-                PuzzleManager.wordleDialogueDoned = true;
+                PuzzleManager.simonDiceDialogueDoned = true;
                 SubtitulosManager.instance.PlayDialogue(linesFirstRun_ES, linesFirstRun_EN, linesFirstRun_CA, clipsFirstRun);
             }
             else
