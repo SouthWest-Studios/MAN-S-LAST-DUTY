@@ -14,7 +14,7 @@ public class FetusScript : MonoBehaviour
 
     private bool showHints = true;
 
-
+    public int counter = 0;
 
     public AudioClip[] clipsDialogo1;
 
@@ -62,7 +62,7 @@ public class FetusScript : MonoBehaviour
         
         if (currentObject != "")
         {
-          manager.GivePuzzle(currentObject);           
+          //manager.GivePuzzle(currentObject);           
         }
 
         if(currentHint != null)
@@ -76,7 +76,7 @@ public class FetusScript : MonoBehaviour
             grabObjects.ForceDropObject();
         }
 
-        int counter = 0;
+ 
 
         for (int i = 0; i < manager.puzzles.Count; i++)
         {
@@ -122,8 +122,6 @@ public class FetusScript : MonoBehaviour
                 bloodManager.LoadBlood();
                 manager.puzzles[i].isHintGiven = false;
             }
-        }
-
-        
+        }        
     }
 }

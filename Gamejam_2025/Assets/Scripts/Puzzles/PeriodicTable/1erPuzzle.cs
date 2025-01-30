@@ -40,6 +40,7 @@ public class PeriodicPuzzle : MonoBehaviour
     {
         puzzleManager = FindAnyObjectByType<PuzzleManager>();
         correctNum = Random.Range(1, 56);
+        Debug.Log(correctNum);
     }
 
     public void GuessNum(int num)

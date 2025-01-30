@@ -51,15 +51,15 @@ public class NavigationManager : MonoBehaviour
 
         HashSet<int> uniqueNumbers = new HashSet<int>(); // Para evitar duplicados
 
-        // Escoger una posición aleatoria para insertar `numberToInsert`
+        // Escoger una posiciï¿½n aleatoria para insertar `numberToInsert`
         int insertIndex = Random.Range(0, 7);
-        uniqueNumbers.Add(numberToInsert); // Asegurar que el número a insertar es único
+        uniqueNumbers.Add(numberToInsert); // Asegurar que el nï¿½mero a insertar es ï¿½nico
 
         for (int i = 0; i < 8; i++)
         {
             if (isArray)
             {
-                // Si es un array, generamos 4 números aleatorios únicos
+                // Si es un array, generamos 4 nï¿½meros aleatorios ï¿½nicos
                 List<int> arrayNumbers = new List<int>();
 
                 if (i == insertIndex)
@@ -81,15 +81,15 @@ public class NavigationManager : MonoBehaviour
                 }
                 
 
-                // Si este índice es el seleccionado, reemplazar un número aleatorio con `numberToInsert`
+                // Si este ï¿½ndice es el seleccionado, reemplazar un nï¿½mero aleatorio con `numberToInsert`
                 
 
-                // Convertir los números en un string separado por espacios
+                // Convertir los nï¿½meros en un string separado por espacios
                 textList[i].text = initialText + string.Join("", arrayNumbers);
             }
             else
             {
-                // Si no es un array, seguir la lógica original
+                // Si no es un array, seguir la lï¿½gica original
                 if (i == insertIndex)
                 {
                     textList[i].text = initialText + numberToInsert.ToString();
@@ -100,7 +100,7 @@ public class NavigationManager : MonoBehaviour
                     do
                     {
                         randomNumber = Random.Range(0, random);
-                    } while (uniqueNumbers.Contains(randomNumber)); // Asegurar que sea único
+                    } while (uniqueNumbers.Contains(randomNumber)); // Asegurar que sea ï¿½nico
 
                     uniqueNumbers.Add(randomNumber);
                     textList[i].text = initialText + randomNumber.ToString();
@@ -151,8 +151,10 @@ public class NavigationManager : MonoBehaviour
 
         foreach (TextMeshPro textObject in ListtangramManager)
         {
+            Debug.Log("FormName = " + tangramManager.formName);
             if (textObject.gameObject.activeSelf)
             {
+                Debug.Log("TextObject = " + textObject.text);
                 if (textObject.text == tangramManager.formName)
                 {
                     checkWin++;
@@ -175,6 +177,7 @@ public class NavigationManager : MonoBehaviour
             puzzleManager = FindAnyObjectByType<PuzzleManager>();
             puzzleManager.CompletePuzzle("NavigationPuzzle");
         }
+        Debug.Log("CheckWin = " + checkWin);
         objectToShow.SetActive(true);
     }
 
