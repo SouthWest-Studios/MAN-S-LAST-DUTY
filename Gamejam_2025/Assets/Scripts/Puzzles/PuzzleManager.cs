@@ -28,7 +28,7 @@ public class PuzzleManager : MonoBehaviour
 
     [Header("UI Elements")]
     public TextMeshProUGUI completionMessage; // Referencia al objeto del mensaje
-    public float messageDuration = 2f;   // Duración del mensaje en segundos
+    public float messageDuration = 2f;   // Duraciï¿½n del mensaje en segundos
 
     public static PuzzleManager instance;
 
@@ -46,14 +46,15 @@ public class PuzzleManager : MonoBehaviour
     public static List<Vector2Int> blood = new List<Vector2Int>();
 
 
+    public static int firstIndex;
+    public static int firstCorrectIndex;
 
+    public static int secondIndex;
+    public static int secondCorrectIndex;
+    
     //PARA LOS DIALOGOS/SUBTITUOS, HAY QUE GUARDARLOS
     public static bool firstRunDoned = false;
     public static bool firstBloodDialogueDoned = false;
-
-  
-    
-
 
     void Awake()
     {
@@ -146,7 +147,7 @@ public class PuzzleManager : MonoBehaviour
         {
             completionMessage.text = message;
             completionMessage.gameObject.SetActive(true); // Muestra el mensaje
-            // Inicia una animación o desvanecimiento
+            // Inicia una animaciï¿½n o desvanecimiento
             StartCoroutine(HideMessageAfterDelay());
         }
     }
@@ -156,7 +157,7 @@ public class PuzzleManager : MonoBehaviour
         yield return new WaitForSeconds(messageDuration);
         if (completionMessage != null)
         {
-            completionMessage.gameObject.SetActive(false); // Oculta el mensaje después del tiempo
+            completionMessage.gameObject.SetActive(false); // Oculta el mensaje despuï¿½s del tiempo
         }
     }
 
@@ -285,8 +286,8 @@ public class PuzzleManager : MonoBehaviour
         int seed = (int)System.DateTime.Now.Ticks; // Usa el timestamp actual como semilla
         Random.InitState(seed);
 
-        int randomCode = Random.Range(0, 10000); // Genera un número entre 0 y 9999
-        numpadFinalCode = randomCode.ToString("D4"); // Convierte a string con 4 dígitos (rellenando con ceros si es necesario)
+        int randomCode = Random.Range(0, 10000); // Genera un nï¿½mero entre 0 y 9999
+        numpadFinalCode = randomCode.ToString("D4"); // Convierte a string con 4 dï¿½gitos (rellenando con ceros si es necesario)
         numeroDeBucles = 0;
 
         foreach (var puzzle in puzzles)
