@@ -6171,6 +6171,16 @@ MonoBehaviour:
   - {fileID: 7402661098492025427}
   - {fileID: 4314611014343853425}
   rotationSpeed: 50
+  clipsCompleted:
+  - {fileID: 8300000, guid: f45b47feaf4d99f40a80289c362fb08c, type: 3}
+  lines_ES:
+  - "An\xE1lisis correcto. Imprima el resultado y ll\xE9velo al sujeto #268 de forma
+    inmediata. "
+  lines_EN:
+  - Correct analysis. Print the result and deliver it to the subject #268 immediately.
+  lines_CA:
+  - "An\xE0lisi correcta. Imprimiu el resultat i porteu-lo al subjecte #268 de forma
+    immediata."
 --- !u!1 &6446758273581399248
 GameObject:
   m_ObjectHideFlags: 0
