@@ -20526,6 +20526,11 @@ PrefabInstance:
       propertyPath: CorrectWaveScript
       value: 
       objectReference: {fileID: 473439929833354607}
+    - target: {fileID: 4869047185820748590, guid: 9827ad07b583a9648a4b08b7751fa275,
+        type: 3}
+      propertyPath: m_Name
+      value: NavigationPuzzle
+      objectReference: {fileID: 0}
     - target: {fileID: 4944478520627129117, guid: 9827ad07b583a9648a4b08b7751fa275,
         type: 3}
       propertyPath: m_Name
@@ -56839,6 +56844,11 @@ PrefabInstance:
       propertyPath: crosshairController
       value: 
       objectReference: {fileID: 872366631}
+    - target: {fileID: 4994036732292086143, guid: 122c22d1ef51b7b488d7e016cbbed82e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7546511573119331438, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: fadeTObLACK
@@ -63145,7 +63155,7 @@ PrefabInstance:
     - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
         type: 3}
       propertyPath: puzzles.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
         type: 3}
@@ -63159,7 +63169,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
         type: 3}
+      propertyPath: puzzles.Array.data[12].name
+      value: NavigationPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
+        type: 3}
       propertyPath: puzzles.Array.data[11].isReseteable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
+        type: 3}
+      propertyPath: puzzles.Array.data[12].isReseteable
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -64146,12 +64166,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2d0b81f2805433e4bab8b5fef7140579,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.235
+      value: 4.203
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d0b81f2805433e4bab8b5fef7140579,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -96.11936
+      value: -96.624
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d0b81f2805433e4bab8b5fef7140579,
         type: 3}
