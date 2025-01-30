@@ -15948,100 +15948,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &934530151
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 934530152}
-  - component: {fileID: 934530154}
-  - component: {fileID: 934530153}
-  m_Layer: 0
-  m_Name: DialogueTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &934530152
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934530151}
-  serializedVersion: 2
-  m_LocalRotation: {x: -6.869504e-16, y: -0.000003367662, z: 2.3283064e-10, w: 1}
-  m_LocalPosition: {x: 1.9, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1315629968338962516}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &934530153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934530151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ebddead115a1d341a62995126d04d22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipsFirstRun:
-  - {fileID: 8300000, guid: 55065a46db750fd468f206725c4bbe43, type: 3}
-  clipsResumen:
-  - {fileID: 8300000, guid: a4a7bb5e8a54a074c8f97c60cbb6610f, type: 3}
-  linesFirstRun_EN:
-  - 'An intervention in the umbilical cord is required. To ensure perfection:  First,
-    select the cutting area. Within that area, choose the appropriate type of cut.
-    Then, deliver the result to the subject #268 immediately. '
-  linesFirstRun_ES:
-  - "Es necesaria una intervenci\xF3n en el cord\xF3n umbilical. Para que sea perfecta: 
-    Primero, elija la zona de corte. Dentro de esa zona, seleccione el tipo de corte
-    adecuado. Despu\xE9s, lleve el resultado al sujeto #268  de forma inmediata. "
-  linesFirstRun_CA:
-  - "\xC9s necess\xE0ria una intervenci\xF3 en el cord\xF3 umbilical. Perqu\xE8 sigui
-    perfecta: Primer, selecciona la zona de tall. Dins d'aquesta zona, selecciona
-    el tipus de tall adequat. Despr\xE9s, porta el resultat al subjecte #268 immediatament."
-  linesResumen_EN:
-  - 'The cut is not correct.  If the position or the type of cut is in red, they
-    are incorrect. If they are in green, they are correct. Perform another intervention
-    and deliver the result to subject #268 immediately. '
-  linesResumen_ES:
-  - "El corte no es correcto.  Si la posici\xF3n o el tipo de corte est\xE1 en rojo,
-    son err\xF3neas. Si est\xE1n en verde, son correctas. Realice otra intervenci\xF3n
-    y lleve el resultado al sujeto #268 de forma inmediata. "
-  linesResumen_CA:
-  - "El tall no \xE9s correcte. Si la posici\xF3 o el tipus de tall est\xE0 en vermell,
-    s\xF3n erronis. Si estan en verd, s\xF3n correctes. Realitza una altra intervenci\xF3
-    i porta el resultat al subjecte #268 immediatament. "
---- !u!65 &934530154
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934530151}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.2, y: 2.95, z: 2.61}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &940984226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46316,27 +46222,27 @@ PrefabInstance:
     - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: clipsGrabBlood.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: clipsGrabBlood.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 279fd16be703d274cbf8c57b535a38db, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: linesGrabBlood_CA.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: linesGrabBlood_EN.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: linesGrabBlood_ES.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
@@ -52502,47 +52408,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3742593095805245005, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      propertyPath: lineCA.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3742593095805245005, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      propertyPath: lineEN.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3742593095805245005, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      propertyPath: lineES.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3742593095805245005, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      propertyPath: clipSub.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3742593095805245005, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      propertyPath: lineCA.Array.data[0]
-      value: "Intervenci\xF3 correcta. Procedeix a portar-la al subjecte #268 immediatament."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3742593095805245005, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      propertyPath: lineEN.Array.data[0]
-      value: 'Correct intervention. Proceed to deliver it to subject #268 immediately. '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3742593095805245005, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      propertyPath: lineES.Array.data[0]
-      value: "Intervenci\xF3n correcta. Proceda a llevarla al sujeto #268 de forma
-        inmediata. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 3742593095805245005, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      propertyPath: clipSub.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5524b7d4e3d8fe54a9e9d08733db5055, type: 3}
     - target: {fileID: 3991758784662231115, guid: ed8754d3fd7069542971bb809cc244af,
         type: 3}
       propertyPath: player
@@ -52560,11 +52425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 314620077936077265, guid: ed8754d3fd7069542971bb809cc244af,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 934530152}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed8754d3fd7069542971bb809cc244af, type: 3}
 --- !u!1660057539 &9223372036854775807
