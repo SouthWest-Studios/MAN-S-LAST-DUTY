@@ -9507,6 +9507,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WordleProblem
       objectReference: {fileID: 0}
+    - target: {fileID: 5843358854158533112, guid: 4130fcb44527101428d7e6d1e24c7f69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7167544139783466953, guid: 4130fcb44527101428d7e6d1e24c7f69,
         type: 3}
       propertyPath: m_IsActive
@@ -11482,6 +11487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WordleProblem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843358854158533112, guid: 4130fcb44527101428d7e6d1e24c7f69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7167544139783466953, guid: 4130fcb44527101428d7e6d1e24c7f69,
         type: 3}
@@ -14546,10 +14556,20 @@ PrefabInstance:
       propertyPath: CorrectWaveScript
       value: 
       objectReference: {fileID: 473439929833354607}
+    - target: {fileID: 3801699936864695001, guid: 9827ad07b583a9648a4b08b7751fa275,
+        type: 3}
+      propertyPath: m_text
+      value: RHOMB
+      objectReference: {fileID: 0}
     - target: {fileID: 4944478520627129117, guid: 9827ad07b583a9648a4b08b7751fa275,
         type: 3}
       propertyPath: m_Name
       value: NavigationProblem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944478520627129117, guid: 9827ad07b583a9648a4b08b7751fa275,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8315409544369631789, guid: 9827ad07b583a9648a4b08b7751fa275,
         type: 3}
@@ -16594,6 +16614,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PipeDream
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873171612507363036, guid: 487332127425f3941a61b5f9142850b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3916202593773379637, guid: 487332127425f3941a61b5f9142850b5,
         type: 3}
@@ -18875,6 +18900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PeriodicTable
       objectReference: {fileID: 0}
+    - target: {fileID: 4780285526528535286, guid: 8d386f4115bf4374b98e04db8f64d5a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6671375907046488199, guid: 8d386f4115bf4374b98e04db8f64d5a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19556,7 +19586,7 @@ PrefabInstance:
     - target: {fileID: 2333587895621402787, guid: 144055c3ff2175f409a4304afc015cb9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.93
+      value: -10.89
       objectReference: {fileID: 0}
     - target: {fileID: 2333587895621402787, guid: 144055c3ff2175f409a4304afc015cb9,
         type: 3}
@@ -19566,7 +19596,7 @@ PrefabInstance:
     - target: {fileID: 2333587895621402787, guid: 144055c3ff2175f409a4304afc015cb9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.3
+      value: -41.1
       objectReference: {fileID: 0}
     - target: {fileID: 2333587895621402787, guid: 144055c3ff2175f409a4304afc015cb9,
         type: 3}
@@ -44344,6 +44374,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NotasMentales
       objectReference: {fileID: 0}
+    - target: {fileID: 5475812835721557026, guid: 1d4324d5d4502df468865913cda8cc80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -45365,7 +45400,7 @@ PrefabInstance:
     - target: {fileID: 287688849686832199, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.94
+      value: 9.87
       objectReference: {fileID: 0}
     - target: {fileID: 287688849686832199, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
@@ -45375,7 +45410,7 @@ PrefabInstance:
     - target: {fileID: 287688849686832199, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -87.56
+      value: -58.03
       objectReference: {fileID: 0}
     - target: {fileID: 287688849686832199, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
@@ -45427,6 +45462,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
+        type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 872366629}
     - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: minuteText
@@ -45435,7 +45475,7 @@ PrefabInstance:
     - target: {fileID: 4623854026621706339, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: m_Constraints
-      value: 126
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 4835098825475368265, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
@@ -49496,6 +49536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
         type: 3}
+      propertyPath: puzzles.Array.data[9].isReseteable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
+        type: 3}
       propertyPath: puzzles.Array.data[11].isReseteable
       value: 1
       objectReference: {fileID: 0}
@@ -50713,6 +50758,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuitarHeroPuzzleBueno
       objectReference: {fileID: 0}
+    - target: {fileID: 1403309563509357259, guid: bab56e1bf4eb08e4295f895c5b6ddd7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7128647443722135061, guid: bab56e1bf4eb08e4295f895c5b6ddd7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50863,6 +50913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuertasNumPad
       objectReference: {fileID: 0}
+    - target: {fileID: 8990697390580285343, guid: 6ac60d46a5055d746bb32821c2876abe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50910,6 +50965,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SimonDice
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367447302762126244, guid: 1182d22562798c0478d3aee6ac894831,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8255388844228217216, guid: 1182d22562798c0478d3aee6ac894831,
         type: 3}
@@ -50990,6 +51050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaveProblem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341128169374481830, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4342956643174487366, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
         type: 3}
@@ -51128,6 +51193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PintarCasillasPuzzleBueno
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774164022913629593, guid: cf5af7c29a2e38e43960a0a37b7cdd3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51354,6 +51424,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TangramProblem
       objectReference: {fileID: 0}
+    - target: {fileID: 2984216591902495445, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4996245559630746443, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
         type: 3}
       propertyPath: m_IsActive
@@ -51566,6 +51641,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "Cord\xF3nUmbilical"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846406739238250904, guid: ed8754d3fd7069542971bb809cc244af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
