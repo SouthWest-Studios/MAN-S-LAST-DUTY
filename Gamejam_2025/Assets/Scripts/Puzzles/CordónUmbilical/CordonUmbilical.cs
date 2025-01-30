@@ -83,14 +83,15 @@ public class CordonUmbilical : MonoBehaviour
         currentMainCamera = puzzleCamera;
         
         // Initialize random values based on puzzle seed
-        Puzzle puzzle = PuzzleManager.instance.GetPuzzle("UmbilicalCordPuzzle");
+        Puzzle puzzle = PuzzleManager.instance.GetPuzzle("CordonUmbilicalPuzzle");
         if (puzzle != null)
         {
             Random.InitState(puzzle.seed);
             correctGroupIndex = Random.Range(0, 4); 
             correctObjectInGroupIndex = Random.Range(0, 3); 
-            //Debug.Log("Correct group: " + correctGroupIndex + ", Correct object: " + correctObjectInGroupIndex);
+            Debug.Log("Correct group: " + correctGroupIndex + ", Correct object: " + correctObjectInGroupIndex);
         }
+        else Debug.LogError("Puzzle not found!");
 
         // Calcular el total de objetos para el array
         int totalObjects = 0;
