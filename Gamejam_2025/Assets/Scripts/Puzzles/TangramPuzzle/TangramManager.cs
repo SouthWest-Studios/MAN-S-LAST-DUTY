@@ -19,6 +19,13 @@ public class TangramManager : MonoBehaviour
 
     public ObjectInteraction objectInteraction;
 
+
+
+    public AudioClip[] clipSub;
+    public string[] linesES;
+    public string[] linesEN;
+    public string[] linesCAT;
+
     private void Start()
     {
         randForm = Random.Range(0, 4);
@@ -90,6 +97,9 @@ public class TangramManager : MonoBehaviour
         }
         if (allCorrect)
         {
+
+            SubtitulosManager.instance.PlayDialogue(linesES, linesEN, linesCAT, clipSub);
+
             victorySound.Play();
             puzzleManager = FindAnyObjectByType<PuzzleManager>();
             puzzleManager.CompletePuzzle("TangramPuzzle");
