@@ -307,6 +307,7 @@ public class ProximidadSonora : MonoBehaviour
             }
             else
             {
+                PuzzleManager.instance.CompletePuzzle("ProximidadSonoraPuzzle");
                 gameActive = false;
 
 
