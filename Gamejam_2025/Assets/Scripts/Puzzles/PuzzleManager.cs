@@ -51,7 +51,10 @@ public class PuzzleManager : MonoBehaviour
 
     public static int secondIndex;
     public static int secondCorrectIndex;
-    
+
+    public GameObject TextE;
+    public GameObject TextF;
+
     //PARA LOS DIALOGOS/SUBTITUOS, HAY QUE GUARDARLOS
     public static bool firstRunDoned = false;
     public static bool firstBloodDialogueDoned = false;

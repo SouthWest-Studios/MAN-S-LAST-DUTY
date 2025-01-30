@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PanelController : MonoBehaviour
 {
@@ -100,9 +101,9 @@ public class PanelController : MonoBehaviour
                 closeConfigButton.onClick.AddListener(CloseConfigAction);  // Asignamos el mismo método para cerrar la configuración
         }
 
-        private void Button1Action()
+        public void Button1Action()
         {
-            Debug.Log("Panel 0 - Botón 1 presionado");
+            PuzzleManager.instance.NewGame();
         }
 
         private void CloseConfigAction()
@@ -135,7 +136,7 @@ public class PanelController : MonoBehaviour
 
         private void Button1Action()
         {
-            Debug.Log("Panel 1 - Botón 1 presionado");
+            Rewind.instance.StartRewinding();
         }
 
         private void CloseConfigAction()
@@ -197,7 +198,7 @@ public class PanelController : MonoBehaviour
 
         public AccessibilitySettings accessibilitySettings;
 
-        private string[] languages = { "English", "Castellano", "Català"};
+        private string[] languages = { "Castellano", "English", "Català"};
         private int currentLanguageIndex = 0;
 
         public void Initialize()
@@ -243,14 +244,15 @@ public class PanelController : MonoBehaviour
 
         private void ChangeLanguage(int direction)
         {
-            currentLanguageIndex = (currentLanguageIndex + direction + languages.Length) % languages.Length;
+            //currentLanguageIndex = (currentLanguageIndex + direction + languages.Length) % languages.Length;
+            PuzzleManager.instance.CambiarIdioma();
             UpdateLanguageDisplay();
         }
 
         private void UpdateLanguageDisplay()
         {
             if (gameSettings.languageText != null)
-                gameSettings.languageText.text = languages[currentLanguageIndex];
+                gameSettings.languageText.text = languages[PuzzleManager.instance.idiomaIndex];
         }
 
         private void ApplySettings()
@@ -336,15 +338,15 @@ public class PanelController : MonoBehaviour
             panelController = controller;  // Guardamos la referencia de PanelController
 
             if (button1 != null)
-                button1.onClick.AddListener(Button1Action);
+                button1.onClick.AddListener(MainMenu);
 
             if (closeConfigButton != null)
                 closeConfigButton.onClick.AddListener(CloseConfigAction);  // Asignamos el mismo método para cerrar la configuración
         }
 
-        private void Button1Action()
+        public void MainMenu()
         {
-            Debug.Log("Panel 4 - Botón 1 presionado");
+            SceneManager.LoadScene(0);
         }
 
         private void CloseConfigAction()
@@ -378,7 +380,6 @@ public class PanelController : MonoBehaviour
 
         private void CloseGame()
         {
-            Debug.Log("Closing game...");
 
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;  // Cierra el editor de Unity
@@ -393,5 +394,10 @@ public class PanelController : MonoBehaviour
                 panelController.CloseConfig();  // Llamamos a la función de cerrar configuración
             }
         }
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

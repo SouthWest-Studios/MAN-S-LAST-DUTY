@@ -26,14 +26,17 @@ public class ObjectInteraction : MonoBehaviour
         {
             playerIsNear = true;
             Debug.Log("El jugador está cerca del cubo.");
+            PuzzleManager.instance.TextE.SetActive(true);
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) 
     {
         if (other.CompareTag("Player"))
         {
             playerIsNear = false;
+            PuzzleManager.instance.TextE.SetActive(false);
+
             Debug.Log("El jugador se alejó del cubo.");
         }
     }
