@@ -1880,6 +1880,17 @@ MonoBehaviour:
   - {fileID: 8938290442116147357}
   - {fileID: 1589990742765390867}
   trigger: {fileID: 1610007103086650495}
+  clips:
+  - {fileID: 8300000, guid: ec19b5681c246374180ef78304a51c20, type: 3}
+  lines_EN:
+  - Perfect molecular formula identified. Proceed to deliver it to the subject #268
+    immediately.
+  lines_ES:
+  - "F\xF3rmula molecular perfecta identificada. Proceda a entregarla al sujeto #268
+    de forma inmediata."
+  lines_CA:
+  - "F\xF3rmula molecular perfecta identificada. Procedeix a entregar-la al subjecte
+    #268 immediatament."
 --- !u!1 &3647496532334440249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,6 +2855,100 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &5660421627075429745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7540118043408129552}
+  - component: {fileID: 7290355665311298691}
+  - component: {fileID: 8286049265697198070}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7540118043408129552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660421627075429745}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.14339407, z: -0, w: -0.9896657}
+  m_LocalPosition: {x: -0.4, y: 0.75, z: 0.11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7965333000002595963}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7290355665311298691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660421627075429745}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8286049265697198070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660421627075429745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7ab5a33c0c8dc40837d880cb65436e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: f7a399aa09f0ee54a861d32502926543, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: 5f050f2831538e24ca095b1c7c9dbba7, type: 3}
+  linesFirstRun_EN:
+  - 'In this experiment, you must decipher the best possible combination of molecules.
+    To do so:  Place one molecule in each slot. Deliver the result to the subject
+    #268 immediately. '
+  linesFirstRun_ES:
+  - "En este experimento, usted deber\xE1 descifrar la mejor combinaci\xF3n posible
+    de mol\xE9culas. Para ello:  Coloque una mol\xE9cula en cada slot. Lleve el resultado
+    al sujeto #268 de forma inmediata. "
+  linesFirstRun_CA:
+  - "En aquest experiment, haur\xE0s de desxifrar la millor combinaci\xF3 possible
+    de mol\xE8cules. Per aix\xF2: Col\xB7loca una mol\xE8cula en cada forat. Porta
+    el resultat al subjecte #268 immediatament."
+  linesResumen_EN:
+  - 'Analysis complete:  The red molecules are not part of the final formula. The
+    yellow molecules are present, but not in the correct position. The green molecules
+    are correct. Please perform another test. '
+  linesResumen_ES:
+  - "An\xE1lisis realizado:  Las mol\xE9culas en rojo no forman parte de la f\xF3rmula
+    final. Las mol\xE9culas en amarillo est\xE1n presentes, pero no en la posici\xF3n
+    correcta. Las mol\xE9culas en verde son correctas. Por favor, realice otra prueba. "
+  linesResumen_CA:
+  - "An\xE0lisi realitzat: Les mol\xE8cules en vermell no formen part de la f\xF3rmula
+    final. Les mol\xE8cules en groc estan presents, per\xF2 no en la posici\xF3 correcta.
+    Les mol\xE8cules en verd s\xF3n correctes. Si us plau, realitza una altra prova."
 --- !u!1 &5706341117797204116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,6 +3031,7 @@ Transform:
   - {fileID: 5252259304452633981}
   - {fileID: 8659048531223559417}
   - {fileID: 2519641838521538662}
+  - {fileID: 7540118043408129552}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5892559616389706561
@@ -3841,52 +3947,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.941757
+      value: -366.963
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5258627
+      value: -761.41614
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.635232
+      value: -329.252
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.56741095
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.17075728
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.78358954
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.18674654
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -29.107
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 109.131
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -3.654
       objectReference: {fileID: 0}
     - target: {fileID: -2484921068739079471, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
@@ -3943,6 +4049,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
+      objectReference: {fileID: 0}
     - target: {fileID: 8513859187771203891, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       propertyPath: m_Name
@@ -3969,7 +4080,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8513859187771203891, guid: 4ef1e46af5479b747a7d08ff2827ec7c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2994408749508768900}
+      addedObject: {fileID: 6908490196164296203}
   m_SourcePrefab: {fileID: 100100000, guid: 4ef1e46af5479b747a7d08ff2827ec7c, type: 3}
 --- !u!1 &1845947429702644651 stripped
 GameObject:
@@ -3998,7 +4109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5171359, y: 3.944965, z: 1.5347741}
   m_Center: {x: 0.0011901855, y: 0.0007942319, z: 0.77219605}
---- !u!54 &2994408749508768900
+--- !u!54 &6908490196164296203
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
