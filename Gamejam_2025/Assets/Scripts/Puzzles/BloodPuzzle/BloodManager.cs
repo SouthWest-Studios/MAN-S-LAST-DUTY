@@ -26,10 +26,9 @@ public class BloodManager : MonoBehaviour
 
     void Start()
     {
-        if(blood == null)
-        {
-            blood = bloodAsyncStatic;
-        }
+        
+        blood = bloodAsyncStatic;
+        
     }
 
     void Update()
@@ -134,17 +133,20 @@ public class BloodManager : MonoBehaviour
 
     public void SaveBlood()
     {
+
+       
+
         for (int k = 0; k < blood.Count; k++)
         {
-            if (PuzzleManager.instance.blood.Count > k)
+            if (PuzzleManager.blood.Count > k)
             {
 
-                PuzzleManager.instance.blood[k] = new Vector2Int(blood[k].currentNumber, blood[k].correctNumber);
+                PuzzleManager.blood[k] = new Vector2Int(blood[k].currentNumber, blood[k].correctNumber);
 
             }
             else
             {
-                PuzzleManager.instance.blood.Add(new Vector2Int(blood[k].currentNumber, blood[k].correctNumber));
+                PuzzleManager.blood.Add(new Vector2Int(blood[k].currentNumber, blood[k].correctNumber));
             }
             
         }
@@ -153,13 +155,13 @@ public class BloodManager : MonoBehaviour
 
     public void LoadBlood()
     {
-        for (int k = 0; k < PuzzleManager.instance.blood.Count; k++)
+        for (int k = 0; k < PuzzleManager.blood.Count; k++)
         {
             //for (int i = 0; i < PuzzleManager.instance.blood[k].sticks.Count; i++)
             //{
                 //blood[k].sticks[i] = PuzzleManager.instance.blood[k].sticks[i];
-                blood[k].currentNumber = PuzzleManager.instance.blood[k].x;
-                blood[k].correctNumber = PuzzleManager.instance.blood[k].y;
+                blood[k].currentNumber = PuzzleManager.blood[k].x;
+                blood[k].correctNumber = PuzzleManager.blood[k].y;
                 blood[k].saveTry();
             //}
         }
