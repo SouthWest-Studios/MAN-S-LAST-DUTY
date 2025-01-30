@@ -150,8 +150,6 @@ public class CordonUmbilical : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(correctGroupIndex);
-        Debug.Log(correctObjectInGroupIndex);
         // Añadir verificación al inicio del Update
         if (isPuzzleComplete) return;
 
