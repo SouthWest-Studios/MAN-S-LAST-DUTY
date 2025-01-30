@@ -59,20 +59,6 @@ public class FetusScript : MonoBehaviour
 
         if(currentHint != null)
         {
-
-            if(currentHint == "WordlePuzzle")
-            {
-                
-            }
-            if(currentHint == "CordonUmbilicalPuzzle")
-            {
-                
-            }
-            if (currentHint == "BloodPuzzle")
-            {
-                
-                
-            }
             manager.GiveHint(currentHint);
         }
 
@@ -80,6 +66,21 @@ public class FetusScript : MonoBehaviour
         {
             Destroy(grabObjects.GetHeldObject());
             grabObjects.ForceDropObject();
+        }
+
+        int counter = 0;
+
+        for (int i = 0; i < manager.puzzles.Count; i++)
+        {
+            if (manager.puzzles[i].isCompleted == true && manager.puzzles[i].isPuzzleGiven)
+            {
+                counter++;
+            }
+        }
+
+        if (counter >= 5)
+        {
+            Debug.Log("VICTORIA");
         }
 
     }
