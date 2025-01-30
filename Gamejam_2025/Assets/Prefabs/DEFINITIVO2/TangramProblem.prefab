@@ -260,6 +260,124 @@ Transform:
   - {fileID: 1371037879234796672}
   m_Father: {fileID: 5269424406187391734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1030500124119323051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585935502733443688}
+  - component: {fileID: 6597616859356024512}
+  - component: {fileID: 8639718232082815394}
+  m_Layer: 0
+  m_Name: Spot Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &585935502733443688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030500124119323051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.69575024, y: 0.00000001862645, z: 0.04528196, w: 0.7168551}
+  m_LocalPosition: {x: 540.893, y: 524.472, z: -157.214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5269424406187391734}
+  m_LocalEulerAnglesHint: {x: 85.951, y: 63.175, z: 66.847}
+--- !u!108 &6597616859356024512
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030500124119323051}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2
+  m_Range: 5.171246
+  m_SpotAngle: 96.948135
+  m_InnerSpotAngle: 96.948135
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &8639718232082815394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030500124119323051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1114938530698596471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2984216591902495445}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.47460654, z: -0, w: 0.88019806}
+  m_LocalRotation: {x: 0, y: -0.474603, z: 0, w: 0.8802}
   m_LocalPosition: {x: -430.17, y: -521.35736, z: -368.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1045,6 +1163,8 @@ Transform:
   - {fileID: 3294326365126072362}
   - {fileID: 1287944152963785484}
   - {fileID: 5004567304752987505}
+  - {fileID: 585935502733443688}
+  - {fileID: 4222251856123421513}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -56.667, z: 0}
 --- !u!1 &3143905236038571730
@@ -2124,7 +2244,7 @@ Transform:
   m_GameObject: {fileID: 4996245559630746443}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4122724, y: -0.57573664, z: -0.4067648, w: 0.5771493}
-  m_LocalPosition: {x: 540.028, y: 521.918, z: -174.755}
+  m_LocalPosition: {x: 541.099, y: 522.347, z: -156.945}
   m_LocalScale: {x: 0.35994804, y: 0.35994798, z: 0.359948}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2209,7 +2329,7 @@ Transform:
   m_GameObject: {fileID: 5006744651210727718}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4122724, y: -0.57573664, z: -0.4067648, w: 0.5771493}
-  m_LocalPosition: {x: 540.028, y: 521.918, z: -174.755}
+  m_LocalPosition: {x: 541.099, y: 522.347, z: -156.945}
   m_LocalScale: {x: 0.35994804, y: 0.5672886, z: 0.359948}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2901,6 +3021,8 @@ MonoBehaviour:
   cameraFirstPerson: {fileID: 0}
   focusCamera: {fileID: 589759508485415681}
   transitionSpeed: 2
+  isTransitioning: 0
+  isFocused: 0
   isCanvasToOpen: 1
   player: {fileID: 0}
   canvasAnimator: {fileID: 1022808516775268329}
@@ -2992,6 +3114,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37924501a542a7498205a2b3bc99f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6224235273555137602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4222251856123421513}
+  - component: {fileID: 369730762165346057}
+  - component: {fileID: 3178041533201901326}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4222251856123421513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224235273555137602}
+  serializedVersion: 2
+  m_LocalRotation: {x: -2.3270773e-10, y: -0.9994721, z: -7.564731e-12, w: -0.03249069}
+  m_LocalPosition: {x: 540.46, y: 522.43, z: -157.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5269424406187391734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &369730762165346057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224235273555137602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3178041533201901326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224235273555137602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40f35256dee4794dbec69921a720ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: 68e46f43cbd3b3c4ebca7d085a80e914, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: 647a4a6d00f55e74ca3307b728482025, type: 3}
+  linesFirstRun_EN:
+  - 'You must complete the constellation using the geometric shapes.  You may rotate
+    the shapes to fit them correctly. Once completed correctly, you will receive
+    a shape needed for the navigation system. '
+  linesFirstRun_ES:
+  - "Debe rellenar la constelaci\xF3n utilizando las figuras geom\xE9tricas.  Puede
+    rotar las figuras para ajustarlas correctamente. Al completarlo correctamente,
+    recibir\xE1 una forma necesaria para el sistema de navegaci\xF3n. "
+  linesFirstRun_CA:
+  - "Haur\xE0s de completar la constel\xB7laci\xF3 utilitzant les figures geom\xE8triques.
+    Pots rotar les figures per ajustar-les correctament. Quan ho facis correctament,
+    rebr\xE0s una forma necess\xE0ria per al sistema de navegaci\xF3. "
+  linesResumen_EN:
+  - 'Fill the shape with the geometric figures.  The shapes can be rotated to fit
+    correctly. You will receive a shape needed for the navigation system once completed
+    correctly. '
+  linesResumen_ES:
+  - "Rellene la figura con las formas geom\xE9tricas.  Se pueden rotar las figuras
+    para ajustarlas correctamente. Recibir\xE1 una forma necesaria para el sistema
+    de navegaci\xF3n al completarlo correctamente. "
+  linesResumen_CA:
+  - "Omple la figura amb les formes geom\xE8triques. Es poden rotar les figures per
+    ajustar-les correctament. Rebr\xE0s una forma necess\xE0ria per al sistema de
+    navegaci\xF3 quan ho facis correctament."
 --- !u!1 &6510874204041701889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,7 +3234,7 @@ Transform:
   m_GameObject: {fileID: 6510874204041701889}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4122724, y: -0.57573664, z: -0.4067648, w: 0.5771493}
-  m_LocalPosition: {x: 540.028, y: 521.918, z: -174.755}
+  m_LocalPosition: {x: 541.099, y: 522.347, z: -156.945}
   m_LocalScale: {x: 0.35994804, y: 0.35994798, z: 0.359948}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3103,7 +3319,7 @@ Transform:
   m_GameObject: {fileID: 6880405124058421349}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4122724, y: -0.57573664, z: -0.4067648, w: 0.5771493}
-  m_LocalPosition: {x: 540.028, y: 521.918, z: -174.755}
+  m_LocalPosition: {x: 541.099, y: 522.347, z: -156.945}
   m_LocalScale: {x: 0.35994804, y: 0.35994798, z: 0.359948}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3754,6 +3970,17 @@ MonoBehaviour:
   formName: 
   victorySound: {fileID: 1600550936229710069}
   objectInteraction: {fileID: 6697553471174183532}
+  clipSub:
+  - {fileID: 8300000, guid: 071df2fa0eb2e3f489e006806191537e, type: 3}
+  linesES:
+  - "Constelaci\xF3n correcta. Introduzca en el sistema de navegaci\xF3n la forma
+    geom\xE9trica recibida."
+  linesEN:
+  - Correct constellation. Enter the received geometric shape into the navigation
+    system.
+  linesCAT:
+  - "Constel\xB7laci\xF3 correcta. Introdueix al sistema de navegaci\xF3 la forma
+    geom\xE8trica rebuda."
 --- !u!1 &8368146268006134372
 GameObject:
   m_ObjectHideFlags: 0
