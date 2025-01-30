@@ -8,8 +8,8 @@ public class ObjectInteraction : MonoBehaviour
     public FirstPersonLook cameraFirstPerson;
     public Camera focusCamera;
     public float transitionSpeed = 2.0f; // Velocidad de transición
-    private bool isTransitioning = false;
-    private bool isFocused = false; // Estado de la cámara
+    public bool isTransitioning = false;
+    public bool isFocused = false; // Estado de la cámara
 
     public bool isCanvasToOpen = false;
 
