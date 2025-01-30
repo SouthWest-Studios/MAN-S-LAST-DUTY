@@ -59,6 +59,7 @@ public class PuzzleManager : MonoBehaviour
     public static bool periodicTableDialogueDoned = false;
     public static bool simonDiceDialogueDoned = false;
     public static bool pipeDreamDialogueDoned = false;
+    public static bool guitarHeroDialogueDoned = false;
 
     void Awake()
     {
