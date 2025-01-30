@@ -1157,6 +1157,8 @@ MonoBehaviour:
   cameraFirstPerson: {fileID: 0}
   focusCamera: {fileID: 3059430863730989255}
   transitionSpeed: 2
+  isTransitioning: 0
+  isFocused: 0
   isCanvasToOpen: 1
   player: {fileID: 0}
   canvasAnimator: {fileID: 9138937686640633009}
@@ -1298,6 +1300,14 @@ MonoBehaviour:
   - {fileID: 5668739372723878936}
   finalText: {fileID: 4326151405163313604}
   navigationManager: {fileID: 0}
+  clipSubtitulo:
+  - {fileID: 8300000, guid: cfe7578fcba54a3488840b29a3823a5c, type: 3}
+  lineES:
+  - "N\xFAmero de onda encontrado. Introduzca el n\xFAmero en la navegaci\xF3n. "
+  lineEN:
+  - Wave number found. Enter the number in the navigation system.
+  lineCA:
+  - "N\xFAmero d'ona trobat. Introdueix el n\xFAmero en la navegaci\xF3."
 --- !u!1 &1949245802120209391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,7 +3383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4341128169374481830}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.17490423, y: -0.0045709494, z: 0.00017459945, w: -0.98457485}
+  m_LocalRotation: {x: 0.17490388, y: 0.004573768, z: -0.00017177209, w: 0.98457485}
   m_LocalPosition: {x: -12.03497, y: -1.6417841, z: -1.3484344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3383,8 +3393,9 @@ Transform:
   - {fileID: 2203588233047831853}
   - {fileID: 7478356459306991024}
   - {fileID: 4217666738892073409}
+  - {fileID: 6763940653890484007}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.146, y: 0.546, z: 0.077}
 --- !u!114 &6731387189677361722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3995,6 +4006,102 @@ MonoBehaviour:
   m_hasFontAssetChanged: 1
   m_renderer: {fileID: 8018678470744279471}
   m_maskType: 0
+--- !u!1 &5254027579247130108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6763940653890484007}
+  - component: {fileID: 897439463997457047}
+  - component: {fileID: 2723697149910958513}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6763940653890484007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254027579247130108}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.046995807, y: 0.83269066, z: -0.551397, w: -0.019467067}
+  m_LocalPosition: {x: 12.92, y: 1.05, z: -0.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4342956643174487366}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &897439463997457047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254027579247130108}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2723697149910958513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5254027579247130108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d64007481dcc64e881f6fdfd2ad773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: eda69c1a7a861864dbda6d87b31c4743, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: 5a7f23fc26f09aa44831860a99d87e07, type: 3}
+  linesFirstRun_EN:
+  - 'You must find the correct communication wave.  Each section has different possibilities.
+    You also have a button that briefly displays the communications. Once completed
+    correctly, you will receive the wave number needed for the navigation test. '
+  linesFirstRun_ES:
+  - "Debe encontrar la onda de comunicaci\xF3n correcta.  Cada secci\xF3n tiene distintas
+    posibilidades. Tambi\xE9n cuenta con un bot\xF3n que le muestra las comunicaciones
+    durante un breve per\xEDodo de tiempo. Al realizarla correctamente, recibir\xE1
+    el n\xFAmero de onda necesario para la prueba de navegaci\xF3n. "
+  linesFirstRun_CA:
+  - "Haur\xE0s de trobar l'ona de comunicaci\xF3 correcta. Cada secci\xF3 t\xE9 diferents
+    possibilitats. Tamb\xE9 disposes d'un bot\xF3 que et mostra les comunicacions
+    durant un breu per\xEDode de temps. Quan ho facis correctament, rebr\xE0s el
+    n\xFAmero d'ona necessari per la prova de navegaci\xF3. "
+  linesResumen_EN:
+  - 'Find the correct wave number.  Each section has several possibilities. You have
+    a button to briefly display the wave. Once decoded correctly, you will receive
+    the wave number required for navigation. '
+  linesResumen_ES:
+  - "Encuentre el n\xFAmero de onda correcto.  Cada secci\xF3n tiene varias posibilidades.
+    Cuenta con un bot\xF3n para mostrar la onda. Al descifrarlo, obtendr\xE1 el n\xFAmero
+    de onda necesario para la navegaci\xF3n. "
+  linesResumen_CA:
+  - "Troba el n\xFAmero d'ona correcte. Cada secci\xF3 t\xE9 diverses possibilitats.
+    Tens un bot\xF3 per mostrar l'ona. Quan la desxifres, obtindr\xE0s el n\xFAmero
+    d'ona necessari per la navegaci\xF3."
 --- !u!1 &5271376300451225038
 GameObject:
   m_ObjectHideFlags: 0

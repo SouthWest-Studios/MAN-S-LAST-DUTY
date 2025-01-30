@@ -41,6 +41,12 @@ public class correctWaveScript : MonoBehaviour
     public NavigationManager navigationManager;
 
 
+    public AudioClip[] clipSubtitulo;
+    public string[] lineES;
+    public string[] lineEN;
+    public string[] lineCA;
+
+
     void Start()
     {
         puzzleManager = FindAnyObjectByType<PuzzleManager>();
@@ -182,6 +188,11 @@ public class correctWaveScript : MonoBehaviour
             {
                 audioSource.PlayOneShot(winSound);
             }
+
+
+
+
+            SubtitulosManager.instance.PlayDialogue(lineES, lineEN, lineCA, clipSubtitulo);
 
             puzzleManager.CompletePuzzle("WavePuzzle");
             finalText.gameObject.SetActive(true);

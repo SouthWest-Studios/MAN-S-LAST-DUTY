@@ -52236,9 +52236,49 @@ PrefabInstance:
       objectReference: {fileID: 2031459004}
     - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
         type: 3}
+      propertyPath: lineCA.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
+      propertyPath: lineEN.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
+      propertyPath: lineES.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
       propertyPath: navigationManager
       value: 
       objectReference: {fileID: 1658404557}
+    - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
+      propertyPath: lineCA.Array.data[0]
+      value: "N\xFAmero d'ona trobat. Introdueix el n\xFAmero en la navegaci\xF3."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
+      propertyPath: lineEN.Array.data[0]
+      value: Wave number found. Enter the number in the navigation system.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
+      propertyPath: lineES.Array.data[0]
+      value: "N\xFAmero de onda encontrado. Introduzca el n\xFAmero en la navegaci\xF3n. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
+      propertyPath: clipSubtitulo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677846185762828219, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
+        type: 3}
+      propertyPath: clipSubtitulo.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: cfe7578fcba54a3488840b29a3823a5c, type: 3}
     - target: {fileID: 8752346092984945976, guid: 18b4c302ecf4d0e4cafaeec11dfd0f70,
         type: 3}
       propertyPath: player
