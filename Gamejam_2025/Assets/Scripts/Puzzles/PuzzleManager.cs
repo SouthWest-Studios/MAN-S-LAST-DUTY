@@ -38,8 +38,8 @@ public class PuzzleManager : MonoBehaviour
     [Header("Idioma")]
     public int idiomaIndex = 0; //0 ESP, 1 ENG, 2 CAT
 
-    public List<Vector3> wordleFinalList = new List<Vector3>();
-    public List<Vector3> wordleFinalListPosition = new List<Vector3>();
+    public static List<Vector3> wordleFinalList = new List<Vector3>();
+    public static List<Vector3> wordleFinalListPosition = new List<Vector3>();
 
     public static int numeroDeBucles = 0;
 
