@@ -370,17 +370,17 @@ public class ProximidadSonora : MonoBehaviour
             
             if (currentLevel >= 1)
             {
-                coordsText = $"X = {level1Sum:0}";
+                coordsText = $"X = {Mathf.Floor(level1Sum)}";
             }
             
             if (currentLevel >= 2)
             {
-                coordsText += $"\nY = {level2Sum:0}";
+                coordsText += $"\nY = {Mathf.Floor(level2Sum)}";
             }
             
             if (currentLevel >= 3)
             {
-                coordsText += $"\nZ = {level3Sum:0}";
+                coordsText += $"\nZ = {Mathf.Floor(level3Sum)}";
             }
 
             coordinatesText.text = coordsText;
