@@ -14869,12 +14869,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &851035302 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1747957911197619190, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1746401304}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &872123946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100008, guid: 8a0669be60aaf43bc84e95a66b4f5248,
@@ -46282,69 +46276,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2038231814132050517, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      propertyPath: clipsGrabBlood.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      propertyPath: clipsGrabBlood.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      propertyPath: linesGrabBlood_CA.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      propertyPath: linesGrabBlood_EN.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2352812884434781036, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      propertyPath: linesGrabBlood_ES.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4596758276794941486, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: minuteText
       value: 
       objectReference: {fileID: 1686090123}
-    - target: {fileID: 4623854026621706339, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
     - target: {fileID: 4835098825475368265, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: crosshairController
       value: 
       objectReference: {fileID: 872366631}
-    - target: {fileID: 8691012292855062502, guid: 122c22d1ef51b7b488d7e016cbbed82e,
+    - target: {fileID: 7546511573119331438, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
-      propertyPath: canRun
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8691012292855062502, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      propertyPath: runSpeed
-      value: 7
-      objectReference: {fileID: 0}
+      propertyPath: fadeTObLACK
+      value: 
+      objectReference: {fileID: 1999656929}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1747957911197619190, guid: 122c22d1ef51b7b488d7e016cbbed82e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1746401310}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122c22d1ef51b7b488d7e016cbbed82e, type: 3}
 --- !u!114 &1746401305 stripped
 MonoBehaviour:
@@ -46352,28 +46302,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1746401304}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851035302}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97fca36bd81de7c4cafce7bbf02ca611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1746401310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851035302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11cdc710d35ed9145b5898be0c98495a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerToChangeScene: 21.5
-  timerToFadeBlackScene: 20
-  fadeTObLACK: {fileID: 1999656929}
-  empiezaTransicionFinal: 0
 --- !u!1 &1751038347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 7c640618751f24e19a758d31aaa0351b,
