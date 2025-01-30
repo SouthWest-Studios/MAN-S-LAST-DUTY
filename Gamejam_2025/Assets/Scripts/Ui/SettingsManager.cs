@@ -23,6 +23,8 @@ public class SettingsManager : MonoBehaviour
     public Slider voiceVolumeSlider;
     public Slider sfxVolumeSlider;
 
+    public FirstPersonMovement playerMovement; // Referencia al script de movimiento del jugador
+
     private void Awake()
     {
         if(instance == null) { instance = this; }
@@ -95,6 +97,7 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
+
     private void OpenConfig()
     {
         isConfigOpen = true;
@@ -105,6 +108,12 @@ public class SettingsManager : MonoBehaviour
             backgroundImage.GetComponent<Animator>()?.SetTrigger("Start");
 
         isPanelOpen.isPanelOpen = true;
+
+        // Deshabilitar el movimiento del jugador
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = false;
+        }
     }
 
     public void CloseConfig()
@@ -117,6 +126,12 @@ public class SettingsManager : MonoBehaviour
 
         panelController.CloseAllPanels();
         isPanelOpen.isPanelOpen = false;
+
+        // Habilitar el movimiento del jugador
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = true;
+        }
 
         StartCoroutine(CloseConfigWithDelay());
     }
