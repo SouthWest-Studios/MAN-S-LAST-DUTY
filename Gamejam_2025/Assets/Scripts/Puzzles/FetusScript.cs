@@ -86,7 +86,7 @@ public class FetusScript : MonoBehaviour
             }
         }
 
-        if (counter >= 5)
+        if (counter >= 4)
         {
 
             SubtitulosManager.instance.PlayDialogue(linesDialogo1_ES_FINAL, linesDialogo1_EN_FINAL, linesDialogo1_CA_FINAL, clipsDialogoFinal);

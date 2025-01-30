@@ -114,7 +114,7 @@ public class BloodManager : MonoBehaviour
     {
         // Espera 30 segundos
         //GetComponent<Button>().interactable = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(30f);
         isRotating = false; // Detener rotación
         
         // Resetear la rotación de los tubos
