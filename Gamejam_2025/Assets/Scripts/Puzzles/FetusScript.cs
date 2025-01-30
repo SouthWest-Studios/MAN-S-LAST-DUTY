@@ -92,6 +92,7 @@ public class FetusScript : MonoBehaviour
             SubtitulosManager.instance.PlayDialogue(linesDialogo1_ES_FINAL, linesDialogo1_EN_FINAL, linesDialogo1_CA_FINAL, clipsDialogoFinal);
             TransicionFinal.instance.PlayTransicionFinal();
 
+
             Debug.Log("VICTORIA");
         }
 
