@@ -52,7 +52,7 @@ public class FetusScript : MonoBehaviour
             {
                 
             }
-            if(currentHint == "UmbilicalCord")
+            if(currentHint == "CordonUmbilicalPuzzle")
             {
                 
             }
@@ -84,11 +84,11 @@ public class FetusScript : MonoBehaviour
                 wordleController.LoadMolecules();
                 manager.puzzles[i].isHintGiven = false;
             }
-            if (manager.puzzles[i].isHintGiven && manager.puzzles[i].name == "UmbilicalCord")
+            if (manager.puzzles[i].isHintGiven && manager.puzzles[i].name == "CordonUmbilicalPuzzle")
             {
-                //cordonUmbilical = FindAnyObjectByType<CordonUmbilical>();
-                //cordonUmbilical.CheckPuzzle(); ;
-                //manager.puzzles[i].isHintGiven = false;
+                cordonUmbilical = FindAnyObjectByType<CordonUmbilical>();
+                cordonUmbilical.CheckPuzzle();
+                manager.puzzles[i].isHintGiven = false;
             }
             if (manager.puzzles[i].isHintGiven && manager.puzzles[i].name == "BloodPuzzle")
             {

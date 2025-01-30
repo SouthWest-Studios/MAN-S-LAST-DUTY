@@ -45365,17 +45365,17 @@ PrefabInstance:
     - target: {fileID: 287688849686832199, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.24
+      value: 9.94
       objectReference: {fileID: 0}
     - target: {fileID: 287688849686832199, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 287688849686832199, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -56.58
+      value: -87.56
       objectReference: {fileID: 0}
     - target: {fileID: 287688849686832199, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
@@ -45432,6 +45432,11 @@ PrefabInstance:
       propertyPath: minuteText
       value: 
       objectReference: {fileID: 1686090123}
+    - target: {fileID: 4623854026621706339, guid: 122c22d1ef51b7b488d7e016cbbed82e,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 4835098825475368265, guid: 122c22d1ef51b7b488d7e016cbbed82e,
         type: 3}
       propertyPath: crosshairController
