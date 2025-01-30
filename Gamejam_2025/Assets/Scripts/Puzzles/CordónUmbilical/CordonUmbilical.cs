@@ -48,7 +48,6 @@ public class CordonUmbilical : MonoBehaviour
     [Header("Puzzle Settings")]
     [SerializeField] public static int correctGroupIndex = 0; // Grupo 1 (índice 0)
     [SerializeField] public static int correctObjectInGroupIndex = 0; // Primer objeto (índice 0)
-
     private bool isPuzzleActive = false;
     private bool isSnapped = false;
     private bool isTransitioning = false;
@@ -151,6 +150,8 @@ public class CordonUmbilical : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(correctGroupIndex);
+        Debug.Log(correctObjectInGroupIndex);
         // Añadir verificación al inicio del Update
         if (isPuzzleComplete) return;
 
@@ -722,28 +723,29 @@ public class CordonUmbilical : MonoBehaviour
     }
     public void CheckPuzzle()
     {
+        //Debug.Log("Checking puzzle...");
         currentObjectGroup = PuzzleManager.firstIndex;
-        currentObjectGroup = PuzzleManager.firstCorrectIndex;
+        correctGroupIndex = PuzzleManager.firstCorrectIndex;
         correctObjectInGroupIndex = PuzzleManager.secondCorrectIndex;
         int selectedIndex = PuzzleManager.secondIndex;
         GameObject[] currentGroup = GetCurrentGroup();
         //int currentPivotIndex = GetCurrentPivotIndex();
-        
         if (currentGroup == null/* || selectedObject == null*/) 
         {
             return;
         }
 
+        //Debug.Log("AAAAACurrent group: " + currentObjectGroup + ", Correct group: " + correctGroupIndex + ", Selected index: " + selectedIndex + ", Correct index: " + correctObjectInGroupIndex);
         //int selectedIndex = System.Array.IndexOf(currentGroup, selectedObject.gameObject);
         bool isCorrect = (currentObjectGroup == correctGroupIndex && selectedIndex == correctObjectInGroupIndex);
         
         // Cambiar material del pivot según si es el grupo correcto o no
-        if (selectedIndex >= 0 && selectedIndex < pivotObjects.Length)
+        if (currentObjectGroup >= 0 && currentObjectGroup < pivotObjects.Length)
         {
-            MeshRenderer pivotRenderer = pivotObjects[selectedIndex].GetComponent<MeshRenderer>();
+            MeshRenderer pivotRenderer = pivotObjects[currentObjectGroup].GetComponent<MeshRenderer>();
             if (pivotRenderer != null)
             {
-                if (selectedIndex == correctGroupIndex)
+                if (currentObjectGroup == correctGroupIndex)
                 {
                     pivotRenderer.material = correctPivotMaterial;
                 }
@@ -769,7 +771,8 @@ public class CordonUmbilical : MonoBehaviour
 
 
             puzzleManager = FindObjectOfType<PuzzleManager>();
-            puzzleManager.CompletePuzzle("UmbilicalCord");
+            puzzleManager.CompletePuzzle("CordonUmbilicalPuzzle");
+            //Debug.Log("Puzzle completado UmbilicalCord");
         }
         
         EndPuzzle();
