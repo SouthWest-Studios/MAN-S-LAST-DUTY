@@ -56,31 +56,31 @@ public class TangramManager : MonoBehaviour
 
             var molecule = slots[i].GetComponentInChildren<DraggableTangram>();
 
-            if(molecule.pieceID == 1 && molecule.pieceRotation != 3)
+            if(molecule.pieceID == 1 && molecule.pieceRotation != 0)
             {
                 allCorrect = false;
             }
-            if (molecule.pieceID == 2 && molecule.pieceRotation != 2)
+            if (molecule.pieceID == 2 && molecule.pieceRotation != 0)
             {
                 allCorrect = false;
             }
-            if (molecule.pieceID == 3 && molecule.pieceRotation != 0)
+            if (molecule.pieceID == 3 && molecule.pieceRotation != 0 && molecule.pieceID == 3 && molecule.pieceRotation != 1 && molecule.pieceID == 3 && molecule.pieceRotation != 2 && molecule.pieceID == 3 && molecule.pieceRotation != 3)
             {
                 allCorrect = false;
             }
-            if (molecule.pieceID == 4 && molecule.pieceRotation != 0)
+            if (molecule.pieceID == 4 && molecule.pieceRotation != 3)
             {
                 allCorrect = false;
             }
-            if (molecule.pieceID == 5 && molecule.pieceRotation != 3)
+            if (molecule.pieceID == 5 && molecule.pieceRotation != 2)
             {
                 allCorrect = false;
             }
-            if (molecule.pieceID == 6 && molecule.pieceRotation != 3)
+            if (molecule.pieceID == 6 && molecule.pieceRotation != 2)
             {
                 allCorrect = false;
             }
-            if (molecule.pieceID == 7 && molecule.pieceRotation != 0)
+            if (molecule.pieceID == 7 && molecule.pieceRotation != 1 && molecule.pieceID == 7 && molecule.pieceRotation != 3)
             {
                 allCorrect = false;
             }
