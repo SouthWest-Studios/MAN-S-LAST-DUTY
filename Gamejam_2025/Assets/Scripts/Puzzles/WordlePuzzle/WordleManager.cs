@@ -141,8 +141,8 @@ public class WordleController : MonoBehaviour
         {
             if(slots[i].GetComponentInChildren<DraggableMolecule>() != null)
             {
-                PuzzleManager.instance.wordleFinalList[i] = new Vector3(slots[i].GetComponentInChildren<DraggableMolecule>().transform.position.x, slots[i].GetComponentInChildren<DraggableMolecule>().transform.position.y, slots[i].GetComponentInChildren<DraggableMolecule>().moleculeID);
-                PuzzleManager.instance.wordleFinalListPosition[i] = slots[i].GetComponentInChildren<DraggableMolecule>().initialPosition;
+                PuzzleManager.wordleFinalList[i] = new Vector3(slots[i].GetComponentInChildren<DraggableMolecule>().transform.position.x, slots[i].GetComponentInChildren<DraggableMolecule>().transform.position.y, slots[i].GetComponentInChildren<DraggableMolecule>().moleculeID);
+                PuzzleManager.wordleFinalListPosition[i] = slots[i].GetComponentInChildren<DraggableMolecule>().initialPosition;
             }
             
         }
@@ -153,16 +153,16 @@ public class WordleController : MonoBehaviour
         canvas.SetActive(true);
         DraggableMolecule[] draggableMolecules = Resources.FindObjectsOfTypeAll<DraggableMolecule>();
 
-        for (int i = 0; i < PuzzleManager.instance.wordleFinalList.Count; i++)
+        for (int i = 0; i < PuzzleManager.wordleFinalList.Count; i++)
         {
             for (int j = 0; j < draggableMolecules.Length; j++) // Evita usar un número fijo (12)
             {
-                if (PuzzleManager.instance.wordleFinalList[i].z == draggableMolecules[j].moleculeID)
+                if (PuzzleManager.wordleFinalList[i].z == draggableMolecules[j].moleculeID)
                 {
 
                     draggableMolecules[j].gameObject.transform.SetParent(slots[i].transform);
-                    draggableMolecules[j].initialPosition = PuzzleManager.instance.wordleFinalListPosition[i];
-                    draggableMolecules[j].gameObject.GetComponent<RectTransform>().position = new Vector2(PuzzleManager.instance.wordleFinalList[i].x, PuzzleManager.instance.wordleFinalList[i].y);
+                    draggableMolecules[j].initialPosition = PuzzleManager.wordleFinalListPosition[i];
+                    draggableMolecules[j].gameObject.GetComponent<RectTransform>().position = new Vector2(PuzzleManager.wordleFinalList[i].x, PuzzleManager.wordleFinalList[i].y);
                     draggableMolecules[j].transform.localScale = new Vector3(0.922f, 0.922f, 0.922f);
                     
                 }
