@@ -6238,6 +6238,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentObject: 
   currentHint: 
+  clipsDialogo1:
+  - {fileID: 8300000, guid: f7765d0fb2ab9494a85b16dd6b69d171, type: 3}
+  linesDialogo1_ES:
+  - "An\xE1lisis entregado al sujeto #268."
+  linesDialogo1_EN:
+  - Analysis delivered to subject #268.
+  linesDialogo1_CA:
+  - "An\xE0lisi entregada al subjecte #268"
+  clipsDialogoFinal:
+  - {fileID: 8300000, guid: df7f372f086d6074ba87ef49356afdc8, type: 3}
+  linesDialogo1_ES_FINAL:
+  - "Felicitaciones, tu tarea se ha completado con \xE9xito, el sujeto #268 ser\xE1
+    enviado con \xE9xito al laboratorio. Desafortunadamente, no podemos decir lo
+    mismo sobre ti. MLD quiere agradecerte tu compromiso con nosotros, en unos segundos
+    el ox\xEDgeno de la nave llegar\xE1 a su fin."
+  linesDialogo1_EN_FINAL:
+  - Congratulations, your task has been successfully completed, subject #268 will
+    be successfully sent to the laboratory. Unfortunately, we cannot say the same
+    about you, MLD wants to thank you for your commitment to us, in a few seconds
+    the oxygen on the ship will come to an end.
+  linesDialogo1_CA_FINAL:
+  - "Felicitats, la teva tasca s'ha completat amb \xE8xit, el subjecte #268 ser\xE0
+    enviat amb \xE8xit al laboratori. Malauradament, no podem dir el mateix sobre
+    tu. MLD vol agrair-te el teu comprom\xEDs amb nosaltres, en uns segons l'oxigen
+    de la nau s'esgotar\xE0.  "
 --- !u!95 &8738259240144854788
 Animator:
   serializedVersion: 5

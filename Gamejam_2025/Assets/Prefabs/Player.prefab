@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 4623854026621706339}
   - component: {fileID: 8691012292855062502}
   - component: {fileID: 4596758276794941486}
+  - component: {fileID: 7546511573119331438}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -251,7 +252,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!114 &8691012292855062502
 MonoBehaviour:
@@ -267,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   canRun: 1
-  runSpeed: 9
+  runSpeed: 7
   runningKey: 304
 --- !u!114 &4596758276794941486
 MonoBehaviour:
@@ -307,6 +308,22 @@ MonoBehaviour:
   maxVignette: 1
   vignetteSpeed: 0
   targetColor: {r: 0.759434, g: 0.759434, b: 1, a: 1}
+--- !u!114 &7546511573119331438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747957911197619190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cdc710d35ed9145b5898be0c98495a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerToChangeScene: 21.5
+  timerToFadeBlackScene: 20
+  fadeTObLACK: {fileID: 0}
+  empiezaTransicionFinal: 0
 --- !u!1 &1785041738263720966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +1044,10 @@ MonoBehaviour:
   crosshair: {fileID: 0}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   grabbableColor: {r: 0, g: 1, b: 0, a: 1}
+  clipsGrabBlood: []
+  linesGrabBlood_ES: []
+  linesGrabBlood_EN: []
+  linesGrabBlood_CA: []
 --- !u!1 &6039989719434558431
 GameObject:
   m_ObjectHideFlags: 0
