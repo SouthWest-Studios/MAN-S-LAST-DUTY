@@ -65,6 +65,7 @@ public class PuzzleManager : MonoBehaviour
     public static bool ondaDialogueDoned = false;
     public static bool proximidadSonoraDialogueDoned = false;
     public static bool tangramDialogueDoned = false;
+    public static bool navegacionDialogueDoned = false;
 
     void Awake()
     {

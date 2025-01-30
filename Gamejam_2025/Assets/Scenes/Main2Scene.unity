@@ -10306,100 +10306,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &629767328
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 629767329}
-  - component: {fileID: 629767331}
-  - component: {fileID: 629767330}
-  m_Layer: 0
-  m_Name: DialogueTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &629767329
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629767328}
-  serializedVersion: 2
-  m_LocalRotation: {x: -2.3270773e-10, y: -0.9994721, z: -7.564731e-12, w: -0.03249069}
-  m_LocalPosition: {x: 540.46, y: 522.43, z: -157.02}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1544281477890363772}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &629767330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629767328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f40f35256dee4794dbec69921a720ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipsFirstRun:
-  - {fileID: 8300000, guid: 68e46f43cbd3b3c4ebca7d085a80e914, type: 3}
-  clipsResumen:
-  - {fileID: 8300000, guid: 647a4a6d00f55e74ca3307b728482025, type: 3}
-  linesFirstRun_EN:
-  - 'You must complete the constellation using the geometric shapes.  You may rotate
-    the shapes to fit them correctly. Once completed correctly, you will receive
-    a shape needed for the navigation system. '
-  linesFirstRun_ES:
-  - "Debe rellenar la constelaci\xF3n utilizando las figuras geom\xE9tricas.  Puede
-    rotar las figuras para ajustarlas correctamente. Al completarlo correctamente,
-    recibir\xE1 una forma necesaria para el sistema de navegaci\xF3n. "
-  linesFirstRun_CA:
-  - "Haur\xE0s de completar la constel\xB7laci\xF3 utilitzant les figures geom\xE8triques.
-    Pots rotar les figures per ajustar-les correctament. Quan ho facis correctament,
-    rebr\xE0s una forma necess\xE0ria per al sistema de navegaci\xF3. "
-  linesResumen_EN:
-  - 'Fill the shape with the geometric figures.  The shapes can be rotated to fit
-    correctly. You will receive a shape needed for the navigation system once completed
-    correctly. '
-  linesResumen_ES:
-  - "Rellene la figura con las formas geom\xE9tricas.  Se pueden rotar las figuras
-    para ajustarlas correctamente. Recibir\xE1 una forma necesaria para el sistema
-    de navegaci\xF3n al completarlo correctamente. "
-  linesResumen_CA:
-  - "Omple la figura amb les formes geom\xE8triques. Es poden rotar les figures per
-    ajustar-les correctament. Rebr\xE0s una forma necess\xE0ria per al sistema de
-    navegaci\xF3 quan ho facis correctament."
---- !u!65 &629767331
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629767328}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.2, y: 2.95, z: 2.61}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &629998124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 404482, guid: 70875bfee8728450189136f0533aabe0,
@@ -15437,7 +15343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 952066613092808353, guid: 9827ad07b583a9648a4b08b7751fa275,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1751013179}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9827ad07b583a9648a4b08b7751fa275, type: 3}
 --- !u!1 &897903566
@@ -42243,124 +42153,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1434725996}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1441984950
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1441984951}
-  - component: {fileID: 1441984953}
-  - component: {fileID: 1441984952}
-  m_Layer: 0
-  m_Name: Spot Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1441984951
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441984950}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.69575024, y: 0.00000001862645, z: 0.04528196, w: 0.7168551}
-  m_LocalPosition: {x: 540.893, y: 524.472, z: -157.214}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1544281477890363772}
-  m_LocalEulerAnglesHint: {x: 85.951, y: 63.175, z: 66.847}
---- !u!114 &1441984952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441984950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
---- !u!108 &1441984953
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441984950}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 0
-  m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 5.171246
-  m_SpotAngle: 96.948135
-  m_InnerSpotAngle: 96.948135
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1001 &1455554745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46508,6 +46300,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fca36bd81de7c4cafce7bbf02ca611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1751013178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751013179}
+  - component: {fileID: 1751013181}
+  - component: {fileID: 1751013180}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1751013179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751013178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7076619, z: 0, w: 0.70655125}
+  m_LocalPosition: {x: -0.28, y: -0.93, z: -0.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1352171437}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.09, z: 0}
+--- !u!114 &1751013180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751013178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e11fa49f0df9042b170e5f0075db1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: e5a97e8ef89f0fa4c85d005e0660d488, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: 354ce516a8f0c0e4ba887dd3c79f18b0, type: 3}
+  linesFirstRun_EN:
+  - 'In the navigation system, you must enter the data received from the previous
+    tests:  The wave number, The map coordinates, The geometric shape. Once done
+    correctly, you will receive a result that must be delivered to fetus #268. '
+  linesFirstRun_ES:
+  - "En el sistema de navegaci\xF3n, debe a\xF1adir los datos recibidos en las pruebas
+    anteriores:  El n\xFAmero de onda, Las coordenadas del mapa, La figura geom\xE9trica.
+    Al hacerlo, recibir\xE1 un resultado que deber\xE1 entregar al feto #268. "
+  linesFirstRun_CA:
+  - "Al sistema de navegaci\xF3, haur\xE0s d'afegir les dades rebudes en les proves
+    anteriors: El n\xFAmero d'ona, Les coordenades del mapa, La figura geom\xE8trica.
+    Quan ho facis correctament, rebr\xE0s un resultat que haur\xE0s d'entregar al
+    fetus #268. "
+  linesResumen_EN:
+  - 'Navigation system incorrect.  Verify the data from the previous tests: Wave
+    number, Map coordinates, Geometric shape. Correct the data and deliver the result
+    to fetus #268. '
+  linesResumen_ES:
+  - "Sistema de navegaci\xF3n incorrecto.  Verifique los datos de las pruebas anteriores:
+    N\xFAmero de onda, Coordenadas del mapa, Figura geom\xE9trica. Corrija los datos
+    y entregue el resultado al sujeto #268. "
+  linesResumen_CA:
+  - "Sistema de navegaci\xF3 incorrecte. Verifica les dades de les proves anteriors:
+    N\xFAmero d'ona, Coordenades del mapa, Figura geom\xE8trica. Corregeix les dades
+    i entrega el resultat al subjecte #268."
+--- !u!65 &1751013181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751013178}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1751038347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: 7c640618751f24e19a758d31aaa0351b,
@@ -52496,78 +52383,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1810980710}
     m_Modifications:
-    - target: {fileID: 1371037879234796672, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 541.099
-      objectReference: {fileID: 0}
-    - target: {fileID: 1371037879234796672, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 522.347
-      objectReference: {fileID: 0}
-    - target: {fileID: 1371037879234796672, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -156.945
-      objectReference: {fileID: 0}
     - target: {fileID: 2984216591902495445, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
         type: 3}
       propertyPath: m_Name
       value: TangramProblem
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361951741187847670, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: clipSub.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361951741187847670, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: linesEN.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361951741187847670, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: linesES.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361951741187847670, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: linesCAT.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361951741187847670, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: clipSub.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 071df2fa0eb2e3f489e006806191537e, type: 3}
-    - target: {fileID: 4361951741187847670, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: linesEN.Array.data[0]
-      value: Correct constellation. Enter the received geometric shape into the navigation
-        system.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361951741187847670, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: linesES.Array.data[0]
-      value: "Constelaci\xF3n correcta. Introduzca en el sistema de navegaci\xF3n
-        la forma geom\xE9trica recibida."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361951741187847670, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: linesCAT.Array.data[0]
-      value: "Constel\xB7laci\xF3 correcta. Introdueix al sistema de navegaci\xF3
-        la forma geom\xE8trica rebuda."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4996245559630746443, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5006744651210727718, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5269424406187391734, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
         type: 3}
@@ -52619,11 +52438,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6510874204041701889, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6697553471174183532, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
         type: 3}
       propertyPath: player
@@ -52634,67 +52448,9 @@ PrefabInstance:
       propertyPath: cameraFirstPerson
       value: 
       objectReference: {fileID: 1757412655}
-    - target: {fileID: 6880405124058421349, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7204486155853832999, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 541.099
-      objectReference: {fileID: 0}
-    - target: {fileID: 7204486155853832999, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 522.347
-      objectReference: {fileID: 0}
-    - target: {fileID: 7204486155853832999, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -156.945
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370921618727063794, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 541.099
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370921618727063794, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 522.347
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370921618727063794, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -156.945
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564593654114306386, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 541.099
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564593654114306386, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 522.347
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564593654114306386, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -156.945
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5269424406187391734, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1441984951}
-    - targetCorrespondingSourceObject: {fileID: 5269424406187391734, guid: f3634df89a213b94a9ec46e7b2bf5f3c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 629767329}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3634df89a213b94a9ec46e7b2bf5f3c, type: 3}
 --- !u!4 &8958081090025342708 stripped
