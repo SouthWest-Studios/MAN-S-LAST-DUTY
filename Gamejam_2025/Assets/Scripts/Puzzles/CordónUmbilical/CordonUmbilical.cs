@@ -71,6 +71,14 @@ public class CordonUmbilical : MonoBehaviour
     [SerializeField] private Vector3 spawnPosition; // Opcional: posición donde aparecerá el prefab
     [SerializeField] private GameObject[] objectsToDeactivate; // Añadir este array
 
+
+
+    public AudioClip[] clipSub;
+    public string[] lineES;
+    public string[] lineEN;
+    public string[] lineCA;
+
+
     void Start()
     {
         currentMainCamera = puzzleCamera;
@@ -755,6 +763,11 @@ public class CordonUmbilical : MonoBehaviour
 
         if (isCorrect)
         {
+
+
+            SubtitulosManager.instance.PlayDialogue(lineES,lineEN,lineCA,clipSub);
+
+
             puzzleManager = FindObjectOfType<PuzzleManager>();
             puzzleManager.CompletePuzzle("UmbilicalCord");
         }

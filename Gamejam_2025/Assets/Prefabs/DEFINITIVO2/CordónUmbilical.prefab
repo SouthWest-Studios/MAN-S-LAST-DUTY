@@ -155,6 +155,14 @@ MonoBehaviour:
   - {fileID: 6288633371663833473}
   - {fileID: 1807495020307152828}
   - {fileID: 3024502214903397832}
+  clipSub:
+  - {fileID: 8300000, guid: 5524b7d4e3d8fe54a9e9d08733db5055, type: 3}
+  lineES:
+  - "Intervenci\xF3n correcta. Proceda a llevarla al sujeto #268 de forma inmediata. "
+  lineEN:
+  - 'Correct intervention. Proceed to deliver it to subject #268 immediately. '
+  lineCA:
+  - "Intervenci\xF3 correcta. Procedeix a portar-la al subjecte #268 immediatament."
 --- !u!114 &3991758784662231115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +179,8 @@ MonoBehaviour:
   cameraFirstPerson: {fileID: 0}
   focusCamera: {fileID: 2479925010250923847}
   transitionSpeed: 2
+  isTransitioning: 0
+  isFocused: 0
   isCanvasToOpen: 1
   player: {fileID: 0}
   canvasAnimator: {fileID: 0}
@@ -1995,6 +2005,100 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3729422075792592484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5879041228467815312}
+  - component: {fileID: 8485175571565849547}
+  - component: {fileID: 4401288244733144999}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5879041228467815312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729422075792592484}
+  serializedVersion: 2
+  m_LocalRotation: {x: -6.869504e-16, y: -0.000003367662, z: 2.3283064e-10, w: 1}
+  m_LocalPosition: {x: 1.9, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 314620077936077265}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8485175571565849547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729422075792592484}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4401288244733144999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729422075792592484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebddead115a1d341a62995126d04d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: 55065a46db750fd468f206725c4bbe43, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: a4a7bb5e8a54a074c8f97c60cbb6610f, type: 3}
+  linesFirstRun_EN:
+  - 'An intervention in the umbilical cord is required. To ensure perfection:  First,
+    select the cutting area. Within that area, choose the appropriate type of cut.
+    Then, deliver the result to the subject #268 immediately. '
+  linesFirstRun_ES:
+  - "Es necesaria una intervenci\xF3n en el cord\xF3n umbilical. Para que sea perfecta: 
+    Primero, elija la zona de corte. Dentro de esa zona, seleccione el tipo de corte
+    adecuado. Despu\xE9s, lleve el resultado al sujeto #268  de forma inmediata. "
+  linesFirstRun_CA:
+  - "\xC9s necess\xE0ria una intervenci\xF3 en el cord\xF3 umbilical. Perqu\xE8 sigui
+    perfecta: Primer, selecciona la zona de tall. Dins d'aquesta zona, selecciona
+    el tipus de tall adequat. Despr\xE9s, porta el resultat al subjecte #268 immediatament."
+  linesResumen_EN:
+  - 'The cut is not correct.  If the position or the type of cut is in red, they
+    are incorrect. If they are in green, they are correct. Perform another intervention
+    and deliver the result to subject #268 immediately. '
+  linesResumen_ES:
+  - "El corte no es correcto.  Si la posici\xF3n o el tipo de corte est\xE1 en rojo,
+    son err\xF3neas. Si est\xE1n en verde, son correctas. Realice otra intervenci\xF3n
+    y lleve el resultado al sujeto #268 de forma inmediata. "
+  linesResumen_CA:
+  - "El tall no \xE9s correcte. Si la posici\xF3 o el tipus de tall est\xE0 en vermell,
+    s\xF3n erronis. Si estan en verd, s\xF3n correctes. Realitza una altra intervenci\xF3
+    i porta el resultat al subjecte #268 immediatament. "
 --- !u!1 &3867020440399997801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,6 +3234,7 @@ Transform:
   m_Children:
   - {fileID: 3512008960851416365}
   - {fileID: 5636593495539174788}
+  - {fileID: 5879041228467815312}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &6095738756491295005
