@@ -43,10 +43,15 @@ public class PuzzleManager : MonoBehaviour
 
     public static int numeroDeBucles = 0;
 
-
- 
-
     public static List<Vector2Int> blood = new List<Vector2Int>();
+
+
+
+    //PARA LOS DIALOGOS/SUBTITUOS, HAY QUE GUARDARLOS
+    public static bool firstRunDoned = false;
+    public static bool firstBloodDialogueDoned = false;
+
+  
     
 
 

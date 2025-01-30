@@ -2330,6 +2330,101 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 2
+--- !u!1 &2518160698644436065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6974849248075691570}
+  - component: {fileID: 7016604926341235543}
+  - component: {fileID: 9117114815226610778}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6974849248075691570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518160698644436065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6791446101054550468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7016604926341235543
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518160698644436065}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: -11.71, y: 0.85, z: -3.31}
+--- !u!114 &9117114815226610778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518160698644436065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473a8df4dd9939244ab4e63520386807, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: 279fd16be703d274cbf8c57b535a38db, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: e1c1370030dd2b74fa8f2fa8b954b271, type: 3}
+  linesFirstRun_EN:
+  - 'In this test, you must analyze the optimal combination to create the purest
+    blood. To achieve this:  Select a position in each of the three parts. Print
+    the result of your selection. Wait for 30000 miliseconds. '
+  linesFirstRun_ES:
+  - "En esta prueba, deber\xE1 analizar la combinaci\xF3n \xF3ptima para crear la
+    sangre m\xE1s pura. Para lograrlo:  Seleccione una posici\xF3n en cada una de
+    las tres partes. Imprima el resultado de su selecci\xF3n. Vuelva en 30000 milisegundos. "
+  linesFirstRun_CA:
+  - "En aquesta prova, haur\xE0s d'analitzar la combinaci\xF3 \xF2ptima per crear
+    la sang m\xE9s pura. Per aconseguir-ho: Selecciona una posici\xF3 en cadascuna
+    de les tres parts. Imprimeix el resultat de la teva selecci\xF3. Torna en 30.000
+    mil\xB7lisegons. Quan tornis a la prova: Porta el resultat al subjecte #268 immediatament. "
+  linesResumen_EN:
+  - 'Analyze the blood. Remember: Select a position. Print the result. Return in
+    30000 miliseconds. Deliver to the subject #268. Important note: The correct position
+    must be the one closest to the green. '
+  linesResumen_ES:
+  - "Analice la sangre. Recuerde:  Seleccione una posici\xF3n. Imprima el resultado.
+    Regrese en 30000 milisegundos. Entrega inmediata al sujeto #268.  Nota importante:
+    La posici\xF3n correcta debe ser la m\xE1s cercana a la verde. "
+  linesResumen_CA:
+  - "Analitza la sang. Recorda: Selecciona una posici\xF3. Imprimeix el resultat.
+    Torna en 30 segons. Entrega immediata al subjecte #268. Nota important: La posici\xF3
+    correcta ha de ser la m\xE9s propera a la verda."
 --- !u!1 &2602690408658200098
 GameObject:
   m_ObjectHideFlags: 0
@@ -5453,7 +5548,7 @@ GameObject:
   - component: {fileID: 1765893454506994034}
   - component: {fileID: 5158522743962617185}
   m_Layer: 0
-  m_Name: TuboDeSangre
+  m_Name: BloodPuzzle
   m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5585,9 +5680,8 @@ GameObject:
   - component: {fileID: 265078565490722225}
   - component: {fileID: 1070720882357191661}
   m_Layer: 0
-  m_Name: "\u043F\u0440\u043E\u0431\u0438\u0440\u043A\u0430 \u043A\u0440\u043E\u0432\u0438
-    .002"
-  m_TagString: Grabbable
+  m_Name: BloodPuzzle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6063,6 +6157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e02ea9c7c3f8c448d3b1718ea0eb42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodAsyncStatic:
+  - {fileID: 4547764874792738132}
+  - {fileID: 1138436076427277891}
+  - {fileID: 7977644152913877317}
   bloodTube: {fileID: 5824343127464502508}
   rotateSound: {fileID: 1349587950779613239}
   startSound: {fileID: 7223763513653288124}
@@ -6197,6 +6295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1acbffcb356a94409b33a8b85558c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodRuedaID: 3
   correctNumber: 0
   currentNumber: 0
   sticks:
@@ -6853,6 +6952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1acbffcb356a94409b33a8b85558c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodRuedaID: 1
   correctNumber: 0
   currentNumber: 0
   sticks:
@@ -6890,7 +6990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7638949462986550416}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00000035762784}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -37.20278, y: -0.13178405, z: -8.435482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6905,6 +7005,7 @@ Transform:
   - {fileID: 804643359682896641}
   - {fileID: 3257526822558389913}
   - {fileID: 2619293151486855027}
+  - {fileID: 6974849248075691570}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &7822978178502094141
@@ -7269,6 +7370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1acbffcb356a94409b33a8b85558c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodRuedaID: 2
   correctNumber: 0
   currentNumber: 0
   sticks:
@@ -8306,6 +8408,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3958683964158097320}
+        m_TargetAssemblyTypeName: BloodManager, Assembly-CSharp
+        m_MethodName: SaveBlood
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3958683964158097320}
+        m_TargetAssemblyTypeName: BloodManager, Assembly-CSharp
+        m_MethodName: CheckWin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2075552846316768973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8696,6 +8822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1acbffcb356a94409b33a8b85558c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BloodRuedaID: 0
   correctNumber: 0
   currentNumber: 0
   sticks: []
