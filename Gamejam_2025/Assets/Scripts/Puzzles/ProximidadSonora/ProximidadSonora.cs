@@ -74,6 +74,12 @@ public class ProximidadSonora : MonoBehaviour
     public float clickCooldown = 3f;
     private float lastClickTime = -3f;
 
+    public AudioClip[] clipsSub;
+
+    public string[] lineES;
+    public string[] lineEN;
+    public string[] lineCA;
+
     private void Start()
     {
         InitializeGame();
@@ -302,6 +308,17 @@ public class ProximidadSonora : MonoBehaviour
             else
             {
                 gameActive = false;
+
+
+
+                SubtitulosManager.instance.PlayDialogue(lineES, lineEN, lineCA, clipsSub);
+
+
+
+
+
+
+
                 StartCoroutine(CloseGameAfterDelay(1f));
             }
         }

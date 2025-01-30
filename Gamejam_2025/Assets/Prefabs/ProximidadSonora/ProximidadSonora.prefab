@@ -135,6 +135,96 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2249124408336050434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5081083036419243621}
+  - component: {fileID: 8675975748633327630}
+  - component: {fileID: 4213571943486945127}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5081083036419243621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2249124408336050434}
+  serializedVersion: 2
+  m_LocalRotation: {x: -2.3283064e-10, y: -1, z: -0, w: -0.0000004172325}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7276887760340074694}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8675975748633327630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2249124408336050434}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4213571943486945127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2249124408336050434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b16ff97b5825d74e8cbb6217bdda90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: 5cf45c6784e3a0e48837a4a91abf6afe, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: 1e104f123378f02459a296b165e019fe, type: 3}
+  linesFirstRun_EN:
+  - 'In this map, you must find the exact point with the help of sound.  You must
+    perform this task three times. Once completed correctly, you will receive the
+    coordinates for navigation. '
+  linesFirstRun_ES:
+  - "n este mapa, debe encontrar el punto exacto con la ayuda sonora.  Deber\xE1
+    realizarlo tres veces. Al completarlo correctamente, recibir\xE1 las coordenadas
+    para la navegaci\xF3n. "
+  linesFirstRun_CA:
+  - "En aquest mapa, haur\xE0s de trobar el punt exacte amb l'ajuda sonora. Haur\xE0s
+    de realitzar-ho tres vegades. Quan ho facis correctament, rebr\xE0s les coordenades
+    per a la navegaci\xF3. "
+  linesResumen_EN:
+  - 'Find the exact point on the map.  You will receive three coordinates once completed
+    correctly. '
+  linesResumen_ES:
+  - "Encuentre el punto exacto en el mapa.  Recibir\xE1 tres coordenadas al completarlo
+    correctamente. "
+  linesResumen_CA:
+  - "Troba el punt exacte al mapa. Rebr\xE0s tres coordenades quan ho facis correctament. "
 --- !u!1 &2392591957881830071
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +731,7 @@ Transform:
   - {fileID: 928284016358789551}
   - {fileID: 7107684714542517422}
   - {fileID: 7674549849805547642}
+  - {fileID: 5081083036419243621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &4854149966043522876
@@ -686,6 +777,14 @@ MonoBehaviour:
   copylevel3Sum: 0
   navigationManager: {fileID: 0}
   clickCooldown: 1.5
+  clipsSub:
+  - {fileID: 8300000, guid: 2e022bfe5e54f944a918034f20eec591, type: 3}
+  lineES:
+  - "Coordenadas encontradas. Puede a\xF1adirlas en el sistema de navegaci\xF3n."
+  lineEN:
+  - Coordinates found. You may add them to the navigation system.
+  lineCA:
+  - "Coordenades trobades. Pots afegir-les al sistema de navegaci\xF3."
 --- !u!82 &9012978512784823328
 AudioSource:
   m_ObjectHideFlags: 0
