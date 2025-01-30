@@ -13,8 +13,11 @@ public class FinalSceneManager : MonoBehaviour
 
     [Header("Sounds")]
     public AudioSource generalAudioSource;
+    public AudioSource backgroundMusic;
     public AudioClip turnOffMonitor_AC;
     public AudioClip mouseClick_AC;
+    public bool isEnding = false;
+    public float musicDownSpeed = 2;
 
     [Header("Puntuacion")]
     public TextMeshProUGUI numeroTexto;
@@ -32,6 +35,10 @@ public class FinalSceneManager : MonoBehaviour
         {
             generalAudioSource.PlayOneShot(mouseClick_AC);
         }
+        if (isEnding)
+        {
+            backgroundMusic.volume -= musicDownSpeed * Time.deltaTime;
+        }
     }
 
 
@@ -40,6 +47,7 @@ public class FinalSceneManager : MonoBehaviour
         
         turnOffMonitorAnimator.Play("turnOffMonitor");
         generalAudioSource.PlayOneShot(turnOffMonitor_AC);
+        isEnding = true;
     }
 
     public void OnTurnOffMonitorEnd()
