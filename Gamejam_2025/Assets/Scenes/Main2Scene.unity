@@ -4135,7 +4135,7 @@ GameObject:
   - component: {fileID: 221331240}
   m_Layer: 0
   m_Name: MegafoniaSource (1)
-  m_TagString: Untagged
+  m_TagString: Voice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11345,7 +11345,7 @@ GameObject:
   - component: {fileID: 485236606}
   m_Layer: 0
   m_Name: MegafoniaSource (6)
-  m_TagString: Untagged
+  m_TagString: Voice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15021,7 +15021,7 @@ GameObject:
   - component: {fileID: 694662482}
   m_Layer: 0
   m_Name: MegafoniaSource
-  m_TagString: Untagged
+  m_TagString: Voice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27189,6 +27189,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1253222391}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1258407329
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8060504823008170914, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_Name
+      value: VolumeAudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768301859192049040, guid: 99821dca93f0b5b4baf94bb59e9c1c42,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99821dca93f0b5b4baf94bb59e9c1c42, type: 3}
 --- !u!1 &1269818814
 GameObject:
   m_ObjectHideFlags: 0
@@ -29031,7 +29099,7 @@ GameObject:
   - component: {fileID: 1344286389}
   m_Layer: 0
   m_Name: MegafoniaSource (2)
-  m_TagString: Untagged
+  m_TagString: Voice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29427,7 +29495,7 @@ GameObject:
   - component: {fileID: 1360241266}
   m_Layer: 0
   m_Name: MegafoniaSource (5)
-  m_TagString: Untagged
+  m_TagString: Voice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56593,7 +56661,7 @@ GameObject:
   - component: {fileID: 1794565960}
   m_Layer: 0
   m_Name: MegafoniaSource (4)
-  m_TagString: Untagged
+  m_TagString: Voice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61264,7 +61332,7 @@ GameObject:
   - component: {fileID: 2044254702}
   m_Layer: 0
   m_Name: MegafoniaSource (3)
-  m_TagString: Untagged
+  m_TagString: Voice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61628,7 +61696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2073163822
 Transform:
   m_ObjectHideFlags: 0
@@ -64088,3 +64156,4 @@ SceneRoots:
   - {fileID: 1578012028}
   - {fileID: 991157167}
   - {fileID: 1753544948}
+  - {fileID: 1258407329}
