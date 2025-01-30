@@ -38,7 +38,7 @@ public class DoubleClickUI : MonoBehaviour
         }
         else
         {
-            Debug.LogError("No se encontró un botón en este GameObject.");
+            //Debug.LogError("No se encontró un botón en este GameObject.");
         }
     }
 
@@ -48,7 +48,7 @@ public class DoubleClickUI : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !IsPointerOverUIElement(myButton.gameObject))
         {
             onClickOutside?.Invoke();
-            Debug.Log("Clic fuera del botón detectado!");
+           
         }
     }
 
@@ -57,7 +57,7 @@ public class DoubleClickUI : MonoBehaviour
         if (Time.time - lastClickTime < doubleClickTime)
         {
             onDoubleClick?.Invoke(); // Llama al evento de doble clic
-            Debug.Log("Doble clic detectado!");
+            
         }
         else
         {

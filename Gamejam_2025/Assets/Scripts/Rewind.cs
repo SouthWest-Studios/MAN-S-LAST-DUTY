@@ -83,6 +83,7 @@ public class Rewind : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PuzzleManager.numeroDeBucles++;
         contadorInicioScene = initialFadetoBlackSceneTime;
         InitializeRewind();
         InitializePostProcessing();

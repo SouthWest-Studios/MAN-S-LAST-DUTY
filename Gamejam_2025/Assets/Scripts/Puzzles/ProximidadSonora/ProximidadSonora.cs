@@ -117,6 +117,7 @@ public class ProximidadSonora : MonoBehaviour
             coordinatesText.gameObject.SetActive(false);
         if (crosshairController != null)
             crosshairController.ShowCrosshair(true);
+
     }
 
     private void StartGame()

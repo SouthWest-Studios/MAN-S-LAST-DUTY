@@ -17,7 +17,6 @@ public class ObjectInteraction : MonoBehaviour
     private Quaternion initialPlayerCameraRotation;
     private bool hasSavedInitialTransform = false;
 
-
     public FirstPersonMovement player;
     public Animator canvasAnimator; // Referencia al Animator del canvas
 
@@ -39,7 +38,6 @@ public class ObjectInteraction : MonoBehaviour
         }
     }
 
-
     private void Update()
     {
         if (playerIsNear && Input.GetKeyDown(KeyCode.E))
@@ -50,16 +48,7 @@ public class ObjectInteraction : MonoBehaviour
 
                 if (isCanvasToOpen)
                 {
-                    Cursor.lockState = CursorLockMode.None;
-                    canvasToOpen.SetActive(true);
-                    cameraFirstPerson.isPanelOpen = true;
-                    cameraFirstPerson.crosshairController.gameObject.SetActive(false);
-
-                    // Activar el trigger "In" del Animator
-                    if (canvasAnimator != null)
-                    {
-                        canvasAnimator.SetTrigger("In");
-                    }
+                    OpenCanvas();
                 }
             }
             else if (isFocused && !isTransitioning)
@@ -68,17 +57,39 @@ public class ObjectInteraction : MonoBehaviour
 
                 if (isCanvasToOpen)
                 {
-                    // No desactivar el canvas aquí, se hará en la corrutina
-                    cameraFirstPerson.isPanelOpen = false;
-                    Cursor.lockState = CursorLockMode.Locked;
-
-                    // Activar el trigger "Out" del Animator
-                    if (canvasAnimator != null)
-                    {
-                        canvasAnimator.SetTrigger("Out");
-                    }
+                    CloseCanvas();
                 }
             }
+        }
+    }
+
+    // Método para abrir el canvas
+    private void OpenCanvas()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        canvasToOpen.SetActive(true);
+        cameraFirstPerson.isPanelOpen = true;
+        cameraFirstPerson.crosshairController.gameObject.SetActive(false);
+
+        // Activar el trigger "In" del Animator
+        if (canvasAnimator != null)
+        {
+            canvasAnimator.SetTrigger("In");
+        }
+    }
+
+    // Método para cerrar el canvas
+    public void CloseCanvas()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        canvasToOpen.SetActive(false);
+        cameraFirstPerson.isPanelOpen = false;
+        cameraFirstPerson.crosshairController.gameObject.SetActive(true);
+
+        // Activar el trigger "Out" del Animator
+        if (canvasAnimator != null)
+        {
+            canvasAnimator.SetTrigger("Out");
         }
     }
 
@@ -183,7 +194,7 @@ public class ObjectInteraction : MonoBehaviour
         // Desactivar el canvas si es necesario
         if (isCanvasToOpen)
         {
-            canvasToOpen.SetActive(false);
+            CloseCanvas(); // Usar el método CloseCanvas para asegurar consistencia
         }
 
         // Restablecer variables
