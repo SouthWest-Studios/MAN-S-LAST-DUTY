@@ -61,7 +61,25 @@ public class WordleController : MonoBehaviour
 
     private void Update()
     {
-        if (allCorrect)
+        int count = 0;
+        for (int i = 0; i < slots.Count; i++)
+        {
+            if (slots[i].transform.childCount > 0)
+            {
+                count++;
+                allCorrect = true;
+            }
+        }
+        if (count >= 5)
+        {
+            allCorrect = true;
+        }
+        else 
+        {
+            allCorrect = false;
+        }
+        
+            if (allCorrect)
         {
             if(canvas.activeSelf)
             {
@@ -73,10 +91,6 @@ public class WordleController : MonoBehaviour
 
                 SubtitulosManager.instance.PlayDialogue(lines_ES, lines_EN, lines_CA, clips);
 
-
-
-
-
                 puzzleManager = FindAnyObjectByType<PuzzleManager>();
                 puzzleManager.CompletePuzzle("WordlePuzzle");
                 //finalText.SetActive(true);
@@ -84,6 +98,10 @@ public class WordleController : MonoBehaviour
                 //trigger.gameObject.GetComponent<Collider>().enabled = false;
                 trigger.enabled = false;
                 SetHintActive();
+                
+
+
+
                 return;
             }
         }
@@ -91,41 +109,42 @@ public class WordleController : MonoBehaviour
 
     public void CheckCombination()
     {
-         allCorrect = true;
+         
         for (int i = 0; i < slots.Count; i++)
         {
 
             var molecule = slots[i].GetComponentInChildren<DraggableMolecule>();
             if (molecule != null)
             {
-                if (molecule.moleculeID == correctCombination[i])
-                {
-                    // Verde: Correcta y en la posición correcta
+                //if (molecule.moleculeID == correctCombination[i])
+                //{
+                //    // Verde: Correcta y en la posición correcta
                     slots[i].GetComponent<SlotScript>().SetSlotColor(Color.green);
                     EnableMoleculeInteraction(molecule, true); // Habilitar interacción si es correcta
-                }
-                else if (correctCombination.Contains(molecule.moleculeID))
-                {
-                    // Amarillo: Correcta pero en la posición incorrecta
-                    slots[i].GetComponent<SlotScript>().SetSlotColor(Color.yellow);
-                    EnableMoleculeInteraction(molecule, true); // Habilitar interacción si es correcta pero en lugar incorrecto
-                    allCorrect = false; // Si alguna molécula está en amarillo, no está completamente correcta
-                }
-                else
-                {
-                    // Rojo: Incorrecta
-                    slots[i].GetComponent<SlotScript>().SetSlotColor(Color.red);
-                    molecule.ReturnToInitialPosition();
-                    EnableMoleculeInteraction(molecule, false); // Deshabilitar interacción si es incorrecta
-                    initialSlotScripts[molecule.moleculeID].gameObject.GetComponent<Image>().color = Color.red;
-                    allCorrect = false; // Si alguna molécula es incorrecta, no está completamente correcta
-                }
-            }
-            else
-            {
-                // Sin molécula en este slot
-                slots[i].GetComponent<SlotScript>().SetSlotColor(Color.black);
-                allCorrect = false; // Si hay un slot vacío, el juego no está completado
+            //    }
+            //    else if (correctCombination.Contains(molecule.moleculeID))
+            //    {
+            //        // Amarillo: Correcta pero en la posición incorrecta
+            //        slots[i].GetComponent<SlotScript>().SetSlotColor(Color.yellow);
+            //        EnableMoleculeInteraction(molecule, true); // Habilitar interacción si es correcta pero en lugar incorrecto
+            //        allCorrect = false; // Si alguna molécula está en amarillo, no está completamente correcta
+            //    }
+            //    else
+            //    {
+            //        // Rojo: Incorrecta
+            //        slots[i].GetComponent<SlotScript>().SetSlotColor(Color.red);
+            //        molecule.ReturnToInitialPosition();
+            //        EnableMoleculeInteraction(molecule, false); // Deshabilitar interacción si es incorrecta
+            //        initialSlotScripts[molecule.moleculeID].gameObject.GetComponent<Image>().color = Color.red;
+            //        allCorrect = false; // Si alguna molécula es incorrecta, no está completamente correcta
+            //    }
+            //}
+            //else
+            //{
+            //    // Sin molécula en este slot
+            //    slots[i].GetComponent<SlotScript>().SetSlotColor(Color.black);
+            //    allCorrect = false; // Si hay un slot vacío, el juego no está completado
+            //}
             }
         }
         
