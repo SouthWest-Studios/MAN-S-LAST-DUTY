@@ -20692,6 +20692,11 @@ PrefabInstance:
       propertyPath: CorrectWaveScript
       value: 
       objectReference: {fileID: 473439929833354607}
+    - target: {fileID: 4869047185820748590, guid: 9827ad07b583a9648a4b08b7751fa275,
+        type: 3}
+      propertyPath: m_Name
+      value: NavigationPuzzle
+      objectReference: {fileID: 0}
     - target: {fileID: 4944478520627129117, guid: 9827ad07b583a9648a4b08b7751fa275,
         type: 3}
       propertyPath: m_Name
@@ -63323,7 +63328,7 @@ PrefabInstance:
     - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
         type: 3}
       propertyPath: puzzles.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
         type: 3}
@@ -63337,7 +63342,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
         type: 3}
+      propertyPath: puzzles.Array.data[12].name
+      value: NavigationPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
+        type: 3}
       propertyPath: puzzles.Array.data[11].isReseteable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633123343231324622, guid: e40ae25e6fc43bd43a7707ab6d8b1214,
+        type: 3}
+      propertyPath: puzzles.Array.data[12].isReseteable
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
