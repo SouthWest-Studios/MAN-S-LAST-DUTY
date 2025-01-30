@@ -41,6 +41,8 @@ public class PuzzleManager : MonoBehaviour
     public List<Vector3> wordleFinalList = new List<Vector3>();
     public List<Vector3> wordleFinalListPosition = new List<Vector3>();
 
+    public static int numeroDeBucles = 0;
+
 
 
     void Awake()
@@ -215,6 +217,7 @@ public class PuzzleManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("PuzzleCount", puzzles.Count);
         PlayerPrefs.SetString("umpadFinalCode", numpadFinalCode);
+        PlayerPrefs.SetInt("numeroDeBucles", numeroDeBucles);
 
         for (int i = 0; i < puzzles.Count; i++)
         {
@@ -240,6 +243,7 @@ public class PuzzleManager : MonoBehaviour
         }
 
         numpadFinalCode = PlayerPrefs.GetString("numpadFinalCode");
+        numeroDeBucles = PlayerPrefs.GetInt("numeroDeBucles");
 
         int puzzleCount = PlayerPrefs.GetInt("PuzzleCount");
         puzzles.Clear();
@@ -270,6 +274,7 @@ public class PuzzleManager : MonoBehaviour
 
         int randomCode = Random.Range(0, 10000); // Genera un número entre 0 y 9999
         numpadFinalCode = randomCode.ToString("D4"); // Convierte a string con 4 dígitos (rellenando con ceros si es necesario)
+        numeroDeBucles = 0;
 
         foreach (var puzzle in puzzles)
         {
