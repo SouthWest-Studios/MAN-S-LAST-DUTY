@@ -8878,7 +8878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7774164022913629593}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -21.197351, y: 1.2662159, z: -27.158432}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8891,6 +8891,7 @@ Transform:
   - {fileID: 3315690057048135656}
   - {fileID: 2367483430249489152}
   - {fileID: 6091013245509287678}
+  - {fileID: 6899162207430676151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &3456220060961589767
@@ -9866,6 +9867,97 @@ Transform:
   - {fileID: 7885341822251917832}
   m_Father: {fileID: 6758754680471445630}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: -158}
+--- !u!1 &8435042517041791235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6899162207430676151}
+  - component: {fileID: 7090712971545616247}
+  - component: {fileID: 852351714305298341}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6899162207430676151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435042517041791235}
+  serializedVersion: 2
+  m_LocalRotation: {x: -1.6463637e-10, y: -0.70710814, z: 1.6463589e-10, w: 0.70710546}
+  m_LocalPosition: {x: 1.66, y: -0.64, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6720297729368687196}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7090712971545616247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435042517041791235}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 2.95, z: 2.61}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &852351714305298341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435042517041791235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79107d971b864cd409c0d48468b4168d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsFirstRun:
+  - {fileID: 8300000, guid: c3f5289fb8f306444935d9f0e79df6f3, type: 3}
+  clipsResumen:
+  - {fileID: 8300000, guid: 43af8f2fb913dfc4b9a4886956f43c9a, type: 3}
+  linesFirstRun_EN:
+  - 'Here, you must turn off all the lights. To do so, you will need to use the buttons. 
+    Each button turns on certain lights. Once all lights are off, you will receive
+    a code for the door. '
+  linesFirstRun_ES:
+  - "Aqu\xED deber\xE1 apagar todas las luces. Para ello, tendr\xE1 que usar los
+    botones.  Cada bot\xF3n enciende ciertas luces. Al apagar todas las luces, recibir\xE1
+    un c\xF3digo para la puerta. "
+  linesFirstRun_CA:
+  - "Aqu\xED haur\xE0s d'apagar totes les llums. Per aix\xF2, haur\xE0s d'usar els
+    botons. Cada bot\xF3 enc\xE9n certes llums. Quan apagues totes les llums, rebr\xE0s
+    un codi per la porta."
+  linesResumen_EN:
+  - 'Turn off the lights by pressing the buttons.  Each button turns off certain
+    lights. Once finished, you will receive a code for the door. '
+  linesResumen_ES:
+  - "Apague las luces pulsando los botones.  Cada bot\xF3n apaga ciertas luces. Al
+    terminar, recibir\xE1 un c\xF3digo para la puerta. "
+  linesResumen_CA:
+  - "Apaga les llums prement els botons. Cada bot\xF3 apaga certes llums. Quan acabis,
+    rebr\xE0s un codi per la porta."
 --- !u!1 &8482052662302321081
 GameObject:
   m_ObjectHideFlags: 0
