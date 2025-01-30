@@ -20,6 +20,15 @@ public class WordleController : MonoBehaviour
 
     public ObjectInteraction trigger;
 
+
+
+    public AudioClip[] clips;
+
+
+    public string[] lines_EN;
+    public string[] lines_ES;
+    public string[] lines_CA;
+
     private void Start()
     {
         GenerateRandomCombination();
@@ -56,6 +65,18 @@ public class WordleController : MonoBehaviour
         {
             if(canvas.activeSelf)
             {
+
+
+
+
+
+
+                SubtitulosManager.instance.PlayDialogue(lines_ES, lines_EN, lines_CA, clips);
+
+
+
+
+
                 puzzleManager = FindAnyObjectByType<PuzzleManager>();
                 puzzleManager.CompletePuzzle("WordlePuzzle");
                 //finalText.SetActive(true);

@@ -24,6 +24,15 @@ public class BloodManager : MonoBehaviour
     private float elapsedTime = 0f;
     private bool accelerating = true;
 
+
+    public AudioClip[] clipsCompleted;
+
+
+    public string[] lines_ES;
+    public string[] lines_EN;
+    public string[] lines_CA;
+
+
     void Start()
     {
         
@@ -74,6 +83,9 @@ public class BloodManager : MonoBehaviour
             if (puzzleManager != null)
             {
                 puzzleManager.CompletePuzzle("BloodPuzzle");
+
+                SubtitulosManager.instance.PlayDialogue(lines_ES, lines_EN, lines_CA, clipsCompleted);
+
             }
 
             

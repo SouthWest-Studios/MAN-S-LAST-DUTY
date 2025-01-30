@@ -22,6 +22,16 @@ public class GrabObjects : MonoBehaviour
     private GameObject currentGrabbable;
     private FetusScript fetus;
 
+
+
+    public AudioClip[] clipsGrabBlood;
+
+
+    public string[] linesGrabBlood_ES;
+    public string[] linesGrabBlood_EN;
+    public string[] linesGrabBlood_CA;
+
+
     private void Start()
     {
         mainCamera = GetComponent<Camera>();
@@ -87,6 +97,16 @@ public class GrabObjects : MonoBehaviour
     {
         heldObject = objToGrab;
         heldRigidbody = heldObject.GetComponent<Rigidbody>();
+
+
+        if(objToGrab.name == "BloodPuzzle")
+        {
+            SubtitulosManager.instance.PlayDialogue(linesGrabBlood_ES, linesGrabBlood_EN, linesGrabBlood_CA, clipsGrabBlood);
+
+        }
+
+
+
         
         if (heldRigidbody != null)
         {

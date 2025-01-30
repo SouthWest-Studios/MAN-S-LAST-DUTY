@@ -197,7 +197,7 @@ public class PanelController : MonoBehaviour
 
         public AccessibilitySettings accessibilitySettings;
 
-        private string[] languages = { "English", "Castellano"};
+        private string[] languages = { "English", "Castellano", "Català"};
         private int currentLanguageIndex = 0;
 
         public void Initialize()

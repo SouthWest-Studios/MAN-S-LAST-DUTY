@@ -51,6 +51,35 @@ public class SubtitulosManager : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
+
+    public void PlayDialogue(string[] spanishLines, string[] englishLines, string[] catalanLines, AudioClip[] clip)
+    {
+        StopAllCoroutines();
+        textDialogue.text = string.Empty;
+        foreach (AudioSource audioSource in audiosSources)
+        {
+
+            audioSource.Stop();
+        }
+
+        if(PuzzleManager.instance.idiomaIndex == 0)
+        {
+            this.lines = spanishLines;
+        }
+        else if(PuzzleManager.instance.idiomaIndex == 1)
+        {
+            this.lines = englishLines;
+        }
+        else if(PuzzleManager.instance.idiomaIndex == 2)
+        {
+            this.lines = catalanLines;
+        }
+        this.audiosClips = clip;
+        dialoguePanel.SetActive(true);
+        StartCoroutine(TypeLine());
+    }
+
+
     IEnumerator TypeLine()
     {
 

@@ -23,8 +23,10 @@ public class BloodPuzzle : MonoBehaviour
 
     void Start()
     {
-        
-        correctNumber = Random.Range(1, 10); // 1 incluido, 10 excluido
+
+        Random.InitState(PuzzleManager.instance.GetPuzzle("BloodPuzzle").seed + BloodRuedaID);
+
+        correctNumber = Random.Range(0, 8); // 1 incluido, 10 excluido
         currentNumber = 0;
         inicialRotation = Quaternion.identity;
 

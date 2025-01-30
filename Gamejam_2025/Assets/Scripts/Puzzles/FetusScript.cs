@@ -15,6 +15,14 @@ public class FetusScript : MonoBehaviour
     private bool showHints = true;
 
 
+
+    public AudioClip[] clipsDialogo1;
+
+    public string[] linesDialogo1_ES;
+    public string[] linesDialogo1_EN;
+    public string[] linesDialogo1_CA;
+
+
     void Start()
     {
         grabObjects = FindObjectOfType<GrabObjects>();
@@ -33,6 +41,10 @@ public class FetusScript : MonoBehaviour
     public void FetusInteract()
     {
         Debug.Log("fetusInteract");
+
+
+        SubtitulosManager.instance.PlayDialogue(linesDialogo1_ES, linesDialogo1_EN, linesDialogo1_CA, clipsDialogo1);
+
         manager = FindAnyObjectByType<PuzzleManager>();
         wordleController = FindAnyObjectByType<WordleController>();
         cordonUmbilical = FindAnyObjectByType<CordonUmbilical>();

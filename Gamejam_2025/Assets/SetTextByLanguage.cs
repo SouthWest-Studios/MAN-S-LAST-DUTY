@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class SetTextByLanguage : MonoBehaviour
 {
+    [TextAreaAttribute(3,10)]
     public string spanishText;
+    [TextAreaAttribute(3, 10)]
     public string englishText;
+    [TextAreaAttribute(3, 10)]
     public string catalanText;
 
     private TextMeshProUGUI m_tmp;
