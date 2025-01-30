@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class ProximidadSonora : MonoBehaviour
 {
@@ -208,14 +209,26 @@ public class ProximidadSonora : MonoBehaviour
 
     private void Update()
     {
+        if (mainCanvas.activeSelf)
+        {
+            OnEnable();
+        }
         if (!gameActive) return;
 
         HandleMouseInput();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        
+        if (!mainCanvas.activeSelf)
         {
             OnDisable();
         }
+        //if (mainCanvas && Input.GetKeyDown(KeyCode.E) && gameActive)
+        //{
+        //    OnDisable();
+        //}
+
+
+
     }
 
     private void HandleMouseInput()
