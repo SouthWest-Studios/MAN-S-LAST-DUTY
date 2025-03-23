@@ -38,4 +38,4 @@ We are SouthWest Studio.
 - Raül Sánchez Rodríguez - Lead Designer
 - Aleix Botella Llobet - Lead Programmer
 - Martí Sabaté Miranda  - Programmer
-- Alejandro Ibañez Ramírez - Programmer
+- Alejandro Ibañez Ramírez - Programme
